@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Button } from "@/components/ui";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -81,13 +80,10 @@ export default function ResumePage() {
                 Professional Experience & Skills
               </p>
             </div>
-            <Button
-              variant="primary"
-              className="whitespace-nowrap"
-              onClick={() => {
-                // Placeholder for PDF download
-                alert("PDF download will be implemented");
-              }}
+            <button
+              disabled
+              className="inline-flex items-center whitespace-nowrap rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-3 font-semibold text-white opacity-50 cursor-not-allowed"
+              title="PDF download coming soon"
             >
               <svg
                 className="mr-2 h-5 w-5"
@@ -102,8 +98,8 @@ export default function ResumePage() {
                   d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                 />
               </svg>
-              Download PDF
-            </Button>
+              Download PDF (Coming Soon)
+            </button>
           </div>
 
           <div className="space-y-16">
