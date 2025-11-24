@@ -19,9 +19,10 @@ export interface SkillsProps {
  */
 export function Skills({ className }: SkillsProps) {
   const categories: Record<Skill["category"], string> = {
-    frontend: "Frontend",
-    backend: "Backend",
-    tools: "Tools & DevOps",
+    languages: "Languages",
+    frameworks: "Frameworks & Platforms",
+    databases: "Databases",
+    devops: "DevOps & Cloud",
     other: "Other",
   };
 
@@ -46,14 +47,16 @@ export function Skills({ className }: SkillsProps) {
           </p>
         </div>
 
-        <div className="grid gap-12 md:grid-cols-3">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {Object.entries(groupedSkills).map(([category, categorySkills]) => (
             <div key={category}>
               <h3 className="mb-6 text-xl font-semibold text-gray-900 dark:text-white">
                 {categories[category as Skill["category"]]}
               </h3>
               <div className="flex flex-col gap-4">
-                {categorySkills.map((skill) => (
+                {categorySkills
+                  .sort((a, b) => b.proficiency - a.proficiency)
+                  .map((skill) => (
                   <div key={skill.name}>
                     <div className="mb-2">
                       <span className="font-medium text-gray-700 dark:text-gray-300">

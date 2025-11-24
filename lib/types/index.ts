@@ -14,7 +14,7 @@ export interface Project {
 
 export interface Skill {
   name: string;
-  category: "frontend" | "backend" | "tools" | "other";
+  category: "languages" | "frameworks" | "databases" | "devops" | "other";
   proficiency: number; // 1-5
 }
 
@@ -22,4 +22,19 @@ export interface ContactForm {
   name: string;
   email: string;
   message: string;
+}
+
+export interface CaseStudy {
+  id: string;
+  slug: string;
+  title: string;
+  description: string;
+  year: string;
+  tags: string[];
+  problem: string;
+  solution: string;
+  technicalDetails: string[];
+  results: string[];
+  lessonsLearned?: string[];
+  images?: string[];
 }
