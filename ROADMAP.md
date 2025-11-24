@@ -111,7 +111,21 @@ Personal website / landing page that showcases technical skills through code qua
 
 **Goal**: Unique features that set portfolio apart
 
-### 3.1 Blog (Optional)
+### 3.1 Internationalization (i18n)
+- [ ] Setup next-intl for Next.js 15 App Router
+- [ ] Configure i18n routing (/en/, /ru/)
+- [ ] Create translation files (en.json, ru.json)
+- [ ] Translate all pages and components
+- [ ] Translate case studies data
+- [ ] Add language switcher to Header
+- [ ] Test language switching and persistence
+
+**Estimated Duration**: 6-8 hours
+**Priority**: HIGH (requested by user)
+
+---
+
+### 3.2 Blog (Optional)
 - [ ] MDX setup
 - [ ] Blog posts with syntax highlighting
 - [ ] RSS feed
@@ -121,7 +135,7 @@ Personal website / landing page that showcases technical skills through code qua
 
 ---
 
-### 3.2 Analytics Dashboard
+### 3.3 Analytics Dashboard
 - [ ] Vercel Analytics integration
 - [ ] Custom events tracking
 - [ ] Public stats page
