@@ -85,8 +85,11 @@ export const caseStudies: CaseStudy[] = [
       "EAV pattern for dynamic entity/field creation without migrations",
       "Multi-tenancy with Company + ConnectionURL (separate databases per client)",
       "Type-safe value storage with separate tables (Boolean, Integer, String, GeoLocation, Image)",
+      "Value storage design: Evaluated linking by ID to custom type tables vs direct type ID reference, chose separate tables for type safety and easier value retrieval",
       "Visual layout engine with Section/Screen components",
-      "Dependency graph for object relationships",
+      "Dependency graph for object relationships - chose tree structure over cyclic graph for better scalability",
+      "Architecture decision: Entity can be used as field in only one parent entity (prevents circular dependencies)",
+      "Recursive table relationships: Field references Entity, Entity can reference Field (one-directional)",
       "Dynamic filtering system for user-created entities",
     ],
     results: [
@@ -101,6 +104,6 @@ export const caseStudies: CaseStudy[] = [
       "Type-safe value storage prevents data corruption in dynamic systems",
       "Visual builders need strong dependency management to handle complex relationships",
     ],
-    images: ["/case-studies/website-builder/db-schema-1.png", "/case-studies/website-builder/db-schema-2.png"],
+    images: ["/case-studies/website-builder/db-schema-1-v2.png", "/case-studies/website-builder/db-schema-2-v2.png"],
   },
 ];

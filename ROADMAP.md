@@ -107,6 +107,23 @@ Personal website / landing page that showcases technical skills through code qua
 
 ---
 
+### 2.5 AI Development Error Monitoring 📅 PLANNED
+
+**Goal**: Automatic error detection during AI development
+
+**Tasks**:
+- [ ] Setup background monitoring of dev server output
+- [ ] Automatic error detection (500 status, stderr output)
+- [ ] AI notification when errors occur
+- [ ] Automatic error analysis and fixing
+- [ ] Integration with Claude Code workflow
+
+**Estimated Duration**: 3-4 hours
+**Priority**: MEDIUM
+**Rationale**: AI should catch and fix errors immediately without user intervention
+
+---
+
 ## Phase 3: Advanced Features 📅 FUTURE
 
 **Goal**: Unique features that set portfolio apart
@@ -185,8 +202,11 @@ Personal website / landing page that showcases technical skills through code qua
 
 **Goal**: Production-ready deployment
 
-### 5.1 Deployment
-- [ ] Deploy to Vercel
+### 5.1 Deployment ⏳ IN PROGRESS
+- ✅ Vercel configuration file
+- [ ] Connect GitHub repository to Vercel
+- [ ] Setup automatic deployments on push to main
+- [ ] Setup preview deployments for feature branches
 - [ ] Custom domain setup
 - [ ] SSL certificate
 - [ ] Environment variables

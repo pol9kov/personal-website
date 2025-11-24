@@ -4,9 +4,9 @@ import Link from "next/link";
 import { caseStudies } from "@/lib/constants/case-studies";
 
 interface CaseStudyPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
@@ -15,8 +15,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function CaseStudyPage({ params }: CaseStudyPageProps) {
-  const study = caseStudies.find((s) => s.slug === params.slug);
+export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
+  const { slug } = await params;
+  const study = caseStudies.find((s) => s.slug === slug);
 
   if (!study) {
     notFound();

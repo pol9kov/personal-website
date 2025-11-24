@@ -59,33 +59,6 @@ export function Contact({ className }: ContactProps) {
               LinkedIn
             </Button>
           </div>
-
-          <div className="mt-12 flex items-center justify-center gap-8 text-gray-600 dark:text-gray-400">
-            <a
-              href="https://github.com/pol9kov"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-gray-900 dark:hover:text-white transition-colors"
-            >
-              GitHub
-            </a>
-            <a
-              href="https://t.me/pol9kov"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-gray-900 dark:hover:text-white transition-colors"
-            >
-              Telegram
-            </a>
-            <a
-              href="https://www.linkedin.com/in/egor-polyakov/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-gray-900 dark:hover:text-white transition-colors"
-            >
-              LinkedIn
-            </a>
-          </div>
         </div>
       </div>
     </section>
