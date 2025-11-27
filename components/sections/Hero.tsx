@@ -27,17 +27,12 @@ export function Hero({ className }: HeroProps) {
         className
       )}
     >
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
-          {/* Left side - Text content */}
-          <div className="flex-1 text-center md:text-left">
-            <h1 className="text-5xl font-bold text-gray-900 dark:text-white sm:text-6xl md:text-7xl">
-              Hi, I&apos;m
-            </h1>
-          </div>
-
-          {/* Right side - Profile photo */}
-          <div className="relative h-40 w-40 sm:h-48 sm:w-48 md:h-56 md:w-56 flex-shrink-0">
+      <div className="container mx-auto px-4 text-center">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+          <h1 className="text-5xl font-bold text-gray-900 dark:text-white sm:text-6xl md:text-7xl">
+            Hi, I&apos;m
+          </h1>
+          <div className="relative h-32 w-32 sm:h-40 sm:w-40 md:h-48 md:w-48 flex-shrink-0">
             <Image
               src="/images/profile.jpg"
               alt="Egor Polyakov"
@@ -48,13 +43,13 @@ export function Hero({ className }: HeroProps) {
           </div>
         </div>
 
-        <p className="mx-auto md:mx-0 mt-6 max-w-2xl text-lg text-gray-600 dark:text-gray-300 sm:text-xl text-center md:text-left">
+        <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-600 dark:text-gray-300 sm:text-xl">
           Software Engineer with 10+ years of experience building universal frameworks
           and elegant architectural solutions. Passionate about creating generalized systems
           that eliminate duplication and solve complex problems at their core.
         </p>
 
-        <div className="mt-10 flex flex-col items-center md:items-start justify-center md:justify-start gap-4 sm:flex-row">
+        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button variant="primary" size="lg">
             View Projects
           </Button>
@@ -63,7 +58,7 @@ export function Hero({ className }: HeroProps) {
           </Button>
         </div>
 
-        <div className="mt-16 flex items-center justify-center md:justify-start gap-6">
+        <div className="mt-16 flex items-center justify-center gap-6">
           <a
             href="https://github.com/pol9kov"
             target="_blank"
