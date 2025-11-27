@@ -33,15 +33,6 @@ export function Footer({ className }: FooterProps) {
             </h3>
             <div className="flex items-center gap-6">
               <a
-                href="https://github.com/pol9kov"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-                aria-label="GitHub"
-              >
-                GitHub
-              </a>
-              <a
                 href="https://www.linkedin.com/in/egor-polyakov/"
                 target="_blank"
                 rel="noopener noreferrer"
