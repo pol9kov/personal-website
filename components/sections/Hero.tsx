@@ -33,7 +33,7 @@ export function Hero({ className }: HeroProps) {
           <div className="flex-shrink-0 order-1 md:order-2">
             <div className="relative h-48 w-48 sm:h-56 sm:w-56 md:h-64 md:w-64">
               <Image
-                src="/images/profile.png"
+                src="/images/profile.jpg"
                 alt="Egor Polyakov"
                 fill
                 className="rounded-full object-cover"
