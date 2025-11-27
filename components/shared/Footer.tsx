@@ -25,9 +25,14 @@ export function Footer({ className }: FooterProps) {
     >
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-end gap-3">
-          <h3 className="text-sm font-semibold text-gray-900 dark:text-white">
+          <a
+            href="https://t.me/pol9kov"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-semibold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+          >
             Contact
-          </h3>
+          </a>
           <div className="flex items-center gap-6">
             <a
               href="https://www.linkedin.com/in/egor-polyakov/"
