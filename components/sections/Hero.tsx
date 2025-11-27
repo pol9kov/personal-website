@@ -50,12 +50,24 @@ export function Hero({ className }: HeroProps) {
         </p>
 
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Button variant="primary" size="lg">
-            View Projects
-          </Button>
-          <Button variant="secondary" size="lg">
-            Contact Me
-          </Button>
+          <a
+            href="https://github.com/pol9kov?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button variant="primary" size="lg">
+              View Projects
+            </Button>
+          </a>
+          <a
+            href="https://t.me/pol9kov"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button variant="secondary" size="lg">
+              Contact Me
+            </Button>
+          </a>
         </div>
 
         <div className="mt-16 flex items-center justify-center gap-6">
