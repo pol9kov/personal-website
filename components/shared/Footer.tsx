@@ -29,7 +29,7 @@ export function Footer({ className }: FooterProps) {
             href="https://t.me/pol9kov"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-semibold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
           >
             Contact
           </a>

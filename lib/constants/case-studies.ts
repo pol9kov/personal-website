@@ -105,5 +105,6 @@ export const caseStudies: CaseStudy[] = [
       "Visual builders need strong dependency management to handle complex relationships",
     ],
     images: ["/case-studies/website-builder/db-schema-1-v2.png", "/case-studies/website-builder/db-schema-2-v2.png"],
+    githubUrl: "https://github.com/pol9kov/ContractTracking",
   },
 ];

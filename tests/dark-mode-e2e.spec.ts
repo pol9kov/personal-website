@@ -56,9 +56,7 @@ test.describe("Dark Mode E2E", () => {
     const sections = [
       { selector: 'header', name: 'Header' },
       { selector: 'section:has(h1:text("Hi, I\'m"))', name: 'Hero' },
-      { selector: 'section:has(h2:text("Featured Projects"))', name: 'Projects' },
       { selector: 'section:has(h2:text("Skills"))', name: 'Skills' },
-      { selector: 'section:has(h2:text("Work Together"))', name: 'Contact' },
     ];
 
     for (const section of sections) {

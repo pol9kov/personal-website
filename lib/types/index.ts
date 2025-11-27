@@ -37,4 +37,5 @@ export interface CaseStudy {
   results: string[];
   lessonsLearned?: string[];
   images?: string[];
+  githubUrl?: string;
 }
