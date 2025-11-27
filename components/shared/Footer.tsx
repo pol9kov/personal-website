@@ -50,6 +50,15 @@ export function Footer({ className }: FooterProps) {
             >
               LinkedIn
             </a>
+            <a
+              href="https://t.me/pol9kov"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+              aria-label="Telegram"
+            >
+              Telegram
+            </a>
           </div>
         </div>
       </div>
