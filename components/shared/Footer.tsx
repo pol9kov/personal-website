@@ -24,7 +24,7 @@ export function Footer({ className }: FooterProps) {
       )}
     >
       <div className="container mx-auto px-4">
-        <div className="flex flex-col items-center gap-3">
+        <div className="flex flex-col items-end gap-3">
           <h3 className="text-sm font-semibold text-gray-900 dark:text-white">
             Contact
           </h3>
