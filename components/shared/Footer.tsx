@@ -50,15 +50,6 @@ export function Footer({ className }: FooterProps) {
             >
               LinkedIn
             </a>
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-600 hover:text-gray-900 transition-colors"
-              aria-label="Twitter"
-            >
-              Twitter
-            </a>
           </div>
         </div>
       </div>
