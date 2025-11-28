@@ -12,6 +12,7 @@ Complete documentation for the portfolio website project.
 | [../ROADMAP.md](../ROADMAP.md)           | Project roadmap, milestones, current progress | Everyone |
 | [../ARCHITECTURE.md](../ARCHITECTURE.md) | Technical architecture, design decisions  | Developers   |
 | [../CONTRIBUTING.md](../CONTRIBUTING.md) | Contribution guidelines, commit format    | Contributors |
+| [COMPONENTS.md](./COMPONENTS.md)         | Component documentation, props, patterns  | Developers   |
 
 ### For AI Assistants
 
@@ -30,6 +31,7 @@ README.md (entry point)
 ├── CLAUDE.md (AI rules) ──┐
 └── docs/                   │
     ├── README.md (this)    │
+    ├── COMPONENTS.md (component guide)
     ├── TESTING-STRATEGY.md ←┤ (referenced in AI rules)
     └── CLAUDE-MD-OPTIMIZATION.md ←┘
 ```
@@ -66,6 +68,7 @@ When creating/updating documentation:
 
 - Setup instructions? → [README.md](../README.md#-quick-start)
 - Code structure? → [ARCHITECTURE.md](../ARCHITECTURE.md)
+- Component documentation? → [COMPONENTS.md](./COMPONENTS.md)
 - How to commit? → [CONTRIBUTING.md](../CONTRIBUTING.md)
 - AI workflow? → [CLAUDE.md](../CLAUDE.md)
 - Testing strategy? → [TESTING-STRATEGY.md](./TESTING-STRATEGY.md)
@@ -73,6 +76,6 @@ When creating/updating documentation:
 
 ---
 
-**Last Updated:** 2025-11-13
+**Last Updated:** 2025-11-27
 **Maintained by:** Project contributors
 **Questions?** Open an issue
