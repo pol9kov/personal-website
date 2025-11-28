@@ -1,6 +1,7 @@
 import { skills } from "@/lib/constants/skills";
 import { Skill } from "@/lib/types";
 import { cn } from "@/lib/utils/cn";
+import { SkillIntegralChart } from "@/components/ui";
 
 /**
  * Skills section props
@@ -53,24 +54,12 @@ export function Skills({ className }: SkillsProps) {
               <h3 className="mb-6 text-xl font-semibold text-gray-900 dark:text-white">
                 {categories[category as Skill["category"]]}
               </h3>
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-6">
                 {categorySkills
                   .sort((a, b) => b.proficiency - a.proficiency)
                   .map((skill) => (
-                  <div key={skill.name}>
-                    <div className="mb-2">
-                      <span className="font-medium text-gray-700 dark:text-gray-300">
-                        {skill.name}
-                      </span>
-                    </div>
-                    <div className="h-2 w-full rounded-full bg-gray-200 dark:bg-gray-700">
-                      <div
-                        className="h-full rounded-full bg-gradient-to-r from-blue-600 to-purple-600 transition-all"
-                        style={{ width: `${(skill.proficiency / 5) * 100}%` }}
-                      />
-                    </div>
-                  </div>
-                ))}
+                    <SkillIntegralChart key={skill.name} skill={skill} />
+                  ))}
               </div>
             </div>
           ))}
