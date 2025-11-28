@@ -1,5 +1,17 @@
 # Personal Website
 
+<div align="center">
+
+### 🌐 **[View Live Site →](https://egor-polyakov.vercel.app)**
+
+[![Live Demo](https://img.shields.io/badge/Live_Demo-egor--polyakov.vercel.app-blue?style=for-the-badge&logo=vercel)](https://egor-polyakov.vercel.app)
+
+*Click to explore the live portfolio*
+
+---
+
+</div>
+
 Personal website / landing page built with Next.js 15, showcasing technical skills through code quality and architectural decisions.
 
 ## 🎯 Project Goals
