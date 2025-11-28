@@ -6,7 +6,7 @@
 
 [![Live Demo](https://img.shields.io/badge/Live_Demo-egor--polyakov.vercel.app-blue?style=for-the-badge&logo=vercel)](https://egor-polyakov.vercel.app)
 
-*Click to explore the live portfolio*
+*Visit the live site*
 
 ---
 
