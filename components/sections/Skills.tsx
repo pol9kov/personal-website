@@ -50,16 +50,37 @@ export function Skills({ className }: SkillsProps) {
 
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {Object.entries(groupedSkills).map(([category, categorySkills]) => (
-            <div key={category}>
+            <div key={category} className="relative">
+              {/* Decorative integral "icicle" */}
+              <div className="flex justify-center mb-4">
+                <SkillIntegralChart
+                  skills={categorySkills}
+                  width={120}
+                  height={100}
+                />
+              </div>
+
               <h3 className="mb-6 text-xl font-semibold text-gray-900 dark:text-white">
                 {categories[category as Skill["category"]]}
               </h3>
-              <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-4">
                 {categorySkills
                   .sort((a, b) => b.proficiency - a.proficiency)
                   .map((skill) => (
-                    <SkillIntegralChart key={skill.name} skill={skill} />
-                  ))}
+                  <div key={skill.name}>
+                    <div className="mb-2">
+                      <span className="font-medium text-gray-700 dark:text-gray-300">
+                        {skill.name}
+                      </span>
+                    </div>
+                    <div className="h-2 w-full rounded-full bg-gray-200 dark:bg-gray-700">
+                      <div
+                        className="h-full rounded-full bg-gradient-to-r from-blue-600 to-purple-600 transition-all"
+                        style={{ width: `${(skill.proficiency / 5) * 100}%` }}
+                      />
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           ))}
