@@ -38,7 +38,7 @@ npm run type-check && npm run lint && npm test
 - ✅ Complete user journey tested
 - ❌ Never say "try it" without testing
 
-## Before Presenting to User
+## Before Making a Commit
 
 **MUST re-analyze task from scratch:**
 
@@ -62,4 +62,4 @@ npm run type-check && npm run lint && npm test
 
 ---
 
-**Last Updated:** 2025-11-27 (added self-verification step)
+**Last Updated:** 2025-11-27 (self-verification before commit)
