@@ -32,7 +32,7 @@ export function Header({ className }: HeaderProps) {
 
   const navItems = [
     { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
+    { href: "/about", label: "About Me" },
     { href: "/case-studies", label: "Case Studies" },
     { href: "/resume", label: "Resume" },
   ];
