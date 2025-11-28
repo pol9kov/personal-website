@@ -23,6 +23,7 @@ export interface HeaderProps {
 export function Header({ className }: HeaderProps) {
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Only show theme toggle after client-side hydration
   useEffect(() => {
@@ -57,8 +58,9 @@ export function Header({ className }: HeaderProps) {
           Egor Polyakov
         </Link>
 
-        <div className="flex items-center gap-6">
-          <nav>
+        <div className="flex items-center gap-4">
+          {/* Desktop navigation - hidden on mobile */}
+          <nav className="hidden md:block">
             <ul className="flex items-center gap-6">
               {navItems.map((item) => (
                 <li key={item.href}>
@@ -73,6 +75,7 @@ export function Header({ className }: HeaderProps) {
             </ul>
           </nav>
 
+          {/* Theme toggle button */}
           {mounted && (
             <button
               onClick={toggleTheme}
@@ -110,8 +113,67 @@ export function Header({ className }: HeaderProps) {
               )}
             </button>
           )}
+
+          {/* Mobile menu button - visible only on mobile */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden rounded-lg p-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            aria-label="Toggle menu"
+            aria-expanded={isMenuOpen}
+          >
+            {isMenuOpen ? (
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            ) : (
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            )}
+          </button>
         </div>
       </div>
+
+      {/* Mobile menu panel */}
+      {isMenuOpen && (
+        <div className="md:hidden border-t border-gray-200 dark:border-gray-800">
+          <nav className="container mx-auto px-4 py-4">
+            <ul className="flex flex-col gap-4">
+              {navItems.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }
