@@ -9,6 +9,7 @@ Complete documentation for the portfolio website project.
 | Document                                 | Description                               | Audience     |
 | ---------------------------------------- | ----------------------------------------- | ------------ |
 | [../README.md](../README.md)             | Project overview, tech stack, quick start | Everyone     |
+| [../CHANGELOG.md](../CHANGELOG.md)       | Version history and release notes         | Everyone     |
 | [../ROADMAP.md](../ROADMAP.md)           | Project roadmap, milestones, current progress | Everyone |
 | [../ARCHITECTURE.md](../ARCHITECTURE.md) | Technical architecture, design decisions  | Developers   |
 | [../CONTRIBUTING.md](../CONTRIBUTING.md) | Contribution guidelines, commit format    | Contributors |
@@ -26,6 +27,8 @@ Complete documentation for the portfolio website project.
 
 ```
 README.md (entry point)
+├── CHANGELOG.md (version history)
+├── ROADMAP.md (project milestones)
 ├── ARCHITECTURE.md (technical details)
 ├── CONTRIBUTING.md (contribution workflow)
 ├── CLAUDE.md (AI rules) ──┐
@@ -67,6 +70,7 @@ When creating/updating documentation:
 **Looking for:**
 
 - Setup instructions? → [README.md](../README.md#-quick-start)
+- Version history? → [CHANGELOG.md](../CHANGELOG.md)
 - Code structure? → [ARCHITECTURE.md](../ARCHITECTURE.md)
 - Component documentation? → [COMPONENTS.md](./COMPONENTS.md)
 - How to commit? → [CONTRIBUTING.md](../CONTRIBUTING.md)

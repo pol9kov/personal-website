@@ -85,6 +85,7 @@ See [ARCHITECTURE.md](./ARCHITECTURE.md) for detailed codemap.
 
 ## 📖 Documentation
 
+- **[Changelog](./CHANGELOG.md)** - Version history and release notes
 - **[Roadmap](./ROADMAP.md)** - Project roadmap and current progress
 - **[Architecture Guide](./ARCHITECTURE.md)** - Technical architecture and design decisions
 - **[Contributing Guide](./CONTRIBUTING.md)** - Commit format and workflow
