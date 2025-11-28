@@ -52,11 +52,11 @@ export function Skills({ className }: SkillsProps) {
           {Object.entries(groupedSkills).map(([category, categorySkills]) => (
             <div key={category} className="relative">
               {/* Decorative integral "icicle" */}
-              <div className="flex justify-center mb-4">
+              <div className="flex justify-center mb-6">
                 <SkillIntegralChart
                   skills={categorySkills}
-                  width={120}
-                  height={100}
+                  width={160}
+                  height={140}
                 />
               </div>
 
