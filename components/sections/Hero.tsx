@@ -41,7 +41,7 @@ export function Hero({ className }: HeroProps) {
           </div>
 
           <h1
-            className="text-4xl font-bold sm:text-5xl md:text-6xl mb-6"
+            className="text-4xl font-bold sm:text-5xl md:text-6xl mt-4 mb-2"
             style={{
               background: 'linear-gradient(to right, rgb(37, 99, 235), rgb(6, 182, 212))',
               WebkitBackgroundClip: 'text',
