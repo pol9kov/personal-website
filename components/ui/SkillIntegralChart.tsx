@@ -131,15 +131,22 @@ export function SkillIntegralChart({
             strokeDasharray="4 2"
             className="text-purple-600 dark:text-purple-400 opacity-50"
           />
-        </svg>
 
-        {/* Integral notation */}
-        <div className="mt-1 text-xs font-mono text-gray-500 dark:text-gray-400">
-          <span>∫</span>
-          <sub>0</sub>
-          <sup>{proficiencyPercent.toFixed(0)}</sup>
-          <span className="ml-1">f(x)dx</span>
-        </div>
+          {/* Integral formula overlaid on graph (semi-transparent) */}
+          <text
+            x={width / 2}
+            y={height - 8}
+            textAnchor="middle"
+            className="text-xs font-mono fill-gray-400 dark:fill-gray-600 opacity-40"
+            style={{ userSelect: "none" }}
+          >
+            ∫₀
+            <tspan dy="-2" fontSize="10">
+              {proficiencyPercent.toFixed(0)}
+            </tspan>
+            <tspan dy="2"> f(x)dx</tspan>
+          </text>
+        </svg>
       </div>
     </div>
   );
