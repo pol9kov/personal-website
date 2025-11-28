@@ -38,6 +38,16 @@ npm run type-check && npm run lint && npm test
 - ✅ Complete user journey tested
 - ❌ Never say "try it" without testing
 
+## Before Presenting to User
+
+**MUST re-analyze task from scratch:**
+
+1. Re-read original user request
+2. Re-think solution independently
+3. Compare with actual implementation
+4. Verify all requirements met
+5. Check for simpler alternatives
+
 ## Documentation
 
 **When creating docs:** File → docs/README.md → Link from parent → Reference in CLAUDE.md
@@ -52,4 +62,4 @@ npm run type-check && npm run lint && npm test
 
 ---
 
-**Last Updated:** 2025-11-27
+**Last Updated:** 2025-11-27 (added self-verification step)
