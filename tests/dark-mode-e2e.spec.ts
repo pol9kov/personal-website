@@ -55,7 +55,7 @@ test.describe("Dark Mode E2E", () => {
     // Verify all major sections have dark styling
     const sections = [
       { selector: 'header', name: 'Header' },
-      { selector: 'section:has(h1:text("Hi, I\'m"))', name: 'Hero' },
+      { selector: 'section:has(h1:text("Egor Polyakov"))', name: 'Hero' },
       { selector: 'section:has(h2:text("Skills"))', name: 'Skills' },
     ];
 

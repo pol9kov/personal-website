@@ -28,12 +28,9 @@ export function Hero({ className }: HeroProps) {
       )}
     >
       <div className="container mx-auto px-4 text-center">
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+        <div className="flex flex-col sm:flex-row items-start justify-center gap-6">
           <div className="flex flex-col items-center sm:items-end">
-            <h1 className="text-5xl font-bold text-gray-900 dark:text-white sm:text-6xl md:text-7xl">
-              Hi, I&apos;m
-            </h1>
-            <h2
+            <h1
               className="text-4xl font-bold sm:text-5xl md:text-6xl"
               style={{
                 background: 'linear-gradient(to right, rgb(37, 99, 235), rgb(6, 182, 212))',
@@ -46,7 +43,7 @@ export function Hero({ className }: HeroProps) {
               }}
             >
               Egor Polyakov
-            </h2>
+            </h1>
           </div>
           <div className="relative h-32 w-32 sm:h-40 sm:w-40 md:h-48 md:w-48 flex-shrink-0">
             <Image
