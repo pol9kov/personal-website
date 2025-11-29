@@ -34,21 +34,13 @@ export function Hero({ className }: HeroProps) {
             className="relative float-right ml-6 mb-6 h-36 w-36 sm:h-44 sm:w-44 md:h-52 md:w-52 rounded-full overflow-hidden"
             style={{ shapeOutside: 'circle(50%)' }}
           >
-            {/* Mobile: zoomed version with offset */}
-            <div className="absolute sm:hidden" style={{
-              width: '140%',
-              height: '140%',
-              top: '-30%',
-              left: '-20%'
-            }}>
-              <Image
-                src="/images/profile.jpg"
-                alt="Egor Polyakov"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
+            {/* Mobile: zoomed version */}
+            <img
+              src="/images/profile.jpg"
+              alt="Egor Polyakov"
+              className="absolute w-[160%] h-[160%] object-cover sm:hidden"
+              style={{ top: '-40%', left: '-30%' }}
+            />
             {/* Desktop: original version */}
             <Image
               src="/images/profile.jpg"
