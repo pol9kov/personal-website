@@ -39,7 +39,7 @@ export function Hero({ className }: HeroProps) {
               alt="Egor Polyakov"
               fill
               className="object-cover"
-              style={{ objectPosition: '70% 20%', transform: 'scale(1.4)' }}
+              style={{ objectPosition: '85% 10%', transform: 'scale(1.4)' }}
               priority
             />
           </div>
