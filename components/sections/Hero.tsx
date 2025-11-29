@@ -60,7 +60,7 @@ export function Hero({ className }: HeroProps) {
           <div className="clear-both"></div>
         </div>
 
-        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <div className="mt-10 flex flex-row flex-wrap items-center justify-center gap-4">
           <a
             href="https://github.com/pol9kov?tab=repositories"
             target="_blank"
