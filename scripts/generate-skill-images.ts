@@ -80,11 +80,19 @@ function generateIntegralSVG(categorySkills: Skill[]): string {
     return { x, y };
   });
 
-  // Add final point below the last skill
+  // Add final points below the last skill - curve down to zero
   const lastSkill = sortedSkills[sortedSkills.length - 1];
   if (lastSkill) {
+    const lastY = (sortedSkills.length - 1) * (ROW_HEIGHT + ROW_GAP) + ROW_HEIGHT / 2;
+    const lastX = (lastSkill.proficiency / 5) * 100;
+    // Intermediate point to curve down
     basePoints.push({
-      x: (lastSkill.proficiency / 5) * 100,
+      x: lastX * 0.5,
+      y: lastY + ROW_GAP * 1.5,
+    });
+    // Final point at zero
+    basePoints.push({
+      x: 0,
       y: totalHeight,
     });
   }
@@ -173,15 +181,15 @@ function generateIntegralSVG(categorySkills: Skill[]): string {
   <defs>
     <linearGradient id="area-${seed}" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="${COLOR_START}" stop-opacity="0"/>
-      <stop offset="50%" stop-color="${COLOR_START}" stop-opacity="0"/>
+      <stop offset="55%" stop-color="${COLOR_START}" stop-opacity="0"/>
       <stop offset="75%" stop-color="${COLOR_START}" stop-opacity="0.1"/>
       <stop offset="90%" stop-color="${COLOR_START}" stop-opacity="0.18"/>
       <stop offset="100%" stop-color="${COLOR_START}" stop-opacity="0.25"/>
     </linearGradient>
     <linearGradient id="spray-${seed}" x1="0" y1="0" x2="100" y2="0" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="${COLOR_END}" stop-opacity="0"/>
-      <stop offset="30%" stop-color="${COLOR_END}" stop-opacity="0.3"/>
-      <stop offset="50%" stop-color="${COLOR_END}" stop-opacity="0.7"/>
+      <stop offset="35%" stop-color="${COLOR_END}" stop-opacity="0.2"/>
+      <stop offset="50%" stop-color="${COLOR_END}" stop-opacity="0.6"/>
       <stop offset="65%" stop-color="${COLOR_END}" stop-opacity="1"/>
       <stop offset="82%" stop-color="${COLOR_START}" stop-opacity="1"/>
       <stop offset="100%" stop-color="${COLOR_START}" stop-opacity="1"/>
@@ -218,7 +226,7 @@ function generateIntegralSVG(categorySkills: Skill[]): string {
       <rect x="0" y="0" width="100" height="${totalHeight}" fill="url(#sharp-reveal-${seed})"/>
     </mask>
     <filter id="blur-${seed}" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="2"/>
+      <feGaussianBlur stdDeviation="1"/>
     </filter>
   </defs>
   <!-- Layer 1: Blurred version (visible at bottom through mask) -->
