@@ -19,7 +19,7 @@ export const skills: Skill[] = [
   { name: "Clean Architecture", category: "frameworks", proficiency: 4 },
   { name: "Infrastructure as Code", category: "frameworks", proficiency: 4 },
   { name: "Hyperledger Fabric", category: "frameworks", proficiency: 4 },
-  { name: "Codename One", category: "frameworks", proficiency: 1 },
+  { name: "React/Next.js", category: "frameworks", proficiency: 1 },
   { name: "Ruby on Rails", category: "frameworks", proficiency: 1 },
 
   // Databases
