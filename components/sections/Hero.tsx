@@ -30,7 +30,10 @@ export function Hero({ className }: HeroProps) {
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-3xl">
           {/* Photo floats to the right, text wraps around it */}
-          <div className="relative float-right ml-6 mb-6 h-32 w-32 sm:h-40 sm:w-40 md:h-48 md:w-48">
+          <div
+            className="relative float-right ml-4 mb-2 h-32 w-32 sm:ml-6 sm:mb-6 sm:h-40 sm:w-40 md:h-48 md:w-48"
+            style={{ shapeOutside: 'circle(50%)' }}
+          >
             <Image
               src="/images/profile.jpg"
               alt="Egor Polyakov"
@@ -41,16 +44,13 @@ export function Hero({ className }: HeroProps) {
           </div>
 
           <h1
-            className="text-4xl font-bold sm:text-5xl md:text-6xl mt-4 mb-2 name-gradient inline-block"
-            style={{
-              paddingBottom: '8px',
-              lineHeight: '1.3'
-            }}
+            className="inline text-4xl font-bold sm:text-5xl md:text-6xl name-gradient"
+            style={{ lineHeight: '1.3' }}
           >
             Egor Polyakov
           </h1>
-
-          <p className="text-lg text-gray-600 dark:text-gray-300 sm:text-xl">
+          <br className="sm:hidden" />
+          <p className="inline text-lg text-gray-600 dark:text-gray-300 sm:text-xl sm:block sm:mt-4">
             Software Engineer with 10+ years of experience building universal frameworks
             and elegant architectural solutions. Passionate about creating generalized systems
             that eliminate duplication and solve complex problems at their core.
