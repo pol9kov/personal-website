@@ -10,9 +10,8 @@ export interface SkillsProps {
   className?: string;
 }
 
-// Layout constants for skill rows
+// Layout constant for skill rows
 const ROW_HEIGHT = 40; // Height of each skill row (name + bar)
-const ROW_GAP = 16; // Gap between rows (gap-4 = 16px)
 
 /**
  * Skills section - technical skills display
@@ -65,11 +64,7 @@ export function Skills({ className }: SkillsProps) {
                 {/* Skills list with integral overlay */}
                 <div className="relative">
                   {/* Integral area chart overlay */}
-                  <SkillIntegralChart
-                    skills={sortedSkills}
-                    rowHeight={ROW_HEIGHT}
-                    rowGap={ROW_GAP}
-                  />
+                  <SkillIntegralChart category={category as Skill["category"]} />
 
                   {/* Skill bars */}
                   <div className="relative z-10 flex flex-col gap-4">
