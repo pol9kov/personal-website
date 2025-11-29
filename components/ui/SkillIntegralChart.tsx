@@ -17,14 +17,24 @@ export function SkillIntegralChart({
   if (skills.length === 0) return null;
 
   const seed = skills.reduce((acc, s) => acc + s.name.charCodeAt(0), 0);
-  const totalHeight = skills.length * rowHeight + (skills.length - 1) * rowGap;
+  // Total height includes all rows + gaps, plus extra padding to fully cover container
+  const totalHeight = skills.length * rowHeight + (skills.length - 1) * rowGap + rowGap;
 
   // Points at the right edge of each progress bar
   const basePoints = skills.map((skill, i) => {
-    const y = Math.max(4, i * (rowHeight + rowGap) - rowGap / 2);
+    const y = Math.max(4, i * (rowHeight + rowGap) + rowHeight / 2);
     const x = (skill.proficiency / 5) * 100;
     return { x, y };
   });
+
+  // Add a final point below the last skill to extend the wave
+  const lastSkill = skills[skills.length - 1];
+  if (lastSkill) {
+    basePoints.push({
+      x: (lastSkill.proficiency / 5) * 100,
+      y: totalHeight,
+    });
+  }
 
   // Seeded random for consistent spikes
   const seededRandom = (i: number) => {
@@ -106,49 +116,69 @@ export function SkillIntegralChart({
 
   const bottomY = totalHeight;
 
-  // Polygon with all points including fluctuations
+  // Polygon with all points including fluctuations - start from top
   const polygonPoints = [
-    `0,${first.y}`,
+    `0,0`,
+    `${first.x},0`,
     ...points.map((p) => `${p.x},${p.y}`),
     `0,${bottomY}`,
   ].join(" ");
 
-  // Extend points to bottom
-  const extendedPoints = [...points, { x: last.x, y: bottomY }];
+  // Generate particles with density increasing toward edge
+  const particles: { x: number; y: number; size: number }[] = [];
 
-  // Generate spray particles along the edge
-  // Particles are denser near the edge and sparser further away
-  const particles: { x: number; y: number; size: number; opacity: number }[] = [];
-  const particleCount = extendedPoints.length * 25; // Many particles
+  // Helper to find wave x at given y
+  const getWaveXAtY = (y: number): number => {
+    for (let i = 0; i < points.length - 1; i++) {
+      const p1 = points[i];
+      const p2 = points[i + 1];
+      if (!p1 || !p2) continue;
+      if (y >= p1.y && y <= p2.y) {
+        const t = (y - p1.y) / (p2.y - p1.y);
+        return p1.x + (p2.x - p1.x) * t;
+      }
+    }
+    return points[0]?.x ?? 50;
+  };
 
-  for (let i = 0; i < particleCount; i++) {
-    // Pick a random point along the edge
-    const pointIndex = Math.floor(seededRandom(i * 13) * extendedPoints.length);
-    const point = extendedPoints[pointIndex];
-    if (!point) continue;
+  // Create particles at different distance bands with decreasing count
+  const bands = [
+    { minDist: 0, maxDist: 2, count: 10000 },   // Very dense at edge
+    { minDist: 2, maxDist: 5, count: 4000 },    // Dense
+    { minDist: 5, maxDist: 10, count: 1500 },   // Medium
+    { minDist: 10, maxDist: 20, count: 500 },   // Sparse
+    { minDist: 20, maxDist: 40, count: 150 },   // Very sparse
+  ];
 
-    // Distance from edge (0 = at edge, 1 = far away)
-    // Use exponential distribution so most particles are near the edge
-    const rawDistance = seededRandom(i * 17);
-    const distance = rawDistance * rawDistance * rawDistance; // Cubic falloff - more particles near edge
-    const maxDistance = 25; // Max scatter distance in viewBox units
-    const offsetX = distance * maxDistance;
+  let particleIndex = 0;
+  for (const band of bands) {
+    for (let i = 0; i < band.count; i++) {
+      const y = seededRandom(particleIndex * 7) * totalHeight;
+      const edgeX = getWaveXAtY(y);
 
-    // Only place particles within bounds
-    const particleX = point.x - offsetX;
-    if (particleX < 0) continue;
+      // Scale distance by y position: stay narrow until near bottom, then expand quickly
+      const yProgress = y / totalHeight;
+      const yScale = 0.03 + Math.pow(yProgress, 6) * 14.97;
+      const scaledMinDist = band.minDist * yScale;
+      const scaledMaxDist = band.maxDist * yScale;
 
-    // Slight vertical scatter
-    const verticalOffset = (seededRandom(i * 23) - 0.5) * 4;
-    const particleY = point.y + verticalOffset;
+      // Density decreases with y: keep most at top, few at bottom
+      const keepProbability = 1 - Math.pow(yProgress, 1.5);
+      if (seededRandom(particleIndex * 31) > keepProbability) {
+        particleIndex++;
+        continue;
+      }
 
-    // Size: smaller particles further away (0.3 to 1.2)
-    const size = 0.3 + (1 - distance) * 0.9;
+      const dist = scaledMinDist + seededRandom(particleIndex * 13) * (scaledMaxDist - scaledMinDist);
+      // Shift particles left by 0.35% to align better with Layer 1 gradient
+      const x = edgeX - dist - 0.35;
 
-    // Opacity: decreases with distance (0.1 to 0.8)
-    const opacity = 0.1 + (1 - distance) * 0.7;
-
-    particles.push({ x: particleX, y: particleY, size, opacity });
+      if (x > 0) {
+        const size = 0.15 + seededRandom(particleIndex * 19) * 0.1;
+        particles.push({ x, y, size });
+      }
+      particleIndex++;
+    }
   }
 
   return (
@@ -158,41 +188,86 @@ export function SkillIntegralChart({
       preserveAspectRatio="none"
     >
       <defs>
-        {/* Gradient: fully transparent left side, soft fade to blue on right */}
+        {/* Gradient: fully transparent left side, soft fade on right */}
         <linearGradient id={`area-${seed}`} x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" style={{ stopColor: 'var(--integral-color-blue)' }} stopOpacity="0" />
-          <stop offset="50%" style={{ stopColor: 'var(--integral-color-blue)' }} stopOpacity="0" />
-          <stop offset="75%" style={{ stopColor: 'var(--integral-color-blue)' }} stopOpacity="0.1" />
-          <stop offset="90%" style={{ stopColor: 'var(--integral-color-blue)' }} stopOpacity="0.18" />
-          <stop offset="100%" style={{ stopColor: 'var(--integral-color-blue)' }} stopOpacity="0.25" />
+          <stop offset="0%" style={{ stopColor: 'var(--integral-color-start)' }} stopOpacity="0" />
+          <stop offset="50%" style={{ stopColor: 'var(--integral-color-start)' }} stopOpacity="0" />
+          <stop offset="75%" style={{ stopColor: 'var(--integral-color-start)' }} stopOpacity="0.1" />
+          <stop offset="90%" style={{ stopColor: 'var(--integral-color-start)' }} stopOpacity="0.18" />
+          <stop offset="100%" style={{ stopColor: 'var(--integral-color-start)' }} stopOpacity="0.25" />
         </linearGradient>
-        {/* Gradient for spray layers - cyan */}
-        <linearGradient id={`spray-${seed}`} x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" style={{ stopColor: 'var(--integral-color-cyan)' }} stopOpacity="0" />
-          <stop offset="40%" style={{ stopColor: 'var(--integral-color-cyan)' }} stopOpacity="0" />
-          <stop offset="70%" style={{ stopColor: 'var(--integral-color-cyan)' }} stopOpacity="0.4" />
-          <stop offset="100%" style={{ stopColor: 'var(--integral-color-cyan)' }} stopOpacity="1" />
+        {/* Gradient for Layer 1 - more transparent on left (near text) */}
+        <linearGradient id={`spray-${seed}`} x1="0" y1="0" x2="100" y2="0" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" style={{ stopColor: 'var(--integral-color-start)' }} stopOpacity="0" />
+          <stop offset="20%" style={{ stopColor: 'var(--integral-color-start)' }} stopOpacity="0" />
+          <stop offset="50%" style={{ stopColor: 'var(--integral-color-start)' }} stopOpacity="0.15" />
+          <stop offset="70%" style={{ stopColor: 'var(--integral-color-start)' }} stopOpacity="0.35" />
+          <stop offset="85%" style={{ stopColor: 'var(--integral-color-end)' }} stopOpacity="0.6" />
+          <stop offset="100%" style={{ stopColor: 'var(--integral-color-end)' }} stopOpacity="1" />
         </linearGradient>
+        {/* Gradient for Layer 2 - same colors, NO opacity (fully opaque) */}
+        <linearGradient id={`spray-solid-${seed}`} x1="0" y1="0" x2="100" y2="0" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" style={{ stopColor: 'var(--integral-color-start)' }} />
+          <stop offset="40%" style={{ stopColor: 'var(--integral-color-start)' }} />
+          <stop offset="70%" style={{ stopColor: 'var(--integral-color-start)' }} />
+          <stop offset="85%" style={{ stopColor: 'var(--integral-color-end)' }} />
+          <stop offset="100%" style={{ stopColor: 'var(--integral-color-end)' }} />
+        </linearGradient>
+        {/* Clip path to constrain Layer 2 within integral shape */}
+        <clipPath id={`clip-${seed}`}>
+          <polygon points={polygonPoints} />
+        </clipPath>
+        {/* Mask for fading at bottom (last 3 rows) */}
+        <mask id={`fade-bottom-${seed}`}>
+          <rect x="0" y="0" width="100" height={totalHeight - (rowHeight + rowGap) * 3} fill="white" />
+          <linearGradient id={`fade-gradient-${seed}`} x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="white" />
+            <stop offset="100%" stopColor="black" />
+          </linearGradient>
+          <rect
+            x="0"
+            y={totalHeight - (rowHeight + rowGap) * 3}
+            width="100"
+            height={(rowHeight + rowGap) * 3}
+            fill={`url(#fade-gradient-${seed})`}
+          />
+        </mask>
       </defs>
 
-      {/* Layer 1: Cyan spray - no blur */}
+      {/* Layer 1: Base gradient fill with fade at bottom */}
       <polygon
         points={polygonPoints}
         fill={`url(#spray-${seed})`}
-        fillOpacity="0.25"
+        fillOpacity="0.7"
+        mask={`url(#fade-bottom-${seed})`}
       />
 
-      {/* Layer 2: Spray particles - blue dots scattered from edge */}
-      {particles.map((p, i) => (
-        <circle
-          key={i}
-          cx={p.x}
-          cy={p.y}
-          r={p.size}
-          style={{ fill: 'var(--integral-color-blue)' }}
-          fillOpacity={p.opacity}
-        />
-      ))}
+      {/* Layer 2: Particles clipped to integral shape */}
+      <g clipPath={`url(#clip-${seed})`}>
+        {particles.map((p, i) => {
+          // Only fade in last half of the last row
+          const fadeZoneHeight = (rowHeight + rowGap) * 0.5;
+          const lastRowStart = totalHeight - fadeZoneHeight;
+          let opacity = 1;
+          if (p.y > lastRowStart) {
+            // Sharp fade from 1 to 0 in last half of row
+            const fadeProgress = (p.y - lastRowStart) / fadeZoneHeight;
+            opacity = 1 - fadeProgress;
+          }
+
+          return (
+            <rect
+              key={i}
+              x={p.x}
+              y={p.y}
+              width={p.size}
+              height={p.size * 4}
+              fill={`url(#spray-solid-${seed})`}
+              fillOpacity={opacity}
+            />
+          );
+        })}
+      </g>
 
       {/* Main gradient fill */}
       <polygon points={polygonPoints} fill={`url(#area-${seed})`} />
