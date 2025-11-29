@@ -71,7 +71,7 @@ function generateIntegralSVG(categorySkills: Skill[]): string {
   const totalHeight =
     sortedSkills.length * ROW_HEIGHT +
     (sortedSkills.length - 1) * ROW_GAP +
-    ROW_GAP * 2; // Extra padding at bottom
+    ROW_HEIGHT; // Extra padding at bottom (full row height)
 
   // Points at the right edge of each progress bar
   const basePoints = sortedSkills.map((skill, i) => {
@@ -194,51 +194,9 @@ function generateIntegralSVG(categorySkills: Skill[]): string {
       <stop offset="82%" stop-color="${COLOR_START}" stop-opacity="1"/>
       <stop offset="100%" stop-color="${COLOR_START}" stop-opacity="1"/>
     </linearGradient>
-    <!-- Opacity fade mask (bottom fades out - less fade) -->
-    <mask id="fade-bottom-${seed}">
-      <linearGradient id="fade-gradient-${seed}" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="white"/>
-        <stop offset="75%" stop-color="white"/>
-        <stop offset="90%" stop-color="rgb(200,200,200)"/>
-        <stop offset="97%" stop-color="rgb(140,140,140)"/>
-        <stop offset="100%" stop-color="rgb(80,80,80)"/>
-      </linearGradient>
-      <rect x="0" y="0" width="100" height="${totalHeight}" fill="url(#fade-gradient-${seed})"/>
-    </mask>
-    <!-- Progressive blur mask: black at top (show sharp), white at bottom (show blur) -->
-    <linearGradient id="blur-reveal-${seed}" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="black"/>
-      <stop offset="60%" stop-color="black"/>
-      <stop offset="85%" stop-color="white"/>
-      <stop offset="100%" stop-color="white"/>
-    </linearGradient>
-    <mask id="blur-mask-${seed}">
-      <rect x="0" y="0" width="100" height="${totalHeight}" fill="url(#blur-reveal-${seed})"/>
-    </mask>
-    <!-- Sharp reveal mask: opposite of blur mask -->
-    <linearGradient id="sharp-reveal-${seed}" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="white"/>
-      <stop offset="60%" stop-color="white"/>
-      <stop offset="85%" stop-color="black"/>
-      <stop offset="100%" stop-color="black"/>
-    </linearGradient>
-    <mask id="sharp-mask-${seed}">
-      <rect x="0" y="0" width="100" height="${totalHeight}" fill="url(#sharp-reveal-${seed})"/>
-    </mask>
-    <filter id="blur-${seed}" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="1"/>
-    </filter>
   </defs>
-  <!-- Layer 1: Blurred version (visible at bottom through mask) -->
-  <g mask="url(#blur-mask-${seed})" filter="url(#blur-${seed})">
-    <polygon points="${polygonPoints}" fill="url(#spray-${seed})" fill-opacity="0.7" mask="url(#fade-bottom-${seed})"/>
-    <polygon points="${polygonPoints}" fill="url(#area-${seed})"/>
-  </g>
-  <!-- Layer 2: Sharp version (visible at top through mask) -->
-  <g mask="url(#sharp-mask-${seed})">
-    <polygon points="${polygonPoints}" fill="url(#spray-${seed})" fill-opacity="0.7" mask="url(#fade-bottom-${seed})"/>
-    <polygon points="${polygonPoints}" fill="url(#area-${seed})"/>
-  </g>
+  <polygon points="${polygonPoints}" fill="url(#spray-${seed})" fill-opacity="0.7"/>
+  <polygon points="${polygonPoints}" fill="url(#area-${seed})"/>
 </svg>`;
 }
 
