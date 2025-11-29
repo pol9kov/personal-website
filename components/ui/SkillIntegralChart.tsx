@@ -9,7 +9,7 @@ export interface SkillIntegralChartProps {
  * Images are generated at build time via scripts/generate-skill-images.ts
  */
 // Cache buster - increment to force browser refresh
-const CACHE_VERSION = 32;
+const CACHE_VERSION = 41;
 
 export function SkillIntegralChart({ category }: SkillIntegralChartProps) {
   return (
