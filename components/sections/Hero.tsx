@@ -30,7 +30,7 @@ export function Hero({ className }: HeroProps) {
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-3xl">
           {/* Photo floats to the right, text wraps around it */}
-          <div className="relative float-right ml-4 mb-4 h-24 w-24 sm:ml-6 sm:mb-6 sm:h-40 sm:w-40 md:h-48 md:w-48">
+          <div className="relative float-right ml-6 mb-6 h-32 w-32 sm:h-40 sm:w-40 md:h-48 md:w-48">
             <Image
               src="/images/profile.jpg"
               alt="Egor Polyakov"
@@ -41,7 +41,7 @@ export function Hero({ className }: HeroProps) {
           </div>
 
           <h1
-            className="text-3xl font-bold sm:text-5xl md:text-6xl mt-0 mb-2 name-gradient inline-block"
+            className="text-4xl font-bold sm:text-5xl md:text-6xl mt-4 mb-2 name-gradient inline-block"
             style={{
               paddingBottom: '8px',
               lineHeight: '1.3'
@@ -60,7 +60,7 @@ export function Hero({ className }: HeroProps) {
           <div className="clear-both"></div>
         </div>
 
-        <div className="mt-10 flex flex-row flex-wrap items-center justify-center gap-3 sm:gap-4">
+        <div className="mt-10 flex flex-row flex-wrap items-center justify-center gap-2 sm:gap-4">
           <a
             href="https://github.com/pol9kov?tab=repositories"
             target="_blank"
