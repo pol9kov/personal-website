@@ -116,89 +116,83 @@ export function SkillIntegralChart({
   // Extend points to bottom
   const extendedPoints = [...points, { x: last.x, y: bottomY }];
 
-  // Multiple strip widths for gradient spray effect
-  const createStripPolygon = (width: number) => [
-    ...extendedPoints.map((p) => `${p.x},${p.y}`),
-    ...extendedPoints.slice().reverse().map((p) => `${Math.max(0, p.x - width)},${p.y}`),
-  ].join(" ");
+  // Generate spray particles along the edge
+  // Particles are denser near the edge and sparser further away
+  const particles: { x: number; y: number; size: number; opacity: number }[] = [];
+  const particleCount = extendedPoints.length * 25; // Many particles
 
-  const stripMedium = createStripPolygon(14);  // middle
-  const stripWide = createStripPolygon(24);    // outer, most sparse
+  for (let i = 0; i < particleCount; i++) {
+    // Pick a random point along the edge
+    const pointIndex = Math.floor(seededRandom(i * 13) * extendedPoints.length);
+    const point = extendedPoints[pointIndex];
+    if (!point) continue;
+
+    // Distance from edge (0 = at edge, 1 = far away)
+    // Use exponential distribution so most particles are near the edge
+    const rawDistance = seededRandom(i * 17);
+    const distance = rawDistance * rawDistance * rawDistance; // Cubic falloff - more particles near edge
+    const maxDistance = 25; // Max scatter distance in viewBox units
+    const offsetX = distance * maxDistance;
+
+    // Only place particles within bounds
+    const particleX = point.x - offsetX;
+    if (particleX < 0) continue;
+
+    // Slight vertical scatter
+    const verticalOffset = (seededRandom(i * 23) - 0.5) * 4;
+    const particleY = point.y + verticalOffset;
+
+    // Size: smaller particles further away (0.3 to 1.2)
+    const size = 0.3 + (1 - distance) * 0.9;
+
+    // Opacity: decreases with distance (0.1 to 0.8)
+    const opacity = 0.1 + (1 - distance) * 0.7;
+
+    particles.push({ x: particleX, y: particleY, size, opacity });
+  }
 
   return (
     <svg
-      className="absolute inset-0 w-full h-full pointer-events-none"
+      className="absolute inset-0 w-full h-full pointer-events-none z-0"
       viewBox={`0 0 100 ${totalHeight}`}
       preserveAspectRatio="none"
     >
       <defs>
-        {/* Gradient: fully transparent left side, soft fade to color on right */}
+        {/* Gradient: fully transparent left side, soft fade to blue on right */}
         <linearGradient id={`area-${seed}`} x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="rgb(139, 92, 246)" stopOpacity="0" />
-          <stop offset="50%" stopColor="rgb(139, 92, 246)" stopOpacity="0" />
-          <stop offset="75%" stopColor="rgb(139, 92, 246)" stopOpacity="0.1" />
-          <stop offset="90%" stopColor="rgb(139, 92, 246)" stopOpacity="0.18" />
-          <stop offset="100%" stopColor="rgb(139, 92, 246)" stopOpacity="0.25" />
+          <stop offset="0%" style={{ stopColor: 'var(--integral-color-blue)' }} stopOpacity="0" />
+          <stop offset="50%" style={{ stopColor: 'var(--integral-color-blue)' }} stopOpacity="0" />
+          <stop offset="75%" style={{ stopColor: 'var(--integral-color-blue)' }} stopOpacity="0.1" />
+          <stop offset="90%" style={{ stopColor: 'var(--integral-color-blue)' }} stopOpacity="0.18" />
+          <stop offset="100%" style={{ stopColor: 'var(--integral-color-blue)' }} stopOpacity="0.25" />
         </linearGradient>
-        {/* Gradient for spray layers - visible from middle */}
+        {/* Gradient for spray layers - cyan */}
         <linearGradient id={`spray-${seed}`} x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="rgb(139, 92, 246)" stopOpacity="0" />
-          <stop offset="40%" stopColor="rgb(139, 92, 246)" stopOpacity="0" />
-          <stop offset="70%" stopColor="rgb(139, 92, 246)" stopOpacity="0.4" />
-          <stop offset="100%" stopColor="rgb(139, 92, 246)" stopOpacity="1" />
+          <stop offset="0%" style={{ stopColor: 'var(--integral-color-cyan)' }} stopOpacity="0" />
+          <stop offset="40%" style={{ stopColor: 'var(--integral-color-cyan)' }} stopOpacity="0" />
+          <stop offset="70%" style={{ stopColor: 'var(--integral-color-cyan)' }} stopOpacity="0.4" />
+          <stop offset="100%" style={{ stopColor: 'var(--integral-color-cyan)' }} stopOpacity="1" />
         </linearGradient>
-        {/* Gradient for solid edge fill - only visible very close to edge */}
-        <linearGradient id={`edge-${seed}`} x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="rgb(139, 92, 246)" stopOpacity="0" />
-          <stop offset="80%" stopColor="rgb(139, 92, 246)" stopOpacity="0" />
-          <stop offset="92%" stopColor="rgb(139, 92, 246)" stopOpacity="0.4" />
-          <stop offset="100%" stopColor="rgb(139, 92, 246)" stopOpacity="0.7" />
-        </linearGradient>
-        {/* Blur filters for spray effect layers */}
-        <filter id={`blur-light-${seed}`}>
-          <feGaussianBlur in="SourceGraphic" stdDeviation="2" />
-        </filter>
-        <filter id={`blur-medium-${seed}`}>
-          <feGaussianBlur in="SourceGraphic" stdDeviation="4" />
-        </filter>
-        <filter id={`blur-heavy-${seed}`}>
-          <feGaussianBlur in="SourceGraphic" stdDeviation="8" />
-        </filter>
       </defs>
 
-      {/* Layer 1: Spray effect - blurred layers with gradient fade */}
-      <polygon
-        points={polygonPoints}
-        fill={`url(#spray-${seed})`}
-        fillOpacity="0.15"
-        filter={`url(#blur-heavy-${seed})`}
-      />
-      <polygon
-        points={polygonPoints}
-        fill={`url(#spray-${seed})`}
-        fillOpacity="0.2"
-        filter={`url(#blur-medium-${seed})`}
-      />
+      {/* Layer 1: Cyan spray - no blur */}
       <polygon
         points={polygonPoints}
         fill={`url(#spray-${seed})`}
         fillOpacity="0.25"
-        filter={`url(#blur-light-${seed})`}
       />
 
-      {/* Layer 2: Strip fill - multiple widths with decreasing density (dimmer than layer 1) */}
-      <polygon
-        points={stripWide}
-        fill="rgb(139, 92, 246)"
-        fillOpacity="0.04"
-        filter={`url(#blur-medium-${seed})`}
-      />
-      <polygon
-        points={stripMedium}
-        fill="rgb(139, 92, 246)"
-        fillOpacity="0.08"
-        filter={`url(#blur-light-${seed})`}
-      />
+      {/* Layer 2: Spray particles - blue dots scattered from edge */}
+      {particles.map((p, i) => (
+        <circle
+          key={i}
+          cx={p.x}
+          cy={p.y}
+          r={p.size}
+          style={{ fill: 'var(--integral-color-blue)' }}
+          fillOpacity={p.opacity}
+        />
+      ))}
 
       {/* Main gradient fill */}
       <polygon points={polygonPoints} fill={`url(#area-${seed})`} />

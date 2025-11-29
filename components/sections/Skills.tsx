@@ -72,7 +72,7 @@ export function Skills({ className }: SkillsProps) {
                   />
 
                   {/* Skill bars */}
-                  <div className="flex flex-col gap-4">
+                  <div className="relative z-10 flex flex-col gap-4">
                     {sortedSkills.map((skill) => (
                       <div key={skill.name} className="flex flex-col justify-end" style={{ height: ROW_HEIGHT }}>
                         <span className="font-medium text-gray-700 dark:text-gray-300 mb-1">
