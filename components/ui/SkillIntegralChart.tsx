@@ -41,20 +41,20 @@ export function SkillIntegralChart({
     const phase = segmentIndex * 0.5 + randomPhaseOffset;
 
     // Low frequency - large smooth waves (amplitude scales with proficiency)
-    const lowFreqAmp = 5 + proficiencyScale * 7; // 5-12
+    const lowFreqAmp = 8 + proficiencyScale * 12; // 8-20
     let lowFreq = 0;
     switch (waveType) {
       case 0:
-        lowFreq = Math.sin(t * Math.PI + phase) * lowFreqAmp;
+        lowFreq = Math.sin(t * Math.PI * 0.3 + phase) * lowFreqAmp;
         break;
       case 1:
-        lowFreq = Math.sin(t * Math.PI * 0.8 + phase) * lowFreqAmp;
+        lowFreq = Math.sin(t * Math.PI * 0.25 + phase) * lowFreqAmp;
         break;
       case 2:
-        lowFreq = Math.cos(t * Math.PI * 0.9 + phase) * lowFreqAmp;
+        lowFreq = Math.cos(t * Math.PI * 0.28 + phase) * lowFreqAmp;
         break;
       default:
-        lowFreq = Math.sin(t * Math.PI * 1.1 + phase) * lowFreqAmp;
+        lowFreq = Math.sin(t * Math.PI * 0.35 + phase) * lowFreqAmp;
     }
 
     // High frequency - small detailed oscillations (different random phase)
@@ -113,6 +113,18 @@ export function SkillIntegralChart({
     `0,${bottomY}`,
   ].join(" ");
 
+  // Extend points to bottom
+  const extendedPoints = [...points, { x: last.x, y: bottomY }];
+
+  // Multiple strip widths for gradient spray effect
+  const createStripPolygon = (width: number) => [
+    ...extendedPoints.map((p) => `${p.x},${p.y}`),
+    ...extendedPoints.slice().reverse().map((p) => `${Math.max(0, p.x - width)},${p.y}`),
+  ].join(" ");
+
+  const stripMedium = createStripPolygon(14);  // middle
+  const stripWide = createStripPolygon(24);    // outer, most sparse
+
   return (
     <svg
       className="absolute inset-0 w-full h-full pointer-events-none"
@@ -128,33 +140,61 @@ export function SkillIntegralChart({
           <stop offset="90%" stopColor="rgb(139, 92, 246)" stopOpacity="0.18" />
           <stop offset="100%" stopColor="rgb(139, 92, 246)" stopOpacity="0.25" />
         </linearGradient>
+        {/* Gradient for spray layers - visible from middle */}
+        <linearGradient id={`spray-${seed}`} x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="rgb(139, 92, 246)" stopOpacity="0" />
+          <stop offset="40%" stopColor="rgb(139, 92, 246)" stopOpacity="0" />
+          <stop offset="70%" stopColor="rgb(139, 92, 246)" stopOpacity="0.4" />
+          <stop offset="100%" stopColor="rgb(139, 92, 246)" stopOpacity="1" />
+        </linearGradient>
+        {/* Gradient for solid edge fill - only visible very close to edge */}
+        <linearGradient id={`edge-${seed}`} x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="rgb(139, 92, 246)" stopOpacity="0" />
+          <stop offset="80%" stopColor="rgb(139, 92, 246)" stopOpacity="0" />
+          <stop offset="92%" stopColor="rgb(139, 92, 246)" stopOpacity="0.4" />
+          <stop offset="100%" stopColor="rgb(139, 92, 246)" stopOpacity="0.7" />
+        </linearGradient>
         {/* Blur filters for spray effect layers */}
         <filter id={`blur-light-${seed}`}>
-          <feGaussianBlur in="SourceGraphic" stdDeviation="3" />
+          <feGaussianBlur in="SourceGraphic" stdDeviation="2" />
         </filter>
         <filter id={`blur-medium-${seed}`}>
-          <feGaussianBlur in="SourceGraphic" stdDeviation="6" />
+          <feGaussianBlur in="SourceGraphic" stdDeviation="4" />
         </filter>
         <filter id={`blur-heavy-${seed}`}>
-          <feGaussianBlur in="SourceGraphic" stdDeviation="12" />
+          <feGaussianBlur in="SourceGraphic" stdDeviation="8" />
         </filter>
       </defs>
 
-      {/* Spray effect - multiple blurred layers */}
+      {/* Layer 1: Spray effect - blurred layers with gradient fade */}
       <polygon
         points={polygonPoints}
-        fill="rgb(139, 92, 246)"
-        fillOpacity="0.03"
+        fill={`url(#spray-${seed})`}
+        fillOpacity="0.15"
         filter={`url(#blur-heavy-${seed})`}
       />
       <polygon
         points={polygonPoints}
-        fill="rgb(139, 92, 246)"
-        fillOpacity="0.05"
+        fill={`url(#spray-${seed})`}
+        fillOpacity="0.2"
         filter={`url(#blur-medium-${seed})`}
       />
       <polygon
         points={polygonPoints}
+        fill={`url(#spray-${seed})`}
+        fillOpacity="0.25"
+        filter={`url(#blur-light-${seed})`}
+      />
+
+      {/* Layer 2: Strip fill - multiple widths with decreasing density (dimmer than layer 1) */}
+      <polygon
+        points={stripWide}
+        fill="rgb(139, 92, 246)"
+        fillOpacity="0.04"
+        filter={`url(#blur-medium-${seed})`}
+      />
+      <polygon
+        points={stripMedium}
         fill="rgb(139, 92, 246)"
         fillOpacity="0.08"
         filter={`url(#blur-light-${seed})`}
