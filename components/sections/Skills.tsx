@@ -10,6 +10,10 @@ export interface SkillsProps {
   className?: string;
 }
 
+// Layout constants for skill rows
+const ROW_HEIGHT = 40; // Height of each skill row (name + bar)
+const ROW_GAP = 16; // Gap between rows (gap-4 = 16px)
+
 /**
  * Skills section - technical skills display
  *
@@ -49,41 +53,44 @@ export function Skills({ className }: SkillsProps) {
         </div>
 
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
-          {Object.entries(groupedSkills).map(([category, categorySkills]) => (
-            <div key={category} className="relative">
-              {/* Decorative integral "icicle" */}
-              <div className="flex justify-center mb-6">
-                <SkillIntegralChart
-                  skills={categorySkills}
-                  width={160}
-                  height={140}
-                />
-              </div>
+          {Object.entries(groupedSkills).map(([category, categorySkills]) => {
+            const sortedSkills = [...categorySkills].sort((a, b) => b.proficiency - a.proficiency);
 
-              <h3 className="mb-6 text-xl font-semibold text-gray-900 dark:text-white">
-                {categories[category as Skill["category"]]}
-              </h3>
-              <div className="flex flex-col gap-4">
-                {categorySkills
-                  .sort((a, b) => b.proficiency - a.proficiency)
-                  .map((skill) => (
-                  <div key={skill.name}>
-                    <div className="mb-2">
-                      <span className="font-medium text-gray-700 dark:text-gray-300">
-                        {skill.name}
-                      </span>
-                    </div>
-                    <div className="h-2 w-full rounded-full bg-gray-200 dark:bg-gray-700">
-                      <div
-                        className="h-full rounded-full bg-gradient-to-r from-blue-600 to-purple-600 transition-all"
-                        style={{ width: `${(skill.proficiency / 5) * 100}%` }}
-                      />
-                    </div>
+            return (
+              <div key={category}>
+                <h3 className="mb-6 text-xl font-semibold text-gray-900 dark:text-white">
+                  {categories[category as Skill["category"]]}
+                </h3>
+
+                {/* Skills list with integral overlay */}
+                <div className="relative">
+                  {/* Integral area chart overlay */}
+                  <SkillIntegralChart
+                    skills={sortedSkills}
+                    rowHeight={ROW_HEIGHT}
+                    rowGap={ROW_GAP}
+                  />
+
+                  {/* Skill bars */}
+                  <div className="flex flex-col gap-4">
+                    {sortedSkills.map((skill) => (
+                      <div key={skill.name} className="flex flex-col justify-end" style={{ height: ROW_HEIGHT }}>
+                        <span className="font-medium text-gray-700 dark:text-gray-300 mb-1">
+                          {skill.name}
+                        </span>
+                        <div className="h-2 w-full rounded-full bg-gray-200 dark:bg-gray-700">
+                          <div
+                            className="h-full rounded-full bg-gradient-to-r from-blue-600 to-purple-600 transition-all"
+                            style={{ width: `${(skill.proficiency / 5) * 100}%` }}
+                          />
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

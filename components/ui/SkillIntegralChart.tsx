@@ -1,151 +1,168 @@
 import { Skill } from "@/lib/types";
 
-/**
- * SkillsIntegralChart props
- */
 export interface SkillIntegralChartProps {
   skills: Skill[];
-  width?: number;
-  height?: number;
+  rowHeight?: number;
+  rowGap?: number;
 }
 
 /**
- * Decorative integral "icicle" visualization
- * Visual element showing category proficiency as an integral shape
- *
- * @example
- * ```tsx
- * <SkillIntegralChart skills={categorySkills} width={160} height={140} />
- * ```
+ * Simple area chart overlay - fills area from left edge to skill proficiency line
  */
 export function SkillIntegralChart({
   skills,
-  width = 160,
-  height = 140,
+  rowHeight = 40,
+  rowGap = 16,
 }: SkillIntegralChartProps) {
-  // Calculate average proficiency for the category
-  const avgProficiency = skills.reduce((sum, s) => sum + s.proficiency, 0) / skills.length;
-  const proficiencyPercent = (avgProficiency / 5) * 100;
+  if (skills.length === 0) return null;
 
-  // Seed based on all skill names for consistent randomness
   const seed = skills.reduce((acc, s) => acc + s.name.charCodeAt(0), 0);
+  const totalHeight = skills.length * rowHeight + (skills.length - 1) * rowGap;
 
-  // Generate elegant icicle curve
-  const numPoints = 60;
-  const centerX = width / 2;
-  const maxWidth = width * 0.4;
-  const icicleHeight = (proficiencyPercent / 100) * (height - 25); // Leave space for text
+  // Points at the right edge of each progress bar
+  const basePoints = skills.map((skill, i) => {
+    const y = Math.max(4, i * (rowHeight + rowGap) - rowGap / 2);
+    const x = (skill.proficiency / 5) * 100;
+    return { x, y };
+  });
 
-  const curvePoints: string[] = [];
-  const fillPoints: string[] = [];
+  // Seeded random for consistent spikes
+  const seededRandom = (i: number) => {
+    const x = Math.sin(seed * 9999 + i * 7777) * 10000;
+    return x - Math.floor(x);
+  };
 
-  // Start from top center
-  fillPoints.push(`M ${centerX} 0`);
+  // Wave function - mix of low frequency (large smooth) + high frequency (small detailed)
+  const waveType = seed % 4;
+  const waveFunction = (t: number, segmentIndex: number, _pointIndex: number, proficiencyScale: number): number => {
+    // Random phase offset for each segment - so waves don't start from same place
+    const randomPhaseOffset = seededRandom(segmentIndex * 37) * Math.PI * 2;
+    const randomPhaseOffset2 = seededRandom(segmentIndex * 53) * Math.PI * 2;
+    const phase = segmentIndex * 0.5 + randomPhaseOffset;
 
-  for (let i = 0; i <= numPoints; i++) {
-    const t = i / numPoints;
-    const y = t * icicleHeight;
+    // Low frequency - large smooth waves (amplitude scales with proficiency)
+    const lowFreqAmp = 5 + proficiencyScale * 7; // 5-12
+    let lowFreq = 0;
+    switch (waveType) {
+      case 0:
+        lowFreq = Math.sin(t * Math.PI + phase) * lowFreqAmp;
+        break;
+      case 1:
+        lowFreq = Math.sin(t * Math.PI * 0.8 + phase) * lowFreqAmp;
+        break;
+      case 2:
+        lowFreq = Math.cos(t * Math.PI * 0.9 + phase) * lowFreqAmp;
+        break;
+      default:
+        lowFreq = Math.sin(t * Math.PI * 1.1 + phase) * lowFreqAmp;
+    }
 
-    // Create elegant organic wave pattern
-    const wave1 = Math.sin(t * Math.PI * 2.5 + seed * 0.01) * maxWidth * 0.45;
-    const wave2 = Math.sin(t * Math.PI * 6 + seed * 0.02) * maxWidth * 0.25;
-    const wave3 = Math.cos(t * Math.PI * 4 + seed * 0.015) * maxWidth * 0.15;
-    const taper = Math.sin(t * Math.PI) * 0.85 + 0.15; // Smooth taper
+    // High frequency - small detailed oscillations (different random phase)
+    const highFreqAmp = 2 + proficiencyScale * 3; // 2-5
+    const highFreq = Math.sin(t * Math.PI * 3 + randomPhaseOffset2) * highFreqAmp;
 
-    const offset = (wave1 + wave2 + wave3) * taper;
-    const x = centerX + offset;
+    // Combine: 70% low freq + 30% high freq
+    const wave = lowFreq * 0.7 + highFreq * 0.3;
 
-    curvePoints.push(`${i === 0 ? "M" : "L"} ${x.toFixed(2)} ${y.toFixed(2)}`);
-    fillPoints.push(`L ${x.toFixed(2)} ${y.toFixed(2)}`);
+    return wave;
+  };
+
+  // Generate path with smooth curves
+  const points: { x: number; y: number }[] = [];
+  const pointsPerSegment = 16; // More points for smoother curves
+
+  // Always start with first point
+  const firstBase = basePoints[0];
+  if (firstBase) {
+    points.push({ x: firstBase.x, y: firstBase.y });
   }
 
-  // Close the path
-  fillPoints.push(`L ${centerX} ${icicleHeight.toFixed(2)}`);
-  fillPoints.push("Z");
+  for (let i = 0; i < basePoints.length - 1; i++) {
+    const current = basePoints[i];
+    const next = basePoints[i + 1];
+    if (!current || !next) continue;
 
-  const curvePath = curvePoints.join(" ");
-  const filledPath = fillPoints.join(" ");
+    // Generate intermediate points with wave + random spikes
+    // proficiencyScale: 0-1 based on average X position (higher X = higher proficiency)
+    const avgProficiency = (current.x + next.x) / 2 / 100;
+
+    for (let j = 1; j <= pointsPerSegment; j++) {
+      const t = j / pointsPerSegment;
+      const baseY = current.y + (next.y - current.y) * t;
+      const baseX = current.x + (next.x - current.x) * t;
+      // Apply wave, fading at endpoints, scaled by proficiency
+      const edgeFade = Math.sin(t * Math.PI);
+      const waveOffset = waveFunction(t, i, j, avgProficiency) * edgeFade;
+      points.push({
+        x: Math.max(0, Math.min(100, baseX + waveOffset)),
+        y: baseY,
+      });
+    }
+  }
+
+  const first = points[0];
+  const last = points[points.length - 1];
+  if (!first || !last) return null;
+
+  const bottomY = totalHeight;
+
+  // Polygon with all points including fluctuations
+  const polygonPoints = [
+    `0,${first.y}`,
+    ...points.map((p) => `${p.x},${p.y}`),
+    `0,${bottomY}`,
+  ].join(" ");
 
   return (
     <svg
-      width={width}
-      height={height}
-      viewBox={`0 0 ${width} ${height}`}
-      className="transition-all duration-500 hover:scale-105 cursor-pointer"
-      style={{ filter: "drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1))" }}
+      className="absolute inset-0 w-full h-full pointer-events-none"
+      viewBox={`0 0 100 ${totalHeight}`}
+      preserveAspectRatio="none"
     >
       <defs>
-        {/* Light theme gradient */}
-        <linearGradient
-          id={`icicle-gradient-light-${seed}`}
-          x1="0%"
-          y1="0%"
-          x2="0%"
-          y2="100%"
-        >
-          <stop offset="0%" stopColor="rgb(96, 165, 250)" stopOpacity="0.6" />
-          <stop offset="50%" stopColor="rgb(129, 140, 248)" stopOpacity="0.7" />
-          <stop offset="100%" stopColor="rgb(167, 139, 250)" stopOpacity="0.8" />
+        {/* Gradient: fully transparent left side, soft fade to color on right */}
+        <linearGradient id={`area-${seed}`} x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="rgb(139, 92, 246)" stopOpacity="0" />
+          <stop offset="50%" stopColor="rgb(139, 92, 246)" stopOpacity="0" />
+          <stop offset="75%" stopColor="rgb(139, 92, 246)" stopOpacity="0.1" />
+          <stop offset="90%" stopColor="rgb(139, 92, 246)" stopOpacity="0.18" />
+          <stop offset="100%" stopColor="rgb(139, 92, 246)" stopOpacity="0.25" />
         </linearGradient>
-
-        {/* Dark theme gradient */}
-        <linearGradient
-          id={`icicle-gradient-dark-${seed}`}
-          x1="0%"
-          y1="0%"
-          x2="0%"
-          y2="100%"
-        >
-          <stop offset="0%" stopColor="rgb(59, 130, 246)" stopOpacity="0.7" />
-          <stop offset="50%" stopColor="rgb(99, 102, 241)" stopOpacity="0.8" />
-          <stop offset="100%" stopColor="rgb(139, 92, 246)" stopOpacity="0.9" />
-        </linearGradient>
+        {/* Blur filters for spray effect layers */}
+        <filter id={`blur-light-${seed}`}>
+          <feGaussianBlur in="SourceGraphic" stdDeviation="3" />
+        </filter>
+        <filter id={`blur-medium-${seed}`}>
+          <feGaussianBlur in="SourceGraphic" stdDeviation="6" />
+        </filter>
+        <filter id={`blur-heavy-${seed}`}>
+          <feGaussianBlur in="SourceGraphic" stdDeviation="12" />
+        </filter>
       </defs>
 
-      {/* Filled icicle shape - light theme */}
-      <path
-        d={filledPath}
-        fill={`url(#icicle-gradient-light-${seed})`}
-        className="transition-all duration-500 dark:hidden"
+      {/* Spray effect - multiple blurred layers */}
+      <polygon
+        points={polygonPoints}
+        fill="rgb(139, 92, 246)"
+        fillOpacity="0.03"
+        filter={`url(#blur-heavy-${seed})`}
+      />
+      <polygon
+        points={polygonPoints}
+        fill="rgb(139, 92, 246)"
+        fillOpacity="0.05"
+        filter={`url(#blur-medium-${seed})`}
+      />
+      <polygon
+        points={polygonPoints}
+        fill="rgb(139, 92, 246)"
+        fillOpacity="0.08"
+        filter={`url(#blur-light-${seed})`}
       />
 
-      {/* Filled icicle shape - dark theme */}
-      <path
-        d={filledPath}
-        fill={`url(#icicle-gradient-dark-${seed})`}
-        className="hidden dark:block transition-all duration-500"
-      />
+      {/* Main gradient fill */}
+      <polygon points={polygonPoints} fill={`url(#area-${seed})`} />
 
-      {/* Outline curve */}
-      <path
-        d={curvePath}
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        className="text-blue-600 dark:text-blue-400 opacity-70"
-      />
-
-      {/* Percentage text in center */}
-      <text
-        x={centerX}
-        y={icicleHeight / 2 + 5}
-        textAnchor="middle"
-        className="text-2xl font-bold fill-white dark:fill-white"
-        style={{ userSelect: "none" }}
-      >
-        {proficiencyPercent.toFixed(0)}%
-      </text>
-
-      {/* Integral symbol at bottom */}
-      <text
-        x={centerX}
-        y={height - 8}
-        textAnchor="middle"
-        className="text-base font-mono fill-gray-600 dark:fill-gray-400 opacity-50"
-        style={{ userSelect: "none" }}
-      >
-        ∫ f(x)dx
-      </text>
     </svg>
   );
 }
