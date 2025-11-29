@@ -31,7 +31,7 @@ export function Hero({ className }: HeroProps) {
         <div className="mx-auto max-w-3xl">
           {/* Photo floats to the right, text wraps around it */}
           <div
-            className="relative float-right ml-4 mb-2 h-32 w-32 sm:ml-6 sm:mb-6 sm:h-40 sm:w-40 md:h-48 md:w-48"
+            className="relative float-right ml-6 mb-6 h-32 w-32 sm:h-40 sm:w-40 md:h-48 md:w-48"
             style={{ shapeOutside: 'circle(50%)' }}
           >
             <Image
