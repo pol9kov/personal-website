@@ -168,38 +168,18 @@ function generateIntegralSVG(categorySkills: Skill[]): string {
     `0,${totalHeight}`,
   ].join(" ");
 
-  // Build complete SVG with hard-coded colors
+  // Solid fill with fade only on right edge (near wave line)
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 ${totalHeight}" preserveAspectRatio="none">
   <defs>
-    <linearGradient id="area-${seed}" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="${COLOR_START}" stop-opacity="0"/>
-      <stop offset="50%" stop-color="${COLOR_START}" stop-opacity="0"/>
-      <stop offset="75%" stop-color="${COLOR_START}" stop-opacity="0.1"/>
-      <stop offset="90%" stop-color="${COLOR_START}" stop-opacity="0.18"/>
-      <stop offset="100%" stop-color="${COLOR_START}" stop-opacity="0.25"/>
+    <linearGradient id="grad-${seed}" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="${COLOR_END}" stop-opacity="1"/>
+      <stop offset="60%" stop-color="${COLOR_END}" stop-opacity="1"/>
+      <stop offset="80%" stop-color="${COLOR_START}" stop-opacity="0.6"/>
+      <stop offset="92%" stop-color="${COLOR_START}" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="${COLOR_START}" stop-opacity="0"/>
     </linearGradient>
-    <linearGradient id="spray-${seed}" x1="0" y1="0" x2="100" y2="0" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="${COLOR_END}" stop-opacity="0"/>
-      <stop offset="30%" stop-color="${COLOR_END}" stop-opacity="0.3"/>
-      <stop offset="50%" stop-color="${COLOR_END}" stop-opacity="0.7"/>
-      <stop offset="65%" stop-color="${COLOR_END}" stop-opacity="1"/>
-      <stop offset="82%" stop-color="${COLOR_START}" stop-opacity="1"/>
-      <stop offset="100%" stop-color="${COLOR_START}" stop-opacity="1"/>
-    </linearGradient>
-    <mask id="fade-bottom-${seed}">
-      <linearGradient id="fade-gradient-${seed}" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="white"/>
-        <stop offset="50%" stop-color="rgb(220,220,220)"/>
-        <stop offset="70%" stop-color="rgb(180,180,180)"/>
-        <stop offset="85%" stop-color="rgb(100,100,100)"/>
-        <stop offset="95%" stop-color="rgb(40,40,40)"/>
-        <stop offset="100%" stop-color="black"/>
-      </linearGradient>
-      <rect x="0" y="0" width="100" height="${totalHeight}" fill="url(#fade-gradient-${seed})"/>
-    </mask>
   </defs>
-  <polygon points="${polygonPoints}" fill="url(#spray-${seed})" fill-opacity="0.7" mask="url(#fade-bottom-${seed})"/>
-  <polygon points="${polygonPoints}" fill="url(#area-${seed})"/>
+  <polygon points="${polygonPoints}" fill="url(#grad-${seed})"/>
 </svg>`;
 }
 
