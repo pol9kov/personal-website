@@ -36,7 +36,7 @@ export default function AboutPage() {
                 </p>
                 <p>
                   I don&apos;t play roles or hide behind jargon. I stay true to
-                  myself and bring full presence to my work—whether that&apos;s
+                  myself and bring full presence to my work-whether that&apos;s
                   architecting a system, reviewing code, or mentoring a teammate.
                   My strength lies in <em>transparency and the ability to face
                   hard truths</em>, both in code and in collaboration.
@@ -54,10 +54,23 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                 <p>
+                  I graduated from LNMO (Laboratory of Continuous Mathematical
+                  Education) in St. Petersburg, where I explored over a dozen
+                  programming languages-from Pascal to OCaml, C, Haskell, and
+                  even Brainfuck. From my school years, I was involved in
+                  scientific research and presented at academic conferences. I
+                  placed 3rd in Mathematics at ICYS-2012 in the Netherlands, 1st
+                  at the St. Petersburg State Competition, and 3rd at the Baltic
+                  Science and Engineering Competition. In 2015-2016, I served on
+                  the youth jury for the Baltic competition. During this time, I
+                  worked on information decomposition algorithms, neural
+                  networks, and data analysis.
+                </p>
+                <p>
                   My path in development has been shaped by a principle:{" "}
                   <em>life is a continuous stream of experience that makes you
                   stronger and wiser</em>. Each project is an opportunity to
-                  learn—not just about technology, but about how systems serve
+                  learn-not just about technology, but about how systems serve
                   people.
                 </p>
                 <p>
@@ -85,8 +98,8 @@ export default function AboutPage() {
               <div className="space-y-4 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                 <p>
                   I build systems <strong>step by step, without rushing</strong>.
-                  There are no shortcuts to quality. Every action—writing code,
-                  designing architecture, reviewing pull requests—is an expression
+                  There are no shortcuts to quality. Every action-writing code,
+                  designing architecture, reviewing pull requests-is an expression
                   of care for the craft and for the people who depend on what we
                   build.
                 </p>
@@ -104,7 +117,7 @@ export default function AboutPage() {
                   I value <strong>practical solutions</strong> that work today
                   while remaining adaptable for tomorrow. Clean architecture,
                   well-tested code, and honest documentation aren&apos;t
-                  formalities—they are acts of care for future maintainers,
+                  formalities-they are acts of care for future maintainers,
                   including yourself six months from now when you&apos;ve
                   forgotten why you made that choice.
                 </p>
@@ -132,7 +145,7 @@ export default function AboutPage() {
                 </p>
                 <p>
                   I&apos;m particularly interested in systems that need to be
-                  both robust and adaptable—microservices architectures that can
+                  both robust and adaptable-microservices architectures that can
                   evolve, databases that can handle dynamic schemas, and APIs
                   that developers actually enjoy using.
                 </p>
@@ -148,8 +161,8 @@ export default function AboutPage() {
                 <p>
                   Outside of programming, I&apos;m interested in mindfulness
                   practices, physical training, and the philosophy of continuous
-                  improvement. I believe that maintaining balance—between focus
-                  and rest, intensity and ease—makes me a better engineer.
+                  improvement. I believe that maintaining balance-between focus
+                  and rest, intensity and ease-makes me a better engineer.
                 </p>
                 <p>
                   These interests aren&apos;t separate from my work; they inform
