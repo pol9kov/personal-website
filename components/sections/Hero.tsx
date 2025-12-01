@@ -31,14 +31,23 @@ export function Hero({ className }: HeroProps) {
         <div className="mx-auto max-w-3xl">
           {/* Photo floats to the right, text wraps around it */}
           <div
-            className="relative float-right ml-6 mb-6 h-36 w-36 sm:h-44 sm:w-44 md:h-52 md:w-52 rounded-full overflow-hidden"
+            className="relative float-right ml-2 mb-2 sm:ml-6 sm:mb-6 h-36 w-36 sm:h-44 sm:w-44 md:h-52 md:w-52 rounded-full overflow-hidden"
             style={{ shapeOutside: 'circle(50%)' }}
           >
+            {/* Mobile: pre-cropped zoomed version */}
+            <Image
+              src="/images/profile-mobile.jpg"
+              alt="Egor Polyakov"
+              fill
+              className="object-cover sm:hidden"
+              priority
+            />
+            {/* Desktop: full image */}
             <Image
               src="/images/profile.jpg"
               alt="Egor Polyakov"
               fill
-              className="object-cover"
+              className="object-cover hidden sm:block"
               priority
             />
           </div>
