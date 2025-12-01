@@ -38,8 +38,8 @@ export function Hero({ className }: HeroProps) {
             <img
               src="/images/profile.jpg"
               alt="Egor Polyakov"
-              className="absolute w-[140%] h-[140%] object-cover sm:hidden"
-              style={{ top: '-40%', left: '-20%' }}
+              className="absolute w-[130%] h-[130%] object-cover sm:hidden"
+              style={{ top: '-30%', left: '-15%' }}
             />
             {/* Desktop: original version */}
             <Image
