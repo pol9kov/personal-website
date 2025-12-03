@@ -52,6 +52,13 @@ export function Footer({ className }: FooterProps) {
             >
               Telegram
             </a>
+            <a
+              href="mailto:egor.pol9kov@gmail.com"
+              className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+              aria-label="Email"
+            >
+              Email
+            </a>
           </div>
         </div>
       </div>
