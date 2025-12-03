@@ -58,6 +58,15 @@ export function Contact({ className }: ContactProps) {
             >
               LinkedIn
             </Button>
+            <Button
+              variant="secondary"
+              size="lg"
+              onClick={() => {
+                window.location.href = "mailto:egor.pol9kov@gmail.com";
+              }}
+            >
+              Email
+            </Button>
           </div>
         </div>
       </div>
