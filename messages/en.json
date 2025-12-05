@@ -1,0 +1,203 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About Me",
+    "caseStudies": "Case Studies",
+    "resume": "Resume",
+    "siteName": "Egor Polyakov"
+  },
+  "hero": {
+    "name": "Egor Polyakov",
+    "subtitle": "Software Engineer with 10+ years of experience building universal frameworks and elegant architectural solutions. Passionate about creating generalized systems that eliminate duplication and solve complex problems at their core.",
+    "viewProjects": "View Projects",
+    "contactMe": "Contact Me"
+  },
+  "skills": {
+    "title": "Skills & Technologies",
+    "subtitle": "Technologies and tools I work with",
+    "categories": {
+      "languages": "Languages",
+      "frameworks": "Frameworks & Platforms",
+      "databases": "Databases",
+      "devops": "DevOps & Cloud",
+      "other": "Other"
+    }
+  },
+  "footer": {
+    "contact": "Contacts",
+    "email": "Email"
+  },
+  "common": {
+    "toggleTheme": "Toggle theme",
+    "toggleMenu": "Toggle menu"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "My journey, philosophy, and what drives me",
+    "whoIAm": {
+      "title": "Who I Am",
+      "p1": "I'm a backend engineer with over a decade of experience building systems that need to be both robust and adaptable. What defines me is not just technical skill, but a deep commitment to honesty, presence, and care in everything I build.",
+      "p2": "I don't play roles or hide behind jargon. I stay true to myself and bring full presence to my work, whether that's architecting a system, reviewing code, or mentoring a teammate. My strength lies in",
+      "p2Emphasis": "transparency and the ability to face hard truths",
+      "p2End": ", both in code and in collaboration.",
+      "quote": "Mind brings clarity. Heart brings depth. Presence is my gift."
+    },
+    "journey": {
+      "title": "The Journey",
+      "p1": "I graduated from LNMO (Laboratory of Continuous Mathematical Education) in St. Petersburg, where I explored over a dozen programming languages, from Pascal to OCaml, C, Haskell, and even Brainfuck. From my school years, I was involved in scientific research and presented at academic conferences. I placed 3rd in Mathematics at ICYS-2012 in the Netherlands, 1st at the St. Petersburg State Competition, and 3rd at the Baltic Science and Engineering Competition. In 2015-2016, I served on the youth jury for the Baltic competition. During this time, I worked on information decomposition algorithms, neural networks, and data analysis.",
+      "p2": "My path in development has been shaped by a principle:",
+      "p2Emphasis": "life is a continuous stream of experience that makes you stronger and wiser",
+      "p2End": ". Each project is an opportunity to learn, not just about technology, but about how systems serve people.",
+      "p3": "I used to approach problems from my head, chasing control and perfect solutions. Over time, I learned that true engineering happens when you stay present with the problem, listen deeply, and act from understanding rather than avoidance. The best architectures emerge when you respect both technical constraints and human needs.",
+      "p4": "From building dynamic EAV systems a decade ago to designing cloud-native Go microservices today, I've learned that sustainable solutions come from discipline, patience, and a willingness to stay with complexity until clarity emerges."
+    },
+    "approach": {
+      "title": "My Approach",
+      "p1Start": "I build systems",
+      "p1Bold": "step by step, without rushing",
+      "p1End": ". There are no shortcuts to quality. Every action, whether writing code, designing architecture, or reviewing pull requests, is an expression of care for the craft and for the people who depend on what we build.",
+      "p2Start": "My approach is grounded in",
+      "p2Bold": "responsibility over control",
+      "p2End": ". Control is an illusion; you can't predict every edge case or prevent every bug. But you can take full ownership of your decisions, your code quality, and the trust you build with your team. This mindset has guided me through complex migrations, system redesigns, and moments where clarity only came after sitting with the problem longer than was comfortable.",
+      "p3Start": "I value",
+      "p3Bold": "practical solutions",
+      "p3End": " that work today while remaining adaptable for tomorrow. Clean architecture, well-tested code, and honest documentation aren't formalities; they are acts of care for future maintainers, including yourself six months from now when you've forgotten why you made that choice.",
+      "p4Start": "Most importantly, I bring",
+      "p4Bold": "presence",
+      "p4End": " to my work. Not just technical attention, but genuine engagement with the problem at hand. Great engineering happens when you stop avoiding complexity and start listening to what the system is telling you."
+    },
+    "currentFocus": {
+      "title": "Current Focus",
+      "p1": "Right now, I'm deepening my expertise in Go, exploring the intersection of backend systems and AI infrastructure, and building tools that bridge powerful technologies with practical human needs.",
+      "p2": "I'm particularly interested in systems that need to be both robust and adaptable: microservices architectures that can evolve, databases that can handle dynamic schemas, and APIs that developers actually enjoy using."
+    },
+    "beyondCode": {
+      "title": "Beyond Code",
+      "p1": "Outside of programming, I'm interested in mindfulness practices, physical training, and the philosophy of continuous improvement. I believe that maintaining balance between focus and rest, intensity and ease, makes me a better engineer.",
+      "p2": "These interests aren't separate from my work; they inform how I approach problems. Attention, patience, and presence are as important in debugging a complex system as they are in any other practice."
+    },
+    "values": {
+      "title": "Core Values",
+      "continuousLearning": {
+        "title": "Continuous Learning:",
+        "text": "Every experience is an opportunity to grow. I treat each project as a chance to learn something new about systems, people, or myself."
+      },
+      "curiosity": {
+        "title": "Curiosity:",
+        "text": "Asking \"why\" and \"how\" leads to better solutions. I dig deep into problems to understand root causes, not just symptoms."
+      },
+      "progress": {
+        "title": "Progress Over Perfection:",
+        "text": "Step by step, without rushing. Sustainable progress beats flashy shortcuts every time."
+      },
+      "trust": {
+        "title": "Trust and Care:",
+        "text": "Building trust through reliability, clear communication, and genuine care for the people I work with and the systems we maintain together."
+      },
+      "balance": {
+        "title": "Balance:",
+        "text": "Technical excellence matters, but so does pragmatism. Innovation is important, but so is stability. Finding harmony between competing needs is where real engineering happens."
+      }
+    }
+  },
+  "resume": {
+    "title": "Resume",
+    "subtitle": "Download my professional resume in PDF format",
+    "download": "Download Resume PDF"
+  },
+  "caseStudies": {
+    "title": "Case Studies",
+    "subtitle": "Deep dives into technical solutions and architectural decisions",
+    "problem": "Problem",
+    "solution": "Solution",
+    "technicalDetails": "Technical Details",
+    "results": "Results",
+    "lessonsLearned": "Lessons Learned",
+    "backToList": "Back to Case Studies",
+    "viewSource": "View Source Code",
+    "architectureDiagrams": "Architecture Diagrams",
+    "items": {
+      "ai-infrastructure": {
+        "title": "AI Platform",
+        "description": "Modular AI platform with plugin architecture. Independent plugins communicate via events (Pub/Sub pattern).",
+        "problem": "Need for a flexible AI platform where different capabilities (chat, visualization, ML) can be developed independently and communicate without tight coupling.",
+        "solution": "Built a modular platform with core library (auth, spaces, events) and independent plugins that communicate via Pub/Sub events. Plugins don't import each other directly.",
+        "technicalDetails": [
+          "Core library: auth, spaces management, event bus (emit/on/request/handle)",
+          "Plugin types: UI (chat, graph), Data/Intelligence (thoughts with RAG & LLM), Service (ML embeddings)",
+          "Event-driven communication: plugins publish events without knowing subscribers",
+          "Tech stack: TypeScript, Next.js 16, React 19, Python FastAPI for ML service",
+          "Database: Turso (SQLite edge) with Drizzle ORM",
+          "Thoughts plugin owns AI logic (RAG, prompts, LLM calls); Chat is pure UI"
+        ],
+        "results": [
+          "Fully decoupled plugin system where new plugins can be added without modifying core",
+          "Clean separation: UI plugins vs Data/Intelligence plugins vs Service plugins",
+          "Event-driven architecture enables easy testing and plugin replacement"
+        ],
+        "lessonsLearned": [
+          "Pub/Sub pattern is ideal for plugin communication - publishers don't need to know subscribers",
+          "Separating UI from business logic (Chat UI vs Thoughts intelligence) improves maintainability",
+          "Pure core library without framework dependencies enables maximum flexibility"
+        ]
+      },
+      "mobile-platform": {
+        "title": "Cross-Platform Mobile Platform",
+        "description": "Production-ready mobile platform built with Flutter and AWS, implementing Clean Architecture with comprehensive infrastructure automation.",
+        "problem": "Need for a scalable, maintainable mobile platform with robust backend infrastructure and automated deployment.",
+        "solution": "Implemented Clean Architecture with Feature-based approach in Flutter, backed by AWS serverless infrastructure with full automation using CDK.",
+        "technicalDetails": [
+          "Flutter mobile app with Clean Architecture and Feature-based structure",
+          "Reactive state management using Riverpod",
+          "AWS Lambda functions in Golang for backend",
+          "DynamoDB for data storage",
+          "S3 for file storage",
+          "Cognito for authentication",
+          "Full infrastructure automation with AWS CDK",
+          "CI/CD pipeline for automated deployments"
+        ],
+        "results": [
+          "Production-ready platform serving real users",
+          "Highly maintainable codebase with clear separation of concerns",
+          "Fully automated infrastructure deployment",
+          "Cost-effective serverless architecture"
+        ],
+        "lessonsLearned": [
+          "Clean Architecture pays off in large Flutter applications",
+          "Feature-based organization improves team collaboration",
+          "Infrastructure as Code (CDK) is essential for reproducible environments",
+          "Serverless architecture significantly reduces operational overhead"
+        ]
+      },
+      "website-builder": {
+        "title": "Dynamic Website Builder Platform",
+        "description": "A flexible website builder system from 10 years ago, featuring Entity-Attribute-Value (EAV) architecture for dynamic schema and multi-tenancy support.",
+        "problem": "Need for a website builder where users could create custom entity types and fields without database migrations, supporting multiple tenants with isolated data.",
+        "solution": "Implemented EAV (Entity-Attribute-Value) pattern with multi-tenancy support, allowing dynamic schema creation and type-safe value storage.",
+        "technicalDetails": [
+          "EAV pattern for dynamic entity/field creation without migrations",
+          "Multi-tenancy with Company + ConnectionURL (separate databases per client)",
+          "Type-safe value storage with separate tables (Boolean, Integer, String, GeoLocation, Image)",
+          "Value storage design: Evaluated linking by ID to custom type tables vs direct type ID reference, chose separate tables for type safety and easier value retrieval",
+          "Visual layout engine with Section/Screen components",
+          "Dependency graph for object relationships - chose tree structure over cyclic graph for better scalability",
+          "Architecture decision: Entity can be used as field in only one parent entity (prevents circular dependencies)",
+          "Recursive table relationships: Field references Entity, Entity can reference Field (one-directional)",
+          "Dynamic filtering system for user-created entities"
+        ],
+        "results": [
+          "Users could create custom entity types without developer intervention",
+          "Achieved complete data isolation between tenants",
+          "Zero downtime for schema changes",
+          "Flexible enough to support various business domains"
+        ],
+        "lessonsLearned": [
+          "EAV pattern provides ultimate flexibility but requires careful query optimization",
+          "Multi-tenancy at database level provides strongest isolation guarantees",
+          "Type-safe value storage prevents data corruption in dynamic systems",
+          "Visual builders need strong dependency management to handle complex relationships"
+        ]
+      }
+    }
+  }
+}

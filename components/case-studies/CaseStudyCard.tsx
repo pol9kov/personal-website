@@ -1,6 +1,7 @@
-'use client';
+"use client";
 
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils/cn";
 import type { CaseStudy } from "@/lib/types";
 
@@ -9,11 +10,16 @@ interface CaseStudyCardProps {
 }
 
 export function CaseStudyCard({ study }: CaseStudyCardProps) {
+  const t = useTranslations("caseStudies");
+
+  // Get translated content for this specific case study
+  const title = t(`items.${study.slug}.title`);
+  const description = t(`items.${study.slug}.description`);
+
   return (
-    <Link
-      href={`/case-studies/${study.slug}`}
+    <div
       className={cn(
-        "group block rounded-lg border border-gray-200 bg-white p-6 transition-all hover:border-blue-500 hover:shadow-lg",
+        "group rounded-lg border border-gray-200 bg-white p-6 transition-all hover:border-blue-500 hover:shadow-lg",
         "dark:border-gray-800 dark:bg-gray-900 dark:hover:border-blue-400"
       )}
     >
@@ -26,7 +32,6 @@ export function CaseStudyCard({ study }: CaseStudyCardProps) {
             href={study.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={(e) => e.stopPropagation()}
             className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
             aria-label="View source code on GitHub"
           >
@@ -46,13 +51,13 @@ export function CaseStudyCard({ study }: CaseStudyCardProps) {
         )}
       </div>
 
-      <h2 className="mb-2 text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-        {study.title}
-      </h2>
+      <Link href={`/case-studies/${study.slug}`}>
+        <h2 className="mb-2 text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+          {title}
+        </h2>
+      </Link>
 
-      <p className="mb-4 text-gray-600 dark:text-gray-300">
-        {study.description}
-      </p>
+      <p className="mb-4 text-gray-600 dark:text-gray-300">{description}</p>
 
       <div className="flex flex-wrap gap-2">
         {study.tags.map((tag) => (
@@ -64,6 +69,6 @@ export function CaseStudyCard({ study }: CaseStudyCardProps) {
           </span>
         ))}
       </div>
-    </Link>
+    </div>
   );
 }

@@ -1,9 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useTransition } from "react";
+import { useTranslations, useLocale } from "next-intl";
+import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { cn } from "@/lib/utils/cn";
+import { type Locale } from "@/i18n/routing";
 
 /**
  * Header component props
@@ -21,9 +23,15 @@ export interface HeaderProps {
  * ```
  */
 export function Header({ className }: HeaderProps) {
+  const t = useTranslations("navigation");
+  const tCommon = useTranslations("common");
+  const locale = useLocale();
+  const pathname = usePathname();
+  const router = useRouter();
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [, startTransition] = useTransition();
 
   // Only show theme toggle after client-side hydration
   useEffect(() => {
@@ -32,11 +40,17 @@ export function Header({ className }: HeaderProps) {
   }, []);
 
   const navItems = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About Me" },
-    { href: "/case-studies", label: "Case Studies" },
-    { href: "/resume", label: "Resume" },
+    { href: "/", label: t("home") },
+    { href: "/about", label: t("about") },
+    { href: "/case-studies", label: t("caseStudies") },
+    { href: "/resume", label: t("resume") },
   ];
+
+  const switchLocale = (newLocale: Locale) => {
+    startTransition(() => {
+      router.replace(pathname, { locale: newLocale, scroll: false });
+    });
+  };
 
   const toggleTheme = () => {
     setTheme(resolvedTheme === "dark" ? "light" : "dark");
@@ -55,7 +69,7 @@ export function Header({ className }: HeaderProps) {
           href="/"
           className="text-xl font-bold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
         >
-          Egor Polyakov
+          {t("siteName")}
         </Link>
 
         <div className="flex items-center gap-4">
@@ -80,7 +94,7 @@ export function Header({ className }: HeaderProps) {
             <button
               onClick={toggleTheme}
               className="rounded-lg p-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-              aria-label="Toggle theme"
+              aria-label={tCommon("toggleTheme")}
             >
               {resolvedTheme === "dark" ? (
                 <svg
@@ -114,11 +128,21 @@ export function Header({ className }: HeaderProps) {
             </button>
           )}
 
+          {/* Language switcher - minimal text style */}
+          {mounted && (
+            <button
+              onClick={() => switchLocale(locale === "en" ? "ru" : "en")}
+              className="text-sm text-gray-500 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+            >
+              {locale === "en" ? "Русский" : "English"}
+            </button>
+          )}
+
           {/* Mobile menu button - visible only on mobile */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden rounded-lg p-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-            aria-label="Toggle menu"
+            aria-label={tCommon("toggleMenu")}
             aria-expanded={isMenuOpen}
           >
             {isMenuOpen ? (

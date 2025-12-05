@@ -1,3 +1,6 @@
+"use client";
+
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils/cn";
 
 /**
@@ -16,6 +19,8 @@ export interface FooterProps {
  * ```
  */
 export function Footer({ className }: FooterProps) {
+  const t = useTranslations("footer");
+
   return (
     <footer
       className={cn(
@@ -31,7 +36,7 @@ export function Footer({ className }: FooterProps) {
             rel="noopener noreferrer"
             className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
           >
-            Contact
+            {t("contact")}
           </a>
           <div className="flex items-center gap-6">
             <a
@@ -55,9 +60,9 @@ export function Footer({ className }: FooterProps) {
             <a
               href="mailto:egor.pol9kov@gmail.com"
               className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-              aria-label="Email"
+              aria-label={t("email")}
             >
-              Email
+              {t("email")}
             </a>
           </div>
         </div>

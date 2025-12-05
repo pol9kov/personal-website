@@ -1,11 +1,21 @@
 import type { Metadata } from "next";
+import { setRequestLocale } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Resume | Egor Polyakov",
   description: "Download my professional resume",
 };
 
-export default function ResumePage() {
+interface ResumePageProps {
+  params: Promise<{ locale: string }>;
+}
+
+export default async function ResumePage({ params }: ResumePageProps) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("resume");
+
   return (
     <main className="flex min-h-screen items-center justify-center bg-gradient-to-b from-white to-gray-50 py-20 dark:from-gray-900 dark:to-gray-950">
       <div className="container mx-auto px-4">
@@ -27,17 +37,17 @@ export default function ResumePage() {
               </svg>
             </div>
             <h1 className="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
-              Resume
+              {t("title")}
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-300">
-              Download my professional resume in PDF format
+              {t("subtitle")}
             </p>
           </div>
 
           <a
             href="/resume.pdf"
             download="YegorPolyakovResume.pdf"
-            className="inline-flex items-center rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:shadow-xl hover:scale-105"
+            className="inline-flex items-center rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:scale-105 hover:shadow-xl"
           >
             <svg
               className="mr-3 h-6 w-6"
@@ -52,7 +62,7 @@ export default function ResumePage() {
                 d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
               />
             </svg>
-            Download Resume PDF
+            {t("download")}
           </a>
         </div>
       </div>

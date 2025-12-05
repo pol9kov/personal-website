@@ -1,10 +1,13 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import Link from "next/link";
+import { setRequestLocale } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { caseStudies } from "@/lib/constants/case-studies";
 
 interface CaseStudyPageProps {
   params: Promise<{
+    locale: string;
     slug: string;
   }>;
 }
@@ -16,22 +19,37 @@ export async function generateStaticParams() {
 }
 
 export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
-  const { slug } = await params;
+  const { locale, slug } = await params;
+  setRequestLocale(locale);
+
   const study = caseStudies.find((s) => s.slug === slug);
 
   if (!study) {
     notFound();
   }
 
+  const t = await getTranslations("caseStudies");
+
+  // Get translated content
+  const title = t(`items.${slug}.title`);
+  const description = t(`items.${slug}.description`);
+  const problem = t(`items.${slug}.problem`);
+  const solution = t(`items.${slug}.solution`);
+
+  // Get arrays - need to use raw() for arrays
+  const technicalDetails = t.raw(`items.${slug}.technicalDetails`) as string[];
+  const results = t.raw(`items.${slug}.results`) as string[];
+  const lessonsLearned = t.raw(`items.${slug}.lessonsLearned`) as string[];
+
   return (
     <main className="min-h-screen bg-white dark:bg-gray-950">
       <div className="container mx-auto px-4 py-20">
         <Link
           href="/case-studies"
-          className="inline-flex items-center text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 transition-colors mb-8"
+          className="mb-8 inline-flex items-center text-blue-600 transition-colors hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
         >
           <svg
-            className="w-5 h-5 mr-2"
+            className="mr-2 h-5 w-5"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -43,7 +61,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               d="M10 19l-7-7m0 0l7-7m-7 7h18"
             />
           </svg>
-          Back to Case Studies
+          {t("backToList")}
         </Link>
 
         <div className="mb-8">
@@ -63,12 +81,12 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             </div>
           </div>
 
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            {study.title}
+          <h1 className="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
+            {title}
           </h1>
 
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">
-            {study.description}
+          <p className="mb-6 text-xl text-gray-600 dark:text-gray-300">
+            {description}
           </p>
 
           {study.githubUrl && (
@@ -76,7 +94,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               href={study.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg bg-gray-900 dark:bg-white px-4 py-2 text-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors"
+              className="inline-flex items-center gap-2 rounded-lg bg-gray-900 px-4 py-2 text-white transition-colors hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100"
             >
               <svg
                 className="h-5 w-5"
@@ -90,32 +108,32 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                   clipRule="evenodd"
                 />
               </svg>
-              View Source Code
+              {t("viewSource")}
             </a>
           )}
         </div>
 
-        <div className="prose prose-lg dark:prose-invert max-w-none">
+        <div className="prose prose-lg max-w-none dark:prose-invert">
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              Problem
+            <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
+              {t("problem")}
             </h2>
-            <p className="text-gray-600 dark:text-gray-300">{study.problem}</p>
+            <p className="text-gray-600 dark:text-gray-300">{problem}</p>
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              Solution
+            <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
+              {t("solution")}
             </h2>
-            <p className="text-gray-600 dark:text-gray-300">{study.solution}</p>
+            <p className="text-gray-600 dark:text-gray-300">{solution}</p>
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              Technical Details
+            <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
+              {t("technicalDetails")}
             </h2>
             <ul className="space-y-2">
-              {study.technicalDetails.map((detail, index) => (
+              {technicalDetails.map((detail, index) => (
                 <li key={index} className="text-gray-600 dark:text-gray-300">
                   {detail}
                 </li>
@@ -124,11 +142,11 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              Results
+            <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
+              {t("results")}
             </h2>
             <ul className="space-y-2">
-              {study.results.map((result, index) => (
+              {results.map((result, index) => (
                 <li key={index} className="text-gray-600 dark:text-gray-300">
                   {result}
                 </li>
@@ -136,13 +154,13 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             </ul>
           </section>
 
-          {study.lessonsLearned && study.lessonsLearned.length > 0 && (
+          {lessonsLearned && lessonsLearned.length > 0 && (
             <section className="mb-12">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                Lessons Learned
+              <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
+                {t("lessonsLearned")}
               </h2>
               <ul className="space-y-2">
-                {study.lessonsLearned.map((lesson, index) => (
+                {lessonsLearned.map((lesson, index) => (
                   <li key={index} className="text-gray-600 dark:text-gray-300">
                     {lesson}
                   </li>
@@ -153,18 +171,21 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
 
           {study.images && study.images.length > 0 && (
             <section className="mb-12">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                Architecture Diagrams
+              <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
+                {t("architectureDiagrams")}
               </h2>
               <div className="space-y-8">
                 {study.images.map((image, index) => (
-                  <div key={index} className="rounded-lg border border-gray-200 dark:border-gray-800 overflow-hidden">
+                  <div
+                    key={index}
+                    className="overflow-hidden rounded-lg border border-gray-200 dark:border-gray-800"
+                  >
                     <Image
                       src={image}
-                      alt={`${study.title} - Diagram ${index + 1}`}
+                      alt={`${title} - Diagram ${index + 1}`}
                       width={1200}
                       height={800}
-                      className="w-full h-auto"
+                      className="h-auto w-full"
                     />
                   </div>
                 ))}

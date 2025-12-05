@@ -1,3 +1,6 @@
+"use client";
+
+import { useTranslations } from "next-intl";
 import { skills } from "@/lib/constants/skills";
 import { Skill } from "@/lib/types";
 import { cn } from "@/lib/utils/cn";
@@ -22,12 +25,14 @@ const ROW_HEIGHT = 40; // Height of each skill row (name + bar)
  * ```
  */
 export function Skills({ className }: SkillsProps) {
+  const t = useTranslations("skills");
+
   const categories: Record<Skill["category"], string> = {
-    languages: "Languages",
-    frameworks: "Frameworks & Platforms",
-    databases: "Databases",
-    devops: "DevOps & Cloud",
-    other: "Other",
+    languages: t("categories.languages"),
+    frameworks: t("categories.frameworks"),
+    databases: t("categories.databases"),
+    devops: t("categories.devops"),
+    other: t("categories.other"),
   };
 
   const groupedSkills = skills.reduce(
@@ -42,12 +47,17 @@ export function Skills({ className }: SkillsProps) {
   );
 
   return (
-    <section className={cn("bg-white dark:bg-gray-950 py-20", className)} id="skills">
+    <section
+      className={cn("bg-white dark:bg-gray-950 py-20", className)}
+      id="skills"
+    >
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white">Skills & Technologies</h2>
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white">
+            {t("title")}
+          </h2>
           <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
-            Technologies and tools I work with
+            {t("subtitle")}
           </p>
         </div>
 
