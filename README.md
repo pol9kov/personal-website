@@ -52,6 +52,29 @@ This isn't just a landing page—it's a demonstration of:
 
 **Why:** Declarative animations, performance-optimized, great DX
 
+### next-intl
+
+**Why:** Server-component-first i18n, type-safe translations
+
+### Vercel Analytics
+
+**Why:** Zero-config analytics, no performance impact, GDPR-compliant
+
+## 🌍 Features
+
+### Internationalization
+
+- Full Russian and English support
+- Language preference saved to cookie
+- Locale-aware Open Graph images
+
+### Analytics & Tracking
+
+- Vercel Analytics integration
+- UTM short links for tracking traffic sources:
+  - `/go/telegram`, `/go/linkedin`, `/go/twitter`
+  - `/go/email`, `/go/resume`, `/go/hh`
+
 ## 📊 Performance Metrics
 
 Target metrics:

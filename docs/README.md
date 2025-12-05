@@ -80,6 +80,6 @@ When creating/updating documentation:
 
 ---
 
-**Last Updated:** 2025-11-27
+**Last Updated:** 2025-12-05
 **Maintained by:** Project contributors
 **Questions?** Open an issue

@@ -7,6 +7,37 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0] - 2025-12-05
+
+### Added
+- **Internationalization (i18n)**: Full Russian language support
+  - Added next-intl for locale management
+  - Language switcher in header
+  - Cookie-based language preference persistence
+  - All content translated to Russian
+- **Dynamic Open Graph Images**: Locale-aware social preview cards
+  - Profile photo with gradient styling
+  - Localized name, title, and experience text
+  - 1200x630 resolution for optimal sharing
+- **Analytics**: Vercel Analytics integration
+  - Page view tracking across the site
+  - Uses `@vercel/analytics/next` for Next.js optimization
+- **UTM Short Links**: Tracking links for different channels
+  - `/go/telegram` - Telegram shares
+  - `/go/linkedin` - LinkedIn shares
+  - `/go/twitter` - Twitter/X shares
+  - `/go/email` - Email signature
+  - `/go/resume` - Resume document links
+  - `/go/hh` - HeadHunter job board (redirects to Russian locale)
+- **Footer**: Added email contact link
+
+### Changed
+- **Resume Button**: Consistent PDF format label
+
+### Fixed
+- **OG Images**: Proper async params handling for Next.js 15
+- **OG Images**: Increased line-height to prevent letter clipping
+
 ## [0.3.0] - 2025-11-27
 
 ### Added
@@ -115,6 +146,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Version History
 
+- **0.4.0** - i18n (Russian), OG images, Vercel Analytics, UTM tracking links
 - **0.3.0** - Hero section enhancements, case studies improvements, component documentation
 - **0.2.0** - Global dark mode, cross-tab sync, comprehensive testing
 - **0.1.0** - Initial release with core features
