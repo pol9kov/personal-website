@@ -115,8 +115,8 @@ export default async function Image({
               backgroundClip: "text",
               color: "transparent",
               margin: 0,
-              marginBottom: 16,
-              lineHeight: 1.1,
+              marginBottom: 8,
+              lineHeight: 1.4,
             }}
           >
             {name}
