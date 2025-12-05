@@ -47,6 +47,8 @@ export function Header({ className }: HeaderProps) {
   ];
 
   const switchLocale = (newLocale: Locale) => {
+    // Save language preference to cookie (1 year expiry)
+    document.cookie = `NEXT_LOCALE=${newLocale};path=/;max-age=31536000`;
     startTransition(() => {
       router.replace(pathname, { locale: newLocale, scroll: false });
     });
