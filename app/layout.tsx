@@ -1,3 +1,5 @@
+import { Analytics } from "@vercel/analytics/react";
+
 // Root layout - required by Next.js to have html and body tags
 export default function RootLayout({
   children,
@@ -6,7 +8,10 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning>
-      <body suppressHydrationWarning>{children}</body>
+      <body suppressHydrationWarning>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
