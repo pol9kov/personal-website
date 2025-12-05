@@ -12,9 +12,9 @@ export const contentType = "image/png";
 export default async function Image({
   params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
-  const { locale } = params;
+  const { locale } = await params;
 
   const name = locale === "ru" ? "Егор Поляков" : "Egor Polyakov";
   const title = locale === "ru" ? "Software Engineer" : "Software Engineer";
