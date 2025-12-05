@@ -18,11 +18,41 @@ const geistMono = Geist_Mono({
   subsets: ["latin", "cyrillic"],
 });
 
-export const metadata: Metadata = {
-  title: "Egor Polyakov - Full-Stack Developer",
-  description:
-    "Personal website showcasing technical skills through code quality and architectural decisions",
-};
+type LocaleParam = { locale: string };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<LocaleParam>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  const isRu = locale === "ru";
+  const name = isRu ? "Егор Поляков" : "Egor Polyakov";
+  const title = `${name} - Software Engineer`;
+  const description = isRu
+    ? "Более 10 лет опыта в создании универсальных фреймворков и элегантных архитектурных решений"
+    : "Software Engineer with 10+ years of experience building universal frameworks and elegant architectural solutions";
+
+  return {
+    title,
+    description,
+    metadataBase: new URL("https://egor-polyakov.vercel.app"),
+    openGraph: {
+      title,
+      description,
+      url: `https://egor-polyakov.vercel.app/${locale}`,
+      siteName: name,
+      locale: isRu ? "ru_RU" : "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+  };
+}
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
