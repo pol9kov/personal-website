@@ -13,25 +13,24 @@ export const caseStudies: CaseStudy[] = [
     year: "2025",
     tags: ["Next.js", "LLM", "RAG", "Architecture"],
     problem:
-      "Support team spent significant time processing repetitive requests. Operators had to manually search for information in the knowledge base.",
+      "Support team spent significant time processing repetitive requests. Operators manually searched for information in the knowledge base, increasing response time.",
     solution:
-      "Integrated AI layer with CRM: the system analyzes incoming messages, finds relevant materials, and generates responses based on corporate knowledge base. Configured handoff to operator for non-standard situations.",
+      "Integrated AI layer with CRM: the system analyzes incoming messages, finds relevant materials, and generates responses based on corporate knowledge base. Non-standard requests are automatically handed off to an operator.",
     technicalDetails: [
-      "Next.js",
-      "LLM",
-      "RAG",
-      "REST API integration",
+      "Integration via REST API",
+      "RAG layer for relevant data retrieval",
+      "AI processing in Next.js API layer",
     ],
     results: [
       "Response time reduced from minutes to seconds",
       "Operator workload decreased by more than 40%",
-      "Consistent responses at experienced employee level",
-      "Operates 24/7 without human intervention",
+      "Response quality comparable to experienced employee",
+      "System operates 24/7",
     ],
     lessonsLearned: [
-      "AI is effective for typical requests but requires fallback to human",
-      "Knowledge base quality directly affects response quality",
-      "Integration with existing systems is critical for adoption",
+      "AI effectively handles typical requests",
+      "Fallback to human is mandatory for edge cases",
+      "Knowledge base quality directly affects accuracy",
     ],
   },
   {
