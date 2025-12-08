@@ -11,7 +11,7 @@ export const caseStudies: CaseStudy[] = [
     description:
       "Ready-to-use AI platform for business integration. Connects to existing systems and solves tasks faster.",
     year: "2025",
-    tags: ["AI", "LLM", "Integrations", "Business Automation"],
+    tags: ["Next.js", "LLM", "RAG", "Architecture"],
     problem:
       "Companies need to integrate AI into their products, but building from scratch is expensive and time-consuming.",
     solution:
