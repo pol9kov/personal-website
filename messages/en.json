@@ -2,6 +2,7 @@
   "navigation": {
     "home": "Home",
     "about": "About Me",
+    "aiIntegration": "AI Integration",
     "caseStudies": "Case Studies",
     "resume": "Resume",
     "siteName": "Egor Polyakov"
@@ -104,6 +105,39 @@
     "title": "Resume",
     "subtitle": "Download my professional resume in PDF format",
     "download": "Download Resume (PDF)"
+  },
+  "aiIntegration": {
+    "title": "We integrate AI into your processes in days, not months",
+    "subtitle": "We connect AI directly to your systems. No building from scratch. No consulting cycles. Results in the first days.",
+    "problem": {
+      "title": "Problem",
+      "text": "AI implementation usually turns into a long cycle: hiring specialists, choosing models, infrastructure, approvals. First results come in 3-6 months."
+    },
+    "solution": {
+      "title": "Solution",
+      "text": "We connect AI directly to your systems: CRM, chatbot, website, internal services. No building from scratch. No consulting cycles. Results in the first days."
+    },
+    "tasksTitle": "What tasks we solve",
+    "tasks": [
+      "Auto-responses in support based on your knowledge base",
+      "Assistant for managers: client history, documents, next action",
+      "Incoming request processing and routing",
+      "Data extraction from documents"
+    ],
+    "howWeWork": {
+      "title": "How we work",
+      "note": "Where models are hosted - cloud or your servers - you decide."
+    },
+    "steps": [
+      "You describe the task",
+      "We connect to your systems",
+      "You see a working result"
+    ],
+    "whyNotConsulting": {
+      "title": "How we differ from consulting",
+      "problem": "Consulting writes custom code for months. Result - custom integration that's hard to maintain.",
+      "solution": "We connect a ready-made service, proven on typical tasks. Faster, more predictable, no technical debt."
+    }
   },
   "caseStudies": {
     "title": "Case Studies",
