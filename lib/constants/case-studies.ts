@@ -7,31 +7,31 @@ export const caseStudies: CaseStudy[] = [
   {
     id: "1",
     slug: "ai-infrastructure",
-    title: "AI Platform",
+    title: "We integrate AI into your processes in days, not months",
     description:
-      "Ready-to-use AI platform for business integration. Connects to existing systems and solves tasks faster.",
+      "We connect AI directly to your systems. No building from scratch. No consulting cycles. Results in the first days.",
     year: "2025",
     tags: ["Next.js", "LLM", "RAG", "Architecture"],
     problem:
-      "Companies need to integrate AI into their products, but building from scratch is expensive and time-consuming.",
+      "AI implementation usually turns into a long cycle: hiring specialists, choosing models, infrastructure, approvals. First results come in 3-6 months.",
     solution:
-      "Ready-made platform: LLM core, memory, plugins, integrations. Connects to your project as an external module.",
+      "We connect AI directly to your systems: CRM, chatbot, website, internal services. No building from scratch. No consulting cycles. Results in the first days.",
     technicalDetails: [
-      "Ready-to-use LLM core with support for various models",
-      "Memory and context management system",
-      "Modular architecture with plugins tailored to client needs",
-      "Integrations with CRM, bots, websites, internal systems",
-      "Works as an external service — code is not transferred",
+      "Auto-responses in support based on your knowledge base",
+      "Assistant for managers: client history, documents, next action",
+      "Incoming request processing and routing",
+      "Data extraction from documents",
     ],
     results: [
-      "Fast AI implementation without building from scratch",
-      "Flexible customization for business needs",
-      "Independence from specific LLM provider",
+      "You describe the task",
+      "We connect to your systems",
+      "You see a working result",
+      "Where models are hosted - cloud or your servers - you decide",
     ],
     lessonsLearned: [
-      "Modular approach allows adapting the solution to any task",
-      "Integration as a service reduces client risks",
-      "Ready-made infrastructure saves months of development",
+      "Consulting writes custom code for months. Result - custom integration that's hard to maintain",
+      "We connect a ready-made service, proven on typical tasks",
+      "Faster, more predictable, no technical debt",
     ],
   },
   {
