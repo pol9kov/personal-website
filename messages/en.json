@@ -120,7 +120,7 @@
       "ai-infrastructure": {
         "title": "We integrate AI into your processes in days, not months",
         "description": "We connect AI directly to your systems. No building from scratch. No consulting cycles. Results in the first days.",
-        "problem": "AI implementation usually turns into a long cycle: hiring specialists, choosing models, infrastructure, approvals. First results come in 3–6 months.",
+        "problem": "AI implementation usually turns into a long cycle: hiring specialists, choosing models, infrastructure, approvals. First results come in 3-6 months.",
         "solution": "We connect AI directly to your systems: CRM, chatbot, website, internal services. No building from scratch. No consulting cycles. Results in the first days.",
         "technicalDetails": [
           "Auto-responses in support based on your knowledge base",
@@ -132,10 +132,10 @@
           "You describe the task",
           "We connect to your systems",
           "You see a working result",
-          "Where models are hosted — cloud or your servers — you decide"
+          "Where models are hosted - cloud or your servers - you decide"
         ],
         "lessonsLearned": [
-          "Consulting writes custom code for months. Result — custom integration that's hard to maintain",
+          "Consulting writes custom code for months. Result - custom integration that's hard to maintain",
           "We connect a ready-made service, proven on typical tasks",
           "Faster, more predictable, no technical debt"
         ]
