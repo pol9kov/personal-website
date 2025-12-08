@@ -31,7 +31,7 @@ export function Hero({ className }: HeroProps) {
       )}
     >
       <div className="container mx-auto px-4">
-        <div className="mx-auto max-w-3xl">
+        <div className="mx-auto max-w-2xl">
           {/* Photo floats to the right, text wraps around it */}
           <div
             className="relative float-right ml-2 mb-2 sm:ml-6 sm:mb-6 h-36 w-36 sm:h-44 sm:w-44 md:h-52 md:w-52 rounded-full overflow-hidden"
