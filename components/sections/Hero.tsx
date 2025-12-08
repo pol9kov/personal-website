@@ -62,7 +62,7 @@ export function Hero({ className }: HeroProps) {
             {t("name")}
           </h1>
           <br className="sm:hidden" />
-          <p className="inline text-lg text-gray-600 dark:text-gray-300 sm:text-xl sm:block sm:mt-4">
+          <p className="inline text-xl text-gray-600 dark:text-gray-300 sm:text-2xl sm:block sm:mt-4">
             {t("subtitle")}
           </p>
 
