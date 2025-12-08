@@ -65,14 +65,14 @@ export function Hero({ className }: HeroProps) {
           <p className="inline text-xl text-gray-600 dark:text-gray-300 sm:text-2xl sm:block sm:mt-4">
             {t("subtitle")}
           </p>
-          <p className="mt-6 text-sm tracking-wider text-gray-400 dark:text-gray-500 opacity-80">
+          <p className="mt-5 text-xs tracking-widest text-gray-400 dark:text-gray-500 opacity-70 uppercase">
             {t("tags")}
           </p>
 
           {/* Clear float */}
           <div className="clear-both"></div>
 
-          <div className="mt-12 flex flex-col items-center">
+          <div className="mt-8 flex flex-col items-center">
             <div className="grid w-full grid-cols-[1fr_auto_1fr] items-center">
               <a
                 href="https://github.com/pol9kov?tab=repositories"
