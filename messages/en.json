@@ -153,26 +153,25 @@
     "items": {
       "ai-infrastructure": {
         "title": "AI Integration into CRM for Support Automation",
-        "description": "Connecting LLM to CRM via RAG layer for automatic responses based on internal knowledge base.",
-        "problem": "The company was manually processing a large volume of repetitive customer requests. Operators spent time searching for information in the knowledge base.",
-        "solution": "Connected LLM to CRM via RAG layer and configured auto-responses based on internal knowledge base. The system analyzes incoming requests, finds relevant documents, and generates responses.",
+        "description": "Connecting LLM to company CRM for automatic responses based on internal knowledge base.",
+        "problem": "Support team spent significant time processing repetitive requests. Operators had to manually search for information in the knowledge base.",
+        "solution": "Integrated AI layer with CRM: the system analyzes incoming messages, finds relevant materials, and generates responses based on corporate knowledge base. Configured handoff to operator for non-standard situations.",
         "technicalDetails": [
-          "Next.js API for request processing",
-          "RAG pipeline: vector search + LLM generation",
-          "Integration with existing CRM via REST API",
-          "Embedding caching for faster search",
-          "Fallback to operator on low model confidence"
+          "Next.js",
+          "LLM",
+          "RAG",
+          "REST API integration"
         ],
         "results": [
           "Response time reduced from minutes to seconds",
           "Operator workload decreased by more than 40%",
-          "Response quality at experienced operator level",
-          "System operates 24/7 without human intervention"
+          "Consistent responses at experienced employee level",
+          "Operates 24/7 without human intervention"
         ],
         "lessonsLearned": [
-          "RAG is critical for accuracy - without it LLM hallucinates",
-          "Fallback to human is mandatory for edge cases",
-          "Knowledge base quality determines response quality"
+          "AI is effective for typical requests but requires fallback to human",
+          "Knowledge base quality directly affects response quality",
+          "Integration with existing systems is critical for adoption"
         ]
       },
       "mobile-platform": {
