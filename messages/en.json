@@ -10,6 +10,7 @@
   "hero": {
     "name": "Egor Polyakov",
     "subtitle": "Software Engineer with 10+ years of experience. I build reliable systems and turn complexity into clear architecture.",
+    "tags": "Backend · Architecture · AI Integration",
     "viewProjects": "View Projects",
     "contactMe": "Contact Me"
   },

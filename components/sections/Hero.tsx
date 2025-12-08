@@ -65,6 +65,9 @@ export function Hero({ className }: HeroProps) {
           <p className="inline text-xl text-gray-600 dark:text-gray-300 sm:text-2xl sm:block sm:mt-4">
             {t("subtitle")}
           </p>
+          <p className="mt-4 text-sm font-medium tracking-wide text-gray-500 dark:text-gray-400 sm:text-base">
+            {t("tags")}
+          </p>
 
           {/* Clear float */}
           <div className="clear-both"></div>
