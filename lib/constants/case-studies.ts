@@ -7,31 +7,32 @@ export const caseStudies: CaseStudy[] = [
   {
     id: "1",
     slug: "ai-infrastructure",
-    title: "We integrate AI into your processes in days, not months",
+    title: "AI Integration into CRM for Support Automation",
     description:
-      "We connect AI directly to your systems. No building from scratch. No consulting cycles. Results in the first days.",
+      "Connecting LLM to CRM via RAG layer for automatic responses based on internal knowledge base.",
     year: "2025",
     tags: ["Next.js", "LLM", "RAG", "Architecture"],
     problem:
-      "AI implementation usually turns into a long cycle: hiring specialists, choosing models, infrastructure, approvals. First results come in 3-6 months.",
+      "The company was manually processing a large volume of repetitive customer requests. Operators spent time searching for information in the knowledge base.",
     solution:
-      "We connect AI directly to your systems: CRM, chatbot, website, internal services. No building from scratch. No consulting cycles. Results in the first days.",
+      "Connected LLM to CRM via RAG layer and configured auto-responses based on internal knowledge base. The system analyzes incoming requests, finds relevant documents, and generates responses.",
     technicalDetails: [
-      "Auto-responses in support based on your knowledge base",
-      "Assistant for managers: client history, documents, next action",
-      "Incoming request processing and routing",
-      "Data extraction from documents",
+      "Next.js API for request processing",
+      "RAG pipeline: vector search + LLM generation",
+      "Integration with existing CRM via REST API",
+      "Embedding caching for faster search",
+      "Fallback to operator on low model confidence",
     ],
     results: [
-      "You describe the task",
-      "We connect to your systems",
-      "You see a working result",
-      "Where models are hosted - cloud or your servers - you decide",
+      "Response time reduced from minutes to seconds",
+      "Operator workload decreased by more than 40%",
+      "Response quality at experienced operator level",
+      "System operates 24/7 without human intervention",
     ],
     lessonsLearned: [
-      "Consulting writes custom code for months. Result - custom integration that's hard to maintain",
-      "We connect a ready-made service, proven on typical tasks",
-      "Faster, more predictable, no technical debt",
+      "RAG is critical for accuracy - without it LLM hallucinates",
+      "Fallback to human is mandatory for edge cases",
+      "Knowledge base quality determines response quality",
     ],
   },
   {
