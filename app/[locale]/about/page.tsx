@@ -5,7 +5,7 @@ import { getTranslations } from "next-intl/server";
 export const metadata: Metadata = {
   title: "About | Egor Polyakov",
   description:
-    "Learn more about my journey, philosophy, and what drives me as a developer.",
+    "Backend engineer with 10+ years of experience. Building systems that handle complexity while remaining understandable.",
 };
 
 interface AboutPageProps {
@@ -40,60 +40,18 @@ export default async function AboutPage({ params }: AboutPageProps) {
               </h2>
               <div className="space-y-4 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                 <p>{t("whoIAm.p1")}</p>
-                <p>
-                  {t("whoIAm.p2")}{" "}
-                  <em>{t("whoIAm.p2Emphasis")}</em>
-                  {t("whoIAm.p2End")}
-                </p>
-                <p className="italic text-gray-600 dark:text-gray-400">
-                  {t("whoIAm.quote")}
-                </p>
+                <p>{t("whoIAm.p2")}</p>
               </div>
             </section>
 
-            {/* The Journey */}
-            <section>
-              <h2 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
-                {t("journey.title")}
-              </h2>
-              <div className="space-y-4 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-                <p>{t("journey.p1")}</p>
-                <p>
-                  {t("journey.p2")}{" "}
-                  <em>{t("journey.p2Emphasis")}</em>
-                  {t("journey.p2End")}
-                </p>
-                <p>{t("journey.p3")}</p>
-                <p>{t("journey.p4")}</p>
-              </div>
-            </section>
-
-            {/* Philosophy */}
+            {/* My Approach */}
             <section>
               <h2 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
                 {t("approach.title")}
               </h2>
               <div className="space-y-4 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-                <p>
-                  {t("approach.p1Start")}{" "}
-                  <strong>{t("approach.p1Bold")}</strong>
-                  {t("approach.p1End")}
-                </p>
-                <p>
-                  {t("approach.p2Start")}{" "}
-                  <strong>{t("approach.p2Bold")}</strong>
-                  {t("approach.p2End")}
-                </p>
-                <p>
-                  {t("approach.p3Start")}{" "}
-                  <strong>{t("approach.p3Bold")}</strong>
-                  {t("approach.p3End")}
-                </p>
-                <p>
-                  {t("approach.p4Start")}{" "}
-                  <strong>{t("approach.p4Bold")}</strong>
-                  {t("approach.p4End")}
-                </p>
+                <p>{t("approach.p1")}</p>
+                <p>{t("approach.p2")}</p>
               </div>
             </section>
 
@@ -108,67 +66,35 @@ export default async function AboutPage({ params }: AboutPageProps) {
               </div>
             </section>
 
-            {/* Beyond Code */}
-            <section>
-              <h2 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
-                {t("beyondCode.title")}
-              </h2>
-              <div className="space-y-4 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-                <p>{t("beyondCode.p1")}</p>
-                <p>{t("beyondCode.p2")}</p>
-              </div>
-            </section>
-
             {/* Values */}
             <section className="rounded-2xl bg-gradient-to-br from-blue-50 to-purple-50 p-8 dark:from-blue-950/30 dark:to-purple-950/30">
               <h2 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
                 {t("values.title")}
               </h2>
               <ul className="space-y-4 text-lg text-gray-700 dark:text-gray-300">
-                <li className="flex items-start">
-                  <span className="mr-3 text-2xl">🌱</span>
-                  <div>
-                    <strong className="text-gray-900 dark:text-white">
-                      {t("values.continuousLearning.title")}
-                    </strong>{" "}
-                    {t("values.continuousLearning.text")}
-                  </div>
+                <li>
+                  <strong className="text-gray-900 dark:text-white">
+                    {t("values.continuousLearning.title")}
+                  </strong>{" "}
+                  - {t("values.continuousLearning.text")}
                 </li>
-                <li className="flex items-start">
-                  <span className="mr-3 text-2xl">🔍</span>
-                  <div>
-                    <strong className="text-gray-900 dark:text-white">
-                      {t("values.curiosity.title")}
-                    </strong>{" "}
-                    {t("values.curiosity.text")}
-                  </div>
+                <li>
+                  <strong className="text-gray-900 dark:text-white">
+                    {t("values.curiosity.title")}
+                  </strong>{" "}
+                  - {t("values.curiosity.text")}
                 </li>
-                <li className="flex items-start">
-                  <span className="mr-3 text-2xl">📈</span>
-                  <div>
-                    <strong className="text-gray-900 dark:text-white">
-                      {t("values.progress.title")}
-                    </strong>{" "}
-                    {t("values.progress.text")}
-                  </div>
+                <li>
+                  <strong className="text-gray-900 dark:text-white">
+                    {t("values.progress.title")}
+                  </strong>{" "}
+                  - {t("values.progress.text")}
                 </li>
-                <li className="flex items-start">
-                  <span className="mr-3 text-2xl">🤝</span>
-                  <div>
-                    <strong className="text-gray-900 dark:text-white">
-                      {t("values.trust.title")}
-                    </strong>{" "}
-                    {t("values.trust.text")}
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-3 text-2xl">⚖️</span>
-                  <div>
-                    <strong className="text-gray-900 dark:text-white">
-                      {t("values.balance.title")}
-                    </strong>{" "}
-                    {t("values.balance.text")}
-                  </div>
+                <li>
+                  <strong className="text-gray-900 dark:text-white">
+                    {t("values.trust.title")}
+                  </strong>{" "}
+                  - {t("values.trust.text")}
                 </li>
               </ul>
             </section>

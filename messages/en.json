@@ -34,70 +34,39 @@
   },
   "about": {
     "title": "About Me",
-    "subtitle": "My journey, philosophy, and what drives me",
+    "subtitle": "Backend engineer with 10+ years of experience and a strong mathematical background. Building systems that handle complexity while remaining understandable.",
     "whoIAm": {
       "title": "Who I Am",
-      "p1": "I'm a backend engineer with over a decade of experience building systems that need to be both robust and adaptable. What defines me is not just technical skill, but a deep commitment to honesty, presence, and care in everything I build.",
-      "p2": "I don't play roles or hide behind jargon. I stay true to myself and bring full presence to my work, whether that's architecting a system, reviewing code, or mentoring a teammate. My strength lies in",
-      "p2Emphasis": "transparency and the ability to face hard truths",
-      "p2End": ", both in code and in collaboration.",
-      "quote": "Mind brings clarity. Heart brings depth. Presence is my gift."
-    },
-    "journey": {
-      "title": "The Journey",
-      "p1": "I graduated from LNMO (Laboratory of Continuous Mathematical Education) in St. Petersburg, where I explored over a dozen programming languages, from Pascal to OCaml, C, Haskell, and even Brainfuck. From my school years, I was involved in scientific research and presented at academic conferences. I placed 3rd in Mathematics at ICYS-2012 in the Netherlands, 1st at the St. Petersburg State Competition, and 3rd at the Baltic Science and Engineering Competition. In 2015-2016, I served on the youth jury for the Baltic competition. During this time, I worked on information decomposition algorithms, neural networks, and data analysis.",
-      "p2": "My path in development has been shaped by a principle:",
-      "p2Emphasis": "life is a continuous stream of experience that makes you stronger and wiser",
-      "p2End": ". Each project is an opportunity to learn, not just about technology, but about how systems serve people.",
-      "p3": "I used to approach problems from my head, chasing control and perfect solutions. Over time, I learned that true engineering happens when you stay present with the problem, listen deeply, and act from understanding rather than avoidance. The best architectures emerge when you respect both technical constraints and human needs.",
-      "p4": "From building dynamic EAV systems a decade ago to designing cloud-native Go microservices today, I've learned that sustainable solutions come from discipline, patience, and a willingness to stay with complexity until clarity emerges."
+      "p1": "Graduated from LNMO in St. Petersburg, explored over a dozen programming languages, and placed in ICYS and Baltic Science and Engineering Competition.",
+      "p2": "Over the years, progressed from dynamic EAV systems to cloud-native Go microservices and AI integrations."
     },
     "approach": {
       "title": "My Approach",
-      "p1Start": "I build systems",
-      "p1Bold": "step by step, without rushing",
-      "p1End": ". There are no shortcuts to quality. Every action, whether writing code, designing architecture, or reviewing pull requests, is an expression of care for the craft and for the people who depend on what we build.",
-      "p2Start": "My approach is grounded in",
-      "p2Bold": "responsibility over control",
-      "p2End": ". Control is an illusion; you can't predict every edge case or prevent every bug. But you can take full ownership of your decisions, your code quality, and the trust you build with your team. This mindset has guided me through complex migrations, system redesigns, and moments where clarity only came after sitting with the problem longer than was comfortable.",
-      "p3Start": "I value",
-      "p3Bold": "practical solutions",
-      "p3End": " that work today while remaining adaptable for tomorrow. Clean architecture, well-tested code, and honest documentation aren't formalities; they are acts of care for future maintainers, including yourself six months from now when you've forgotten why you made that choice.",
-      "p4Start": "Most importantly, I bring",
-      "p4Bold": "presence",
-      "p4End": " to my work. Not just technical attention, but genuine engagement with the problem at hand. Great engineering happens when you stop avoiding complexity and start listening to what the system is telling you."
+      "p1": "Working step by step, without rushing. Prioritizing responsibility over control: you can't anticipate everything, but you can own the quality of your decisions.",
+      "p2": "Preferring practical architectures that work today and remain flexible tomorrow."
     },
     "currentFocus": {
       "title": "Current Focus",
-      "p1": "Right now, I'm deepening my expertise in Go, exploring the intersection of backend systems and AI infrastructure, and building tools that bridge powerful technologies with practical human needs.",
-      "p2": "I'm particularly interested in systems that need to be both robust and adaptable: microservices architectures that can evolve, databases that can handle dynamic schemas, and APIs that developers actually enjoy using."
-    },
-    "beyondCode": {
-      "title": "Beyond Code",
-      "p1": "Outside of programming, I'm interested in mindfulness practices, physical training, and the philosophy of continuous improvement. I believe that maintaining balance between focus and rest, intensity and ease, makes me a better engineer.",
-      "p2": "These interests aren't separate from my work; they inform how I approach problems. Attention, patience, and presence are as important in debugging a complex system as they are in any other practice."
+      "p1": "Deepening expertise in Go and AI infrastructure.",
+      "p2": "Interested in systems that need to be both robust and adaptable: microservices, dynamic data schemas, developer-friendly APIs, and AI layers on top of existing products."
     },
     "values": {
-      "title": "Core Values",
+      "title": "Values",
       "continuousLearning": {
-        "title": "Continuous Learning:",
-        "text": "Every experience is an opportunity to grow. I treat each project as a chance to learn something new about systems, people, or myself."
+        "title": "Continuous Learning",
+        "text": "Every project provides new thinking tools."
       },
       "curiosity": {
-        "title": "Curiosity:",
-        "text": "Asking \"why\" and \"how\" leads to better solutions. I dig deep into problems to understand root causes, not just symptoms."
+        "title": "Curiosity",
+        "text": "Seeking root causes, not just treating symptoms."
       },
       "progress": {
-        "title": "Progress Over Perfection:",
-        "text": "Step by step, without rushing. Sustainable progress beats flashy shortcuts every time."
+        "title": "Progress Over Perfection",
+        "text": "Sustainable steps beat quick fixes."
       },
       "trust": {
-        "title": "Trust and Care:",
-        "text": "Building trust through reliability, clear communication, and genuine care for the people I work with and the systems we maintain together."
-      },
-      "balance": {
-        "title": "Balance:",
-        "text": "Technical excellence matters, but so does pragmatism. Innovation is important, but so is stability. Finding harmony between competing needs is where real engineering happens."
+        "title": "Trust",
+        "text": "Honest communication and reliability."
       }
     }
   },
