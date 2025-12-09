@@ -58,7 +58,7 @@ export async function GET() {
             style={{
               fontSize: "64px",
               fontWeight: 700,
-              color: "#3B82F6",
+              color: "#FFFFFF",
               margin: 0,
               lineHeight: 1.1,
               letterSpacing: "-0.02em",
@@ -114,9 +114,13 @@ export async function GET() {
           {[...Array(5)].map((_, row) => (
             <div key={row} style={{ display: "flex", gap: "16px" }}>
               {[...Array(5)].map((_, col) => {
-                // Gradient from blue to purple based on position
-                const hue = 220 + (row + col) * 8; // 220 (blue) to 280 (purple)
-                const opacity = 0.3 + (row + col) * 0.05;
+                // Gradient from cyan (#06B6D4) to blue (#2563EB) based on position
+                const t = (row + col) / 8; // 0 to 1
+                // Interpolate between cyan (6, 182, 212) and blue (37, 99, 235)
+                const r = Math.round(6 + t * (37 - 6));
+                const g = Math.round(182 + t * (99 - 182));
+                const b = Math.round(212 + t * (235 - 212));
+                const opacity = 0.4 + (row + col) * 0.06;
                 return (
                   <div
                     key={col}
@@ -124,7 +128,7 @@ export async function GET() {
                       width: "8px",
                       height: "8px",
                       borderRadius: "50%",
-                      backgroundColor: `hsla(${hue}, 80%, 60%, ${opacity})`,
+                      backgroundColor: `rgba(${r}, ${g}, ${b}, ${opacity})`,
                     }}
                   />
                 );
