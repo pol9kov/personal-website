@@ -72,7 +72,7 @@ export function Hero({ className }: HeroProps) {
           {/* Clear float */}
           <div className="clear-both"></div>
 
-          <div className="mt-8 flex flex-col items-center">
+          <div className="mt-12 flex flex-col items-center">
             <div className="grid w-full grid-cols-[1fr_auto_1fr] items-center">
               <a
                 href="https://github.com/pol9kov?tab=repositories"
