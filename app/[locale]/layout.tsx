@@ -29,8 +29,7 @@ export async function generateMetadata({
 
   const isRu = locale === "ru";
   const name = isRu ? "Егор Поляков" : "Egor Polyakov";
-  const role = isRu ? "Backend & AI инженер" : "Backend & AI Engineer";
-  const title = `${name} — ${role}`;
+  const title = isRu ? "Backend & AI инженер" : "Backend & AI Engineer";
   const description = isRu
     ? "Интеграция ИИ в реальные продукты"
     : "AI Integration for Real Products";
