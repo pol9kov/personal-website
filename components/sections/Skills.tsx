@@ -52,7 +52,7 @@ export function Skills({ className }: SkillsProps) {
       id="skills"
     >
       <div className="container mx-auto px-4">
-        <div className="mb-12 text-center">
+        <div className="mb-8 sm:mb-12 text-center">
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white">
             {t("title")}
           </h2>

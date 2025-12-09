@@ -26,7 +26,7 @@ export default async function AIIntegrationPage({ params }: AIIntegrationPagePro
         <div className="mx-auto max-w-4xl">
           {/* Hero */}
           <div className="mb-16 text-center">
-            <h1 className="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
+            <h1 className="mb-4 text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">
               {t("title")}
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300">

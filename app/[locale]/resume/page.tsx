@@ -17,7 +17,7 @@ export default async function ResumePage({ params }: ResumePageProps) {
   const t = await getTranslations("resume");
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-gradient-to-b from-white to-gray-50 py-20 dark:from-gray-900 dark:to-gray-950">
+    <main className="flex min-h-screen items-start sm:items-center justify-center bg-gradient-to-b from-white to-gray-50 py-12 sm:py-20 dark:from-gray-900 dark:to-gray-950">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-2xl text-center">
           <div className="mb-8">
