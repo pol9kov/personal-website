@@ -114,13 +114,15 @@ export async function GET() {
           {[...Array(5)].map((_, row) => (
             <div key={row} style={{ display: "flex", gap: "16px" }}>
               {[...Array(5)].map((_, col) => {
-                // Gradient from cyan (#06B6D4) to blue (#2563EB) based on position
-                const t = (row + col) / 8; // 0 to 1
+                // Gradient from bottom-left (light) to top-right (dark)
+                // row 4 = bottom, row 0 = top; col 0 = left, col 4 = right
+                const t = (col + (4 - row)) / 8; // 0 (bottom-left) to 1 (top-right)
                 // Interpolate between cyan (6, 182, 212) and blue (37, 99, 235)
                 const r = Math.round(6 + t * (37 - 6));
                 const g = Math.round(182 + t * (99 - 182));
                 const b = Math.round(212 + t * (235 - 212));
-                const opacity = 0.4 + (row + col) * 0.06;
+                // Light at bottom-left, dark at top-right
+                const opacity = 0.7 - t * 0.4;
                 return (
                   <div
                     key={col}
