@@ -70,7 +70,7 @@ export async function GET() {
           {/* Subtitle */}
           <p
             style={{
-              fontSize: "26px",
+              fontSize: "24px",
               fontWeight: 400,
               color: "#BBBBBB",
               margin: 0,
