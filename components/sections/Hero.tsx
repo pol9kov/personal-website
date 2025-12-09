@@ -56,8 +56,7 @@ export function Hero({ className }: HeroProps) {
           </div>
 
           <h1
-            className="inline text-4xl font-bold sm:text-5xl md:text-6xl name-gradient"
-            style={{ lineHeight: "1.3" }}
+            className="inline text-4xl font-bold leading-tight sm:text-5xl md:text-6xl name-gradient"
           >
             {t("name")}
           </h1>
