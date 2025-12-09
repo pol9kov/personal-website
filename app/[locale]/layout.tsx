@@ -45,11 +45,20 @@ export async function generateMetadata({
       siteName: name,
       locale: isRu ? "ru_RU" : "en_US",
       type: "website",
+      images: [
+        {
+          url: "/api/og",
+          width: 1200,
+          height: 630,
+          alt: "Egor Polyakov - AI Integration for Real Products",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: ["/api/og"],
     },
   };
 }
