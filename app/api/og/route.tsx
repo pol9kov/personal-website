@@ -76,6 +76,7 @@ export async function GET() {
               margin: 0,
               lineHeight: 1.5,
               marginTop: "8px",
+              whiteSpace: "nowrap",
             }}
           >
             We connect AI to your CRM, chatbots and internal tools. Results in days, not months.
