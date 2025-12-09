@@ -15,7 +15,7 @@ export const skills: Skill[] = [
 
   // Frameworks & Platforms
   { name: "Flutter", category: "frameworks", proficiency: 4 },
-  { name: "Android", category: "frameworks", proficiency: 3 },
+  { name: "Android", category: "frameworks", proficiency: 1 },
   { name: "Clean Architecture", category: "frameworks", proficiency: 4 },
   { name: "Infrastructure as Code", category: "frameworks", proficiency: 4 },
   { name: "Hyperledger Fabric", category: "frameworks", proficiency: 4 },
@@ -31,7 +31,7 @@ export const skills: Skill[] = [
   { name: "MySQL", category: "databases", proficiency: 2 },
 
   // DevOps & Cloud
-  { name: "AWS", category: "devops", proficiency: 3 },
+  { name: "AWS", category: "devops", proficiency: 4 },
   { name: "Linux", category: "devops", proficiency: 3 },
   { name: "Docker", category: "devops", proficiency: 3 },
   { name: "Git", category: "devops", proficiency: 2 },
