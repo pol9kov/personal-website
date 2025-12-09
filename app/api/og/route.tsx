@@ -70,7 +70,7 @@ export async function GET() {
           {/* Subtitle */}
           <p
             style={{
-              fontSize: "24px",
+              fontSize: "26px",
               fontWeight: 400,
               color: "#BBBBBB",
               margin: 0,
@@ -78,7 +78,9 @@ export async function GET() {
               marginTop: "8px",
             }}
           >
-            We connect AI to your CRM, chatbots and internal tools. Results in days, not months.
+            We connect AI to your CRM, chatbots and internal tools.
+            <br />
+            Results in days, not months.
           </p>
 
           {/* Bottom tags */}
