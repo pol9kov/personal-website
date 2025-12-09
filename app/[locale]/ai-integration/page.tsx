@@ -21,7 +21,7 @@ export default async function AIIntegrationPage({ params }: AIIntegrationPagePro
   const steps = t.raw("steps") as string[];
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-white to-gray-50 py-20 dark:from-gray-900 dark:to-gray-950">
+    <main className="min-h-screen bg-gradient-to-b from-white to-gray-50 pt-12 pb-20 sm:py-20 dark:from-gray-900 dark:to-gray-950">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-4xl">
           {/* Hero */}
