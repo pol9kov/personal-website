@@ -47,7 +47,7 @@ export async function generateMetadata({
       type: "website",
       images: [
         {
-          url: "https://egor-polyakov.vercel.app/api/og",
+          url: "https://egor-polyakov.vercel.app/api/og?v=2",
           width: 1200,
           height: 630,
           alt: "Egor Polyakov - AI Integration for Real Products",
@@ -58,7 +58,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: ["https://egor-polyakov.vercel.app/api/og"],
+      images: ["https://egor-polyakov.vercel.app/api/og?v=2"],
     },
   };
 }
