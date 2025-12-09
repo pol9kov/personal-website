@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { cn } from "@/lib/utils/cn";
 
 /**
@@ -21,6 +21,7 @@ export interface HeroProps {
  */
 export function Hero({ className }: HeroProps) {
   const t = useTranslations("hero");
+  const locale = useLocale();
 
   return (
     <section
@@ -82,7 +83,7 @@ export function Hero({ className }: HeroProps) {
               >
                 {t("viewProjects")}
               </a>
-              <div className="w-8 sm:w-20" />
+              <div className={locale === "ru" ? "w-4 sm:w-20" : "w-20"} />
               <a
                 href="https://t.me/pol9kov"
                 target="_blank"
