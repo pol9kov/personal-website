@@ -37,6 +37,11 @@ const nextConfig: NextConfig = {
         destination: "/ru?utm_source=hh&utm_medium=job_board&utm_campaign=resume",
         permanent: false,
       },
+      {
+        source: "/go/freelancer",
+        destination: "/ru?utm_source=freelancer&utm_medium=job_board&utm_campaign=resume",
+        permanent: false,
+      },
     ];
   },
 };
