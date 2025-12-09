@@ -40,7 +40,7 @@ export default async function AIIntegrationPage({ params }: AIIntegrationPagePro
               <h2 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
                 {t("problem.title")}
               </h2>
-              <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+              <p className="text-lg text-gray-700 dark:text-gray-300">
                 {t("problem.text")}
               </p>
             </section>
@@ -50,7 +50,7 @@ export default async function AIIntegrationPage({ params }: AIIntegrationPagePro
               <h2 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
                 {t("solution.title")}
               </h2>
-              <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+              <p className="text-lg text-gray-700 dark:text-gray-300">
                 {t("solution.text")}
               </p>
             </section>
