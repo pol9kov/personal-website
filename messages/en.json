@@ -18,10 +18,10 @@
     "title": "Skills & Technologies",
     "subtitle": "Technologies and tools I work with",
     "categories": {
-      "languages": "Languages",
-      "frameworks": "Frameworks & Platforms",
+      "languages": "Core Languages",
+      "frameworks": "Architecture & Platforms",
       "databases": "Databases",
-      "devops": "DevOps & Cloud",
+      "devops": "Infrastructure & Tools",
       "other": "Other"
     }
   },
