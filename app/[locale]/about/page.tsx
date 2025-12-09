@@ -23,7 +23,7 @@ export default async function AboutPage({ params }: AboutPageProps) {
         <div className="mx-auto max-w-4xl">
           {/* Header */}
           <div className="mb-16 text-center">
-            <h1 className="mb-4 text-5xl font-bold leading-tight text-gray-900 dark:text-white">
+            <h1 className="mb-4 text-5xl font-bold leading-snug text-gray-900 dark:text-white">
               {t("title")}
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300">
