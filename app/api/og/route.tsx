@@ -78,7 +78,7 @@ export async function GET() {
               marginTop: "8px",
             }}
           >
-            We connect AI to your CRM, chatbots and internal tools.{" "}<br />Results in days, not months.
+            <span>We connect AI to your CRM, chatbots and internal tools. </span><span style={{ display: "block" }}>Results in days, not months.</span>
           </p>
 
           {/* Bottom tags */}
