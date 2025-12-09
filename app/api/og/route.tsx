@@ -25,7 +25,8 @@ export async function GET() {
             right: 0,
             width: "50%",
             height: "100%",
-            background: "radial-gradient(circle at 80% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 50%)",
+            background:
+              "radial-gradient(circle at 80% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 50%)",
           }}
         />
 
@@ -34,16 +35,30 @@ export async function GET() {
           style={{
             display: "flex",
             flexDirection: "column",
-            gap: "24px",
-            maxWidth: "800px",
+            gap: "20px",
+            maxWidth: "850px",
           }}
         >
-          {/* Title */}
+          {/* Top line - name and role */}
+          <p
+            style={{
+              fontSize: "18px",
+              fontWeight: 400,
+              color: "#FFFFFF",
+              margin: 0,
+              opacity: 0.7,
+              letterSpacing: "0.02em",
+            }}
+          >
+            Egor Polyakov · Backend & AI Engineer
+          </p>
+
+          {/* Headline */}
           <h1
             style={{
               fontSize: "64px",
               fontWeight: 700,
-              color: "#FFFFFF",
+              color: "#3B82F6",
               margin: 0,
               lineHeight: 1.1,
               letterSpacing: "-0.02em",
@@ -55,31 +70,36 @@ export async function GET() {
           {/* Subtitle */}
           <p
             style={{
-              fontSize: "28px",
+              fontSize: "26px",
               fontWeight: 400,
               color: "#BBBBBB",
               margin: 0,
-              lineHeight: 1.4,
+              lineHeight: 1.5,
+              marginTop: "8px",
             }}
           >
-            We embed AI into your systems in days, not months.
+            We connect AI to your CRM, chatbots and internal tools.
+            <br />
+            Results in days, not months.
           </p>
 
-          {/* Signature */}
+          {/* Bottom tags */}
           <p
             style={{
-              fontSize: "20px",
-              fontWeight: 300,
-              color: "#888888",
+              fontSize: "14px",
+              fontWeight: 400,
+              color: "#666666",
               margin: 0,
-              marginTop: "24px",
+              marginTop: "32px",
+              letterSpacing: "0.15em",
+              textTransform: "uppercase",
             }}
           >
-            Egor Polyakov — AI & Backend Engineer
+            Backend · Architecture · AI Integration
           </p>
         </div>
 
-        {/* Decorative dots pattern */}
+        {/* Decorative dots pattern with gradient */}
         <div
           style={{
             position: "absolute",
@@ -89,22 +109,26 @@ export async function GET() {
             display: "flex",
             flexDirection: "column",
             gap: "16px",
-            opacity: 0.15,
           }}
         >
           {[...Array(5)].map((_, row) => (
             <div key={row} style={{ display: "flex", gap: "16px" }}>
-              {[...Array(5)].map((_, col) => (
-                <div
-                  key={col}
-                  style={{
-                    width: "8px",
-                    height: "8px",
-                    borderRadius: "50%",
-                    backgroundColor: "#3B82F6",
-                  }}
-                />
-              ))}
+              {[...Array(5)].map((_, col) => {
+                // Gradient from blue to purple based on position
+                const hue = 220 + (row + col) * 8; // 220 (blue) to 280 (purple)
+                const opacity = 0.3 + (row + col) * 0.05;
+                return (
+                  <div
+                    key={col}
+                    style={{
+                      width: "8px",
+                      height: "8px",
+                      borderRadius: "50%",
+                      backgroundColor: `hsla(${hue}, 80%, 60%, ${opacity})`,
+                    }}
+                  />
+                );
+              })}
             </div>
           ))}
         </div>
