@@ -82,7 +82,7 @@ export function Hero({ className }: HeroProps) {
               >
                 {t("viewProjects")}
               </a>
-              <div className="w-20" />
+              <div className="w-8 sm:w-20" />
               <a
                 href="https://t.me/pol9kov"
                 target="_blank"
