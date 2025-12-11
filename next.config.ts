@@ -42,6 +42,11 @@ const nextConfig: NextConfig = {
         destination: "/ru?utm_source=freelancer&utm_medium=job_board&utm_campaign=resume",
         permanent: false,
       },
+      {
+        source: "/go/demo",
+        destination: "https://nani-demo.vercel.app/",
+        permanent: false,
+      },
     ];
   },
 };

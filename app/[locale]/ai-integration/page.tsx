@@ -32,6 +32,14 @@ export default async function AIIntegrationPage({ params }: AIIntegrationPagePro
             <p className="text-xl text-gray-600 dark:text-gray-300">
               {t("subtitle")}
             </p>
+            <a
+              href="https://nani-demo.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-block rounded-lg bg-blue-600 px-6 py-3 text-lg font-medium text-white transition-colors hover:bg-blue-700"
+            >
+              {t("tryDemo")}
+            </a>
           </div>
 
           <div className="space-y-16">
