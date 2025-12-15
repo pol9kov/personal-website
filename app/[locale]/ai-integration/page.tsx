@@ -33,7 +33,7 @@ export default async function AIIntegrationPage({ params }: AIIntegrationPagePro
               {t("subtitle")}
             </p>
             <a
-              href="https://nani-demo.vercel.app/"
+              href="https://imperiaos.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-6 inline-block rounded-lg bg-blue-600 px-6 py-3 text-lg font-medium text-white transition-colors hover:bg-blue-700"

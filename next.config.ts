@@ -44,7 +44,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/go/demo",
-        destination: "https://nani-demo.vercel.app/",
+        destination: "https://imperiaos.com/",
         permanent: false,
       },
     ];
