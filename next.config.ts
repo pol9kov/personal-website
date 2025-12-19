@@ -44,7 +44,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/go/demo",
-        destination: "https://www.imperiaos.com/",
+        destination: "https://imperiaos.com/",
         permanent: false,
       },
     ];
