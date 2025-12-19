@@ -5,7 +5,7 @@ import { getTranslations } from "next-intl/server";
 export const metadata: Metadata = {
   title: "AI Integration | Egor Polyakov",
   description:
-    "We integrate AI into your processes in days, not months. No building from scratch. No consulting cycles.",
+    "We automate your business tasks with AI. No building from scratch. Results in days.",
 };
 
 interface AIIntegrationPageProps {
@@ -33,7 +33,7 @@ export default async function AIIntegrationPage({ params }: AIIntegrationPagePro
               {t("subtitle")}
             </p>
             <a
-              href="https://imperiaos.com/"
+              href="https://www.imperiaos.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-6 inline-block rounded-lg bg-blue-600 px-6 py-3 text-lg font-medium text-white transition-colors hover:bg-blue-700"
