@@ -77,16 +77,16 @@
     "download": "Download Resume (PDF)"
   },
   "aiIntegration": {
-    "title": "We automate your business tasks with AI",
-    "subtitle": "Results in days, not months. No building from scratch.",
+    "title": "We automate your business processes with AI in 24-72 hours",
+    "subtitle": "Custom solution for your specific task. Not a platform, but code written exactly for your process.",
     "tryDemo": "Try Demo",
     "problem": {
       "title": "Problem",
-      "text": "AI implementation usually turns into a long cycle: hiring specialists, choosing models, infrastructure, approvals. First results come in 3-6 months."
+      "text": "Generic platforms don't fit specific processes. Consulting writes from scratch for months. There's a gap between them."
     },
     "solution": {
       "title": "Solution",
-      "text": "We connect AI directly to your systems: CRM, chatbot, website, internal services. No building from scratch. No consulting cycles. Results in the first days."
+      "text": "I write code precisely for your process, but use ready-made AI components (models, vector databases, agents). That's why it's fast - pilot in 24-72 hours, not months."
     },
     "tasksTitle": "What tasks we solve",
     "tasks": [
@@ -100,14 +100,14 @@
       "note": "Where models are hosted - cloud or your servers - you decide."
     },
     "steps": [
-      "You describe the task",
-      "We connect to your systems",
-      "You see a working result"
+      "You describe the process (or talk to nAnI - AI that gathers requirements)",
+      "I write automation for your task in 24-72 hours",
+      "You test the pilot, I refine it to production in 2 weeks"
     ],
     "whyNotConsulting": {
-      "title": "How we differ from consulting",
-      "problem": "Consulting writes custom code for months. Result - custom integration that's hard to maintain.",
-      "solution": "We connect a ready-made service, proven on typical tasks. Faster, more predictable, no technical debt."
+      "title": "Why faster than consulting",
+      "problem": "Consulting writes everything from scratch: business logic, AI layer, and integrations. Months of work.",
+      "solution": "I use ready-made AI components (OpenAI, Neo4j, vector search), but write business logic specifically for your process. Faster + precisely for your task."
     }
   },
   "caseStudies": {

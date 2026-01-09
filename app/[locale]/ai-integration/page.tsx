@@ -5,7 +5,7 @@ import { getTranslations } from "next-intl/server";
 export const metadata: Metadata = {
   title: "AI Integration | Egor Polyakov",
   description:
-    "We automate your business tasks with AI. No building from scratch. Results in days.",
+    "Custom AI automation for your business processes in 24-72 hours. Not a platform, but code written exactly for your process.",
 };
 
 interface AIIntegrationPageProps {
