@@ -78,8 +78,8 @@
   },
   "aiIntegration": {
     "title": "We automate your business processes with AI in 24-72 hours",
-    "subtitle": "Custom solution for your specific task. Not a platform, but code written exactly for your process.",
-    "tryDemo": "Try Demo",
+    "subtitle": "Custom solution for your specific task.",
+    "tryDemo": "Visit Site",
     "problem": {
       "title": "Problem",
       "text": "Generic platforms don't fit specific processes. Consulting writes from scratch for months. There's a gap between them."
