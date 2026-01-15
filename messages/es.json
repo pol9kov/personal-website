@@ -1,0 +1,193 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "about": "Sobre Mi",
+    "aiIntegration": "Integracion IA",
+    "caseStudies": "Casos de Estudio",
+    "resume": "Curriculum",
+    "siteName": "Egor Polyakov"
+  },
+  "hero": {
+    "name": "Egor Polyakov",
+    "subtitle": "Ingeniero de software con mas de 10 anos de experiencia. Construyo sistemas confiables y convierto la complejidad en arquitectura clara.",
+    "tags": "Backend · Arquitectura · Integracion IA",
+    "viewProjects": "Ver Proyectos",
+    "contactMe": "Contactar"
+  },
+  "skills": {
+    "title": "Habilidades y Tecnologias",
+    "subtitle": "Tecnologias y herramientas con las que trabajo",
+    "categories": {
+      "languages": "Lenguajes Principales",
+      "frameworks": "Arquitectura y Plataformas",
+      "databases": "Bases de Datos",
+      "devops": "Infraestructura y Herramientas",
+      "other": "Otros"
+    }
+  },
+  "footer": {
+    "contact": "Contactos",
+    "email": "Correo"
+  },
+  "common": {
+    "toggleTheme": "Cambiar tema",
+    "toggleMenu": "Cambiar menu"
+  },
+  "about": {
+    "title": "Sobre Mi",
+    "subtitle": "Ingeniero backend con mas de 10 anos de experiencia y solida formacion matematica. Construyo sistemas que manejan la complejidad manteniendose comprensibles.",
+    "whoIAm": {
+      "title": "Quien Soy",
+      "p1": "Graduado de LNMO en San Petersburgo, explore mas de una docena de lenguajes de programacion y obtuve premios en ICYS y Baltic Science and Engineering Competition.",
+      "p2": "A lo largo de los anos, progrese desde sistemas EAV dinamicos hasta microservicios Go nativos en la nube e integraciones de IA."
+    },
+    "approach": {
+      "title": "Mi Enfoque",
+      "p1": "Trabajo paso a paso, sin prisas. Priorizo la responsabilidad sobre el control: no puedes anticipar todo, pero puedes hacerte cargo de la calidad de tus decisiones.",
+      "p2": "Prefiero arquitecturas practicas que funcionan hoy y permanecen flexibles manana."
+    },
+    "currentFocus": {
+      "title": "Enfoque Actual",
+      "p1": "Profundizando experiencia en Go e infraestructura de IA.",
+      "p2": "Interesado en sistemas que necesitan ser robustos y adaptables: microservicios, esquemas de datos dinamicos, APIs amigables para desarrolladores y capas de IA sobre productos existentes."
+    },
+    "values": {
+      "title": "Valores",
+      "continuousLearning": {
+        "title": "Aprendizaje Continuo",
+        "text": "Cada proyecto proporciona nuevas herramientas de pensamiento."
+      },
+      "curiosity": {
+        "title": "Curiosidad",
+        "text": "Busco causas raiz, no solo trato sintomas."
+      },
+      "progress": {
+        "title": "Progreso Sobre Perfeccion",
+        "text": "Pasos sostenibles superan soluciones rapidas."
+      },
+      "trust": {
+        "title": "Confianza",
+        "text": "Comunicacion honesta y confiabilidad."
+      }
+    }
+  },
+  "resume": {
+    "title": "Curriculum",
+    "subtitle": "Descarga mi curriculum profesional en formato PDF",
+    "download": "Descargar Curriculum (PDF)"
+  },
+  "aiIntegration": {
+    "title": "Automatizamos tus procesos de negocio con IA en 24-72 horas",
+    "subtitle": "Solucion personalizada para tu tarea especifica.",
+    "tryDemo": "Visitar Sitio",
+    "problem": {
+      "title": "Problema",
+      "text": "Las plataformas genericas no se ajustan a procesos especificos. La consultoria escribe desde cero durante meses. Hay una brecha entre ellos."
+    },
+    "solution": {
+      "title": "Solucion",
+      "text": "Escribo codigo precisamente para tu proceso, pero uso componentes de IA listos (modelos, bases de datos vectoriales, agentes). Por eso es rapido - piloto en 24-72 horas, no meses."
+    },
+    "tasksTitle": "Que tareas resolvemos",
+    "tasks": [
+      "Respuestas automaticas en soporte basadas en tu base de conocimientos",
+      "Asistente para gerentes: historial de cliente, documentos, siguiente accion",
+      "Procesamiento y enrutamiento de solicitudes entrantes",
+      "Extraccion de datos de documentos"
+    ],
+    "howWeWork": {
+      "title": "Como trabajamos",
+      "note": "Donde se alojan los modelos - nube o tus servidores - tu decides."
+    },
+    "steps": [
+      "Describes el proceso (o hablas con nAnI - IA que recopila requisitos)",
+      "Escribo la automatizacion para tu tarea en 24-72 horas",
+      "Pruebas el piloto, lo refino a produccion en 2 semanas"
+    ],
+    "whyNotConsulting": {
+      "title": "Por que mas rapido que consultoria",
+      "problem": "La consultoria escribe todo desde cero: logica de negocio, capa de IA e integraciones. Meses de trabajo.",
+      "solution": "Uso componentes de IA listos (OpenAI, Neo4j, busqueda vectorial), pero escribo la logica de negocio especificamente para tu proceso. Mas rapido + precisamente para tu tarea."
+    }
+  },
+  "caseStudies": {
+    "title": "Casos de Estudio",
+    "subtitle": "Inmersiones profundas en soluciones tecnicas y decisiones arquitectonicas",
+    "problem": "Problema",
+    "solution": "Solucion",
+    "technicalDetails": "Detalles Tecnicos",
+    "results": "Resultados",
+    "lessonsLearned": "Lecciones Aprendidas",
+    "backToList": "Volver a Casos de Estudio",
+    "viewSource": "Ver Codigo Fuente",
+    "architectureDiagrams": "Diagramas de Arquitectura",
+    "items": {
+      "ai-infrastructure": {
+        "title": "Integracion de IA en CRM para Automatizacion de Soporte",
+        "description": "Conexion de LLM a CRM de empresa para respuestas automaticas basadas en base de conocimientos interna.",
+        "problem": "El equipo de soporte pasaba tiempo significativo procesando solicitudes repetitivas. Los operadores buscaban informacion manualmente en la base de conocimientos, aumentando el tiempo de respuesta.",
+        "solution": "Integre capa de IA con CRM: el sistema analiza mensajes entrantes, encuentra materiales relevantes y genera respuestas basadas en la base de conocimientos corporativa. Las solicitudes no estandar se entregan automaticamente a un operador.",
+        "technicalDetails": [
+          "Integracion via REST API",
+          "Capa RAG para recuperacion de datos relevantes",
+          "Procesamiento de IA en capa API de Next.js"
+        ],
+        "results": [
+          "Tiempo de respuesta reducido de minutos a segundos",
+          "Carga de operadores disminuida en mas del 40%",
+          "Calidad de respuesta comparable a empleado experimentado",
+          "Sistema opera 24/7"
+        ],
+        "lessonsLearned": [
+          "IA maneja efectivamente solicitudes tipicas",
+          "Fallback a humano es obligatorio para casos limite",
+          "Calidad de base de conocimientos afecta directamente la precision"
+        ]
+      },
+      "mobile-platform": {
+        "title": "Plataforma Movil Multiplataforma",
+        "description": "Plataforma movil escalable en Flutter y AWS con arquitectura limpia e infraestructura automatizada.",
+        "problem": "Se necesitaba una base para un producto multiplataforma con backend confiable y despliegue automatizado. Los enfoques tipicos llevaban a arquitectura fragmentada.",
+        "solution": "Implemente Clean Architecture con estructura basada en Features en Flutter. Backend - serverless en AWS (Lambda en Golang). Infraestructura definida en CDK y se despliega automaticamente.",
+        "technicalDetails": [
+          "Clean Architecture + estructura basada en Features",
+          "Backend serverless en AWS (Lambda, DynamoDB, Cognito)",
+          "Infraestructura como Codigo (AWS CDK)"
+        ],
+        "results": [
+          "Base arquitectonica e infraestructural implementada",
+          "Despliegue completamente automatizado",
+          "Estructura modular simplifica desarrollo futuro",
+          "Backend en estado listo para produccion"
+        ],
+        "lessonsLearned": [
+          "Clean Architecture vale la pena en proyectos grandes",
+          "Infraestructura como Codigo es critica para reproducibilidad",
+          "Serverless reduce sobrecarga operacional"
+        ]
+      },
+      "website-builder": {
+        "title": "Plataforma de Constructor de Sitios Web Dinamicos",
+        "description": "Sistema de constructor de sitios web flexible con esquema de datos dinamico y soporte multi-tenancy.",
+        "problem": "Se necesitaba un constructor donde usuarios puedan crear tipos de entidades y campos arbitrarios sin migraciones de BD. Ademas aislamiento de datos entre clientes.",
+        "solution": "Implemente patron EAV (Entity-Attribute-Value) con multi-tenancy a nivel de base de datos. Los usuarios crean sus entidades y campos a traves de la interfaz, los datos se almacenan en estructura universal y extensible.",
+        "technicalDetails": [
+          "Patron EAV para esquema dinamico sin migraciones",
+          "Multi-tenancy con bases de datos aisladas por cliente",
+          "Almacenamiento type-safe de diferentes tipos de datos"
+        ],
+        "results": [
+          "Usuarios crean entidades sin intervencion de desarrollador",
+          "Aislamiento completo de datos entre clientes",
+          "Cero tiempo de inactividad para cambios de esquema",
+          "Sistema se adapta a diferentes dominios de negocio"
+        ],
+        "lessonsLearned": [
+          "EAV proporciona maxima flexibilidad pero requiere optimizacion de consultas",
+          "Multi-tenancy a nivel BD es el aislamiento mas confiable",
+          "Almacenamiento type-safe previene corrupcion de datos"
+        ]
+      }
+    }
+  }
+}
