@@ -6,6 +6,7 @@ import { useTranslations, useLocale } from "next-intl";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { cn } from "@/lib/utils/cn";
 import { type Locale } from "@/i18n/routing";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 /**
  * Header component props
@@ -131,14 +132,12 @@ export function Header({ className }: HeaderProps) {
             </button>
           )}
 
-          {/* Language switcher - minimal text style */}
+          {/* Language switcher with flags */}
           {mounted && (
-            <button
-              onClick={() => switchLocale(locale === "en" ? "ru" : "en")}
-              className="text-sm text-gray-500 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-            >
-              {locale === "en" ? "Русский" : "English"}
-            </button>
+            <LanguageSwitcher
+              currentLocale={locale as Locale}
+              onLocaleChange={switchLocale}
+            />
           )}
 
           {/* Mobile menu button - visible only on mobile */}
