@@ -28,11 +28,18 @@ export function LanguageSwitcher({
   };
 
   return (
-    <div className="relative flex items-center">
+    <div className="relative flex items-center h-9">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="p-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors text-neutral-600 dark:text-neutral-400 flex items-center justify-center"
+        className="h-9 w-9 rounded-lg transition-colors flex items-center justify-center"
+        style={{ color: 'var(--nav-text)' }}
         title={currentLocaleData?.label}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.backgroundColor = 'var(--button-hover-bg)';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.backgroundColor = 'transparent';
+        }}
       >
         <span className="w-5 h-5 flex items-center justify-center text-base leading-none">{currentLocaleData?.flag}</span>
       </button>
@@ -44,8 +51,8 @@ export function LanguageSwitcher({
             onClick={() => setIsOpen(false)}
           />
           <div
-            className="absolute right-0 top-full mt-1 w-36 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg z-50 overflow-hidden"
-            style={{ backgroundColor: 'var(--dropdown-bg)' }}
+            className="absolute right-0 top-full mt-1 w-36 border rounded-lg shadow-lg z-50 overflow-hidden"
+            style={{ backgroundColor: 'var(--dropdown-bg)', borderColor: 'var(--border-color)' }}
           >
             {locales.map((locale) => (
               <button

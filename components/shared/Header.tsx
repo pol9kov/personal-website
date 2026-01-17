@@ -28,13 +28,6 @@ export function Header() {
     { href: "/resume", label: t("resume") },
   ];
 
-  // Get current page title (skip home)
-  const getCurrentPageTitle = () => {
-    if (pathname === "/") return null;
-    const currentItem = navItems.find((item) => pathname === item.href);
-    return currentItem?.label;
-  };
-
   const switchLocale = (newLocale: Locale) => {
     document.cookie = `NEXT_LOCALE=${newLocale};path=/;max-age=31536000`;
     startTransition(() => {
@@ -42,13 +35,11 @@ export function Header() {
     });
   };
 
-  const pageTitle = getCurrentPageTitle();
-
   if (!mounted) {
     return (
       <header
-        className="sticky top-0 z-50 h-12 border-b border-neutral-200 dark:border-neutral-800 flex items-center px-4"
-        style={{ backgroundColor: 'var(--background)' }}
+        className="sticky top-0 z-50 h-12 border-b flex items-center px-4"
+        style={{ backgroundColor: 'var(--background)', borderColor: 'var(--border-color)' }}
       >
         <span className="text-lg font-semibold">{t("siteName")}</span>
       </header>
@@ -58,10 +49,10 @@ export function Header() {
   return (
     <>
       <header
-        className="sticky top-0 z-50 h-12 border-b border-neutral-200 dark:border-neutral-800 flex items-center px-3 md:px-4 justify-between"
-        style={{ backgroundColor: 'var(--background)' }}
+        className="sticky top-0 z-50 h-12 border-b flex items-center px-3 md:px-4 justify-between"
+        style={{ backgroundColor: 'var(--background)', borderColor: 'var(--border-color)' }}
       >
-        {/* Left: Logo + current page */}
+        {/* Left: Logo */}
         <div className="flex items-center gap-2 md:gap-3 min-w-0">
           <Link
             href="/"
@@ -70,14 +61,6 @@ export function Header() {
             <span className="text-lg font-semibold hidden sm:block">{t("siteName")}</span>
             <span className="text-base font-semibold sm:hidden">EP</span>
           </Link>
-          {pageTitle && (
-            <>
-              <span className="text-neutral-300 dark:text-neutral-600">/</span>
-              <span className="text-sm font-medium text-neutral-600 dark:text-neutral-400 truncate">
-                {pageTitle}
-              </span>
-            </>
-          )}
         </div>
 
         {/* Right: Nav + Language + Theme */}
@@ -88,11 +71,20 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-sm font-medium transition-colors ${
-                  pathname === item.href
-                    ? "text-purple-600 dark:text-purple-400"
-                    : "text-neutral-600 dark:text-neutral-400 hover:text-purple-600 dark:hover:text-purple-400"
-                }`}
+                className="text-sm font-medium transition-colors"
+                style={{
+                  color: pathname === item.href ? 'var(--nav-active-text)' : 'var(--nav-text)',
+                }}
+                onMouseEnter={(e) => {
+                  if (pathname !== item.href) {
+                    e.currentTarget.style.color = 'var(--nav-hover-text)';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (pathname !== item.href) {
+                    e.currentTarget.style.color = 'var(--nav-text)';
+                  }
+                }}
               >
                 {item.label}
               </Link>
@@ -109,7 +101,14 @@ export function Header() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+            className="md:hidden p-2 rounded-lg transition-colors"
+            style={{ color: 'var(--nav-text)' }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = 'var(--button-hover-bg)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'transparent';
+            }}
           >
             {isMenuOpen ? (
               <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -127,8 +126,8 @@ export function Header() {
       {/* Mobile menu */}
       {isMenuOpen && (
         <div
-          className="md:hidden border-b border-neutral-200 dark:border-neutral-800 px-4 py-3"
-          style={{ backgroundColor: 'var(--background)' }}
+          className="md:hidden border-b px-4 py-3"
+          style={{ backgroundColor: 'var(--background)', borderColor: 'var(--border-color)' }}
         >
           <nav className="flex flex-col gap-3">
             {navItems.map((item) => (
@@ -136,11 +135,20 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
-                className={`text-base font-medium transition-colors ${
-                  pathname === item.href
-                    ? "text-purple-600 dark:text-purple-400"
-                    : "text-neutral-700 dark:text-neutral-300 hover:text-purple-600 dark:hover:text-purple-400"
-                }`}
+                className="text-base font-medium transition-colors"
+                style={{
+                  color: pathname === item.href ? 'var(--nav-active-text)' : 'var(--nav-text)',
+                }}
+                onMouseEnter={(e) => {
+                  if (pathname !== item.href) {
+                    e.currentTarget.style.color = 'var(--nav-hover-text)';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (pathname !== item.href) {
+                    e.currentTarget.style.color = 'var(--nav-text)';
+                  }
+                }}
               >
                 {item.label}
               </Link>

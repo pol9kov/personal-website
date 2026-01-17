@@ -22,8 +22,8 @@ export function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <div className="relative flex items-center">
-        <button className="p-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors flex items-center justify-center">
+      <div className="relative flex items-center h-9">
+        <button className="h-9 w-9 rounded-lg transition-colors flex items-center justify-center">
           <div className="w-5 h-5" />
         </button>
       </div>
@@ -90,10 +90,17 @@ export function ThemeToggle() {
   };
 
   return (
-    <div className="relative flex items-center">
+    <div className="relative flex items-center h-9">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="p-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors text-neutral-600 dark:text-neutral-400 flex items-center justify-center"
+        className="h-9 w-9 rounded-lg transition-colors flex items-center justify-center"
+        style={{ color: 'var(--nav-text)' }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.backgroundColor = 'var(--button-hover-bg)';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.backgroundColor = 'transparent';
+        }}
       >
         {currentIcon}
       </button>
@@ -102,8 +109,8 @@ export function ThemeToggle() {
         <>
           <div className="fixed inset-0 z-40" onClick={() => setIsOpen(false)} />
           <div
-            className="absolute right-0 top-full mt-1 w-36 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg z-50 overflow-hidden"
-            style={{ backgroundColor: 'var(--dropdown-bg)' }}
+            className="absolute right-0 top-full mt-1 w-36 border rounded-lg shadow-lg z-50 overflow-hidden"
+            style={{ backgroundColor: 'var(--dropdown-bg)', borderColor: 'var(--border-color)' }}
           >
             {themes.map((t) => (
               <button
