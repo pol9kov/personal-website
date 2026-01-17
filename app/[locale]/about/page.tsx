@@ -55,17 +55,6 @@ export default async function AboutPage({ params }: AboutPageProps) {
               </div>
             </section>
 
-            {/* Current Focus */}
-            <section>
-              <h2 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
-                {t("currentFocus.title")}
-              </h2>
-              <div className="space-y-4 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-                <p>{t("currentFocus.p1")}</p>
-                <p>{t("currentFocus.p2")}</p>
-              </div>
-            </section>
-
             {/* Values */}
             <section className="rounded-2xl bg-gradient-to-br from-blue-50 to-purple-50 p-8 dark:from-blue-950/30 dark:to-purple-950/30">
               <h2 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white">

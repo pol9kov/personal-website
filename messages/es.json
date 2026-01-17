@@ -43,13 +43,12 @@
     },
     "approach": {
       "title": "Mi Enfoque",
-      "p1": "Trabajo paso a paso, sin prisas. Priorizo la responsabilidad sobre el control: no puedes anticipar todo, pero puedes hacerte cargo de la calidad de tus decisiones.",
+      "p1": "Mientras otros optimizan la elegancia técnica, yo optimizo las ganancias del negocio.",
       "p2": "Prefiero arquitecturas practicas que funcionan hoy y permanecen flexibles manana."
     },
     "currentFocus": {
       "title": "Enfoque Actual",
-      "p1": "Profundizando experiencia en Go e infraestructura de IA.",
-      "p2": "Interesado en sistemas que necesitan ser robustos y adaptables: microservicios, esquemas de datos dinamicos, APIs amigables para desarrolladores y capas de IA sobre productos existentes."
+      "p1": "Interesado en sistemas que necesitan ser robustos y adaptables: microservicios, esquemas de datos dinamicos, APIs amigables para desarrolladores y capas de IA sobre productos existentes."
     },
     "values": {
       "title": "Valores",

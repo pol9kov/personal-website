@@ -43,13 +43,12 @@
     },
     "approach": {
       "title": "My Approach",
-      "p1": "Working step by step, without rushing. Prioritizing responsibility over control: you can't anticipate everything, but you can own the quality of your decisions.",
+      "p1": "While others optimize for technical elegance, I optimize for business profit.",
       "p2": "Preferring practical architectures that work today and remain flexible tomorrow."
     },
     "currentFocus": {
       "title": "Current Focus",
-      "p1": "Deepening expertise in Go and AI infrastructure.",
-      "p2": "Interested in systems that need to be both robust and adaptable: microservices, dynamic data schemas, developer-friendly APIs, and AI layers on top of existing products."
+      "p1": "Interested in systems that need to be both robust and adaptable: microservices, dynamic data schemas, developer-friendly APIs, and AI layers on top of existing products."
     },
     "values": {
       "title": "Values",
