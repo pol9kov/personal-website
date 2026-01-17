@@ -21,14 +21,16 @@ export function Header() {
   }, []);
 
   const navItems = [
+    { href: "/", label: t("home") },
     { href: "/about", label: t("about") },
     { href: "/ai-integration", label: t("aiIntegration") },
     { href: "/case-studies", label: t("caseStudies") },
     { href: "/resume", label: t("resume") },
   ];
 
-  // Get current page title
+  // Get current page title (skip home)
   const getCurrentPageTitle = () => {
+    if (pathname === "/") return null;
     const currentItem = navItems.find((item) => pathname === item.href);
     return currentItem?.label;
   };
