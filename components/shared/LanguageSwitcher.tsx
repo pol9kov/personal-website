@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { type Locale } from "@/i18n/routing";
 
 const locales: { value: Locale; label: string; flag: string }[] = [
@@ -19,8 +19,20 @@ export function LanguageSwitcher({
   onLocaleChange,
 }: LanguageSwitcherProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const [dropdownPosition, setDropdownPosition] = useState({ top: 0, right: 0 });
 
   const currentLocaleData = locales.find((l) => l.value === currentLocale);
+
+  useEffect(() => {
+    if (isOpen && buttonRef.current) {
+      const rect = buttonRef.current.getBoundingClientRect();
+      setDropdownPosition({
+        top: rect.bottom + 8,
+        right: window.innerWidth - rect.right,
+      });
+    }
+  }, [isOpen]);
 
   const handleLocaleChange = (locale: Locale) => {
     onLocaleChange(locale);
@@ -28,8 +40,9 @@ export function LanguageSwitcher({
   };
 
   return (
-    <div className="relative">
+    <>
       <button
+        ref={buttonRef}
         onClick={() => setIsOpen(!isOpen)}
         className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-600 dark:text-gray-400"
         title={currentLocaleData?.label}
@@ -40,10 +53,13 @@ export function LanguageSwitcher({
       {isOpen && (
         <>
           <div
-            className="fixed inset-0 z-40"
+            className="fixed inset-0 z-[60]"
             onClick={() => setIsOpen(false)}
           />
-          <div className="absolute right-0 top-full mt-2 w-36 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg z-[60] overflow-hidden">
+          <div
+            className="fixed w-36 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg z-[70] overflow-hidden"
+            style={{ top: dropdownPosition.top, right: dropdownPosition.right }}
+          >
             {locales.map((locale) => (
               <button
                 key={locale.value}
@@ -76,6 +92,6 @@ export function LanguageSwitcher({
           </div>
         </>
       )}
-    </div>
+    </>
   );
 }
