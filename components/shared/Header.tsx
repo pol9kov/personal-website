@@ -47,7 +47,7 @@ export function Header() {
   if (!mounted) {
     return (
       <header className="sticky top-0 z-50 h-12 border-b border-gray-200 dark:border-gray-800 flex items-center px-4 bg-white/100 dark:bg-gray-900/100">
-        <span className="text-lg font-semibold">{t("siteName")}</span>
+        <span className="text-lg font-semibold text-gray-900 dark:text-white">{t("siteName")}</span>
       </header>
     );
   }
@@ -61,8 +61,8 @@ export function Header() {
             href="/"
             className="hover:opacity-80 transition-opacity flex items-center gap-2 shrink-0"
           >
-            <span className="text-lg font-semibold hidden sm:block">{t("siteName")}</span>
-            <span className="text-base font-semibold sm:hidden">EP</span>
+            <span className="text-lg font-semibold text-gray-900 dark:text-white hidden sm:block">{t("siteName")}</span>
+            <span className="text-base font-semibold text-gray-900 dark:text-white sm:hidden">EP</span>
           </Link>
           {pageTitle && (
             <>
