@@ -46,7 +46,7 @@ export function Header() {
 
   if (!mounted) {
     return (
-      <header className="sticky top-0 z-50 h-12 border-b border-gray-200 dark:border-gray-800 flex items-center px-4 bg-white dark:bg-gray-900">
+      <header className="sticky top-0 z-50 h-12 border-b border-gray-200 dark:border-gray-800 flex items-center px-4 bg-white/100 dark:bg-gray-900/100">
         <span className="text-lg font-semibold">{t("siteName")}</span>
       </header>
     );
@@ -54,7 +54,7 @@ export function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 h-12 border-b border-gray-200 dark:border-gray-800 flex items-center px-3 md:px-4 justify-between bg-white dark:bg-gray-900">
+      <header className="sticky top-0 z-50 h-12 border-b border-gray-200 dark:border-gray-800 flex items-center px-3 md:px-4 justify-between bg-white/100 dark:bg-gray-900/100">
         {/* Left: Logo + current page */}
         <div className="flex items-center gap-2 md:gap-3 min-w-0">
           <Link
@@ -120,7 +120,7 @@ export function Header() {
 
       {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="md:hidden border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 px-4 py-3">
+        <div className="md:hidden border-b border-gray-200 dark:border-gray-800 bg-white/100 dark:bg-gray-900/100 px-4 py-3">
           <nav className="flex flex-col gap-3">
             {navItems.map((item) => (
               <Link
