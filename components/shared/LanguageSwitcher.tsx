@@ -31,10 +31,10 @@ export function LanguageSwitcher({
     <div className="relative flex items-center">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-600 dark:text-gray-400 flex items-center justify-center"
+        className="p-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors text-neutral-600 dark:text-neutral-400 flex items-center justify-center"
         title={currentLocaleData?.label}
       >
-        <span className="text-base leading-none">{currentLocaleData?.flag}</span>
+        <span className="w-5 h-5 flex items-center justify-center text-base leading-none">{currentLocaleData?.flag}</span>
       </button>
 
       {isOpen && (
@@ -43,16 +43,29 @@ export function LanguageSwitcher({
             className="fixed inset-0 z-40"
             onClick={() => setIsOpen(false)}
           />
-          <div className="absolute right-0 top-full mt-1 w-36 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg z-50 overflow-hidden">
+          <div
+            className="absolute right-0 top-full mt-1 w-36 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg z-50 overflow-hidden"
+            style={{ backgroundColor: 'var(--dropdown-bg)' }}
+          >
             {locales.map((locale) => (
               <button
                 key={locale.value}
                 onClick={() => handleLocaleChange(locale.value)}
-                className={`w-full flex items-center gap-2 px-3 py-2 text-sm transition-colors ${
-                  currentLocale === locale.value
-                    ? "bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300"
-                    : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
-                }`}
+                className="w-full flex items-center gap-2 px-3 py-2 text-sm transition-colors"
+                style={{
+                  backgroundColor: currentLocale === locale.value ? 'var(--dropdown-selected-bg)' : 'transparent',
+                  color: currentLocale === locale.value ? 'var(--dropdown-selected-text)' : 'var(--dropdown-text)',
+                }}
+                onMouseEnter={(e) => {
+                  if (currentLocale !== locale.value) {
+                    e.currentTarget.style.backgroundColor = 'var(--dropdown-hover-bg)';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (currentLocale !== locale.value) {
+                    e.currentTarget.style.backgroundColor = 'transparent';
+                  }
+                }}
               >
                 <span>{locale.flag}</span>
                 {locale.label}

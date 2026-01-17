@@ -47,10 +47,10 @@ export function Header() {
   if (!mounted) {
     return (
       <header
-        className="sticky top-0 z-50 h-12 border-b border-gray-200 dark:border-gray-800 flex items-center px-4"
+        className="sticky top-0 z-50 h-12 border-b border-neutral-200 dark:border-neutral-800 flex items-center px-4"
         style={{ backgroundColor: 'var(--background)' }}
       >
-        <span className="text-lg font-semibold text-gray-900 dark:text-white">{t("siteName")}</span>
+        <span className="text-lg font-semibold">{t("siteName")}</span>
       </header>
     );
   }
@@ -58,7 +58,7 @@ export function Header() {
   return (
     <>
       <header
-        className="sticky top-0 z-50 h-12 border-b border-gray-200 dark:border-gray-800 flex items-center px-3 md:px-4 justify-between"
+        className="sticky top-0 z-50 h-12 border-b border-neutral-200 dark:border-neutral-800 flex items-center px-3 md:px-4 justify-between"
         style={{ backgroundColor: 'var(--background)' }}
       >
         {/* Left: Logo + current page */}
@@ -67,13 +67,13 @@ export function Header() {
             href="/"
             className="hover:opacity-80 transition-opacity flex items-center gap-2 shrink-0"
           >
-            <span className="text-lg font-semibold text-gray-900 dark:text-white hidden sm:block">{t("siteName")}</span>
-            <span className="text-base font-semibold text-gray-900 dark:text-white sm:hidden">EP</span>
+            <span className="text-lg font-semibold hidden sm:block">{t("siteName")}</span>
+            <span className="text-base font-semibold sm:hidden">EP</span>
           </Link>
           {pageTitle && (
             <>
-              <span className="text-gray-300 dark:text-gray-600">/</span>
-              <span className="text-sm font-medium text-gray-600 dark:text-gray-400 truncate">
+              <span className="text-neutral-300 dark:text-neutral-600">/</span>
+              <span className="text-sm font-medium text-neutral-600 dark:text-neutral-400 truncate">
                 {pageTitle}
               </span>
             </>
@@ -90,8 +90,8 @@ export function Header() {
                 href={item.href}
                 className={`text-sm font-medium transition-colors ${
                   pathname === item.href
-                    ? "text-blue-600 dark:text-blue-400"
-                    : "text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
+                    ? "text-purple-600 dark:text-purple-400"
+                    : "text-neutral-600 dark:text-neutral-400 hover:text-purple-600 dark:hover:text-purple-400"
                 }`}
               >
                 {item.label}
@@ -109,7 +109,7 @@ export function Header() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            className="md:hidden p-2 rounded-lg text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
           >
             {isMenuOpen ? (
               <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -127,7 +127,7 @@ export function Header() {
       {/* Mobile menu */}
       {isMenuOpen && (
         <div
-          className="md:hidden border-b border-gray-200 dark:border-gray-800 px-4 py-3"
+          className="md:hidden border-b border-neutral-200 dark:border-neutral-800 px-4 py-3"
           style={{ backgroundColor: 'var(--background)' }}
         >
           <nav className="flex flex-col gap-3">
@@ -138,8 +138,8 @@ export function Header() {
                 onClick={() => setIsMenuOpen(false)}
                 className={`text-base font-medium transition-colors ${
                   pathname === item.href
-                    ? "text-blue-600 dark:text-blue-400"
-                    : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+                    ? "text-purple-600 dark:text-purple-400"
+                    : "text-neutral-700 dark:text-neutral-300 hover:text-purple-600 dark:hover:text-purple-400"
                 }`}
               >
                 {item.label}

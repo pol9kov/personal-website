@@ -23,7 +23,7 @@ export function ThemeToggle() {
   if (!mounted) {
     return (
       <div className="relative flex items-center">
-        <button className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors flex items-center justify-center">
+        <button className="p-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors flex items-center justify-center">
           <div className="w-5 h-5" />
         </button>
       </div>
@@ -93,7 +93,7 @@ export function ThemeToggle() {
     <div className="relative flex items-center">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-600 dark:text-gray-400 flex items-center justify-center"
+        className="p-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors text-neutral-600 dark:text-neutral-400 flex items-center justify-center"
       >
         {currentIcon}
       </button>
@@ -101,7 +101,10 @@ export function ThemeToggle() {
       {isOpen && (
         <>
           <div className="fixed inset-0 z-40" onClick={() => setIsOpen(false)} />
-          <div className="absolute right-0 top-full mt-1 w-32 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg z-50 overflow-hidden">
+          <div
+            className="absolute right-0 top-full mt-1 w-36 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg z-50 overflow-hidden"
+            style={{ backgroundColor: 'var(--dropdown-bg)' }}
+          >
             {themes.map((t) => (
               <button
                 key={t.value}
@@ -109,11 +112,21 @@ export function ThemeToggle() {
                   setTheme(t.value);
                   setIsOpen(false);
                 }}
-                className={`w-full flex items-center gap-2 px-3 py-2 text-sm transition-colors ${
-                  theme === t.value
-                    ? "bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300"
-                    : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
-                }`}
+                className="w-full flex items-center gap-2 px-3 py-2 text-sm transition-colors"
+                style={{
+                  backgroundColor: theme === t.value ? 'var(--dropdown-selected-bg)' : 'transparent',
+                  color: theme === t.value ? 'var(--dropdown-selected-text)' : 'var(--dropdown-text)',
+                }}
+                onMouseEnter={(e) => {
+                  if (theme !== t.value) {
+                    e.currentTarget.style.backgroundColor = 'var(--dropdown-hover-bg)';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (theme !== t.value) {
+                    e.currentTarget.style.backgroundColor = 'transparent';
+                  }
+                }}
               >
                 {getIcon(t.value)}
                 {t.label}
