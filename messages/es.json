@@ -77,7 +77,7 @@
   },
   "imperiaOs": {
     "title": "Imperia OS",
-    "subtitle": "Plataforma de desarrollo AI-first. En produccion desde 2025.",
+    "subtitle": "Plataforma de desarrollo AI-first.",
     "tryDemo": "Visitar Plataforma",
     "problem": {
       "title": "El Problema",
@@ -136,7 +136,6 @@
           "Monorepo: Next.js + TypeScript + pnpm workspaces"
         ],
         "results": [
-          "En produccion desde 2025",
           "9 servicios en entornos prod/standby/dev",
           "Despliegue sin tiempo de inactividad con pipeline automatizado",
           "Flujo de desarrollo: escenarios de negocio → tests → agentes generan codigo"

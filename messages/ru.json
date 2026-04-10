@@ -77,7 +77,7 @@
   },
   "imperiaOs": {
     "title": "Imperia OS",
-    "subtitle": "AI-first платформа разработки. В продакшене с 2025.",
+    "subtitle": "AI-first платформа разработки.",
     "tryDemo": "Открыть платформу",
     "problem": {
       "title": "Проблема",
@@ -136,7 +136,6 @@
           "Монорепозиторий: Next.js + TypeScript + pnpm workspaces"
         ],
         "results": [
-          "Работает в продакшене с 2025",
           "9 сервисов на prod/standby/dev окружениях",
           "Zero-downtime деплой с автоматизированным pipeline",
           "Процесс разработки: бизнес-сценарии → тесты → агенты генерируют код"

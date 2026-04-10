@@ -77,7 +77,7 @@
   },
   "imperiaOs": {
     "title": "Imperia OS",
-    "subtitle": "AI-first development platform. Shipped and running since 2025.",
+    "subtitle": "AI-first development platform.",
     "tryDemo": "Visit Platform",
     "problem": {
       "title": "The Problem",
@@ -136,7 +136,6 @@
           "Monorepo: Next.js + TypeScript + pnpm workspaces"
         ],
         "results": [
-          "Running in production since 2025",
           "9 services across prod/standby/dev environments",
           "Zero-downtime deployment with automated pipeline",
           "Development flow: business scenarios → tests → agents generate code"
