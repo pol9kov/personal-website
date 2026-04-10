@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 
 export const metadata: Metadata = {
   title: "Imperia OS | Egor Polyakov",
@@ -84,12 +85,12 @@ export default async function ImperiaOSPage({ params }: ImperiaOSPageProps) {
               <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
                 {t("caseStudyTeaser")}
               </p>
-              <a
+              <Link
                 href="/case-studies/imperia-os"
                 className="inline-block rounded-lg bg-blue-600 px-6 py-3 text-lg font-medium text-white transition-colors hover:bg-blue-700"
               >
                 {t("caseStudyLink")}
-              </a>
+              </Link>
             </section>
           </div>
         </div>
