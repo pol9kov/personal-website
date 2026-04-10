@@ -5,7 +5,7 @@ import { getTranslations } from "next-intl/server";
 export const metadata: Metadata = {
   title: "Imperia OS | Egor Polyakov",
   description:
-    "AI-first development platform. State-machine runtime, three knowledge graphs, shipped since 2025.",
+    "AI-first development platform. The algorithm controls the flow, not the LLM.",
 };
 
 interface ImperiaOSPageProps {
@@ -17,7 +17,6 @@ export default async function ImperiaOSPage({ params }: ImperiaOSPageProps) {
   setRequestLocale(locale);
   const t = await getTranslations("imperiaOs");
 
-  const tasks = t.raw("tasks") as string[];
   const steps = t.raw("steps") as string[];
 
   return (
@@ -63,21 +62,6 @@ export default async function ImperiaOSPage({ params }: ImperiaOSPageProps) {
               </p>
             </section>
 
-            {/* Capabilities */}
-            <section>
-              <h2 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
-                {t("tasksTitle")}
-              </h2>
-              <ul className="space-y-3">
-                {tasks.map((task, index) => (
-                  <li key={index} className="flex items-start text-lg text-gray-700 dark:text-gray-300">
-                    <span className="mr-3 text-blue-600 dark:text-blue-400">•</span>
-                    {task}
-                  </li>
-                ))}
-              </ul>
-            </section>
-
             {/* Development Flow */}
             <section>
               <h2 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
@@ -93,20 +77,19 @@ export default async function ImperiaOSPage({ params }: ImperiaOSPageProps) {
                   </li>
                 ))}
               </ol>
-              <p className="mt-6 text-lg text-gray-600 dark:text-gray-400">
-                {t("howWeWork.note")}
-              </p>
             </section>
 
-            {/* Why This Approach */}
-            <section className="rounded-2xl bg-gradient-to-br from-blue-50 to-purple-50 p-8 dark:from-blue-950/30 dark:to-purple-950/30">
-              <h2 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
-                {t("whyNotConsulting.title")}
-              </h2>
-              <div className="space-y-4 text-lg text-gray-700 dark:text-gray-300">
-                <p>{t("whyNotConsulting.problem")}</p>
-                <p>{t("whyNotConsulting.solution")}</p>
-              </div>
+            {/* Case Study Link */}
+            <section className="rounded-2xl bg-gradient-to-br from-blue-50 to-purple-50 p-8 dark:from-blue-950/30 dark:to-purple-950/30 text-center">
+              <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
+                {t("caseStudyTeaser")}
+              </p>
+              <a
+                href="/case-studies/imperia-os"
+                className="inline-block rounded-lg bg-blue-600 px-6 py-3 text-lg font-medium text-white transition-colors hover:bg-blue-700"
+              >
+                {t("caseStudyLink")}
+              </a>
             </section>
           </div>
         </div>

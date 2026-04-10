@@ -15,8 +15,8 @@
     "contactMe": "Contactar"
   },
   "skills": {
-    "title": "Habilidades y Tecnologias",
-    "subtitle": "Tecnologias y herramientas con las que trabajo",
+    "title": "Habilidades y Tecnologías",
+    "subtitle": "Tecnologías y herramientas con las que trabajo",
     "categories": {
       "languages": "Lenguajes Principales",
       "frameworks": "Arquitectura y Plataformas",
@@ -31,43 +31,24 @@
   },
   "common": {
     "toggleTheme": "Cambiar tema",
-    "toggleMenu": "Cambiar menu"
+    "toggleMenu": "Cambiar menú"
   },
   "about": {
     "title": "Sobre Mi",
-    "subtitle": "Solution Architect. Pregunto por qué antes de preguntar cómo.",
+    "subtitle": "Solution Architect. La IA es muy buena en el cómo — yo me enfoco en el por qué.",
     "whoIAm": {
       "title": "Quien Soy",
-      "p1": "Graduado de LNMO en San Petersburgo, explore mas de una docena de lenguajes de programacion y obtuve premios en ICYS y Baltic Science and Engineering Competition.",
-      "p2": "De sistemas EAV dinamicos a microservicios Go nativos en la nube a Imperia OS — una plataforma donde la IA es parte de la arquitectura, no algo añadido por fuera."
+      "p1": "Educación enfocada en matemáticas en San Petersburgo (LNMO), luego un camino a través de sistemas EAV, microservicios Go nativos en la nube e infraestructura blockchain.",
+      "p2": "Ahora construyendo Imperia OS — una plataforma donde la IA es parte de la arquitectura, no algo añadido por fuera."
     },
     "approach": {
       "title": "Como Pienso",
-      "p1": "Pregunto por que antes de preguntar como. La mayoria de los ingenieros optimizan la solucion. Yo primero verifico si el problema esta formulado correctamente.",
-      "p2": "Detecto cuando un concepto se sustituye durante el razonamiento — cuando una etiqueta generica oculta que nada concreto fue construido, o una abstraccion resuelve un problema que no existe."
+      "p1": "Verifico si el problema está formulado correctamente antes de optimizar la solución.",
+      "p2": "Detecto cuando un concepto se sustituye durante el razonamiento — cuando una etiqueta genérica oculta que nada concreto fue construido, o una abstracción resuelve un problema que no existe."
     },
     "currentFocus": {
       "title": "Enfoque Actual",
-      "p1": "Imperia OS — la misma infraestructura construye la plataforma y la entrega a sus usuarios."
-    },
-    "values": {
-      "title": "Valores",
-      "continuousLearning": {
-        "title": "Aprendizaje Continuo",
-        "text": "Cada proyecto proporciona nuevas herramientas de pensamiento."
-      },
-      "curiosity": {
-        "title": "Curiosidad",
-        "text": "Busco causas raiz, no solo trato sintomas."
-      },
-      "progress": {
-        "title": "Progreso Sobre Perfeccion",
-        "text": "Pasos sostenibles superan soluciones rapidas."
-      },
-      "trust": {
-        "title": "Confianza",
-        "text": "Comunicacion honesta y confiabilidad."
-      }
+      "p1": "Imperia OS. Primero los requisitos de negocio, luego tests, luego código — las tres capas se indexan y embeben automáticamente. El dev-agent trabaja con el mismo flujo: entender el problema, investigar la causa raíz, planificar, implementar, verificar, commitear."
     }
   },
   "resume": {
@@ -81,112 +62,103 @@
     "tryDemo": "Visitar Plataforma",
     "problem": {
       "title": "El Problema",
-      "text": "La mayoria de las integraciones de IA le dan al modelo un prompt y esperan lo mejor. Sin memoria entre sesiones, sin disciplina de workflow, sin trazabilidad. Cada interaccion comienza desde cero."
+      "text": "La mayoría de las integraciones de IA le dan al modelo un prompt y esperan lo mejor. Sin disciplina de workflow, sin trazabilidad, sin forma de saber por qué el agente hizo lo que hizo."
     },
     "solution": {
-      "title": "Arquitectura",
-      "text": "Workflows de fases deterministicos donde los agentes siguen criterios de salida, no la intuicion del LLM. Cada fase determina que herramientas puede usar el agente. Pensamientos registrados en cada paso — confianza, observaciones, brechas. Tres bases de datos con propiedad separada: estructura de codigo en Kuzu, memoria de agentes en Kuzu, conocimiento del usuario en MongoDB."
+      "title": "El Enfoque",
+      "text": "El algoritmo controla el flujo, no el LLM. Los agentes siguen fases determinísticas con criterios de salida. Cada fase restringe qué herramientas están disponibles. Cada paso se registra — confianza, observaciones, brechas. El algoritmo no alucina — solo los pasos acotados dentro de él pueden."
     },
-    "tasksTitle": "Que Hace",
-    "tasks": [
-      "Dev-agent de seis fases: understand → research → plan → implement → verify → commit. Cada fase tiene criterios de salida.",
-      "Herramientas por fase — en fase READ solo lectura, en WRITE edicion, en TESTS ejecucion de tests",
-      "Cadena de pensamiento — cada paso registra confianza, observaciones, brechas y sugerencias. Trazabilidad completa.",
-      "Tres bases de datos, tres propietarios: estructura de codigo en Kuzu, memoria de trabajo en Kuzu, bloques de usuario en MongoDB",
-      "Dominio de negocio como arbol OOP en memoria — configuracion de runtime, no YAML"
-    ],
     "howWeWork": {
-      "title": "Flujo de Desarrollo",
-      "note": "La misma infraestructura construye la plataforma y la entrega."
+      "title": "Cómo Funciona",
+      "note": ""
     },
     "steps": [
-      "Escenarios de negocio definidos en el grafo de conocimiento",
-      "Tests verifican escenarios antes de la implementacion",
-      "Agentes leen el grafo, escriben codigo, despliegan — mismo pipeline para todo"
+      "Primero los requisitos de negocio — el spec tree es configuración de runtime",
+      "Tests escritos desde requisitos — verificación antes de implementación",
+      "El dev-agent sigue seis fases: understand → research → plan → implement → verify → commit",
+      "Las tres capas se indexan y embeben — el agente ve qué existe antes de escribir algo nuevo"
     ],
-    "whyNotConsulting": {
-      "title": "Por Que Este Enfoque",
-      "problem": "Las integraciones tipicas de IA dan al modelo control total. El decide que hacer, que herramientas llamar, cuando parar. Sin disciplina, sin trazabilidad.",
-      "solution": "En Imperia OS el algoritmo controla el flujo. El agente debe encontrar la causa raiz y citar file:line antes de implementar. Cada fase limita el acceso a herramientas. Cada pensamiento se registra con score de confianza. El algoritmo no alucina — solo los pasos acotados dentro de el pueden."
-    }
+    "caseStudyTeaser": "Detalles de arquitectura — acceso por fase, cadenas de pensamiento, propiedad de bases de datos — en el caso de estudio.",
+    "caseStudyLink": "Leer Caso de Estudio"
   },
   "caseStudies": {
     "title": "Casos de Estudio",
-    "subtitle": "Inmersiones profundas en soluciones tecnicas y decisiones arquitectonicas",
+    "subtitle": "Inmersiones profundas en soluciones técnicas y decisiones arquitectónicas",
     "problem": "Problema",
-    "solution": "Solucion",
-    "technicalDetails": "Detalles Tecnicos",
+    "solution": "Solución",
+    "technicalDetails": "Detalles Técnicos",
     "results": "Resultados",
     "lessonsLearned": "Lecciones Aprendidas",
     "backToList": "Volver a Casos de Estudio",
-    "viewSource": "Ver Codigo Fuente",
+    "viewSource": "Ver Código Fuente",
     "architectureDiagrams": "Diagramas de Arquitectura",
     "items": {
       "imperia-os": {
         "title": "Imperia OS — Plataforma de Desarrollo AI-First",
-        "description": "Plataforma multi-agente con workflows de fases deterministicos, acceso a herramientas por fase y trazabilidad completa de pensamiento.",
-        "problem": "Dar a un LLM un prompt y esperar lo mejor no escala. Sin disciplina de workflow, sin trazabilidad, sin forma de saber por que un agente hizo lo que hizo.",
-        "solution": "Workflows de fases deterministicos: understand → research → plan → implement → verify → commit. Cada fase tiene criterios de salida y limita que herramientas puede usar el agente. Cada paso registra un pensamiento con confianza, observaciones y brechas. Tres bases de datos con propiedad separada — estructura de codigo, memoria de agentes y conocimiento del usuario.",
+        "description": "Plataforma donde agentes autónomos siguen workflows de fases determinísticos para desarrollar software.",
+        "problem": "Dar a un LLM control total no escala. El modelo decide qué hacer, qué herramientas llamar, cuándo parar. Sin disciplina, sin trazabilidad, sin forma de prevenir que el agente edite código antes de entender el problema.",
+        "solution": "El algoritmo controla el flujo. El dev-agent sigue seis fases: understand → research → plan → implement → verify → commit. Cada fase tiene criterios de salida. Cada fase limita qué herramientas puede usar el agente — en fase READ solo lectura, en WRITE edición, en TESTS ejecución de tests.",
         "technicalDetails": [
           "Routing Case/Process — cada Process verifica un predicado, se ejecuta en orden, el LLM no decide el siguiente paso",
-          "MCP por fase — READ: solo lectura; WRITE: edicion; TESTS: comandos de test; COMMIT: git",
-          "Cadena de pensamiento por sesion — confianza, observaciones, brechas, sugerencias en cada paso",
+          "MCP por fase — READ: solo lectura; WRITE: edición; TESTS: comandos de test; COMMIT: git",
+          "Cadena de pensamiento por sesión — confianza, observaciones, brechas, sugerencias en cada paso",
           "Code graph en Kuzu — archivos, funciones, clases, importaciones desde parser Rust",
-          "Memoria de agentes en Kuzu — sesiones, pensamientos, deduplicacion de mensajes por embedding",
-          "Bloques de usuario en MongoDB — notas, archivos, pensamientos con embeddings vectoriales para busqueda semantica"
+          "Memoria de agentes en Kuzu — sesiones, pensamientos, deduplicación de mensajes por embedding",
+          "Bloques de usuario en MongoDB — notas, archivos, pensamientos con embeddings vectoriales para búsqueda semántica"
         ],
         "results": [
-          "El dev-agent usa la plataforma para desarrollar la plataforma — mismas herramientas, mismo workflow",
-          "Root-cause-first: el agente debe reproducir y citar file:line antes de implementar"
+          "El dev-agent desarrolla la plataforma usando la plataforma misma — mismas herramientas, mismo workflow",
+          "El agente debe reproducir el bug y citar file:line antes de implementar cualquier fix",
+          "Cada decisión del agente es trazable — los pensamientos registran qué se observó, qué faltaba y por qué el agente eligió su enfoque"
         ],
         "lessonsLearned": [
           "Los LLMs se vuelven confiables cuando un algoritmo controla el flujo — el algoritmo no alucina",
-          "Bases separadas superan una unificada — estructura de codigo, memoria de agentes y datos de usuario necesitan esquemas y patrones de consulta diferentes",
-          "Limitar herramientas por fase previene que los agentes editen codigo antes de entender el problema"
+          "Bases separadas superan una unificada — estructura de código, memoria de agentes y datos de usuario necesitan esquemas y patrones de consulta diferentes",
+          "Limitar herramientas por fase previene que los agentes editen código antes de entender el problema"
         ]
       },
       "mobile-platform": {
-        "title": "Plataforma Movil Multiplataforma",
-        "description": "Plataforma movil escalable en Flutter y AWS con arquitectura limpia e infraestructura automatizada.",
-        "problem": "Se necesitaba una base para un producto multiplataforma con backend confiable y despliegue automatizado. Los enfoques tipicos llevaban a arquitectura fragmentada.",
-        "solution": "Implemente Clean Architecture con estructura basada en Features en Flutter. Backend - serverless en AWS (Lambda en Golang). Infraestructura definida en CDK y se despliega automaticamente.",
+        "title": "Plataforma Móvil Multiplataforma",
+        "description": "Plataforma móvil escalable en Flutter y AWS con arquitectura limpia e infraestructura automatizada.",
+        "problem": "Se necesitaba una base para un producto multiplataforma con backend confiable y despliegue automatizado. Los enfoques típicos llevaban a arquitectura fragmentada.",
+        "solution": "Implementé Clean Architecture con estructura basada en Features en Flutter. Backend serverless en AWS (Lambda en Golang). Infraestructura definida en CDK y se despliega automáticamente.",
         "technicalDetails": [
           "Clean Architecture + estructura basada en Features",
           "Backend serverless en AWS (Lambda, DynamoDB, Cognito)",
-          "Infraestructura como Codigo (AWS CDK)"
+          "Infraestructura como Código (AWS CDK)"
         ],
         "results": [
-          "Base arquitectonica e infraestructural implementada",
+          "Base arquitectónica e infraestructural implementada",
           "Despliegue completamente automatizado",
           "Estructura modular simplifica desarrollo futuro",
-          "Backend en estado listo para produccion"
+          "Backend en estado listo para producción"
         ],
         "lessonsLearned": [
           "Clean Architecture vale la pena en proyectos grandes",
-          "Infraestructura como Codigo es critica para reproducibilidad",
+          "Infraestructura como Código es crítica para reproducibilidad",
           "Serverless reduce sobrecarga operacional"
         ]
       },
       "website-builder": {
-        "title": "Plataforma de Constructor de Sitios Web Dinamicos",
-        "description": "Sistema de constructor de sitios web flexible con esquema de datos dinamico y soporte multi-tenancy.",
-        "problem": "Se necesitaba un constructor donde usuarios puedan crear tipos de entidades y campos arbitrarios sin migraciones de BD. Ademas aislamiento de datos entre clientes.",
-        "solution": "Implemente patron EAV (Entity-Attribute-Value) con multi-tenancy a nivel de base de datos. Los usuarios crean sus entidades y campos a traves de la interfaz, los datos se almacenan en estructura universal y extensible.",
+        "title": "Plataforma de Constructor de Sitios Web Dinámicos",
+        "description": "Sistema flexible de constructor de sitios web con esquema de datos dinámico y soporte multi-tenancy.",
+        "problem": "Se necesitaba un constructor donde los usuarios puedan crear tipos de entidad y campos arbitrarios sin migraciones de BD. Más aislamiento de datos entre clientes.",
+        "solution": "Implementé patrón EAV (Entity-Attribute-Value) con multi-tenancy a nivel de base de datos. Los usuarios crean sus entidades y campos a través de la interfaz, los datos se almacenan en una estructura universal y extensible.",
         "technicalDetails": [
-          "Patron EAV para esquema dinamico sin migraciones",
+          "Patrón EAV para esquema dinámico sin migraciones",
           "Multi-tenancy con bases de datos aisladas por cliente",
           "Almacenamiento type-safe de diferentes tipos de datos"
         ],
         "results": [
-          "Usuarios crean entidades sin intervencion de desarrollador",
+          "Los usuarios crean entidades sin intervención de desarrollador",
           "Aislamiento completo de datos entre clientes",
           "Cero tiempo de inactividad para cambios de esquema",
-          "Sistema se adapta a diferentes dominios de negocio"
+          "El sistema se adapta a diferentes dominios de negocio"
         ],
         "lessonsLearned": [
-          "EAV proporciona maxima flexibilidad pero requiere optimizacion de consultas",
-          "Multi-tenancy a nivel BD es el aislamiento mas confiable",
-          "Almacenamiento type-safe previene corrupcion de datos"
+          "EAV funciona bien para datos verdaderamente dinámicos",
+          "Multi-tenancy requiere decisiones de aislamiento tempranas",
+          "La flexibilidad del esquema tiene un costo de complejidad de consulta"
         ]
       }
     }

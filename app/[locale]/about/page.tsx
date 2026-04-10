@@ -5,7 +5,7 @@ import { getTranslations } from "next-intl/server";
 export const metadata: Metadata = {
   title: "About | Egor Polyakov",
   description:
-    "Backend engineer with 10+ years of experience. Building systems that handle complexity while remaining understandable.",
+    "Solution Architect. I ask why before asking how.",
 };
 
 interface AboutPageProps {
@@ -55,37 +55,14 @@ export default async function AboutPage({ params }: AboutPageProps) {
               </div>
             </section>
 
-            {/* Values */}
-            <section className="rounded-2xl bg-gradient-to-br from-blue-50 to-purple-50 p-8 dark:from-blue-950/30 dark:to-purple-950/30">
+            {/* Current Focus */}
+            <section>
               <h2 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
-                {t("values.title")}
+                {t("currentFocus.title")}
               </h2>
-              <ul className="space-y-4 text-lg text-gray-700 dark:text-gray-300">
-                <li>
-                  <strong className="text-gray-900 dark:text-white">
-                    {t("values.continuousLearning.title")}
-                  </strong>{" "}
-                  - {t("values.continuousLearning.text")}
-                </li>
-                <li>
-                  <strong className="text-gray-900 dark:text-white">
-                    {t("values.curiosity.title")}
-                  </strong>{" "}
-                  - {t("values.curiosity.text")}
-                </li>
-                <li>
-                  <strong className="text-gray-900 dark:text-white">
-                    {t("values.progress.title")}
-                  </strong>{" "}
-                  - {t("values.progress.text")}
-                </li>
-                <li>
-                  <strong className="text-gray-900 dark:text-white">
-                    {t("values.trust.title")}
-                  </strong>{" "}
-                  - {t("values.trust.text")}
-                </li>
-              </ul>
+              <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+                {t("currentFocus.p1")}
+              </p>
             </section>
           </div>
         </div>

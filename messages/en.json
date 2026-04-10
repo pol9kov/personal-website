@@ -35,39 +35,20 @@
   },
   "about": {
     "title": "About Me",
-    "subtitle": "Solution Architect. I ask why before asking how.",
+    "subtitle": "Solution Architect. AI is very good at how — I focus on why.",
     "whoIAm": {
       "title": "Who I Am",
-      "p1": "Graduated from LNMO in St. Petersburg, explored over a dozen programming languages, and placed in ICYS and Baltic Science and Engineering Competition.",
-      "p2": "From dynamic EAV systems to cloud-native Go microservices to Imperia OS — a platform where AI is part of the architecture, not bolted on."
+      "p1": "Math-focused education in St. Petersburg (LNMO), then a path through EAV systems, cloud-native Go microservices, and blockchain infrastructure.",
+      "p2": "Now building Imperia OS — a platform where AI is part of the architecture, not bolted on."
     },
     "approach": {
       "title": "How I Think",
-      "p1": "I ask why before asking how. Most engineers optimize the solution. I check whether the problem is stated correctly first.",
-      "p2": "Strong at catching when a concept drifts mid-reasoning — when a generic label hides the fact that nothing concrete was built, or when an abstraction solves a problem that doesn't exist."
+      "p1": "I check whether the problem is stated correctly before optimizing the solution.",
+      "p2": "I catch when a concept drifts mid-reasoning — when a generic label hides that nothing concrete was built, or when an abstraction solves a problem that doesn't exist."
     },
     "currentFocus": {
       "title": "Current Focus",
-      "p1": "Imperia OS — the same infrastructure builds the platform and delivers it to its users."
-    },
-    "values": {
-      "title": "Values",
-      "continuousLearning": {
-        "title": "Continuous Learning",
-        "text": "Every project provides new thinking tools."
-      },
-      "curiosity": {
-        "title": "Curiosity",
-        "text": "Seeking root causes, not just treating symptoms."
-      },
-      "progress": {
-        "title": "Progress Over Perfection",
-        "text": "Sustainable steps beat quick fixes."
-      },
-      "trust": {
-        "title": "Trust",
-        "text": "Honest communication and reliability."
-      }
+      "p1": "Imperia OS. Business requirements come first, then tests, then code — all three are automatically indexed and embedded. The dev-agent works through the same flow: understand the problem, research root cause, plan, implement, verify, commit."
     }
   },
   "resume": {
@@ -81,34 +62,24 @@
     "tryDemo": "Visit Platform",
     "problem": {
       "title": "The Problem",
-      "text": "Most AI integrations give an LLM a prompt and hope for the best. No memory between sessions, no workflow discipline, no audit trail. Each interaction starts from zero."
+      "text": "Most AI integrations give a model a prompt and hope for the best. No workflow discipline, no audit trail, no way to know why the agent did what it did."
     },
     "solution": {
-      "title": "Architecture",
-      "text": "Deterministic phase workflows where agents follow exit criteria, not LLM intuition. Each phase gates which tools an agent can use. Thoughts recorded at every step — confidence, observations, gaps. Three databases with separate ownership: code structure in Kuzu, agent memory in Kuzu, user knowledge in MongoDB."
+      "title": "The Approach",
+      "text": "The algorithm controls the flow, not the LLM. Agents follow deterministic phases with exit criteria. Each phase restricts which tools are available. Every step is recorded — confidence, observations, gaps. The algorithm doesn't hallucinate — only the bounded steps inside it can."
     },
-    "tasksTitle": "What It Does",
-    "tasks": [
-      "Six-phase dev-agent: understand → research → plan → implement → verify → commit. Each phase has exit criteria.",
-      "Phase-gated tools — agents in READ phase can only read, WRITE phase can edit, TESTS phase can run tests",
-      "Thought chain — every step records confidence, observations, gaps, and suggestions. Full audit trail.",
-      "Three databases, three owners: code structure in Kuzu, working memory in Kuzu, user blocks in MongoDB",
-      "Business domain is an in-memory OOP spec tree — runtime configuration, not YAML"
-    ],
     "howWeWork": {
-      "title": "Development Flow",
-      "note": "Same infrastructure builds the platform and delivers it."
+      "title": "How It Works",
+      "note": ""
     },
     "steps": [
-      "Business scenarios defined in the knowledge graph",
-      "Tests verify scenarios before implementation",
-      "Agents read the graph, write code, deploy — same pipeline for everything"
+      "Business requirements defined first — the spec tree is runtime configuration",
+      "Tests written from requirements — verify before implementation",
+      "Dev-agent follows six phases: understand → research → plan → implement → verify → commit",
+      "All three layers indexed and embedded — the agent sees what exists before writing anything new"
     ],
-    "whyNotConsulting": {
-      "title": "Why This Approach",
-      "problem": "Typical AI integrations give the model full control. It decides what to do, which tools to call, when to stop. No discipline, no traceability.",
-      "solution": "In Imperia OS the algorithm controls the flow. The agent must find root cause and cite file:line before implementing. Each phase gates tool access. Every thought is recorded with confidence score. The algorithm doesn't hallucinate — only the bounded steps inside it can."
-    }
+    "caseStudyTeaser": "Architecture details — phase-gating, thought chains, database ownership — in the case study.",
+    "caseStudyLink": "Read Case Study"
   },
   "caseStudies": {
     "title": "Case Studies",
@@ -124,9 +95,9 @@
     "items": {
       "imperia-os": {
         "title": "Imperia OS — AI-First Development Platform",
-        "description": "Multi-agent platform with deterministic phase workflows, phase-gated tool access, and full thought traceability.",
-        "problem": "Giving an LLM a prompt and hoping for the best doesn't scale. No workflow discipline, no audit trail, no way to know why an agent did what it did.",
-        "solution": "Deterministic phase workflows: understand → research → plan → implement → verify → commit. Each phase has exit criteria and gates which tools the agent can use. Every step records a thought with confidence, observations, and gaps. Three databases with separate ownership — code structure, agent memory, and user knowledge.",
+        "description": "Platform where autonomous agents follow deterministic phase workflows to develop software.",
+        "problem": "Giving an LLM full control doesn't scale. It decides what to do, which tools to call, when to stop. No discipline, no traceability, no way to prevent the agent from editing code before it understands the problem.",
+        "solution": "The algorithm controls the flow. Dev-agent follows six phases: understand → research → plan → implement → verify → commit. Each phase has exit criteria. Each phase gates which tools the agent can access — READ phase is read-only, WRITE phase allows editing, TESTS phase allows test execution.",
         "technicalDetails": [
           "Case/Process routing — each Process checks a predicate, executes in order, no LLM decides the next step",
           "Phase-gated MCP tools — READ phase: read-only; WRITE phase: edit; TESTS: test commands; COMMIT: git",
@@ -136,8 +107,9 @@
           "User blocks in MongoDB — notes, files, thoughts with vector embeddings for semantic search"
         ],
         "results": [
-          "Dev-agent uses the platform to develop the platform — same tools, same workflow",
-          "Root-cause-first: agent must reproduce and cite file:line before implementing"
+          "Dev-agent develops the platform using the platform itself — same tools, same workflow",
+          "Agents must reproduce the bug and cite file:line before implementing any fix",
+          "Every agent decision is traceable — thoughts record what was observed, what was missing, and why the agent chose its approach"
         ],
         "lessonsLearned": [
           "LLMs become reliable when an algorithm controls the flow — the algorithm doesn't hallucinate",
