@@ -81,19 +81,19 @@
     "tryDemo": "Visitar Plataforma",
     "problem": {
       "title": "El Problema",
-      "text": "La mayoria de las integraciones de IA no tienen estado — sin memoria entre sesiones, sin modelo de negocio, sin capacidad de actuar en sistemas reales. Cada interaccion comienza desde cero."
+      "text": "La mayoria de las integraciones de IA le dan al modelo un prompt y esperan lo mejor. Sin memoria entre sesiones, sin disciplina de workflow, sin trazabilidad. Cada interaccion comienza desde cero."
     },
     "solution": {
       "title": "Arquitectura",
-      "text": "Runtime de maquina de estados donde los LLMs son pasos atomicos — el algoritmo controla el flujo, no el modelo. Grafos de conocimiento dan contexto de negocio a los agentes. La infraestructura se despliega y monitorea a si misma."
+      "text": "Workflows de fases deterministicos donde los agentes siguen criterios de salida, no la intuicion del LLM. Cada fase determina que herramientas puede usar el agente. Pensamientos registrados en cada paso — confianza, observaciones, brechas. Tres bases de datos con propiedad separada: estructura de codigo en Kuzu, memoria de agentes en Kuzu, conocimiento del usuario en MongoDB."
     },
     "tasksTitle": "Que Hace",
     "tasks": [
-      "Orquestacion por maquina de estados — cada llamada LLM es un paso deterministico y auditable",
-      "Grafos de conocimiento: dominio de negocio, escenarios de prueba, estructura de codigo — cada uno con su propio esquema",
-      "Sistema de herramientas MCP — agentes acceden a PostgreSQL, Kuzu, MongoDB via interfaces tipadas",
-      "Motor de pensamiento — memoria persistente que conecta ideas entre sesiones",
-      "Hot standby con failover automatico y despliegue sin tiempo de inactividad"
+      "Dev-agent de seis fases: understand → research → plan → implement → verify → commit. Cada fase tiene criterios de salida.",
+      "Herramientas por fase — en fase READ solo lectura, en WRITE edicion, en TESTS ejecucion de tests",
+      "Cadena de pensamiento — cada paso registra confianza, observaciones, brechas y sugerencias. Trazabilidad completa.",
+      "Tres bases de datos, tres propietarios: estructura de codigo en Kuzu, memoria de trabajo en Kuzu, bloques de usuario en MongoDB",
+      "Dominio de negocio como arbol OOP en memoria — configuracion de runtime, no YAML"
     ],
     "howWeWork": {
       "title": "Flujo de Desarrollo",
@@ -106,8 +106,8 @@
     ],
     "whyNotConsulting": {
       "title": "Por Que Este Enfoque",
-      "problem": "Las integraciones tipicas de IA conectan un LLM a un sistema existente. Sin contexto, sin memoria. Cada llamada es un inicio en frio.",
-      "solution": "Imperia OS hace los LLMs stateful. El algoritmo no alucina — controla el flujo, y cada paso es atomico. La memoria persiste entre sesiones. Los grafos de conocimiento proporcionan contexto de negocio."
+      "problem": "Las integraciones tipicas de IA dan al modelo control total. El decide que hacer, que herramientas llamar, cuando parar. Sin disciplina, sin trazabilidad.",
+      "solution": "En Imperia OS el algoritmo controla el flujo. El agente debe encontrar la causa raiz y citar file:line antes de implementar. Cada fase limita el acceso a herramientas. Cada pensamiento se registra con score de confianza. El algoritmo no alucina — solo los pasos acotados dentro de el pueden."
     }
   },
   "caseStudies": {
@@ -124,25 +124,25 @@
     "items": {
       "imperia-os": {
         "title": "Imperia OS — Plataforma de Desarrollo AI-First",
-        "description": "Plataforma AI-first donde el algoritmo controla el flujo y los LLMs son pasos atomicos.",
-        "problem": "Los asistentes de IA no tienen estado — sin memoria persistente, sin contexto de negocio, sin capacidad de actuar en sistemas reales. Un asistente real requiere una plataforma: runtime, base de conocimiento, sistema de agentes e infraestructura.",
-        "solution": "Runtime de maquina de estados donde cada llamada LLM es un paso acotado en un algoritmo. Grafos de conocimiento para dominio de negocio, tests y codigo — cada uno con su propio esquema. Sistema de herramientas MCP para acceso tipado a bases de datos. Infraestructura hot-standby con failover automatico.",
+        "description": "Plataforma multi-agente con workflows de fases deterministicos, acceso a herramientas por fase y trazabilidad completa de pensamiento.",
+        "problem": "Dar a un LLM un prompt y esperar lo mejor no escala. Sin disciplina de workflow, sin trazabilidad, sin forma de saber por que un agente hizo lo que hizo.",
+        "solution": "Workflows de fases deterministicos: understand → research → plan → implement → verify → commit. Cada fase tiene criterios de salida y limita que herramientas puede usar el agente. Cada paso registra un pensamiento con confianza, observaciones y brechas. Tres bases de datos con propiedad separada — estructura de codigo, memoria de agentes y conocimiento del usuario.",
         "technicalDetails": [
-          "Runtime de maquina de estados — el algoritmo no alucina",
-          "Grafos de conocimiento en Kuzu: dominio de negocio, tests, estructura de codigo",
-          "Sistema de herramientas MCP — PostgreSQL, Kuzu, MongoDB via interfaces tipadas",
-          "Motor de pensamiento — memoria persistente con wikilinks y embeddings",
-          "Hot standby con verificaciones de salud cada 15s y failover automatico",
-          "Monorepo: Next.js + TypeScript + pnpm workspaces"
+          "Routing Case/Process — cada Process verifica un predicado, se ejecuta en orden, el LLM no decide el siguiente paso",
+          "MCP por fase — READ: solo lectura; WRITE: edicion; TESTS: comandos de test; COMMIT: git",
+          "Cadena de pensamiento por sesion — confianza, observaciones, brechas, sugerencias en cada paso",
+          "Code graph en Kuzu — archivos, funciones, clases, importaciones desde parser Rust",
+          "Memoria de agentes en Kuzu — sesiones, pensamientos, deduplicacion de mensajes por embedding",
+          "Bloques de usuario en MongoDB — notas, archivos, pensamientos con embeddings vectoriales para busqueda semantica"
         ],
         "results": [
-          "La misma infraestructura construye la plataforma y la entrega a usuarios",
-          "Flujo de desarrollo: escenarios de negocio → tests → agentes escriben codigo"
+          "El dev-agent usa la plataforma para desarrollar la plataforma — mismas herramientas, mismo workflow",
+          "Root-cause-first: el agente debe reproducir y citar file:line antes de implementar"
         ],
         "lessonsLearned": [
-          "Los LLMs se vuelven confiables cuando cada llamada es un paso acotado en una maquina de estados",
-          "Grafos de conocimiento separados superan a uno unificado — diferentes patrones de consulta necesitan diferentes esquemas",
-          "Construir la plataforma con ella misma es la validacion mas fuerte"
+          "Los LLMs se vuelven confiables cuando un algoritmo controla el flujo — el algoritmo no alucina",
+          "Bases separadas superan una unificada — estructura de codigo, memoria de agentes y datos de usuario necesitan esquemas y patrones de consulta diferentes",
+          "Limitar herramientas por fase previene que los agentes editen codigo antes de entender el problema"
         ]
       },
       "mobile-platform": {

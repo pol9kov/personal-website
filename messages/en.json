@@ -81,19 +81,19 @@
     "tryDemo": "Visit Platform",
     "problem": {
       "title": "The Problem",
-      "text": "Most AI integrations are stateless — no memory between sessions, no model of the business, no ability to act on real systems. Each interaction starts from zero."
+      "text": "Most AI integrations give an LLM a prompt and hope for the best. No memory between sessions, no workflow discipline, no audit trail. Each interaction starts from zero."
     },
     "solution": {
       "title": "Architecture",
-      "text": "State-machine runtime where LLMs are atomic steps — the algorithm controls the flow, not the model. Knowledge graphs give agents business context. Infrastructure deploys and monitors itself."
+      "text": "Deterministic phase workflows where agents follow exit criteria, not LLM intuition. Each phase gates which tools an agent can use. Thoughts recorded at every step — confidence, observations, gaps. Three databases with separate ownership: code structure in Kuzu, agent memory in Kuzu, user knowledge in MongoDB."
     },
     "tasksTitle": "What It Does",
     "tasks": [
-      "State-machine orchestration — every LLM call is a deterministic, auditable step",
-      "Knowledge graphs: business domain, test scenarios, code structure — each with its own schema",
-      "MCP tool system — agents access PostgreSQL, Kuzu, MongoDB through typed interfaces",
-      "Thought engine — persistent memory that connects ideas across sessions",
-      "Hot standby with automatic failover and zero-downtime deployment"
+      "Six-phase dev-agent: understand → research → plan → implement → verify → commit. Each phase has exit criteria.",
+      "Phase-gated tools — agents in READ phase can only read, WRITE phase can edit, TESTS phase can run tests",
+      "Thought chain — every step records confidence, observations, gaps, and suggestions. Full audit trail.",
+      "Three databases, three owners: code structure in Kuzu, working memory in Kuzu, user blocks in MongoDB",
+      "Business domain is an in-memory OOP spec tree — runtime configuration, not YAML"
     ],
     "howWeWork": {
       "title": "Development Flow",
@@ -106,8 +106,8 @@
     ],
     "whyNotConsulting": {
       "title": "Why This Approach",
-      "problem": "Typical AI integrations bolt an LLM onto an existing system. No context, no memory. Every call is a cold start.",
-      "solution": "Imperia OS makes LLMs stateful. The algorithm doesn't hallucinate — it controls the flow, and each step is atomic. Memory persists across sessions. Knowledge graphs provide business context."
+      "problem": "Typical AI integrations give the model full control. It decides what to do, which tools to call, when to stop. No discipline, no traceability.",
+      "solution": "In Imperia OS the algorithm controls the flow. The agent must find root cause and cite file:line before implementing. Each phase gates tool access. Every thought is recorded with confidence score. The algorithm doesn't hallucinate — only the bounded steps inside it can."
     }
   },
   "caseStudies": {
@@ -124,25 +124,25 @@
     "items": {
       "imperia-os": {
         "title": "Imperia OS — AI-First Development Platform",
-        "description": "AI-first platform where the algorithm controls the flow and LLMs are atomic steps.",
-        "problem": "AI assistants are stateless — no persistent memory, no business context, no ability to act on real systems. Building a real assistant requires a platform: runtime, knowledge base, agent system, and infrastructure.",
-        "solution": "State-machine runtime where each LLM call is a bounded step in an algorithm. Knowledge graphs for business domain, tests, and code — each with its own schema. MCP tool system for typed database access. Hot-standby infrastructure with automatic failover.",
+        "description": "Multi-agent platform with deterministic phase workflows, phase-gated tool access, and full thought traceability.",
+        "problem": "Giving an LLM a prompt and hoping for the best doesn't scale. No workflow discipline, no audit trail, no way to know why an agent did what it did.",
+        "solution": "Deterministic phase workflows: understand → research → plan → implement → verify → commit. Each phase has exit criteria and gates which tools the agent can use. Every step records a thought with confidence, observations, and gaps. Three databases with separate ownership — code structure, agent memory, and user knowledge.",
         "technicalDetails": [
-          "State-machine runtime — the algorithm doesn't hallucinate",
-          "Knowledge graphs in Kuzu: business domain, tests, code structure",
-          "MCP tool system — PostgreSQL, Kuzu, MongoDB via typed interfaces",
-          "Thought engine — persistent memory with wikilinks and embeddings",
-          "Hot standby with 15s health checks and automatic failover",
-          "Monorepo: Next.js + TypeScript + pnpm workspaces"
+          "Case/Process routing — each Process checks a predicate, executes in order, no LLM decides the next step",
+          "Phase-gated MCP tools — READ phase: read-only; WRITE phase: edit; TESTS: test commands; COMMIT: git",
+          "Thought chain per session — confidence, observations, gaps, suggestions at every step",
+          "Code graph in Kuzu — files, functions, classes, imports from Rust parser",
+          "Agent memory in Kuzu — sessions, thoughts, message deduplication by embedding",
+          "User blocks in MongoDB — notes, files, thoughts with vector embeddings for semantic search"
         ],
         "results": [
-          "The same infrastructure builds the platform and delivers it to users",
-          "Development flow: business scenarios → tests → agents write code"
+          "Dev-agent uses the platform to develop the platform — same tools, same workflow",
+          "Root-cause-first: agent must reproduce and cite file:line before implementing"
         ],
         "lessonsLearned": [
-          "LLMs become reliable when each call is a bounded step in a state machine",
-          "Separate knowledge graphs beat one merged graph — different query patterns need different schemas",
-          "Building the platform with itself is the strongest validation"
+          "LLMs become reliable when an algorithm controls the flow — the algorithm doesn't hallucinate",
+          "Separate databases beat one merged store — code structure, agent memory, and user data need different schemas and query patterns",
+          "Phase-gating tool access prevents agents from editing code before they understand the problem"
         ]
       },
       "mobile-platform": {
