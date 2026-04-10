@@ -35,11 +35,11 @@
   },
   "about": {
     "title": "About Me",
-    "subtitle": "Engineer building Imperia OS — an AI-first platform where LLMs are runtime primitives, not API calls.",
+    "subtitle": "Solution Architect. I ask why before asking how.",
     "whoIAm": {
       "title": "Who I Am",
       "p1": "Graduated from LNMO in St. Petersburg, explored over a dozen programming languages, and placed in ICYS and Baltic Science and Engineering Competition.",
-      "p2": "From dynamic EAV systems to cloud-native Go microservices to Imperia OS — a full AI-first platform with its own runtime, knowledge graphs, and agent system."
+      "p2": "From dynamic EAV systems to cloud-native Go microservices to Imperia OS — a platform where AI is part of the architecture, not bolted on."
     },
     "approach": {
       "title": "How I Think",
@@ -48,7 +48,7 @@
     },
     "currentFocus": {
       "title": "Current Focus",
-      "p1": "Imperia OS — making LLMs stateful with persistent memory, business-aware through knowledge graphs, and reliable through state-machine orchestration. The platform builds itself with the same tools it offers."
+      "p1": "Imperia OS — the same infrastructure builds the platform and delivers it to its users."
     },
     "values": {
       "title": "Values",
@@ -81,16 +81,16 @@
     "tryDemo": "Visit Platform",
     "problem": {
       "title": "The Problem",
-      "text": "AI assistants today are stateless — no memory between sessions, no understanding of your business, no ability to act on real systems. Each interaction starts from zero. Building a real assistant requires a platform: runtime, knowledge, infrastructure."
+      "text": "Most AI integrations are stateless — no memory between sessions, no model of the business, no ability to act on real systems. Each interaction starts from zero."
     },
     "solution": {
       "title": "Architecture",
-      "text": "State-machine runtime where LLMs are atomic steps. Three knowledge graphs — business model, test scenarios, code structure. Agent system that reads all three and acts. Infrastructure that deploys and monitors itself."
+      "text": "State-machine runtime where LLMs are atomic steps — the algorithm controls the flow, not the model. Knowledge graphs give agents business context. Infrastructure deploys and monitors itself."
     },
     "tasksTitle": "What It Does",
     "tasks": [
       "State-machine orchestration — every LLM call is a deterministic, auditable step",
-      "Three-graph knowledge base: business domain, test scenarios, code structure",
+      "Knowledge graphs: business domain, test scenarios, code structure — each with its own schema",
       "MCP tool system — agents access PostgreSQL, Kuzu, MongoDB through typed interfaces",
       "Thought engine — persistent memory that connects ideas across sessions",
       "Hot standby with automatic failover and zero-downtime deployment"
@@ -106,8 +106,8 @@
     ],
     "whyNotConsulting": {
       "title": "Why This Approach",
-      "problem": "Typical AI integrations bolt an LLM onto an existing system. No context, no memory, no business model. Every call is a cold start.",
-      "solution": "Imperia OS makes LLMs stateful. Thought engine persists every interaction. Knowledge graphs give every agent call full business context. State machine makes each step deterministic and auditable."
+      "problem": "Typical AI integrations bolt an LLM onto an existing system. No context, no memory. Every call is a cold start.",
+      "solution": "Imperia OS makes LLMs stateful. The algorithm doesn't hallucinate — it controls the flow, and each step is atomic. Memory persists across sessions. Knowledge graphs provide business context."
     }
   },
   "caseStudies": {
@@ -124,25 +124,24 @@
     "items": {
       "imperia-os": {
         "title": "Imperia OS — AI-First Development Platform",
-        "description": "Full-stack AI platform with state-machine runtime, three knowledge graphs, and self-building agent system.",
+        "description": "AI-first platform where the algorithm controls the flow and LLMs are atomic steps.",
         "problem": "AI assistants are stateless — no persistent memory, no business context, no ability to act on real systems. Building a real assistant requires a platform: runtime, knowledge base, agent system, and infrastructure.",
-        "solution": "Built Imperia OS from scratch: state-machine runtime where LLMs are atomic steps, three knowledge graphs (business model, tests, code), MCP tool system for typed database access, and hot-standby infrastructure with automatic failover.",
+        "solution": "State-machine runtime where each LLM call is a bounded step in an algorithm. Knowledge graphs for business domain, tests, and code — each with its own schema. MCP tool system for typed database access. Hot-standby infrastructure with automatic failover.",
         "technicalDetails": [
-          "State-machine runtime for deterministic LLM orchestration",
-          "Three knowledge graphs in Kuzu: business domain, tests, code structure",
+          "State-machine runtime — the algorithm doesn't hallucinate",
+          "Knowledge graphs in Kuzu: business domain, tests, code structure",
           "MCP tool system — PostgreSQL, Kuzu, MongoDB via typed interfaces",
           "Thought engine — persistent memory with wikilinks and embeddings",
           "Hot standby with 15s health checks and automatic failover",
           "Monorepo: Next.js + TypeScript + pnpm workspaces"
         ],
         "results": [
-          "9 services across prod/standby/dev environments",
-          "Zero-downtime deployment with automated pipeline",
-          "Development flow: business scenarios → tests → agents generate code"
+          "The same infrastructure builds the platform and delivers it to users",
+          "Development flow: business scenarios → tests → agents write code"
         ],
         "lessonsLearned": [
           "LLMs become reliable when each call is a bounded step in a state machine",
-          "Three separate knowledge graphs beat one merged graph — different query patterns need different schemas",
+          "Separate knowledge graphs beat one merged graph — different query patterns need different schemas",
           "Building the platform with itself is the strongest validation"
         ]
       },

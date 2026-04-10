@@ -35,11 +35,11 @@
   },
   "about": {
     "title": "Sobre Mi",
-    "subtitle": "Ingeniero construyendo Imperia OS — una plataforma AI-first donde los LLMs son primitivas de runtime, no llamadas API.",
+    "subtitle": "Solution Architect. Pregunto por qué antes de preguntar cómo.",
     "whoIAm": {
       "title": "Quien Soy",
       "p1": "Graduado de LNMO en San Petersburgo, explore mas de una docena de lenguajes de programacion y obtuve premios en ICYS y Baltic Science and Engineering Competition.",
-      "p2": "De sistemas EAV dinamicos a microservicios Go nativos en la nube a Imperia OS — una plataforma AI-first completa con su propio runtime, grafos de conocimiento y sistema de agentes."
+      "p2": "De sistemas EAV dinamicos a microservicios Go nativos en la nube a Imperia OS — una plataforma donde la IA es parte de la arquitectura, no algo añadido por fuera."
     },
     "approach": {
       "title": "Como Pienso",
@@ -48,7 +48,7 @@
     },
     "currentFocus": {
       "title": "Enfoque Actual",
-      "p1": "Imperia OS — haciendo los LLMs stateful con memoria persistente, conscientes del negocio a traves de grafos de conocimiento, y confiables mediante orquestacion por maquina de estados. La plataforma se construye a si misma con las mismas herramientas que ofrece."
+      "p1": "Imperia OS — la misma infraestructura construye la plataforma y la entrega a sus usuarios."
     },
     "values": {
       "title": "Valores",
@@ -81,16 +81,16 @@
     "tryDemo": "Visitar Plataforma",
     "problem": {
       "title": "El Problema",
-      "text": "Los asistentes de IA actuales no tienen estado — sin memoria entre sesiones, sin comprension del negocio, sin capacidad de actuar en sistemas reales. Cada interaccion comienza desde cero. Un asistente real requiere una plataforma: runtime, conocimiento, infraestructura."
+      "text": "La mayoria de las integraciones de IA no tienen estado — sin memoria entre sesiones, sin modelo de negocio, sin capacidad de actuar en sistemas reales. Cada interaccion comienza desde cero."
     },
     "solution": {
       "title": "Arquitectura",
-      "text": "Runtime de maquina de estados donde los LLMs son pasos atomicos. Tres grafos de conocimiento — modelo de negocio, escenarios de prueba, estructura de codigo. Sistema de agentes que lee los tres y actua. Infraestructura que se despliega y monitorea a si misma."
+      "text": "Runtime de maquina de estados donde los LLMs son pasos atomicos — el algoritmo controla el flujo, no el modelo. Grafos de conocimiento dan contexto de negocio a los agentes. La infraestructura se despliega y monitorea a si misma."
     },
     "tasksTitle": "Que Hace",
     "tasks": [
       "Orquestacion por maquina de estados — cada llamada LLM es un paso deterministico y auditable",
-      "Tres grafos de conocimiento: dominio de negocio, escenarios de prueba, estructura de codigo",
+      "Grafos de conocimiento: dominio de negocio, escenarios de prueba, estructura de codigo — cada uno con su propio esquema",
       "Sistema de herramientas MCP — agentes acceden a PostgreSQL, Kuzu, MongoDB via interfaces tipadas",
       "Motor de pensamiento — memoria persistente que conecta ideas entre sesiones",
       "Hot standby con failover automatico y despliegue sin tiempo de inactividad"
@@ -106,8 +106,8 @@
     ],
     "whyNotConsulting": {
       "title": "Por Que Este Enfoque",
-      "problem": "Las integraciones tipicas de IA conectan un LLM a un sistema existente. Sin contexto, sin memoria, sin modelo de negocio. Cada llamada es un inicio en frio.",
-      "solution": "Imperia OS hace los LLMs stateful. El motor de pensamiento persiste cada interaccion. Los grafos de conocimiento dan a cada llamada de agente contexto completo de negocio. La maquina de estados hace cada paso deterministico y auditable."
+      "problem": "Las integraciones tipicas de IA conectan un LLM a un sistema existente. Sin contexto, sin memoria. Cada llamada es un inicio en frio.",
+      "solution": "Imperia OS hace los LLMs stateful. El algoritmo no alucina — controla el flujo, y cada paso es atomico. La memoria persiste entre sesiones. Los grafos de conocimiento proporcionan contexto de negocio."
     }
   },
   "caseStudies": {
@@ -124,25 +124,24 @@
     "items": {
       "imperia-os": {
         "title": "Imperia OS — Plataforma de Desarrollo AI-First",
-        "description": "Plataforma AI completa con runtime de maquina de estados, tres grafos de conocimiento y sistema de agentes autoconstruible.",
+        "description": "Plataforma AI-first donde el algoritmo controla el flujo y los LLMs son pasos atomicos.",
         "problem": "Los asistentes de IA no tienen estado — sin memoria persistente, sin contexto de negocio, sin capacidad de actuar en sistemas reales. Un asistente real requiere una plataforma: runtime, base de conocimiento, sistema de agentes e infraestructura.",
-        "solution": "Construi Imperia OS desde cero: runtime de maquina de estados donde los LLMs son pasos atomicos, tres grafos de conocimiento (modelo de negocio, tests, codigo), sistema de herramientas MCP para acceso tipado a bases de datos, e infraestructura hot-standby con failover automatico.",
+        "solution": "Runtime de maquina de estados donde cada llamada LLM es un paso acotado en un algoritmo. Grafos de conocimiento para dominio de negocio, tests y codigo — cada uno con su propio esquema. Sistema de herramientas MCP para acceso tipado a bases de datos. Infraestructura hot-standby con failover automatico.",
         "technicalDetails": [
-          "Runtime de maquina de estados para orquestacion deterministica de LLM",
-          "Tres grafos de conocimiento en Kuzu: dominio de negocio, tests, estructura de codigo",
+          "Runtime de maquina de estados — el algoritmo no alucina",
+          "Grafos de conocimiento en Kuzu: dominio de negocio, tests, estructura de codigo",
           "Sistema de herramientas MCP — PostgreSQL, Kuzu, MongoDB via interfaces tipadas",
           "Motor de pensamiento — memoria persistente con wikilinks y embeddings",
           "Hot standby con verificaciones de salud cada 15s y failover automatico",
           "Monorepo: Next.js + TypeScript + pnpm workspaces"
         ],
         "results": [
-          "9 servicios en entornos prod/standby/dev",
-          "Despliegue sin tiempo de inactividad con pipeline automatizado",
-          "Flujo de desarrollo: escenarios de negocio → tests → agentes generan codigo"
+          "La misma infraestructura construye la plataforma y la entrega a usuarios",
+          "Flujo de desarrollo: escenarios de negocio → tests → agentes escriben codigo"
         ],
         "lessonsLearned": [
           "Los LLMs se vuelven confiables cuando cada llamada es un paso acotado en una maquina de estados",
-          "Tres grafos de conocimiento separados superan a uno unificado — diferentes patrones de consulta necesitan diferentes esquemas",
+          "Grafos de conocimiento separados superan a uno unificado — diferentes patrones de consulta necesitan diferentes esquemas",
           "Construir la plataforma con ella misma es la validacion mas fuerte"
         ]
       },
