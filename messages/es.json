@@ -2,15 +2,15 @@
   "navigation": {
     "home": "Inicio",
     "about": "Sobre Mi",
-    "aiIntegration": "Integracion IA",
+    "imperiaOs": "Imperia OS",
     "caseStudies": "Casos de Estudio",
     "resume": "Curriculum",
     "siteName": "Egor Polyakov"
   },
   "hero": {
     "name": "Egor Polyakov",
-    "subtitle": "Ingeniero de software con mas de 10 anos de experiencia. Construyo sistemas confiables y convierto la complejidad en arquitectura clara.",
-    "tags": "Backend · Arquitectura · Integracion IA",
+    "subtitle": "Construyendo Imperia OS — un asistente de IA y la plataforma que requiere. Runtime de maquina de estados, tres grafos de conocimiento, en produccion desde 2025.",
+    "tags": "Plataforma IA · Arquitectura · Infraestructura",
     "viewProjects": "Ver Proyectos",
     "contactMe": "Contactar"
   },
@@ -35,20 +35,20 @@
   },
   "about": {
     "title": "Sobre Mi",
-    "subtitle": "Ingeniero backend con mas de 10 anos de experiencia y solida formacion matematica. Construyo sistemas que manejan la complejidad manteniendose comprensibles.",
+    "subtitle": "Ingeniero construyendo Imperia OS — una plataforma AI-first donde los LLMs son primitivas de runtime, no llamadas API.",
     "whoIAm": {
       "title": "Quien Soy",
       "p1": "Graduado de LNMO en San Petersburgo, explore mas de una docena de lenguajes de programacion y obtuve premios en ICYS y Baltic Science and Engineering Competition.",
-      "p2": "A lo largo de los anos, progrese desde sistemas EAV dinamicos hasta microservicios Go nativos en la nube e integraciones de IA."
+      "p2": "De sistemas EAV dinamicos a microservicios Go nativos en la nube a Imperia OS — una plataforma AI-first completa con su propio runtime, grafos de conocimiento y sistema de agentes."
     },
     "approach": {
-      "title": "Mi Enfoque",
-      "p1": "Mientras otros optimizan la elegancia técnica, yo optimizo las ganancias del negocio.",
-      "p2": "Prefiero arquitecturas practicas que funcionan hoy y permanecen flexibles manana."
+      "title": "Como Pienso",
+      "p1": "Pregunto por que antes de preguntar como. La mayoria de los ingenieros optimizan la solucion. Yo primero verifico si el problema esta formulado correctamente.",
+      "p2": "Detecto cuando un concepto se sustituye durante el razonamiento — cuando una etiqueta generica oculta que nada concreto fue construido, o una abstraccion resuelve un problema que no existe."
     },
     "currentFocus": {
       "title": "Enfoque Actual",
-      "p1": "Interesado en sistemas que necesitan ser robustos y adaptables: microservicios, esquemas de datos dinamicos, APIs amigables para desarrolladores y capas de IA sobre productos existentes."
+      "p1": "Imperia OS — haciendo los LLMs stateful con memoria persistente, conscientes del negocio a traves de grafos de conocimiento, y confiables mediante orquestacion por maquina de estados. La plataforma se construye a si misma con las mismas herramientas que ofrece."
     },
     "values": {
       "title": "Valores",
@@ -75,38 +75,39 @@
     "subtitle": "Descarga mi curriculum profesional en formato PDF",
     "download": "Descargar Curriculum (PDF)"
   },
-  "aiIntegration": {
-    "title": "Automatizamos tus procesos de negocio con IA en 24-72 horas",
-    "subtitle": "Solucion personalizada para tu tarea especifica.",
-    "tryDemo": "Visitar Sitio",
+  "imperiaOs": {
+    "title": "Imperia OS",
+    "subtitle": "Plataforma de desarrollo AI-first. En produccion desde 2025.",
+    "tryDemo": "Visitar Plataforma",
     "problem": {
-      "title": "Problema",
-      "text": "Las plataformas genericas no se ajustan a procesos especificos. La consultoria escribe desde cero durante meses. Hay una brecha entre ellos."
+      "title": "El Problema",
+      "text": "Los asistentes de IA actuales no tienen estado — sin memoria entre sesiones, sin comprension del negocio, sin capacidad de actuar en sistemas reales. Cada interaccion comienza desde cero. Un asistente real requiere una plataforma: runtime, conocimiento, infraestructura."
     },
     "solution": {
-      "title": "Solucion",
-      "text": "Escribo codigo precisamente para tu proceso, pero uso componentes de IA listos (modelos, bases de datos vectoriales, agentes). Por eso es rapido - piloto en 24-72 horas, no meses."
+      "title": "Arquitectura",
+      "text": "Runtime de maquina de estados donde los LLMs son pasos atomicos. Tres grafos de conocimiento — modelo de negocio, escenarios de prueba, estructura de codigo. Sistema de agentes que lee los tres y actua. Infraestructura que se despliega y monitorea a si misma."
     },
-    "tasksTitle": "Que tareas resolvemos",
+    "tasksTitle": "Que Hace",
     "tasks": [
-      "Respuestas automaticas en soporte basadas en tu base de conocimientos",
-      "Asistente para gerentes: historial de cliente, documentos, siguiente accion",
-      "Procesamiento y enrutamiento de solicitudes entrantes",
-      "Extraccion de datos de documentos"
+      "Orquestacion por maquina de estados — cada llamada LLM es un paso deterministico y auditable",
+      "Tres grafos de conocimiento: dominio de negocio, escenarios de prueba, estructura de codigo",
+      "Sistema de herramientas MCP — agentes acceden a PostgreSQL, Kuzu, MongoDB via interfaces tipadas",
+      "Motor de pensamiento — memoria persistente que conecta ideas entre sesiones",
+      "Hot standby con failover automatico y despliegue sin tiempo de inactividad"
     ],
     "howWeWork": {
-      "title": "Como trabajamos",
-      "note": "Donde se alojan los modelos - nube o tus servidores - tu decides."
+      "title": "Flujo de Desarrollo",
+      "note": "La misma infraestructura construye la plataforma y la entrega."
     },
     "steps": [
-      "Describes el proceso (o hablas con nAnI - IA que recopila requisitos)",
-      "Escribo la automatizacion para tu tarea en 24-72 horas",
-      "Pruebas el piloto, lo refino a produccion en 2 semanas"
+      "Escenarios de negocio definidos en el grafo de conocimiento",
+      "Tests verifican escenarios antes de la implementacion",
+      "Agentes leen el grafo, escriben codigo, despliegan — mismo pipeline para todo"
     ],
     "whyNotConsulting": {
-      "title": "Por que mas rapido que consultoria",
-      "problem": "La consultoria escribe todo desde cero: logica de negocio, capa de IA e integraciones. Meses de trabajo.",
-      "solution": "Uso componentes de IA listos (OpenAI, Neo4j, busqueda vectorial), pero escribo la logica de negocio especificamente para tu proceso. Mas rapido + precisamente para tu tarea."
+      "title": "Por Que Este Enfoque",
+      "problem": "Las integraciones tipicas de IA conectan un LLM a un sistema existente. Sin contexto, sin memoria, sin modelo de negocio. Cada llamada es un inicio en frio.",
+      "solution": "Imperia OS hace los LLMs stateful. El motor de pensamiento persiste cada interaccion. Los grafos de conocimiento dan a cada llamada de agente contexto completo de negocio. La maquina de estados hace cada paso deterministico y auditable."
     }
   },
   "caseStudies": {
@@ -121,26 +122,29 @@
     "viewSource": "Ver Codigo Fuente",
     "architectureDiagrams": "Diagramas de Arquitectura",
     "items": {
-      "ai-infrastructure": {
-        "title": "Integracion de IA en CRM para Automatizacion de Soporte",
-        "description": "Conexion de LLM a CRM de empresa para respuestas automaticas basadas en base de conocimientos interna.",
-        "problem": "El equipo de soporte pasaba tiempo significativo procesando solicitudes repetitivas. Los operadores buscaban informacion manualmente en la base de conocimientos, aumentando el tiempo de respuesta.",
-        "solution": "Integre capa de IA con CRM: el sistema analiza mensajes entrantes, encuentra materiales relevantes y genera respuestas basadas en la base de conocimientos corporativa. Las solicitudes no estandar se entregan automaticamente a un operador.",
+      "imperia-os": {
+        "title": "Imperia OS — Plataforma de Desarrollo AI-First",
+        "description": "Plataforma AI completa con runtime de maquina de estados, tres grafos de conocimiento y sistema de agentes autoconstruible.",
+        "problem": "Los asistentes de IA no tienen estado — sin memoria persistente, sin contexto de negocio, sin capacidad de actuar en sistemas reales. Un asistente real requiere una plataforma: runtime, base de conocimiento, sistema de agentes e infraestructura.",
+        "solution": "Construi Imperia OS desde cero: runtime de maquina de estados donde los LLMs son pasos atomicos, tres grafos de conocimiento (modelo de negocio, tests, codigo), sistema de herramientas MCP para acceso tipado a bases de datos, e infraestructura hot-standby con failover automatico.",
         "technicalDetails": [
-          "Integracion via REST API",
-          "Capa RAG para recuperacion de datos relevantes",
-          "Procesamiento de IA en capa API de Next.js"
+          "Runtime de maquina de estados para orquestacion deterministica de LLM",
+          "Tres grafos de conocimiento en Kuzu: dominio de negocio, tests, estructura de codigo",
+          "Sistema de herramientas MCP — PostgreSQL, Kuzu, MongoDB via interfaces tipadas",
+          "Motor de pensamiento — memoria persistente con wikilinks y embeddings",
+          "Hot standby con verificaciones de salud cada 15s y failover automatico",
+          "Monorepo: Next.js + TypeScript + pnpm workspaces"
         ],
         "results": [
-          "Tiempo de respuesta reducido de minutos a segundos",
-          "Carga de operadores disminuida en mas del 40%",
-          "Calidad de respuesta comparable a empleado experimentado",
-          "Sistema opera 24/7"
+          "En produccion desde 2025",
+          "9 servicios en entornos prod/standby/dev",
+          "Despliegue sin tiempo de inactividad con pipeline automatizado",
+          "Flujo de desarrollo: escenarios de negocio → tests → agentes generan codigo"
         ],
         "lessonsLearned": [
-          "IA maneja efectivamente solicitudes tipicas",
-          "Fallback a humano es obligatorio para casos limite",
-          "Calidad de base de conocimientos afecta directamente la precision"
+          "Los LLMs se vuelven confiables cuando cada llamada es un paso acotado en una maquina de estados",
+          "Tres grafos de conocimiento separados superan a uno unificado — diferentes patrones de consulta necesitan diferentes esquemas",
+          "Construir la plataforma con ella misma es la validacion mas fuerte"
         ]
       },
       "mobile-platform": {

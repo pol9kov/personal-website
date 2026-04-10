@@ -6,31 +6,34 @@ import { CaseStudy } from "@/lib/types";
 export const caseStudies: CaseStudy[] = [
   {
     id: "1",
-    slug: "ai-infrastructure",
-    title: "AI Integration into CRM for Support Automation",
+    slug: "imperia-os",
+    title: "Imperia OS — AI-First Development Platform",
     description:
-      "Connecting LLM to company CRM for automatic responses based on internal knowledge base.",
+      "Full-stack AI platform with state-machine runtime, three knowledge graphs, and self-building agent system.",
     year: "2025",
-    tags: ["Next.js", "LLM", "RAG", "Architecture"],
+    tags: ["TypeScript", "Next.js", "PostgreSQL", "Kuzu", "MongoDB", "LLM", "MCP", "Architecture"],
     problem:
-      "Support team spent significant time processing repetitive requests. Operators manually searched for information in the knowledge base, increasing response time.",
+      "AI assistants are stateless — no persistent memory, no business context, no ability to act on real systems. Building a real assistant requires a platform: runtime, knowledge base, agent system, and infrastructure.",
     solution:
-      "Integrated AI layer with CRM: the system analyzes incoming messages, finds relevant materials, and generates responses based on corporate knowledge base. Non-standard requests are automatically handed off to an operator.",
+      "Built Imperia OS from scratch: state-machine runtime where LLMs are atomic steps, three knowledge graphs (business model, tests, code), MCP tool system for typed database access, and hot-standby infrastructure with automatic failover.",
     technicalDetails: [
-      "Integration via REST API",
-      "RAG layer for relevant data retrieval",
-      "AI processing in Next.js API layer",
+      "State-machine runtime for deterministic LLM orchestration",
+      "Three knowledge graphs in Kuzu: business domain, tests, code structure",
+      "MCP tool system — PostgreSQL, Kuzu, MongoDB via typed interfaces",
+      "Thought engine — persistent memory with wikilinks and embeddings",
+      "Hot standby with 15s health checks and automatic failover",
+      "Monorepo: Next.js + TypeScript + pnpm workspaces",
     ],
     results: [
-      "Response time reduced from minutes to seconds",
-      "Operator workload decreased by more than 40%",
-      "Response quality comparable to experienced employee",
-      "System operates 24/7",
+      "Running in production since 2025",
+      "9 services across prod/standby/dev environments",
+      "Zero-downtime deployment with automated pipeline",
+      "Development flow: business scenarios → tests → agents generate code",
     ],
     lessonsLearned: [
-      "AI effectively handles typical requests",
-      "Fallback to human is mandatory for edge cases",
-      "Knowledge base quality directly affects accuracy",
+      "LLMs become reliable when each call is a bounded step in a state machine",
+      "Three separate knowledge graphs beat one merged graph — different query patterns need different schemas",
+      "Building the platform with itself is the strongest validation",
     ],
   },
   {

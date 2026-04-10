@@ -23,7 +23,7 @@ export function Header() {
   const navItems = [
     { href: "/", label: t("home") },
     { href: "/about", label: t("about") },
-    { href: "/ai-integration", label: t("aiIntegration") },
+    { href: "/imperia-os", label: t("imperiaOs") },
     { href: "/case-studies", label: t("caseStudies") },
     { href: "/resume", label: t("resume") },
   ];

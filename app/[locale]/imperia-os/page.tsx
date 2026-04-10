@@ -3,19 +3,19 @@ import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 
 export const metadata: Metadata = {
-  title: "AI Integration | Egor Polyakov",
+  title: "Imperia OS | Egor Polyakov",
   description:
-    "Custom AI automation for your business processes in 24-72 hours. Not a platform, but code written exactly for your process.",
+    "AI-first development platform. State-machine runtime, three knowledge graphs, shipped since 2025.",
 };
 
-interface AIIntegrationPageProps {
+interface ImperiaOSPageProps {
   params: Promise<{ locale: string }>;
 }
 
-export default async function AIIntegrationPage({ params }: AIIntegrationPageProps) {
+export default async function ImperiaOSPage({ params }: ImperiaOSPageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations("aiIntegration");
+  const t = await getTranslations("imperiaOs");
 
   const tasks = t.raw("tasks") as string[];
   const steps = t.raw("steps") as string[];
@@ -53,7 +53,7 @@ export default async function AIIntegrationPage({ params }: AIIntegrationPagePro
               </p>
             </section>
 
-            {/* Solution */}
+            {/* Architecture */}
             <section>
               <h2 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
                 {t("solution.title")}
@@ -63,7 +63,7 @@ export default async function AIIntegrationPage({ params }: AIIntegrationPagePro
               </p>
             </section>
 
-            {/* Tasks */}
+            {/* Capabilities */}
             <section>
               <h2 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
                 {t("tasksTitle")}
@@ -78,7 +78,7 @@ export default async function AIIntegrationPage({ params }: AIIntegrationPagePro
               </ul>
             </section>
 
-            {/* How we work */}
+            {/* Development Flow */}
             <section>
               <h2 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
                 {t("howWeWork.title")}
@@ -98,7 +98,7 @@ export default async function AIIntegrationPage({ params }: AIIntegrationPagePro
               </p>
             </section>
 
-            {/* Why not consulting */}
+            {/* Why This Approach */}
             <section className="rounded-2xl bg-gradient-to-br from-blue-50 to-purple-50 p-8 dark:from-blue-950/30 dark:to-purple-950/30">
               <h2 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
                 {t("whyNotConsulting.title")}
