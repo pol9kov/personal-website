@@ -9,7 +9,7 @@
   },
   "hero": {
     "name": "Egor Polyakov",
-    "subtitle": "Me enfoco en el por qué. AI maneja el cómo.",
+    "subtitle": "El humano da sentido. La IA da forma.",
     "tags": "Solution Architect · Backend · Infrastructure",
     "viewProjects": "Ver Proyectos",
     "contactMe": "Contactar"
@@ -35,7 +35,7 @@
   },
   "about": {
     "title": "Sobre Mi",
-    "subtitle": "Solution Architect. Me enfoco en el por qué, la IA en el cómo.",
+    "subtitle": "Solution Architect. El humano da sentido, la IA da forma.",
     "whoIAm": {
       "title": "Quien Soy",
       "p1": "Educación enfocada en matemáticas en San Petersburgo (LNMO), luego un camino a través de sistemas EAV, microservicios Go nativos en la nube e infraestructura blockchain.",

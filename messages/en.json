@@ -9,7 +9,7 @@
   },
   "hero": {
     "name": "Egor Polyakov",
-    "subtitle": "I focus on why. AI handles the how.",
+    "subtitle": "Humans give meaning. AI gives form.",
     "tags": "Solution Architect · Backend · Infrastructure",
     "viewProjects": "View Projects",
     "contactMe": "Contact Me"
@@ -35,7 +35,7 @@
   },
   "about": {
     "title": "About Me",
-    "subtitle": "Solution Architect. I focus on why, AI handles the how.",
+    "subtitle": "Solution Architect. Humans give meaning, AI gives form.",
     "whoIAm": {
       "title": "Who I Am",
       "p1": "Math-focused education in St. Petersburg (LNMO), then a path through EAV systems, cloud-native Go microservices, and blockchain infrastructure.",
