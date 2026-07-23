@@ -9,14 +9,14 @@
   },
   "hero": {
     "name": "Egor Polyakov",
-    "subtitle": "El humano da sentido. La IA da forma.",
-    "tags": "Solution Architect · Backend · Infrastructure",
+    "subtitle": "Construyendo Imperia OS — un asistente de IA y la plataforma que requiere. Runtime de maquina de estados, tres grafos de conocimiento, en produccion desde 2025.",
+    "tags": "Plataforma IA · Arquitectura · Infraestructura",
     "viewProjects": "Ver Proyectos",
     "contactMe": "Contactar"
   },
   "skills": {
-    "title": "Habilidades y Tecnologías",
-    "subtitle": "Tecnologías y herramientas con las que trabajo",
+    "title": "Habilidades y Tecnologias",
+    "subtitle": "Tecnologias y herramientas con las que trabajo",
     "categories": {
       "languages": "Lenguajes Principales",
       "frameworks": "Arquitectura y Plataformas",
@@ -31,24 +31,43 @@
   },
   "common": {
     "toggleTheme": "Cambiar tema",
-    "toggleMenu": "Cambiar menú"
+    "toggleMenu": "Cambiar menu"
   },
   "about": {
     "title": "Sobre Mi",
-    "subtitle": "Solution Architect. El humano da sentido, la IA da forma.",
+    "subtitle": "Ingeniero construyendo Imperia OS — una plataforma AI-first donde los LLMs son primitivas de runtime, no llamadas API.",
     "whoIAm": {
       "title": "Quien Soy",
-      "p1": "Educación enfocada en matemáticas en San Petersburgo (LNMO), luego un camino a través de sistemas EAV, microservicios Go nativos en la nube e infraestructura blockchain.",
-      "p2": "Ahora construyendo Imperia OS — una plataforma donde la IA es parte de la arquitectura, no algo añadido por fuera."
+      "p1": "Graduado de LNMO en San Petersburgo, explore mas de una docena de lenguajes de programacion y obtuve premios en ICYS y Baltic Science and Engineering Competition.",
+      "p2": "De sistemas EAV dinamicos a microservicios Go nativos en la nube a Imperia OS — una plataforma AI-first completa con su propio runtime, grafos de conocimiento y sistema de agentes."
     },
     "approach": {
       "title": "Como Pienso",
-      "p1": "Verifico si el problema está formulado correctamente antes de optimizar la solución.",
-      "p2": "Detecto cuando un concepto se sustituye durante el razonamiento — cuando una etiqueta genérica oculta que nada concreto fue construido, o una abstracción resuelve un problema que no existe."
+      "p1": "Pregunto por que antes de preguntar como. La mayoria de los ingenieros optimizan la solucion. Yo primero verifico si el problema esta formulado correctamente.",
+      "p2": "Detecto cuando un concepto se sustituye durante el razonamiento — cuando una etiqueta generica oculta que nada concreto fue construido, o una abstraccion resuelve un problema que no existe."
     },
     "currentFocus": {
       "title": "Enfoque Actual",
-      "p1": "Imperia OS. Primero los requisitos de negocio, luego tests, luego código — las tres capas se indexan y embeben automáticamente. El dev-agent trabaja con el mismo flujo: entender el problema, investigar la causa raíz, planificar, implementar, verificar, commitear."
+      "p1": "Imperia OS — haciendo los LLMs stateful con memoria persistente, conscientes del negocio a traves de grafos de conocimiento, y confiables mediante orquestacion por maquina de estados. La plataforma se construye a si misma con las mismas herramientas que ofrece."
+    },
+    "values": {
+      "title": "Valores",
+      "continuousLearning": {
+        "title": "Aprendizaje Continuo",
+        "text": "Cada proyecto proporciona nuevas herramientas de pensamiento."
+      },
+      "curiosity": {
+        "title": "Curiosidad",
+        "text": "Busco causas raiz, no solo trato sintomas."
+      },
+      "progress": {
+        "title": "Progreso Sobre Perfeccion",
+        "text": "Pasos sostenibles superan soluciones rapidas."
+      },
+      "trust": {
+        "title": "Confianza",
+        "text": "Comunicacion honesta y confiabilidad."
+      }
     }
   },
   "resume": {
@@ -58,107 +77,118 @@
   },
   "imperiaOs": {
     "title": "Imperia OS",
-    "subtitle": "Plataforma de desarrollo AI-first.",
+    "subtitle": "Plataforma de desarrollo AI-first. En produccion desde 2025.",
     "tryDemo": "Visitar Plataforma",
     "problem": {
       "title": "El Problema",
-      "text": "La mayoría de las integraciones de IA le dan al modelo un prompt y esperan lo mejor. Sin disciplina de workflow, sin trazabilidad, sin forma de saber por qué el agente hizo lo que hizo."
+      "text": "Los asistentes de IA actuales no tienen estado — sin memoria entre sesiones, sin comprension del negocio, sin capacidad de actuar en sistemas reales. Cada interaccion comienza desde cero. Un asistente real requiere una plataforma: runtime, conocimiento, infraestructura."
     },
     "solution": {
-      "title": "El Enfoque",
-      "text": "El algoritmo controla el flujo, no el LLM. Los agentes siguen fases determinísticas con criterios de salida. Cada fase restringe qué herramientas están disponibles. Cada paso se registra — confianza, observaciones, brechas. El algoritmo no alucina — solo los pasos acotados dentro de él pueden."
+      "title": "Arquitectura",
+      "text": "Runtime de maquina de estados donde los LLMs son pasos atomicos. Tres grafos de conocimiento — modelo de negocio, escenarios de prueba, estructura de codigo. Sistema de agentes que lee los tres y actua. Infraestructura que se despliega y monitorea a si misma."
     },
+    "tasksTitle": "Que Hace",
+    "tasks": [
+      "Orquestacion por maquina de estados — cada llamada LLM es un paso deterministico y auditable",
+      "Tres grafos de conocimiento: dominio de negocio, escenarios de prueba, estructura de codigo",
+      "Sistema de herramientas MCP — agentes acceden a PostgreSQL, Kuzu, MongoDB via interfaces tipadas",
+      "Motor de pensamiento — memoria persistente que conecta ideas entre sesiones",
+      "Hot standby con failover automatico y despliegue sin tiempo de inactividad"
+    ],
     "howWeWork": {
-      "title": "Cómo Funciona",
-      "note": ""
+      "title": "Flujo de Desarrollo",
+      "note": "La misma infraestructura construye la plataforma y la entrega."
     },
     "steps": [
-      "Primero los requisitos de negocio — el spec tree es configuración de runtime",
-      "Tests escritos desde requisitos — verificación antes de implementación",
-      "El dev-agent sigue seis fases: understand → research → plan → implement → verify → commit",
-      "Las tres capas se indexan y embeben — el agente ve qué existe antes de escribir algo nuevo"
+      "Escenarios de negocio definidos en el grafo de conocimiento",
+      "Tests verifican escenarios antes de la implementacion",
+      "Agentes leen el grafo, escriben codigo, despliegan — mismo pipeline para todo"
     ],
-    "caseStudyTeaser": "Detalles de arquitectura — acceso por fase, cadenas de pensamiento, propiedad de bases de datos — en el caso de estudio.",
-    "caseStudyLink": "Leer Caso de Estudio"
+    "whyNotConsulting": {
+      "title": "Por Que Este Enfoque",
+      "problem": "Las integraciones tipicas de IA conectan un LLM a un sistema existente. Sin contexto, sin memoria, sin modelo de negocio. Cada llamada es un inicio en frio.",
+      "solution": "Imperia OS hace los LLMs stateful. El motor de pensamiento persiste cada interaccion. Los grafos de conocimiento dan a cada llamada de agente contexto completo de negocio. La maquina de estados hace cada paso deterministico y auditable."
+    }
   },
   "caseStudies": {
     "title": "Casos de Estudio",
-    "subtitle": "Inmersiones profundas en soluciones técnicas y decisiones arquitectónicas",
+    "subtitle": "Inmersiones profundas en soluciones tecnicas y decisiones arquitectonicas",
     "problem": "Problema",
-    "solution": "Solución",
-    "technicalDetails": "Detalles Técnicos",
+    "solution": "Solucion",
+    "technicalDetails": "Detalles Tecnicos",
     "results": "Resultados",
     "lessonsLearned": "Lecciones Aprendidas",
     "backToList": "Volver a Casos de Estudio",
-    "viewSource": "Ver Código Fuente",
+    "viewSource": "Ver Codigo Fuente",
     "architectureDiagrams": "Diagramas de Arquitectura",
     "items": {
       "imperia-os": {
         "title": "Imperia OS — Plataforma de Desarrollo AI-First",
-        "description": "Plataforma donde agentes autónomos siguen workflows de fases determinísticos para desarrollar software.",
-        "problem": "Dar a un LLM control total no escala. El modelo decide qué hacer, qué herramientas llamar, cuándo parar. Sin disciplina, sin trazabilidad, sin forma de prevenir que el agente edite código antes de entender el problema.",
-        "solution": "El algoritmo controla el flujo. El dev-agent sigue seis fases: understand → research → plan → implement → verify → commit. Cada fase tiene criterios de salida. Cada fase limita qué herramientas puede usar el agente — en fase READ solo lectura, en WRITE edición, en TESTS ejecución de tests.",
+        "description": "Plataforma AI completa con runtime de maquina de estados, tres grafos de conocimiento y sistema de agentes autoconstruible.",
+        "problem": "Los asistentes de IA no tienen estado — sin memoria persistente, sin contexto de negocio, sin capacidad de actuar en sistemas reales. Un asistente real requiere una plataforma: runtime, base de conocimiento, sistema de agentes e infraestructura.",
+        "solution": "Construi Imperia OS desde cero: runtime de maquina de estados donde los LLMs son pasos atomicos, tres grafos de conocimiento (modelo de negocio, tests, codigo), sistema de herramientas MCP para acceso tipado a bases de datos, e infraestructura hot-standby con failover automatico.",
         "technicalDetails": [
-          "Routing Case/Process — cada Process verifica un predicado, se ejecuta en orden, el LLM no decide el siguiente paso",
-          "MCP por fase — READ: solo lectura; WRITE: edición; TESTS: comandos de test; COMMIT: git",
-          "Cadena de pensamiento por sesión — confianza, observaciones, brechas, sugerencias en cada paso",
-          "Code graph en Kuzu — archivos, funciones, clases, importaciones desde parser Rust",
-          "Memoria de agentes en Kuzu — sesiones, pensamientos, deduplicación de mensajes por embedding",
-          "Bloques de usuario en MongoDB — notas, archivos, pensamientos con embeddings vectoriales para búsqueda semántica"
+          "Runtime de maquina de estados para orquestacion deterministica de LLM",
+          "Tres grafos de conocimiento en Kuzu: dominio de negocio, tests, estructura de codigo",
+          "Sistema de herramientas MCP — PostgreSQL, Kuzu, MongoDB via interfaces tipadas",
+          "Motor de pensamiento — memoria persistente con wikilinks y embeddings",
+          "Hot standby con verificaciones de salud cada 15s y failover automatico",
+          "Monorepo: Next.js + TypeScript + pnpm workspaces"
         ],
         "results": [
-          "El dev-agent desarrolla la plataforma usando la plataforma misma — mismas herramientas, mismo workflow",
-          "El agente debe reproducir el bug y citar file:line antes de implementar cualquier fix",
-          "Cada decisión del agente es trazable — los pensamientos registran qué se observó, qué faltaba y por qué el agente eligió su enfoque"
+          "En produccion desde 2025",
+          "9 servicios en entornos prod/standby/dev",
+          "Despliegue sin tiempo de inactividad con pipeline automatizado",
+          "Flujo de desarrollo: escenarios de negocio → tests → agentes generan codigo"
         ],
         "lessonsLearned": [
-          "Los LLMs se vuelven confiables cuando un algoritmo controla el flujo — el algoritmo no alucina",
-          "Bases separadas superan una unificada — estructura de código, memoria de agentes y datos de usuario necesitan esquemas y patrones de consulta diferentes",
-          "Limitar herramientas por fase previene que los agentes editen código antes de entender el problema"
+          "Los LLMs se vuelven confiables cuando cada llamada es un paso acotado en una maquina de estados",
+          "Tres grafos de conocimiento separados superan a uno unificado — diferentes patrones de consulta necesitan diferentes esquemas",
+          "Construir la plataforma con ella misma es la validacion mas fuerte"
         ]
       },
       "mobile-platform": {
-        "title": "Plataforma Móvil Multiplataforma",
-        "description": "Plataforma móvil escalable en Flutter y AWS con arquitectura limpia e infraestructura automatizada.",
-        "problem": "Se necesitaba una base para un producto multiplataforma con backend confiable y despliegue automatizado. Los enfoques típicos llevaban a arquitectura fragmentada.",
-        "solution": "Implementé Clean Architecture con estructura basada en Features en Flutter. Backend serverless en AWS (Lambda en Golang). Infraestructura definida en CDK y se despliega automáticamente.",
+        "title": "Plataforma Movil Multiplataforma",
+        "description": "Plataforma movil escalable en Flutter y AWS con arquitectura limpia e infraestructura automatizada.",
+        "problem": "Se necesitaba una base para un producto multiplataforma con backend confiable y despliegue automatizado. Los enfoques tipicos llevaban a arquitectura fragmentada.",
+        "solution": "Implemente Clean Architecture con estructura basada en Features en Flutter. Backend - serverless en AWS (Lambda en Golang). Infraestructura definida en CDK y se despliega automaticamente.",
         "technicalDetails": [
           "Clean Architecture + estructura basada en Features",
           "Backend serverless en AWS (Lambda, DynamoDB, Cognito)",
-          "Infraestructura como Código (AWS CDK)"
+          "Infraestructura como Codigo (AWS CDK)"
         ],
         "results": [
-          "Base arquitectónica e infraestructural implementada",
+          "Base arquitectonica e infraestructural implementada",
           "Despliegue completamente automatizado",
           "Estructura modular simplifica desarrollo futuro",
-          "Backend en estado listo para producción"
+          "Backend en estado listo para produccion"
         ],
         "lessonsLearned": [
           "Clean Architecture vale la pena en proyectos grandes",
-          "Infraestructura como Código es crítica para reproducibilidad",
+          "Infraestructura como Codigo es critica para reproducibilidad",
           "Serverless reduce sobrecarga operacional"
         ]
       },
       "website-builder": {
-        "title": "Plataforma de Constructor de Sitios Web Dinámicos",
-        "description": "Sistema flexible de constructor de sitios web con esquema de datos dinámico y soporte multi-tenancy.",
-        "problem": "Se necesitaba un constructor donde los usuarios puedan crear tipos de entidad y campos arbitrarios sin migraciones de BD. Más aislamiento de datos entre clientes.",
-        "solution": "Implementé patrón EAV (Entity-Attribute-Value) con multi-tenancy a nivel de base de datos. Los usuarios crean sus entidades y campos a través de la interfaz, los datos se almacenan en una estructura universal y extensible.",
+        "title": "Plataforma de Constructor de Sitios Web Dinamicos",
+        "description": "Sistema de constructor de sitios web flexible con esquema de datos dinamico y soporte multi-tenancy.",
+        "problem": "Se necesitaba un constructor donde usuarios puedan crear tipos de entidades y campos arbitrarios sin migraciones de BD. Ademas aislamiento de datos entre clientes.",
+        "solution": "Implemente patron EAV (Entity-Attribute-Value) con multi-tenancy a nivel de base de datos. Los usuarios crean sus entidades y campos a traves de la interfaz, los datos se almacenan en estructura universal y extensible.",
         "technicalDetails": [
-          "Patrón EAV para esquema dinámico sin migraciones",
+          "Patron EAV para esquema dinamico sin migraciones",
           "Multi-tenancy con bases de datos aisladas por cliente",
           "Almacenamiento type-safe de diferentes tipos de datos"
         ],
         "results": [
-          "Los usuarios crean entidades sin intervención de desarrollador",
+          "Usuarios crean entidades sin intervencion de desarrollador",
           "Aislamiento completo de datos entre clientes",
           "Cero tiempo de inactividad para cambios de esquema",
-          "El sistema se adapta a diferentes dominios de negocio"
+          "Sistema se adapta a diferentes dominios de negocio"
         ],
         "lessonsLearned": [
-          "EAV funciona bien para datos verdaderamente dinámicos",
-          "Multi-tenancy requiere decisiones de aislamiento tempranas",
-          "La flexibilidad del esquema tiene un costo de complejidad de consulta"
+          "EAV proporciona maxima flexibilidad pero requiere optimizacion de consultas",
+          "Multi-tenancy a nivel BD es el aislamiento mas confiable",
+          "Almacenamiento type-safe previene corrupcion de datos"
         ]
       }
     }
