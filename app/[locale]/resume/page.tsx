@@ -16,6 +16,10 @@ export default async function ResumePage({ params }: ResumePageProps) {
   setRequestLocale(locale);
   const t = await getTranslations("resume");
 
+  const pdf = locale === "ru" ? "/resume-ru.pdf" : "/resume-en.pdf";
+  const pdfName =
+    locale === "ru" ? "Yegor_Polyakov_Resume_RU.pdf" : "Yegor_Polyakov_Resume.pdf";
+
   return (
     <main className="flex min-h-screen items-start sm:items-center justify-center bg-gradient-to-b from-white to-gray-50 py-12 sm:py-20 dark:from-gray-900 dark:to-gray-950">
       <div className="container mx-auto px-4">
@@ -45,8 +49,8 @@ export default async function ResumePage({ params }: ResumePageProps) {
           </div>
 
           <a
-            href="/resume.pdf"
-            download="YegorPolyakovResume.pdf"
+            href={pdf}
+            download={pdfName}
             className="inline-flex items-center rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:scale-105 hover:shadow-xl"
           >
             <svg
