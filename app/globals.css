@@ -1,8 +1,12 @@
 @import "tailwindcss";
 
-@theme {
-  --color-*: initial;
-}
+/*
+ * Dark mode is driven by the `.dark` class that next-themes puts on <html>,
+ * not by prefers-color-scheme — the site has an explicit Light/Dark/System
+ * switcher and System is resolved by next-themes, not by CSS.
+ * Tailwind v4 has no JS config, so this is where `darkMode: "class"` lives.
+ */
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   --background: #ffffff;
@@ -61,7 +65,63 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Geist is loaded by next/font in the locale layout (latin + cyrillic) and
+   * exposed as --font-geist-sans. The bare `Arial, Helvetica` here is the
+   * create-next-app default that was never replaced, so the site downloaded two
+   * font families and then rendered in Arial. */
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+/*
+ * Interactive chrome: nav links, icon buttons, dropdown rows.
+ *
+ * These states used to be onMouseEnter/onMouseLeave handlers writing
+ * element.style — about eight copies across Header, ThemeToggle and
+ * LanguageSwitcher. That workaround only existed because the colour palette was
+ * broken; it also meant keyboard users got no focus feedback at all and a tap on
+ * a touch device left the hover colour stuck. CSS does both, in one place.
+ */
+.nav-link {
+  color: var(--nav-text);
+  transition: color 150ms;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--nav-hover-text);
+}
+
+/* After :hover on purpose — the current page keeps its colour when hovered. */
+.nav-link[aria-current="page"] {
+  color: var(--nav-active-text);
+}
+
+.icon-button {
+  color: var(--nav-text);
+  transition: background-color 150ms;
+}
+
+.icon-button:hover,
+.icon-button:focus-visible {
+  background-color: var(--button-hover-bg);
+}
+
+.dropdown-item {
+  color: var(--dropdown-text);
+  transition:
+    background-color 150ms,
+    color 150ms;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus-visible {
+  background-color: var(--dropdown-hover-bg);
+}
+
+/* After :hover on purpose — the selected row keeps its colour when hovered. */
+.dropdown-item[aria-pressed="true"] {
+  background-color: var(--dropdown-selected-bg);
+  color: var(--dropdown-selected-text);
 }
 
 .name-gradient {

@@ -87,28 +87,16 @@
       "title": "Architecture",
       "text": "State-machine runtime where LLMs are atomic steps. Three knowledge graphs — business model, test scenarios, code structure. Agent system that reads all three and acts. Infrastructure that deploys and monitors itself."
     },
-    "tasksTitle": "What It Does",
-    "tasks": [
-      "State-machine orchestration — every LLM call is a deterministic, auditable step",
-      "Three-graph knowledge base: business domain, test scenarios, code structure",
-      "MCP tool system — agents access PostgreSQL, Kuzu, MongoDB through typed interfaces",
-      "Thought engine — persistent memory that connects ideas across sessions",
-      "Hot standby with automatic failover and zero-downtime deployment"
-    ],
     "howWeWork": {
-      "title": "Development Flow",
-      "note": "Same infrastructure builds the platform and delivers it."
+      "title": "Development Flow"
     },
     "steps": [
       "Business scenarios defined in the knowledge graph",
       "Tests verify scenarios before implementation",
       "Agents read the graph, write code, deploy — same pipeline for everything"
     ],
-    "whyNotConsulting": {
-      "title": "Why This Approach",
-      "problem": "Typical AI integrations bolt an LLM onto an existing system. No context, no memory, no business model. Every call is a cold start.",
-      "solution": "Imperia OS makes LLMs stateful. Thought engine persists every interaction. Knowledge graphs give every agent call full business context. State machine makes each step deterministic and auditable."
-    }
+    "caseStudyTeaser": "Imperia OS is also written up as a case study — architecture, decisions and what they cost.",
+    "caseStudyLink": "Read the case study"
   },
   "caseStudies": {
     "title": "Case Studies",

@@ -87,28 +87,16 @@
       "title": "Arquitectura",
       "text": "Runtime de maquina de estados donde los LLMs son pasos atomicos. Tres grafos de conocimiento — modelo de negocio, escenarios de prueba, estructura de codigo. Sistema de agentes que lee los tres y actua. Infraestructura que se despliega y monitorea a si misma."
     },
-    "tasksTitle": "Que Hace",
-    "tasks": [
-      "Orquestacion por maquina de estados — cada llamada LLM es un paso deterministico y auditable",
-      "Tres grafos de conocimiento: dominio de negocio, escenarios de prueba, estructura de codigo",
-      "Sistema de herramientas MCP — agentes acceden a PostgreSQL, Kuzu, MongoDB via interfaces tipadas",
-      "Motor de pensamiento — memoria persistente que conecta ideas entre sesiones",
-      "Hot standby con failover automatico y despliegue sin tiempo de inactividad"
-    ],
     "howWeWork": {
-      "title": "Flujo de Desarrollo",
-      "note": "La misma infraestructura construye la plataforma y la entrega."
+      "title": "Flujo de Desarrollo"
     },
     "steps": [
       "Escenarios de negocio definidos en el grafo de conocimiento",
       "Tests verifican escenarios antes de la implementacion",
       "Agentes leen el grafo, escriben codigo, despliegan — mismo pipeline para todo"
     ],
-    "whyNotConsulting": {
-      "title": "Por Que Este Enfoque",
-      "problem": "Las integraciones tipicas de IA conectan un LLM a un sistema existente. Sin contexto, sin memoria, sin modelo de negocio. Cada llamada es un inicio en frio.",
-      "solution": "Imperia OS hace los LLMs stateful. El motor de pensamiento persiste cada interaccion. Los grafos de conocimiento dan a cada llamada de agente contexto completo de negocio. La maquina de estados hace cada paso deterministico y auditable."
-    }
+    "caseStudyTeaser": "Imperia OS tambien tiene un caso de estudio — arquitectura, decisiones y lo que costaron.",
+    "caseStudyLink": "Leer el caso de estudio"
   },
   "caseStudies": {
     "title": "Casos de Estudio",

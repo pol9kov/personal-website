@@ -169,11 +169,16 @@ function generateIntegralSVG(categorySkills: Skill[]): string {
   const first = points[0];
   if (!first) return "";
 
+  // Round coordinates: raw doubles differ in the last decimals between machines,
+  // so every build rewrote the committed SVGs with pure float noise. 3 decimals
+  // is well below one device pixel at this viewBox.
+  const round = (n: number) => Number(n.toFixed(3));
+
   const polygonPoints = [
     `0,0`,
-    `${first.x},0`,
-    ...points.map((p) => `${p.x},${p.y}`),
-    `0,${totalHeight}`,
+    `${round(first.x)},0`,
+    ...points.map((p) => `${round(p.x)},${round(p.y)}`),
+    `0,${round(totalHeight)}`,
   ].join(" ");
 
   // Progressive blur using two layers: blurred underneath, sharp on top with gradient mask
