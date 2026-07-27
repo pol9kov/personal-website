@@ -1,7 +1,7 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useState, useSyncExternalStore } from "react";
 
 type Theme = "light" | "dark" | "system";
 
@@ -11,14 +11,27 @@ const themes: { value: Theme; label: string }[] = [
   { value: "system", label: "System" },
 ];
 
+/**
+ * True only after hydration. Replaces the `useState(false)` + `setMounted(true)`
+ * in an effect pattern, which React now flags (react-hooks/set-state-in-effect)
+ * because a synchronous setState in an effect triggers a cascading render.
+ * useSyncExternalStore gives the same two-phase answer — false on the server and
+ * during hydration, true afterwards — without the extra render pass. The
+ * subscriber never fires: the value flips exactly once, when the client takes over.
+ */
+const neverChanges = () => () => {};
+const useMounted = () =>
+  useSyncExternalStore(
+    neverChanges,
+    () => true,
+    () => false,
+  );
+
 export function ThemeToggle() {
   const { theme, setTheme, resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  const mounted = useMounted();
   const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   if (!mounted) {
     return (
@@ -93,6 +106,8 @@ export function ThemeToggle() {
     <div className="relative flex items-center h-9">
       <button
         onClick={() => setIsOpen(!isOpen)}
+        aria-label="Toggle theme"
+        aria-expanded={isOpen}
         className="h-9 w-9 rounded-lg transition-colors flex items-center justify-center"
         style={{ color: 'var(--nav-text)' }}
         onMouseEnter={(e) => {

@@ -1,24 +1,37 @@
 "use client";
 
-import { useEffect, useState, useTransition } from "react";
+import { useState, useSyncExternalStore, useTransition } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { type Locale } from "@/i18n/routing";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { ThemeToggle } from "./ThemeToggle";
 
+/**
+ * True only after hydration. Replaces the `useState(false)` + `setMounted(true)`
+ * in an effect pattern, which React now flags (react-hooks/set-state-in-effect)
+ * because a synchronous setState in an effect triggers a cascading render.
+ * useSyncExternalStore gives the same two-phase answer — false on the server and
+ * during hydration, true afterwards — without the extra render pass. The
+ * subscriber never fires: the value flips exactly once, when the client takes over.
+ */
+const neverChanges = () => () => {};
+const useMounted = () =>
+  useSyncExternalStore(
+    neverChanges,
+    () => true,
+    () => false,
+  );
+
 export function Header() {
   const t = useTranslations("navigation");
   const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
-  const [mounted, setMounted] = useState(false);
+  const mounted = useMounted();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [, startTransition] = useTransition();
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   const navItems = [
     { href: "/", label: t("home") },
@@ -101,6 +114,8 @@ export function Header() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+            aria-expanded={isMenuOpen}
             className="md:hidden p-2 rounded-lg transition-colors"
             style={{ color: 'var(--nav-text)' }}
             onMouseEnter={(e) => {
