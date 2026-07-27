@@ -5,12 +5,13 @@ import { Skill } from "@/lib/types";
  */
 export const skills: Skill[] = [
   // Languages
+  { name: "TypeScript", category: "languages", proficiency: 4 },
   { name: "Golang", category: "languages", proficiency: 4 },
   { name: "Dart", category: "languages", proficiency: 4 },
   { name: "Java", category: "languages", proficiency: 3 },
+  { name: "Python", category: "languages", proficiency: 2 },
   { name: "JavaScript", category: "languages", proficiency: 2 },
   { name: "Delphi", category: "languages", proficiency: 2 },
-  { name: "Python", category: "languages", proficiency: 1 },
   { name: "C", category: "languages", proficiency: 1 },
 
   // Frameworks & Platforms
@@ -19,10 +20,11 @@ export const skills: Skill[] = [
   { name: "Clean Architecture", category: "frameworks", proficiency: 4 },
   { name: "Infrastructure as Code", category: "frameworks", proficiency: 4 },
   { name: "Hyperledger Fabric", category: "frameworks", proficiency: 4 },
-  { name: "React/Next.js", category: "frameworks", proficiency: 1 },
+  { name: "React/Next.js", category: "frameworks", proficiency: 3 },
   { name: "Ruby on Rails", category: "frameworks", proficiency: 1 },
 
   // Databases
+  { name: "PostgreSQL", category: "databases", proficiency: 3 },
   { name: "DynamoDB", category: "databases", proficiency: 4 },
   { name: "MongoDB", category: "databases", proficiency: 4 },
   { name: "CouchDB", category: "databases", proficiency: 4 },

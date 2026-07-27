@@ -6,51 +6,13 @@
 import * as fs from "fs";
 import * as path from "path";
 
-// Skill type definition
-interface Skill {
-  name: string;
-  category: "languages" | "frameworks" | "databases" | "devops" | "other";
-  proficiency: number;
-}
-
-// Skills data (copied from lib/constants/skills.ts to avoid import issues)
-const skills: Skill[] = [
-  // Languages
-  { name: "Golang", category: "languages", proficiency: 4 },
-  { name: "Dart", category: "languages", proficiency: 4 },
-  { name: "Java", category: "languages", proficiency: 3 },
-  { name: "JavaScript", category: "languages", proficiency: 2 },
-  { name: "Delphi", category: "languages", proficiency: 2 },
-  { name: "Python", category: "languages", proficiency: 1 },
-  { name: "C", category: "languages", proficiency: 1 },
-
-  // Frameworks & Platforms
-  { name: "Flutter", category: "frameworks", proficiency: 4 },
-  { name: "Android", category: "frameworks", proficiency: 1 },
-  { name: "Clean Architecture", category: "frameworks", proficiency: 4 },
-  { name: "Infrastructure as Code", category: "frameworks", proficiency: 4 },
-  { name: "Hyperledger Fabric", category: "frameworks", proficiency: 4 },
-  { name: "React/Next.js", category: "frameworks", proficiency: 1 },
-  { name: "Ruby on Rails", category: "frameworks", proficiency: 1 },
-
-  // Databases
-  { name: "DynamoDB", category: "databases", proficiency: 4 },
-  { name: "MongoDB", category: "databases", proficiency: 4 },
-  { name: "CouchDB", category: "databases", proficiency: 4 },
-  { name: "LevelDB", category: "databases", proficiency: 4 },
-  { name: "SQLite", category: "databases", proficiency: 3 },
-  { name: "MySQL", category: "databases", proficiency: 2 },
-
-  // DevOps & Cloud
-  { name: "AWS", category: "devops", proficiency: 4 },
-  { name: "Linux", category: "devops", proficiency: 3 },
-  { name: "Docker", category: "devops", proficiency: 3 },
-  { name: "Git", category: "devops", proficiency: 2 },
-  { name: "Prometheus", category: "devops", proficiency: 1 },
-  { name: "Grafana", category: "devops", proficiency: 1 },
-  { name: "Bitcoin", category: "devops", proficiency: 1 },
-  { name: "Ethereum", category: "devops", proficiency: 1 },
-];
+// ЕДИНСТВЕННЫЙ источник списка — lib/constants/skills.ts. Раньше здесь лежала
+// его копия «чтобы не возиться с импортом», и она протухла: в ней не было
+// TypeScript и PostgreSQL, а у Python и React стояли чужие уровни. Кривая на
+// графике рисовалась по копии, а строки под ней — по настоящему списку, поэтому
+// линия шла мимо столбцов. Копия удалена; расхождение теперь невозможно.
+import { skills } from "../lib/constants/skills";
+import type { Skill } from "../lib/types";
 
 // Layout constants (must match Skills.tsx)
 const ROW_HEIGHT = 40;
