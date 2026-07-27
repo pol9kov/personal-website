@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useSyncExternalStore, useTransition } from "react";
+import { useState, useTransition } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { type Locale } from "@/i18n/routing";
@@ -8,27 +8,23 @@ import { LanguageSwitcher } from "./LanguageSwitcher";
 import { ThemeToggle } from "./ThemeToggle";
 
 /**
- * True only after hydration. Replaces the `useState(false)` + `setMounted(true)`
- * in an effect pattern, which React now flags (react-hooks/set-state-in-effect)
- * because a synchronous setState in an effect triggers a cascading render.
- * useSyncExternalStore gives the same two-phase answer — false on the server and
- * during hydration, true afterwards — without the extra render pass. The
- * subscriber never fires: the value flips exactly once, when the client takes over.
+ * ВНИМАНИЕ на будущее. Раньше весь Header ждал гидрации: до неё он возвращал
+ * заглушку с одним именем, поэтому в серверном HTML не было НИ ОДНОЙ ссылки
+ * меню — они появлялись только после того, как в браузере отработает JS.
+ * Замер 2026-07-27 по живой странице: <header> в ответе сервера — 211 байт,
+ * ноль <a> и ноль <button>. Любая заминка с гидрацией (медленная сеть,
+ * блокировщик, ошибка в чанке) оставляла человека с пустой чёрной полосой —
+ * ровно так это и выглядело у владельца сайта.
+ *
+ * Ждать гидрации нужно ОДНОЙ кнопке темы, и у неё для этого есть собственный
+ * гард внутри ThemeToggle. Остальная шапка от темы не зависит и рендерится на
+ * сервере. Не возвращай сюда общий mounted-гейт.
  */
-const neverChanges = () => () => {};
-const useMounted = () =>
-  useSyncExternalStore(
-    neverChanges,
-    () => true,
-    () => false,
-  );
-
 export function Header() {
   const t = useTranslations("navigation");
   const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
-  const mounted = useMounted();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [, startTransition] = useTransition();
 
@@ -48,16 +44,6 @@ export function Header() {
     });
   };
 
-  if (!mounted) {
-    return (
-      <header
-        className="sticky top-0 z-50 h-12 border-b flex items-center px-4"
-        style={{ backgroundColor: 'var(--background)', borderColor: 'var(--border-color)' }}
-      >
-        <span className="text-lg font-semibold">{t("siteName")}</span>
-      </header>
-    );
-  }
 
   return (
     <>
