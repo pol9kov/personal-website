@@ -1,29 +1,19 @@
 import { test, expect } from "@playwright/test";
+import { setTheme } from "./helpers/theme";
 
 test.describe("Dark Mode", () => {
-  test("should toggle dark mode when clicking theme button", async ({ page }) => {
-    await page.goto("http://localhost:3000");
+  test("should switch between dark and light from the theme menu", async ({ page }) => {
+    await page.goto("/en");
 
-    // Check initial state (should be light mode)
     const html = page.locator("html");
     await expect(html).not.toHaveClass(/dark/);
 
-    // Find and click theme toggle button
-    const themeButton = page.locator('button[aria-label="Toggle theme"]');
-    await expect(themeButton).toBeVisible();
-    await themeButton.click();
+    await expect(page.locator('button[aria-label="Toggle theme"]')).toBeVisible();
 
-    // Wait a bit for state to update
-    await page.waitForTimeout(100);
-
-    // Check that dark class was added
+    await setTheme(page, "Dark");
     await expect(html).toHaveClass(/dark/);
 
-    // Click again to toggle back
-    await themeButton.click();
-    await page.waitForTimeout(100);
-
-    // Should be back to light mode
+    await setTheme(page, "Light");
     await expect(html).not.toHaveClass(/dark/);
   });
 });

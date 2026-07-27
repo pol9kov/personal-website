@@ -4,11 +4,11 @@ test.describe("Mobile Navigation", () => {
   test("should show hamburger menu on mobile viewport", async ({ page }) => {
     // Set mobile viewport (iPhone 12)
     await page.setViewportSize({ width: 390, height: 844 });
-    await page.goto("http://localhost:3000");
+    await page.goto("/en");
     await page.waitForLoadState("networkidle");
 
     const hamburgerButton = page.locator('button[aria-label="Toggle menu"]');
-    const desktopNav = page.locator("nav.hidden.md\\:block");
+    const desktopNav = page.locator("nav.hidden.md\\:flex");
 
     // Hamburger should be visible on mobile
     await expect(hamburgerButton).toBeVisible();
@@ -21,7 +21,7 @@ test.describe("Mobile Navigation", () => {
     page,
   }) => {
     await page.setViewportSize({ width: 390, height: 844 });
-    await page.goto("http://localhost:3000");
+    await page.goto("/en");
 
     const hamburgerButton = page.locator('button[aria-label="Toggle menu"]');
 
@@ -51,7 +51,7 @@ test.describe("Mobile Navigation", () => {
     page,
   }) => {
     await page.setViewportSize({ width: 390, height: 844 });
-    await page.goto("http://localhost:3000");
+    await page.goto("/en");
 
     const hamburgerButton = page.locator('button[aria-label="Toggle menu"]');
 
@@ -77,11 +77,11 @@ test.describe("Mobile Navigation", () => {
   }) => {
     // Set desktop viewport
     await page.setViewportSize({ width: 1280, height: 720 });
-    await page.goto("http://localhost:3000");
+    await page.goto("/en");
     await page.waitForLoadState("networkidle");
 
     const hamburgerButton = page.locator('button[aria-label="Toggle menu"]');
-    const desktopNav = page.locator("nav.hidden.md\\:block");
+    const desktopNav = page.locator("nav.hidden.md\\:flex");
 
     // Desktop navigation should be visible
     await expect(desktopNav).toBeVisible();
@@ -92,7 +92,7 @@ test.describe("Mobile Navigation", () => {
 
   test("complete mobile navigation journey", async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 667 }); // iPhone SE
-    await page.goto("http://localhost:3000");
+    await page.goto("/en");
 
     const hamburgerButton = page.locator('button[aria-label="Toggle menu"]');
 

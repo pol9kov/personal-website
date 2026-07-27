@@ -2,10 +2,21 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
+import { Geist, Geist_Mono } from "next/font/google";
 import { Header, Footer } from "@/components/shared";
 import { Providers } from "@/components/providers/Providers";
-import { isLocale, routing } from "@/i18n/routing";
+import { routing } from "@/i18n/routing";
 import "../globals.css";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin", "cyrillic"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin", "cyrillic"],
+});
 
 type LocaleParam = { locale: string };
 
@@ -67,7 +78,7 @@ export default async function LocaleLayout({
 }: LocaleLayoutProps) {
   const { locale } = await params;
 
-  if (!isLocale(locale)) {
+  if (!routing.locales.includes(locale as "en" | "ru")) {
     notFound();
   }
 
@@ -75,7 +86,10 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <div lang={locale} className="antialiased">
+    <div
+      lang={locale}
+      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+    >
       <NextIntlClientProvider messages={messages}>
         <Providers>
           <Header />
