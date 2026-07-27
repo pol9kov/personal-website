@@ -9,8 +9,8 @@
   },
   "hero": {
     "name": "Egor Polyakov",
-    "subtitle": "Building Imperia OS — an AI assistant and the platform it requires. State-machine runtime, three knowledge graphs, shipped since 2025.",
-    "tags": "AI Platform · Architecture · Infrastructure",
+    "subtitle": "Humans give meaning. AI gives form.",
+    "tags": "Solution Architect · Backend · Infrastructure",
     "viewProjects": "View Projects",
     "contactMe": "Contact Me"
   },
@@ -35,39 +35,20 @@
   },
   "about": {
     "title": "About Me",
-    "subtitle": "Engineer building Imperia OS — an AI-first platform where LLMs are runtime primitives, not API calls.",
+    "subtitle": "Solution Architect. Humans give meaning, AI gives form.",
     "whoIAm": {
       "title": "Who I Am",
-      "p1": "Graduated from LNMO in St. Petersburg, explored over a dozen programming languages, and placed in ICYS and Baltic Science and Engineering Competition.",
-      "p2": "From dynamic EAV systems to cloud-native Go microservices to Imperia OS — a full AI-first platform with its own runtime, knowledge graphs, and agent system."
+      "p1": "Math-focused education in St. Petersburg (LNMO), then a path through EAV systems, cloud-native Go microservices, and blockchain infrastructure.",
+      "p2": "Now building Imperia OS — a platform where AI is part of the architecture, not bolted on."
     },
     "approach": {
       "title": "How I Think",
-      "p1": "I ask why before asking how. Most engineers optimize the solution. I check whether the problem is stated correctly first.",
-      "p2": "Strong at catching when a concept drifts mid-reasoning — when a generic label hides the fact that nothing concrete was built, or when an abstraction solves a problem that doesn't exist."
+      "p1": "I check whether the problem is stated correctly before optimizing the solution.",
+      "p2": "I catch when a concept drifts mid-reasoning — when a generic label hides that nothing concrete was built, or when an abstraction solves a problem that doesn't exist."
     },
     "currentFocus": {
       "title": "Current Focus",
-      "p1": "Imperia OS — making LLMs stateful with persistent memory, business-aware through knowledge graphs, and reliable through state-machine orchestration. The platform builds itself with the same tools it offers."
-    },
-    "values": {
-      "title": "Values",
-      "continuousLearning": {
-        "title": "Continuous Learning",
-        "text": "Every project provides new thinking tools."
-      },
-      "curiosity": {
-        "title": "Curiosity",
-        "text": "Seeking root causes, not just treating symptoms."
-      },
-      "progress": {
-        "title": "Progress Over Perfection",
-        "text": "Sustainable steps beat quick fixes."
-      },
-      "trust": {
-        "title": "Trust",
-        "text": "Honest communication and reliability."
-      }
+      "p1": "Imperia OS. Business requirements come first, then tests, then code — all three are automatically indexed and embedded. The dev-agent works through the same flow: understand the problem, research root cause, plan, implement, verify, commit."
     }
   },
   "resume": {
@@ -170,23 +151,24 @@
   },
   "imperiaOs": {
     "title": "Imperia OS",
-    "subtitle": "AI-first development platform. Shipped and running since 2025.",
+    "subtitle": "AI-first development platform.",
     "tryDemo": "Visit Platform",
     "problem": {
       "title": "The Problem",
-      "text": "AI assistants today are stateless — no memory between sessions, no understanding of your business, no ability to act on real systems. Each interaction starts from zero. Building a real assistant requires a platform: runtime, knowledge, infrastructure."
+      "text": "Most AI integrations give a model a prompt and hope for the best. No workflow discipline, no audit trail, no way to know why the agent did what it did."
     },
     "solution": {
-      "title": "Architecture",
-      "text": "State-machine runtime where LLMs are atomic steps. Three knowledge graphs — business model, test scenarios, code structure. Agent system that reads all three and acts. Infrastructure that deploys and monitors itself."
+      "title": "The Approach",
+      "text": "The algorithm controls the flow, not the LLM. Agents follow deterministic phases with exit criteria. Each phase restricts which tools are available. Every step is recorded — confidence, observations, gaps. The algorithm doesn't hallucinate — only the bounded steps inside it can."
     },
     "howWeWork": {
-      "title": "Development Flow"
+      "title": "How It Works"
     },
     "steps": [
-      "Business scenarios defined in the knowledge graph",
-      "Tests verify scenarios before implementation",
-      "Agents read the graph, write code, deploy — same pipeline for everything"
+      "Business requirements defined first — the spec tree is runtime configuration",
+      "Tests written from requirements — verify before implementation",
+      "Dev-agent follows six phases: understand → research → plan → implement → verify → commit",
+      "All three layers indexed and embedded — the agent sees what exists before writing anything new"
     ],
     "caseStudyTeaser": "Imperia OS is also written up as a case study — architecture, decisions and what they cost.",
     "caseStudyLink": "Read the case study"
