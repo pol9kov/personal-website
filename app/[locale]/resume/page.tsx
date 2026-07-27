@@ -16,14 +16,14 @@ interface Job {
   role: string;
   org: string;
   period: string;
-  place: string;
-  bullets: string[];
+  paragraphs: string[];
 }
 
 interface Study {
   degree: string;
   org: string;
   period: string;
+  text: string;
 }
 
 const CONTACTS = [
@@ -44,7 +44,6 @@ export default async function ResumePage({ params }: ResumePageProps) {
 
   const experience = t.raw("experience") as Job[];
   const education = t.raw("education") as Study[];
-  const awards = t.raw("awards") as string[];
   const languages = t.raw("languages") as string[];
   const stack = t.raw("stack") as string[];
 
@@ -98,7 +97,7 @@ export default async function ResumePage({ params }: ResumePageProps) {
             </h2>
             <div className="space-y-8">
               {experience.map((job) => (
-                <div key={`${job.role}-${job.period}`} className="print-avoid-break">
+                <div key={`${job.org}-${job.period}`} className="print-avoid-break">
                   <div className="flex flex-wrap items-baseline justify-between gap-x-4">
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                       {job.role}
@@ -108,22 +107,18 @@ export default async function ResumePage({ params }: ResumePageProps) {
                     </span>
                   </div>
                   <p className="text-sm text-gray-600 dark:text-gray-400">
-                    {job.org} · {job.place}
+                    {job.org}
                   </p>
-                  <ul className="mt-3 space-y-2">
-                    {job.bullets.map((b) => (
-                      <li
-                        key={b}
-                        className="relative pl-5 leading-relaxed text-gray-800 dark:text-gray-200"
+                  <div className="mt-3 space-y-3">
+                    {job.paragraphs.map((p) => (
+                      <p
+                        key={p}
+                        className="leading-relaxed text-gray-800 dark:text-gray-200"
                       >
-                        <span
-                          aria-hidden="true"
-                          className="absolute left-0 top-[0.6em] h-1.5 w-1.5 rounded-full bg-blue-600 dark:bg-blue-400"
-                        />
-                        {b}
-                      </li>
+                        {p}
+                      </p>
                     ))}
-                  </ul>
+                  </div>
                 </div>
               ))}
             </div>
@@ -146,46 +141,44 @@ export default async function ResumePage({ params }: ResumePageProps) {
             </ul>
           </section>
 
-          {/* Education + Awards + Languages */}
-          <div className="mt-10 grid gap-10 sm:grid-cols-2 print-avoid-break">
-            <section>
-              <h2 className="mb-3 text-sm font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400">
-                {t("educationTitle")}
-              </h2>
-              <div className="space-y-4">
-                {education.map((e) => (
-                  <div key={e.period}>
-                    <p className="font-medium text-gray-900 dark:text-white">
+          {/* Education */}
+          <section className="mt-10 print-avoid-break">
+            <h2 className="mb-3 text-sm font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400">
+              {t("educationTitle")}
+            </h2>
+            <div className="space-y-6">
+              {education.map((e) => (
+                <div key={e.period}>
+                  <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+                    <h3 className="font-semibold text-gray-900 dark:text-white">
                       {e.degree}
-                    </p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
-                      {e.org} · {e.period}
-                    </p>
+                    </h3>
+                    <span className="text-sm text-gray-500 dark:text-gray-400">
+                      {e.period}
+                    </span>
                   </div>
-                ))}
-              </div>
-            </section>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                    {e.org}
+                  </p>
+                  <p className="mt-3 leading-relaxed text-gray-800 dark:text-gray-200">
+                    {e.text}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
 
-            <section>
-              <h2 className="mb-3 text-sm font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400">
-                {t("awardsTitle")}
-              </h2>
-              <ul className="space-y-1 text-gray-800 dark:text-gray-200">
-                {awards.map((a) => (
-                  <li key={a}>{a}</li>
-                ))}
-              </ul>
-
-              <h2 className="mb-3 mt-8 text-sm font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400">
-                {t("languagesTitle")}
-              </h2>
-              <ul className="space-y-1 text-gray-800 dark:text-gray-200">
-                {languages.map((l) => (
-                  <li key={l}>{l}</li>
-                ))}
-              </ul>
-            </section>
-          </div>
+          {/* Languages */}
+          <section className="mt-10 print-avoid-break">
+            <h2 className="mb-3 text-sm font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400">
+              {t("languagesTitle")}
+            </h2>
+            <ul className="flex flex-wrap gap-x-6 gap-y-1 text-gray-800 dark:text-gray-200">
+              {languages.map((l) => (
+                <li key={l}>{l}</li>
+              ))}
+            </ul>
+          </section>
 
           <p className="mt-12 text-xs text-gray-400 dark:text-gray-500">
             {t("updated")}

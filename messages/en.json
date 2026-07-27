@@ -77,108 +77,67 @@
     "print": "Print / PDF",
     "contactsTitle": "Contacts",
     "summaryTitle": "Summary",
-    "summary": "Platform engineer, 10+ years shipping software. For the last two years I have been building Imperia OS — a runtime where an LLM call is an atomic state-machine step, not a wrapper around an API: agents, tools over MCP, three knowledge stores (code graph, documents, relational data) and a dev → standby → prod deploy pipeline. In production since 2025, written solo. Before that: blockchain infrastructure at Sber, IBM and Insolar, and cross-platform products on Flutter/AWS. I am not interested in \"adding AI\" to a product — I am interested in systems where the model is part of the runtime.",
+    "summary": "Building an AI assistant to do everything its user wants — and the platform that goal requires. The same infrastructure builds the platform and delivers it to its users.",
     "experienceTitle": "Experience",
     "experience": [
       {
-        "role": "Founder, Platform Engineer — Imperia OS",
-        "org": "Independent project",
-        "period": "05/2025 — Present",
-        "place": "Buenos Aires, Argentina",
-        "bullets": [
-          "State-machine runtime: an LLM call is an atomic step with typed input and output, not a free-running chat loop. Every agent turn is reproducible and inspectable step by step.",
-          "MCP tool layer: ~90 tools (data, git, browser, deploy, messengers) behind one protocol, with access partitioned into registers by how reversible the action is.",
-          "Three knowledge stores behind one access path: code and architecture graph (Kuzu), documents and vector memory (MongoDB), relational data (PostgreSQL) — each owned by its own service, never connected to directly from agent code.",
-          "Agent orchestration: topic-parallel turns, delegation to background workers, judge panels that adversarially verify findings, A/B runs scored by an LLM judge.",
-          "dev → standby → prod deploy pipeline with gates, auto-promotion and single-commit rollback; the coordinator holds the only path to production.",
-          "Input collectors: Telegram (MTProto), WhatsApp, voice with transcription and per-word confidence — all folded into a single event stream."
+        "role": "Imperia OS",
+        "org": "Independent",
+        "period": "2025 – present",
+        "paragraphs": [
+          "The platform is written from inside itself. Agents propose a change, author it, verify it, and land it behind a gate; deployment walks dev, standby, and production with no hand on it. Most of the code is written by the system now. What stays with me is direction, and the gate.",
+          "Two kinds of memory back the development, and both reach the agent the same two ways: pulled into its prompt automatically by embedding match, or fetched on demand through MCP tools.",
+          "The first is a knowledge graph that follows the development flow: business use cases come first; tests are written from them; code implements them; and all three are automatically indexed into the graph and embedded.",
+          "The second is a thought system: a hierarchy that composes itself, where every new thought is summarized into the layer above, recursively. The same module runs the business agents.",
+          "Another way of working with memory: state. A stateful agent is a state machine — the algorithm controls the flow, and each step is atomic: an LLM call or a deterministic operation. The algorithm doesn't hallucinate. Stateless agents are the rest: one call, no machine.",
+          "People and agents are members of the same rooms. Membership is privacy and addressing at once — another agent, another contact, a private side channel between two of them is one more room, not one more concept.",
+          "One agent stands between that mesh and the person. Everything the others say passes through it, and only what changes what the person would do reaches them.",
+          "A promise is an object, not a sentence. When a turn commits to something and nothing durable backs it, the debt is written down and the agent is woken on it later. Going silent on a promise is a state the system can see.",
+          "Agents are one of three abstractions the system reduces to. Blocks are the second — everything addressable shares one shape and one embedding. Protocols are the third — everything that crosses a boundary. Payment included."
         ]
       },
       {
-        "role": "Full Stack Engineer",
-        "org": "Independent project",
-        "period": "06/2022 — 05/2025",
-        "place": "Buenos Aires, Argentina",
-        "bullets": [
-          "Cross-platform mobile platform on Flutter + AWS, brought to a high level of functional readiness.",
-          "Clean Architecture from day one; feature-based modularity on the front end, event-driven reactive architecture (BLoC → Cubit → Riverpod).",
-          "Infrastructure as Code with AWS CDK: reproducible environments and automated deployment.",
-          "Backend: Amplify/Cognito auth, business logic on Lambda (Go), DynamoDB with composite keys, media in S3."
+        "role": "Full-Stack Engineer",
+        "org": "Independent",
+        "period": "2022 – 2025",
+        "paragraphs": [
+          "A cross-platform mobile platform on Flutter and AWS. Clean Architecture from the first commit, cloud infrastructure as code in AWS CDK.",
+          "Dart and Flutter on the frontend — feature-based modules, event-driven reactive layout, Riverpod for state. AWS Lambda in Go on the backend — DynamoDB with composite keys, S3 for media, Amplify and Cognito for auth."
         ]
       },
       {
         "role": "Blockchain Developer",
-        "org": "Sber · Insolar · IBM · Bancor · ShelterZoom",
-        "period": "2018 — 2022",
-        "place": "Russia",
-        "bullets": [
-          "Sber: CRUD abstraction layer over Hyperledger Fabric — feature implementation time from ~8 hours to ~15 minutes. Self-initiated and delivered after hours.",
-          "IBM: full test environment and CI/CD for Hyperledger Fabric — doubled delivery speed; refactored project structure (−30% codebase); led a CouchDB → LevelDB migration (+40% data operation performance); shipped cross-channel encryption with zero defects despite no formal requirements.",
-          "Insolar: data architecture for a blockchain wallet; guided a newly onboarded system architect through the key design decisions.",
-          "Bancor: replaced Hyperledger Fabric usage with Bitcoin-based anchoring.",
-          "ShelterZoom: identified flaws in their Fabric setup and proposed a simpler, faster immutable-store design."
+        "org": "IBM",
+        "period": "2020 – 2022",
+        "paragraphs": [
+          "Built a full testing environment and CI/CD pipeline for Hyperledger Fabric — feature delivery speed doubled. Refactored the project structure, cutting the codebase by 30%. Led the CouchDB→LevelDB migration that improved data-operation performance by 40%. Delivered a cross-channel encryption solution with zero defects, despite the absence of formal requirements."
         ]
       },
       {
-        "role": "Software Engineer (Java)",
-        "org": "PromServiceBank",
-        "period": "2017 — 2018",
-        "place": "Saint Petersburg, Russia",
-        "bullets": [
-          "Implemented Diasoft Flextera front-office, reporting modules and business-process debugging; back-office system and Oracle DB.",
-          "Java/JavaScript data handlers, state-machine configuration and access-rights management."
+        "role": "Blockchain Developer",
+        "org": "Insolar",
+        "period": "2019 – 2020",
+        "paragraphs": [
+          "Designed the data architecture for a blockchain-based wallet, initiating the process and guiding a newly onboarded system architect through the key design decisions."
         ]
       },
       {
-        "role": "Founder / Software Developer",
-        "org": "Independent project",
-        "period": "2017 — 2018",
-        "place": "Saint Petersburg, Russia",
-        "bullets": [
-          "Custom form builder (Ruby on Rails) for contractor work tracking — dynamic data objects on top of a relational database.",
-          "Cross-platform native client (Codename One, Java, SQLite): text, numbers, photos, map markers, camera and geolocation capture.",
-          "Offline support with automatic sync; server side in Java/MySQL/javax.servlet. Delivered a working MVP."
-        ]
-      },
-      {
-        "role": "Software Engineer (Android, Java)",
-        "org": "Housing Service No. 3",
-        "period": "2017",
-        "place": "Saint Petersburg, Russia",
-        "bullets": [
-          "Android app with local SQLite and sync through a server (MySQL, Tomcat, Jersey, Jsch), plus a photo-capture module with SSH upload.",
-          "Reworked the architecture per client request to send data directly from the app."
-        ]
-      },
-      {
-        "role": "Software Engineer (Delphi, C++)",
-        "org": "Central Research Institute of Materials",
-        "period": "2015 — 2016",
-        "place": "Saint Petersburg, Russia",
-        "bullets": [
-          "Programmed an STM32F4Discovery board as the bridge between a PC and a spectrograph controller.",
-          "Independently built the spectrograph software for qualitative and quantitative materials analysis; multithreading for three spectrometers at once; full technical documentation."
+        "role": "Blockchain Developer",
+        "org": "Sber",
+        "period": "2018 – 2019",
+        "paragraphs": [
+          "A custom CRUD-style abstraction layer over Hyperledger Fabric, self-initiated and built after hours. New-feature implementation dropped from around eight hours to fifteen minutes, simplifying composite-key data operations."
         ]
       }
     ],
     "educationTitle": "Education",
     "education": [
       {
-        "degree": "Bachelor, System Administration of Information Systems",
-        "org": "Mathematics and Mechanics Faculty, St. Petersburg State University",
-        "period": "2012 — 2017"
-      },
-      {
-        "degree": "Mathematics",
-        "org": "Laboratory for Continuous Mathematical Education (LNMO), Saint Petersburg",
-        "period": "2008 — 2012"
+        "degree": "Mathematics and Mechanics",
+        "org": "St. Petersburg State University, Mat-Mekh",
+        "period": "2012 – 2017",
+        "text": "Arrived from LNMO, the Saint Petersburg laboratory for continuous mathematical education. Olympiad medals along the way — mathematics at ICYS and the City Olympiad, computer science at the Baltic Scientific and Engineering Competition. Worked through university in parallel — Java, Android, Delphi, and embedded C++ for spectrograph instrumentation at a materials research institute."
       }
-    ],
-    "awardsTitle": "Awards",
-    "awards": [
-      "ICYS — Mathematics",
-      "State Competition — Mathematics",
-      "Baltic Scientific and Engineering Competition — Computer Science"
     ],
     "languagesTitle": "Languages",
     "languages": [
@@ -201,14 +160,12 @@
       "MongoDB",
       "Kuzu",
       "DynamoDB",
-      "CouchDB / LevelDB",
       "AWS (CDK, Lambda, Cognito, S3)",
       "Docker",
       "Linux",
       "systemd",
       "Infrastructure as Code",
-      "Hyperledger Fabric",
-      "Prometheus / Grafana"
+      "Hyperledger Fabric"
     ]
   },
   "imperiaOs": {

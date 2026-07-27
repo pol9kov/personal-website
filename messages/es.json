@@ -77,114 +77,73 @@
     "print": "Imprimir / PDF",
     "contactsTitle": "Contacto",
     "summaryTitle": "Resumen",
-    "summary": "Ingeniero de plataforma, más de 10 años desarrollando software. Los últimos dos años construyo Imperia OS — un runtime donde una llamada al LLM es un paso atómico de una máquina de estados, no un envoltorio sobre una API: agentes, herramientas sobre MCP, tres almacenes de conocimiento (grafo de código, documentos, datos relacionales) y un pipeline de despliegue dev → standby → prod. En producción desde 2025, escrito en solitario. Antes: infraestructura blockchain en Sber, IBM e Insolar, y productos multiplataforma en Flutter/AWS. No me interesa «agregarle AI» a un producto — me interesan los sistemas donde el modelo es parte del runtime.",
+    "summary": "Construyo un asistente de IA que haga todo lo que su usuario quiera — y la plataforma que esa meta exige. La misma infraestructura construye la plataforma y la entrega a sus usuarios.",
     "experienceTitle": "Experiencia",
     "experience": [
       {
-        "role": "Fundador, Platform Engineer — Imperia OS",
+        "role": "Imperia OS",
         "org": "Proyecto propio",
-        "period": "05/2025 — Actualidad",
-        "place": "Buenos Aires, Argentina",
-        "bullets": [
-          "Runtime sobre máquina de estados: la llamada al LLM es un paso atómico con entrada y salida tipadas, no un bucle de chat libre. Cada turno del agente es reproducible e inspeccionable paso a paso.",
-          "Capa de herramientas sobre MCP: ~90 herramientas (datos, git, navegador, despliegue, mensajería) bajo un único protocolo, con acceso segmentado en registros según la reversibilidad de la acción.",
-          "Tres almacenes de conocimiento tras un único acceso: grafo de código y arquitectura (Kuzu), documentos y memoria vectorial (MongoDB), datos relacionales (PostgreSQL) — cada uno detrás de su servicio, sin conexiones directas desde el código del agente.",
-          "Orquestación de agentes: turnos paralelos por tema, delegación a workers en segundo plano, paneles de jueces que verifican hallazgos de forma adversarial, corridas A/B evaluadas por un juez LLM.",
-          "Pipeline de despliegue dev → standby → prod con gates, promoción automática y rollback en un commit; el coordinador es el único camino a producción.",
-          "Colectores de entrada: Telegram (MTProto), WhatsApp, voz con transcripción y confianza por palabra — todo unificado en un solo flujo de eventos."
+        "period": "2025 – presente",
+        "paragraphs": [
+          "La plataforma se escribe desde adentro de sí misma. Los agentes proponen un cambio, lo escriben, lo verifican y lo aterrizan detrás de una compuerta; el despliegue recorre dev, standby y producción sin una mano encima. Hoy la mayor parte del código la escribe el sistema. Lo que queda conmigo es la dirección, y la compuerta.",
+          "Dos tipos de memoria sostienen el desarrollo, y ambos llegan al agente por las mismas dos vías: entran en su prompt automáticamente por coincidencia de embeddings, o se piden bajo demanda mediante herramientas MCP.",
+          "El primero es un grafo de conocimiento que sigue el flujo de desarrollo: primero los casos de uso de negocio; de ellos se escriben los tests; el código los implementa; y los tres se indexan automáticamente en el grafo y se embeben.",
+          "El segundo es un sistema de pensamientos: una jerarquía que se compone sola, donde cada pensamiento nuevo se resume recursivamente en la capa superior. El mismo módulo mueve a los agentes de negocio.",
+          "Otra forma de trabajar la memoria: el estado. Un agente stateful es una máquina de estados — el algoritmo controla el flujo y cada paso es atómico: una llamada al LLM o una operación determinista. El algoritmo no alucina. Los agentes stateless son el resto: una llamada, sin máquina.",
+          "Personas y agentes son miembros de las mismas salas. La membresía es privacidad y direccionamiento a la vez — otro agente, otro contacto, un canal privado entre dos de ellos es una sala más, no un concepto más.",
+          "Un agente se ubica entre esa malla y la persona. Todo lo que dicen los demás pasa por él, y solo llega a la persona lo que cambia lo que haría.",
+          "Una promesa es un objeto, no una frase. Cuando un turno se compromete a algo y nada durable lo respalda, la deuda queda escrita y el agente es despertado por ella más tarde. Callarse sobre una promesa es un estado que el sistema puede ver.",
+          "Los agentes son una de las tres abstracciones a las que se reduce el sistema. Los bloques son la segunda — todo lo direccionable comparte una forma y un embedding. Los protocolos son la tercera — todo lo que cruza un límite. Los pagos incluidos."
         ]
       },
       {
-        "role": "Full Stack Engineer",
+        "role": "Ingeniero Full-Stack",
         "org": "Proyecto propio",
-        "period": "06/2022 — 05/2025",
-        "place": "Buenos Aires, Argentina",
-        "bullets": [
-          "Plataforma móvil multiplataforma en Flutter + AWS, llevada a un alto nivel de madurez funcional.",
-          "Clean Architecture desde el inicio; modularidad por features en el front, arquitectura reactiva orientada a eventos (BLoC → Cubit → Riverpod).",
-          "Infraestructura como código con AWS CDK: entornos reproducibles y despliegue automatizado.",
-          "Backend: autenticación con Amplify/Cognito, lógica de negocio en Lambda (Go), DynamoDB con claves compuestas, medios en S3."
+        "period": "2022 – 2025",
+        "paragraphs": [
+          "Una plataforma móvil multiplataforma sobre Flutter y AWS. Clean Architecture desde el primer commit, infraestructura cloud como código en AWS CDK.",
+          "Dart y Flutter en el frontend — módulos por features, layout reactivo orientado a eventos, Riverpod para el estado. AWS Lambda en Go en el backend — DynamoDB con claves compuestas, S3 para media, Amplify y Cognito para autenticación."
         ]
       },
       {
-        "role": "Blockchain Developer",
-        "org": "Sber · Insolar · IBM · Bancor · ShelterZoom",
-        "period": "2018 — 2022",
-        "place": "Rusia",
-        "bullets": [
-          "Sber: capa de abstracción CRUD sobre Hyperledger Fabric — tiempo de implementación de una feature de ~8 horas a ~15 minutos. Iniciativa propia, desarrollada fuera de horario.",
-          "IBM: entorno de pruebas y CI/CD completos para Hyperledger Fabric — velocidad de entrega duplicada; refactor de la estructura del proyecto (−30% de código); migración CouchDB → LevelDB (+40% de rendimiento en operaciones de datos); cifrado entre canales sin defectos pese a la ausencia de requisitos formales.",
-          "Insolar: arquitectura de datos de una billetera blockchain; guié a un arquitecto de sistemas recién incorporado por las decisiones clave.",
-          "Bancor: reemplacé el uso de Hyperledger Fabric por anclaje sobre Bitcoin.",
-          "ShelterZoom: detecté fallas en su instalación de Fabric y propuse un diseño de almacén inmutable más simple y rápido."
+        "role": "Desarrollador Blockchain",
+        "org": "IBM",
+        "period": "2020 – 2022",
+        "paragraphs": [
+          "Construí un entorno de pruebas completo y un pipeline CI/CD para Hyperledger Fabric — la velocidad de entrega de features se duplicó. Refactoricé la estructura del proyecto, recortando el código en un 30%. Lideré la migración CouchDB→LevelDB que mejoró el rendimiento de las operaciones de datos en un 40%. Entregué una solución de cifrado entre canales con cero defectos, pese a la ausencia de requisitos formales."
         ]
       },
       {
-        "role": "Software Engineer (Java)",
-        "org": "PromServiceBank",
-        "period": "2017 — 2018",
-        "place": "San Petersburgo, Rusia",
-        "bullets": [
-          "Implementación del front-office Diasoft Flextera, módulos de reporting y depuración de procesos de negocio; back-office y Oracle DB.",
-          "Manejadores de datos en Java/JavaScript, configuración de la máquina de estados y gestión de permisos."
+        "role": "Desarrollador Blockchain",
+        "org": "Insolar",
+        "period": "2019 – 2020",
+        "paragraphs": [
+          "Diseñé la arquitectura de datos de una billetera basada en blockchain, iniciando el proceso y guiando a un arquitecto de sistemas recién incorporado a través de las decisiones clave de diseño."
         ]
       },
       {
-        "role": "Fundador / Desarrollador",
-        "org": "Proyecto propio",
-        "period": "2017 — 2018",
-        "place": "San Petersburgo, Rusia",
-        "bullets": [
-          "Constructor de formularios (Ruby on Rails) para seguimiento de trabajos de contratistas — objetos de datos dinámicos sobre una base relacional.",
-          "Cliente nativo multiplataforma (Codename One, Java, SQLite): texto, números, fotos, marcadores en mapa, captura por cámara y geolocalización.",
-          "Modo offline con sincronización automática; servidor en Java/MySQL/javax.servlet. MVP funcional entregado."
-        ]
-      },
-      {
-        "role": "Software Engineer (Android, Java)",
-        "org": "Housing Service No. 3",
-        "period": "2017",
-        "place": "San Petersburgo, Rusia",
-        "bullets": [
-          "App Android con SQLite local y sincronización vía servidor (MySQL, Tomcat, Jersey, Jsch), más módulo de captura de fotos con subida por SSH.",
-          "Rediseñé la arquitectura a pedido del cliente para enviar los datos directamente desde la app."
-        ]
-      },
-      {
-        "role": "Software Engineer (Delphi, C++)",
-        "org": "Instituto Central de Investigación de Materiales",
-        "period": "2015 — 2016",
-        "place": "San Petersburgo, Rusia",
-        "bullets": [
-          "Programación de una placa STM32F4Discovery como puente entre una PC y el controlador de un espectrógrafo.",
-          "Desarrollé de forma independiente el software del espectrógrafo para análisis cualitativo y cuantitativo de materiales; multithreading para tres espectrómetros simultáneos; documentación técnica completa."
+        "role": "Desarrollador Blockchain",
+        "org": "Sber",
+        "period": "2018 – 2019",
+        "paragraphs": [
+          "Una capa de abstracción tipo CRUD sobre Hyperledger Fabric, por iniciativa propia y fuera de horario. La implementación de una nueva feature bajó de unas ocho horas a quince minutos, simplificando las operaciones con claves compuestas."
         ]
       }
     ],
     "educationTitle": "Educación",
     "education": [
       {
-        "degree": "Licenciatura, Administración de Sistemas de Información",
-        "org": "Facultad de Matemática y Mecánica, Universidad Estatal de San Petersburgo",
-        "period": "2012 — 2017"
-      },
-      {
-        "degree": "Matemática",
-        "org": "Laboratorio de Educación Matemática Continua (LNMO), San Petersburgo",
-        "period": "2008 — 2012"
+        "degree": "Matemática y Mecánica",
+        "org": "Universidad Estatal de San Petersburgo, Mat-Mej",
+        "period": "2012 – 2017",
+        "text": "Llegué desde LNMO, el laboratorio de San Petersburgo para la educación matemática continua. Medallas de olimpiada en el camino — matemática en ICYS y en la Olimpiada de la Ciudad, informática en el Concurso Científico e Ingenieril del Báltico. Trabajé en paralelo a la universidad — Java, Android, Delphi y C++ embebido para instrumentación de espectrógrafos en un instituto de investigación de materiales."
       }
-    ],
-    "awardsTitle": "Premios",
-    "awards": [
-      "ICYS — Matemática",
-      "Olimpiada Nacional — Matemática",
-      "Concurso Científico y de Ingeniería del Báltico — Informática"
     ],
     "languagesTitle": "Idiomas",
     "languages": [
       "Ruso — nativo",
-      "Inglés — Avanzado",
-      "Español — Básico"
+      "Inglés — Advanced",
+      "Español — inicial"
     ],
     "stackTitle": "Stack",
     "stack": [
@@ -201,14 +160,12 @@
       "MongoDB",
       "Kuzu",
       "DynamoDB",
-      "CouchDB / LevelDB",
       "AWS (CDK, Lambda, Cognito, S3)",
       "Docker",
       "Linux",
       "systemd",
       "Infrastructure as Code",
-      "Hyperledger Fabric",
-      "Prometheus / Grafana"
+      "Hyperledger Fabric"
     ]
   },
   "imperiaOs": {
