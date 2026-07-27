@@ -76,19 +76,21 @@ export function Skills({ className }: SkillsProps) {
                   {/* Integral area chart overlay */}
                   <SkillIntegralChart category={category as Skill["category"]} />
 
-                  {/* Skill bars */}
+                  {/* Названия навыков. Полоски убраны: уровень показывает
+                      кривая позади — её горизонтальный размах на строке навыка
+                      и есть его уровень, а полоска дублировала то же самое
+                      вторым способом. Строка сохраняет прежнюю высоту, потому
+                      что кривая опирается на её середину. */}
                   <div className="relative z-10 flex flex-col" style={{ gap: SKILL_ROW_GAP }}>
                     {sortedSkills.map((skill) => (
-                      <div key={skill.name} className="flex flex-col justify-end" style={{ height: SKILL_ROW_HEIGHT }}>
-                        <span className="font-medium text-gray-700 dark:text-gray-300 mb-1">
+                      <div
+                        key={skill.name}
+                        className="flex flex-col justify-center"
+                        style={{ height: SKILL_ROW_HEIGHT }}
+                      >
+                        <span className="font-medium text-gray-700 dark:text-gray-300">
                           {skill.name}
                         </span>
-                        <div className="h-2 w-full rounded-full bg-gray-200 dark:bg-gray-700">
-                          <div
-                            className="h-full rounded-full bg-blue-600 dark:bg-blue-500 transition-all"
-                            style={{ width: `${(skill.proficiency / 5) * 100}%` }}
-                          />
-                        </div>
                       </div>
                     ))}
                   </div>
