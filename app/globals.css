@@ -130,3 +130,35 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* Печать резюме: страница сама себе PDF — один источник правды, без отдельного файла */
+.print-avoid-break {
+  break-inside: avoid;
+}
+
+@media print {
+  header[class*="sticky"],
+  footer,
+  .no-print {
+    display: none !important;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  main {
+    padding: 0 !important;
+  }
+
+  a {
+    color: #000 !important;
+    text-decoration: none !important;
+  }
+
+  @page {
+    margin: 14mm;
+  }
+}
