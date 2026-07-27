@@ -35,38 +35,70 @@
   },
   "about": {
     "title": "Sobre Mi",
-    "subtitle": "Ingeniero backend con mas de 10 anos de experiencia y solida formacion matematica. Construyo sistemas que manejan la complejidad manteniendose comprensibles.",
+    "subtitle": "Mi camino, mi filosofia y lo que me impulsa",
     "whoIAm": {
       "title": "Quien Soy",
-      "p1": "Graduado de LNMO en San Petersburgo, explore mas de una docena de lenguajes de programacion y obtuve premios en ICYS y Baltic Science and Engineering Competition.",
-      "p2": "A lo largo de los anos, progrese desde sistemas EAV dinamicos hasta microservicios Go nativos en la nube e integraciones de IA."
+      "p1": "Soy ingeniero backend con mas de una decada de experiencia construyendo sistemas que deben ser a la vez robustos y adaptables. Lo que me define no es solo la habilidad tecnica, sino un compromiso profundo con la honestidad, la presencia y el cuidado en todo lo que construyo.",
+      "p2": "No interpreto papeles ni me escondo detras de la jerga. Me mantengo fiel a mi mismo y traigo presencia plena a mi trabajo, ya sea disenando la arquitectura de un sistema, revisando codigo o acompanando a un companero de equipo. Mi fuerza esta en",
+      "p2Emphasis": "la transparencia y la capacidad de encarar verdades dificiles",
+      "p2End": ", tanto en el codigo como en la colaboracion.",
+      "quote": "La mente aporta claridad. El corazon aporta profundidad. La presencia es mi don."
+    },
+    "journey": {
+      "title": "El Camino",
+      "p1": "Me gradue en LNMO (Laboratorio de Educacion Matematica Continua) en San Petersburgo, donde explore mas de una docena de lenguajes de programacion, desde Pascal hasta OCaml, C, Haskell e incluso Brainfuck. Desde mis anos escolares participe en investigacion cientifica y presente trabajos en conferencias academicas. Obtuve el 3er lugar en Matematicas en ICYS-2012 en los Paises Bajos, el 1er lugar en el concurso estatal de San Petersburgo y el 3er lugar en el Baltic Science and Engineering Competition. En 2015-2016 forme parte del jurado juvenil del concurso baltico. Durante ese tiempo trabaje en algoritmos de descomposicion de informacion, redes neuronales y analisis de datos.",
+      "p2": "Mi camino en el desarrollo se ha formado a partir de un principio:",
+      "p2Emphasis": "la vida es un flujo continuo de experiencia que te hace mas fuerte y mas sabio",
+      "p2End": ". Cada proyecto es una oportunidad de aprender, no solo sobre tecnologia, sino sobre como los sistemas sirven a las personas.",
+      "p3": "Antes abordaba los problemas desde la cabeza, persiguiendo el control y las soluciones perfectas. Con el tiempo aprendi que la verdadera ingenieria ocurre cuando permaneces presente con el problema, escuchas en profundidad y actuas desde la comprension y no desde la evitacion. Las mejores arquitecturas surgen cuando respetas tanto las restricciones tecnicas como las necesidades humanas.",
+      "p4": "Desde construir sistemas EAV dinamicos hace una decada hasta disenar microservicios cloud-native en Go hoy, he aprendido que las soluciones sostenibles nacen de la disciplina, la paciencia y la disposicion a permanecer con la complejidad hasta que emerge la claridad."
     },
     "approach": {
       "title": "Mi Enfoque",
-      "p1": "Mientras otros optimizan la elegancia técnica, yo optimizo las ganancias del negocio.",
-      "p2": "Prefiero arquitecturas practicas que funcionan hoy y permanecen flexibles manana."
+      "p1Start": "Construyo sistemas",
+      "p1Bold": "paso a paso, sin prisa",
+      "p1End": ". No hay atajos hacia la calidad. Cada accion, ya sea escribir codigo, disenar arquitectura o revisar pull requests, es una expresion de cuidado por el oficio y por las personas que dependen de lo que construimos.",
+      "p2Start": "Mi enfoque se apoya en",
+      "p2Bold": "la responsabilidad antes que el control",
+      "p2End": ". El control es una ilusion; no puedes predecir cada caso limite ni evitar cada error. Pero si puedes asumir plena responsabilidad por tus decisiones, por la calidad de tu codigo y por la confianza que construyes con tu equipo. Esta mentalidad me ha guiado en migraciones complejas, redisenos de sistemas y momentos en los que la claridad solo llego despues de quedarme con el problema mas tiempo del comodo.",
+      "p3Start": "Valoro",
+      "p3Bold": "las soluciones practicas",
+      "p3End": " que funcionan hoy y siguen siendo adaptables manana. La arquitectura limpia, el codigo bien probado y la documentacion honesta no son formalidades; son actos de cuidado hacia quienes mantendran el sistema despues, incluido tu mismo dentro de seis meses, cuando ya hayas olvidado por que tomaste esa decision.",
+      "p4Start": "Y lo mas importante: aporto",
+      "p4Bold": "presencia",
+      "p4End": " a mi trabajo. No solo atencion tecnica, sino implicacion genuina con el problema que tengo delante. La gran ingenieria ocurre cuando dejas de evitar la complejidad y empiezas a escuchar lo que el sistema te esta diciendo."
     },
     "currentFocus": {
       "title": "Enfoque Actual",
-      "p1": "Interesado en sistemas que necesitan ser robustos y adaptables: microservicios, esquemas de datos dinamicos, APIs amigables para desarrolladores y capas de IA sobre productos existentes."
+      "p1": "Ahora mismo estoy profundizando mi experiencia en Go, explorando la interseccion entre los sistemas backend y la infraestructura de IA, y construyendo herramientas que conectan tecnologias potentes con necesidades humanas practicas.",
+      "p2": "Me interesan especialmente los sistemas que deben ser a la vez robustos y adaptables: arquitecturas de microservicios capaces de evolucionar, bases de datos que manejan esquemas dinamicos y APIs que los desarrolladores realmente disfrutan usar."
+    },
+    "beyondCode": {
+      "title": "Mas Alla del Codigo",
+      "p1": "Fuera de la programacion me interesan las practicas de atencion plena, el entrenamiento fisico y la filosofia de la mejora continua. Creo que mantener el equilibrio entre concentracion y descanso, entre intensidad y ligereza, me hace mejor ingeniero.",
+      "p2": "Estos intereses no estan separados de mi trabajo; moldean como abordo los problemas. La atencion, la paciencia y la presencia son tan importantes al depurar un sistema complejo como en cualquier otra practica."
     },
     "values": {
-      "title": "Valores",
+      "title": "Valores Fundamentales",
       "continuousLearning": {
-        "title": "Aprendizaje Continuo",
-        "text": "Cada proyecto proporciona nuevas herramientas de pensamiento."
+        "title": "Aprendizaje continuo:",
+        "text": "Cada experiencia es una oportunidad de crecer. Trato cada proyecto como una ocasion para aprender algo nuevo sobre los sistemas, las personas o sobre mi mismo."
       },
       "curiosity": {
-        "title": "Curiosidad",
-        "text": "Busco causas raiz, no solo trato sintomas."
+        "title": "Curiosidad:",
+        "text": "Preguntar \"por que\" y \"como\" lleva a mejores soluciones. Profundizo en los problemas para entender las causas raiz, no solo los sintomas."
       },
       "progress": {
-        "title": "Progreso Sobre Perfeccion",
-        "text": "Pasos sostenibles superan soluciones rapidas."
+        "title": "Progreso antes que perfeccion:",
+        "text": "Paso a paso, sin prisa. El progreso sostenible siempre gana a los atajos vistosos."
       },
       "trust": {
-        "title": "Confianza",
-        "text": "Comunicacion honesta y confiabilidad."
+        "title": "Confianza y cuidado:",
+        "text": "Construir confianza mediante la fiabilidad, la comunicacion clara y el cuidado genuino por las personas con las que trabajo y por los sistemas que mantenemos juntos."
+      },
+      "balance": {
+        "title": "Equilibrio:",
+        "text": "La excelencia tecnica importa, pero el pragmatismo tambien. La innovacion es importante, pero la estabilidad tambien. Encontrar la armonia entre necesidades que compiten es donde ocurre la verdadera ingenieria."
       }
     }
   },
