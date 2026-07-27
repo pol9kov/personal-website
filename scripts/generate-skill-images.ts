@@ -6,51 +6,12 @@
 import * as fs from "fs";
 import * as path from "path";
 
-// Skill type definition
-interface Skill {
-  name: string;
-  category: "languages" | "frameworks" | "databases" | "devops" | "other";
-  proficiency: number;
-}
-
-// Skills data (copied from lib/constants/skills.ts to avoid import issues)
-const skills: Skill[] = [
-  // Languages
-  { name: "Golang", category: "languages", proficiency: 4 },
-  { name: "Dart", category: "languages", proficiency: 4 },
-  { name: "Java", category: "languages", proficiency: 3 },
-  { name: "JavaScript", category: "languages", proficiency: 2 },
-  { name: "Delphi", category: "languages", proficiency: 2 },
-  { name: "Python", category: "languages", proficiency: 1 },
-  { name: "C", category: "languages", proficiency: 1 },
-
-  // Frameworks & Platforms
-  { name: "Flutter", category: "frameworks", proficiency: 4 },
-  { name: "Android", category: "frameworks", proficiency: 1 },
-  { name: "Clean Architecture", category: "frameworks", proficiency: 4 },
-  { name: "Infrastructure as Code", category: "frameworks", proficiency: 4 },
-  { name: "Hyperledger Fabric", category: "frameworks", proficiency: 4 },
-  { name: "React/Next.js", category: "frameworks", proficiency: 1 },
-  { name: "Ruby on Rails", category: "frameworks", proficiency: 1 },
-
-  // Databases
-  { name: "DynamoDB", category: "databases", proficiency: 4 },
-  { name: "MongoDB", category: "databases", proficiency: 4 },
-  { name: "CouchDB", category: "databases", proficiency: 4 },
-  { name: "LevelDB", category: "databases", proficiency: 4 },
-  { name: "SQLite", category: "databases", proficiency: 3 },
-  { name: "MySQL", category: "databases", proficiency: 2 },
-
-  // DevOps & Cloud
-  { name: "AWS", category: "devops", proficiency: 4 },
-  { name: "Linux", category: "devops", proficiency: 3 },
-  { name: "Docker", category: "devops", proficiency: 3 },
-  { name: "Git", category: "devops", proficiency: 2 },
-  { name: "Prometheus", category: "devops", proficiency: 1 },
-  { name: "Grafana", category: "devops", proficiency: 1 },
-  { name: "Bitcoin", category: "devops", proficiency: 1 },
-  { name: "Ethereum", category: "devops", proficiency: 1 },
-];
+// The single source of truth. This file used to keep its own copy of the list,
+// and the copy went stale: it was missing TypeScript and PostgreSQL and carried
+// wrong proficiencies for React/Next.js and Python, so the generated curve did
+// not match the rows the page actually renders.
+import { skills } from "@/lib/constants/skills";
+import type { Skill } from "@/lib/types";
 
 // Layout constants (must match Skills.tsx)
 const ROW_HEIGHT = 40;
@@ -68,14 +29,17 @@ function generateIntegralSVG(categorySkills: Skill[]): string {
     (a, b) => b.proficiency - a.proficiency
   );
   const seed = sortedSkills.reduce((acc, s) => acc + s.name.charCodeAt(0), 0);
+  // Exactly the height of the rendered rows container in Skills.tsx
+  // (`flex flex-col gap-4` over rows of ROW_HEIGHT). The chart is stretched over
+  // that container with preserveAspectRatio="none", so any extra row of canvas
+  // here squeezes the whole curve upwards and off the bars.
   const totalHeight =
-    sortedSkills.length * ROW_HEIGHT +
-    (sortedSkills.length - 1) * ROW_GAP +
-    ROW_HEIGHT; // Extra padding at bottom (full row height)
+    sortedSkills.length * ROW_HEIGHT + (sortedSkills.length - 1) * ROW_GAP;
 
-  // Points at the right edge of each progress bar
+  // Points at the right edge of each progress bar. The bar sits at the BOTTOM of
+  // its row (`justify-end`, h-2), not at the row's centre.
   const basePoints = sortedSkills.map((skill, i) => {
-    const y = Math.max(4, i * (ROW_HEIGHT + ROW_GAP) + ROW_HEIGHT / 2);
+    const y = i * (ROW_HEIGHT + ROW_GAP) + ROW_HEIGHT - 1;
     const x = (skill.proficiency / 5) * 100;
     return { x, y };
   });
@@ -83,7 +47,8 @@ function generateIntegralSVG(categorySkills: Skill[]): string {
   // Add final points below the last skill - curve down to zero
   const lastSkill = sortedSkills[sortedSkills.length - 1];
   if (lastSkill) {
-    const lastY = (sortedSkills.length - 1) * (ROW_HEIGHT + ROW_GAP) + ROW_HEIGHT / 2;
+    const lastY =
+      (sortedSkills.length - 1) * (ROW_HEIGHT + ROW_GAP) + ROW_HEIGHT - 1;
     const lastX = (lastSkill.proficiency / 5) * 100;
     // Intermediate point to curve down
     basePoints.push({
@@ -169,11 +134,16 @@ function generateIntegralSVG(categorySkills: Skill[]): string {
   const first = points[0];
   if (!first) return "";
 
+  // Round coordinates: raw doubles differ in the last decimals between machines,
+  // so every build rewrote the committed SVGs with pure float noise. 3 decimals
+  // is well below one device pixel at this viewBox.
+  const round = (n: number) => Number(n.toFixed(3));
+
   const polygonPoints = [
     `0,0`,
-    `${first.x},0`,
-    ...points.map((p) => `${p.x},${p.y}`),
-    `0,${totalHeight}`,
+    `${round(first.x)},0`,
+    ...points.map((p) => `${round(p.x)},${round(p.y)}`),
+    `0,${round(totalHeight)}`,
   ].join(" ");
 
   // Progressive blur using two layers: blurred underneath, sharp on top with gradient mask
@@ -222,9 +192,25 @@ if (!fs.existsSync(outputDir)) {
 
 for (const [category, categorySkills] of Object.entries(groupedSkills)) {
   const svg = generateIntegralSVG(categorySkills);
+  if (!svg) {
+    throw new Error(
+      `Empty SVG generated for category "${category}" (${categorySkills.length} skills)`
+    );
+  }
   const filename = path.join(outputDir, `${category}.svg`);
   fs.writeFileSync(filename, svg);
   console.log(`Generated: ${filename}`);
+}
+
+// Fail loud: Skills.tsx renders <img src="/images/skills/<category>.svg">
+// unconditionally, so a category without a file is a silently broken image.
+const missing = Object.keys(groupedSkills).filter(
+  (category) => !fs.existsSync(path.join(outputDir, `${category}.svg`))
+);
+if (missing.length > 0) {
+  throw new Error(
+    `No SVG written for skill categories: ${missing.join(", ")} (expected in ${outputDir})`
+  );
 }
 
 console.log("Done!");

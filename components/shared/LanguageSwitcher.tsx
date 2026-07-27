@@ -3,10 +3,13 @@
 import { useState } from "react";
 import { type Locale } from "@/i18n/routing";
 
-const locales: { value: Locale; label: string; flag: string }[] = [
-  { value: "en", label: "English", flag: "🇬🇧" },
-  { value: "ru", label: "Русский", flag: "🇷🇺" },
-  { value: "es", label: "Español", flag: "🇪🇸" },
+// Short codes, not flag emoji: regional-indicator pairs render as two empty
+// boxes on Windows Chrome (Segoe UI Emoji carries no flag glyphs) — the header
+// showed "□□" where the language control should be.
+const locales: { value: Locale; label: string; code: string }[] = [
+  { value: "en", label: "English", code: "EN" },
+  { value: "ru", label: "Русский", code: "RU" },
+  { value: "es", label: "Español", code: "ES" },
 ];
 
 interface LanguageSwitcherProps {
@@ -31,17 +34,12 @@ export function LanguageSwitcher({
     <div className="relative flex items-center h-9">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="h-9 w-9 rounded-lg transition-colors flex items-center justify-center"
-        style={{ color: 'var(--nav-text)' }}
+        className="icon-button h-9 w-9 rounded-lg flex items-center justify-center"
         title={currentLocaleData?.label}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.backgroundColor = 'var(--button-hover-bg)';
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.backgroundColor = 'transparent';
-        }}
+        aria-label={currentLocaleData?.label}
+        aria-expanded={isOpen}
       >
-        <span className="w-5 h-5 flex items-center justify-center text-base leading-none">{currentLocaleData?.flag}</span>
+        <span className="w-5 h-5 flex items-center justify-center text-xs font-semibold tracking-wide leading-none">{currentLocaleData?.code}</span>
       </button>
 
       {isOpen && (
@@ -58,23 +56,10 @@ export function LanguageSwitcher({
               <button
                 key={locale.value}
                 onClick={() => handleLocaleChange(locale.value)}
-                className="w-full flex items-center gap-2 px-3 py-2 text-sm transition-colors"
-                style={{
-                  backgroundColor: currentLocale === locale.value ? 'var(--dropdown-selected-bg)' : 'transparent',
-                  color: currentLocale === locale.value ? 'var(--dropdown-selected-text)' : 'var(--dropdown-text)',
-                }}
-                onMouseEnter={(e) => {
-                  if (currentLocale !== locale.value) {
-                    e.currentTarget.style.backgroundColor = 'var(--dropdown-hover-bg)';
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (currentLocale !== locale.value) {
-                    e.currentTarget.style.backgroundColor = 'transparent';
-                  }
-                }}
+                className="dropdown-item w-full flex items-center gap-2 px-3 py-2 text-sm"
+                aria-pressed={currentLocale === locale.value}
               >
-                <span>{locale.flag}</span>
+                <span className="text-xs font-semibold tracking-wide w-6">{locale.code}</span>
                 {locale.label}
                 {currentLocale === locale.value && (
                   <svg

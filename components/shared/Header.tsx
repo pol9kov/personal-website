@@ -1,29 +1,27 @@
 "use client";
 
-import { useEffect, useState, useTransition } from "react";
+import { useState, useTransition } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { type Locale } from "@/i18n/routing";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { ThemeToggle } from "./ThemeToggle";
+import { useHydrated } from "@/lib/hooks/useHydrated";
 
 export function Header() {
   const t = useTranslations("navigation");
+  const tCommon = useTranslations("common");
   const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
-  const [mounted, setMounted] = useState(false);
+  const mounted = useHydrated();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [, startTransition] = useTransition();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   const navItems = [
     { href: "/", label: t("home") },
     { href: "/about", label: t("about") },
-    { href: "/ai-integration", label: t("aiIntegration") },
+    { href: "/imperia-os", label: t("imperiaOs") },
     { href: "/case-studies", label: t("caseStudies") },
     { href: "/resume", label: t("resume") },
   ];
@@ -71,20 +69,8 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium transition-colors"
-                style={{
-                  color: pathname === item.href ? 'var(--nav-active-text)' : 'var(--nav-text)',
-                }}
-                onMouseEnter={(e) => {
-                  if (pathname !== item.href) {
-                    e.currentTarget.style.color = 'var(--nav-hover-text)';
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (pathname !== item.href) {
-                    e.currentTarget.style.color = 'var(--nav-text)';
-                  }
-                }}
+                className="nav-link text-sm font-medium"
+                aria-current={pathname === item.href ? "page" : undefined}
               >
                 {item.label}
               </Link>
@@ -101,14 +87,9 @@ export function Header() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg transition-colors"
-            style={{ color: 'var(--nav-text)' }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = 'var(--button-hover-bg)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'transparent';
-            }}
+            className="icon-button md:hidden p-2 rounded-lg"
+            aria-label={tCommon("toggleMenu")}
+            aria-expanded={isMenuOpen}
           >
             {isMenuOpen ? (
               <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -135,20 +116,8 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
-                className="text-base font-medium transition-colors"
-                style={{
-                  color: pathname === item.href ? 'var(--nav-active-text)' : 'var(--nav-text)',
-                }}
-                onMouseEnter={(e) => {
-                  if (pathname !== item.href) {
-                    e.currentTarget.style.color = 'var(--nav-hover-text)';
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (pathname !== item.href) {
-                    e.currentTarget.style.color = 'var(--nav-text)';
-                  }
-                }}
+                className="nav-link text-base font-medium"
+                aria-current={pathname === item.href ? "page" : undefined}
               >
                 {item.label}
               </Link>

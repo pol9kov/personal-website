@@ -1,12 +1,5 @@
 import { defineConfig, devices } from "@playwright/test";
 
-// A dedicated port, not Next's default 3000. `reuseExistingServer` adopts
-// whatever already answers on the URL, and on the build box 3000 is Grafana —
-// the suite then ran against a stranger's page and failed every locator with
-// "element(s) not found", which is how a broken pre-commit gate reads as a
-// broken site.
-const E2E_PORT = process.env.E2E_PORT ?? "3210";
-
 /**
  * Playwright configuration for browser testing
  *
@@ -21,7 +14,7 @@ export default defineConfig({
   reporter: "html",
 
   use: {
-    baseURL: `http://localhost:${E2E_PORT}`,
+    baseURL: "http://localhost:3000",
     trace: "on-first-retry",
     screenshot: "only-on-failure",
   },
@@ -35,8 +28,8 @@ export default defineConfig({
 
   /* Run dev server before starting tests */
   webServer: {
-    command: `npm run dev -- --port ${E2E_PORT}`,
-    url: `http://localhost:${E2E_PORT}`,
+    command: "npm run dev",
+    url: "http://localhost:3000",
     reuseExistingServer: !process.env.CI,
     timeout: 120000,
   },
