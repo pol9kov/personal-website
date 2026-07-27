@@ -124,11 +124,18 @@ export default async function AboutPage({ params }: AboutPageProps) {
               <h2 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
                 {t("values.title")}
               </h2>
+              {/* Маркеры — точки, нарисованные стилями, а не эмодзи: шрифты
+                  Windows и линуксовых десктопов не несут эмодзи-глифов и рисуют
+                  пустой квадрат. Цвет задан инлайном через currentColor, потому
+                  что в текущем дереве Tailwind не генерирует цветовые утилиты
+                  (globals.css обнуляет --color-*) — bg-gray-400 даёт прозрачный
+                  фон, проверено в браузере: computed background rgba(0,0,0,0). */}
               <ul className="space-y-4 text-lg text-gray-700 dark:text-gray-300">
                 <li className="flex items-start">
                   <span
                     aria-hidden="true"
-                    className="mr-3 mt-2 h-2 w-2 shrink-0 rounded-full bg-gray-400 dark:bg-gray-500"
+                    style={{ backgroundColor: "currentColor", opacity: 0.45 }}
+                    className="mr-3 mt-2 h-2 w-2 shrink-0 rounded-full"
                   />
                   <div>
                     <strong className="text-gray-900 dark:text-white">
@@ -140,7 +147,8 @@ export default async function AboutPage({ params }: AboutPageProps) {
                 <li className="flex items-start">
                   <span
                     aria-hidden="true"
-                    className="mr-3 mt-2 h-2 w-2 shrink-0 rounded-full bg-gray-400 dark:bg-gray-500"
+                    style={{ backgroundColor: "currentColor", opacity: 0.45 }}
+                    className="mr-3 mt-2 h-2 w-2 shrink-0 rounded-full"
                   />
                   <div>
                     <strong className="text-gray-900 dark:text-white">
@@ -152,7 +160,8 @@ export default async function AboutPage({ params }: AboutPageProps) {
                 <li className="flex items-start">
                   <span
                     aria-hidden="true"
-                    className="mr-3 mt-2 h-2 w-2 shrink-0 rounded-full bg-gray-400 dark:bg-gray-500"
+                    style={{ backgroundColor: "currentColor", opacity: 0.45 }}
+                    className="mr-3 mt-2 h-2 w-2 shrink-0 rounded-full"
                   />
                   <div>
                     <strong className="text-gray-900 dark:text-white">
@@ -164,7 +173,8 @@ export default async function AboutPage({ params }: AboutPageProps) {
                 <li className="flex items-start">
                   <span
                     aria-hidden="true"
-                    className="mr-3 mt-2 h-2 w-2 shrink-0 rounded-full bg-gray-400 dark:bg-gray-500"
+                    style={{ backgroundColor: "currentColor", opacity: 0.45 }}
+                    className="mr-3 mt-2 h-2 w-2 shrink-0 rounded-full"
                   />
                   <div>
                     <strong className="text-gray-900 dark:text-white">
@@ -176,7 +186,8 @@ export default async function AboutPage({ params }: AboutPageProps) {
                 <li className="flex items-start">
                   <span
                     aria-hidden="true"
-                    className="mr-3 mt-2 h-2 w-2 shrink-0 rounded-full bg-gray-400 dark:bg-gray-500"
+                    style={{ backgroundColor: "currentColor", opacity: 0.45 }}
+                    className="mr-3 mt-2 h-2 w-2 shrink-0 rounded-full"
                   />
                   <div>
                     <strong className="text-gray-900 dark:text-white">
