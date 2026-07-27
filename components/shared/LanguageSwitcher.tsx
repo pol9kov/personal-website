@@ -3,10 +3,14 @@
 import { useState } from "react";
 import { type Locale } from "@/i18n/routing";
 
-const locales: { value: Locale; label: string; flag: string }[] = [
-  { value: "en", label: "English", flag: "🇬🇧" },
-  { value: "ru", label: "Русский", flag: "🇷🇺" },
-  { value: "es", label: "Español", flag: "🇪🇸" },
+// Short codes, not flag emoji. A flag is a regional-indicator PAIR (RU =
+// U+1F1F7 U+1F1FA) and the fonts shipped with Windows and most Linux desktops
+// carry no glyph for it, so the browser draws two empty boxes — the header
+// showed "□□" where the language control should be, live on /ru/about.
+const locales: { value: Locale; label: string; code: string }[] = [
+  { value: "en", label: "English", code: "EN" },
+  { value: "ru", label: "Русский", code: "RU" },
+  { value: "es", label: "Español", code: "ES" },
 ];
 
 interface LanguageSwitcherProps {
@@ -41,7 +45,7 @@ export function LanguageSwitcher({
           e.currentTarget.style.backgroundColor = 'transparent';
         }}
       >
-        <span className="w-5 h-5 flex items-center justify-center text-base leading-none">{currentLocaleData?.flag}</span>
+        <span className="w-5 h-5 flex items-center justify-center text-xs font-semibold leading-none">{currentLocaleData?.code}</span>
       </button>
 
       {isOpen && (
@@ -74,7 +78,7 @@ export function LanguageSwitcher({
                   }
                 }}
               >
-                <span>{locale.flag}</span>
+                <span className="text-xs font-semibold w-5 text-center">{locale.code}</span>
                 {locale.label}
                 {currentLocale === locale.value && (
                   <svg

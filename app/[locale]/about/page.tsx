@@ -126,7 +126,10 @@ export default async function AboutPage({ params }: AboutPageProps) {
               </h2>
               <ul className="space-y-4 text-lg text-gray-700 dark:text-gray-300">
                 <li className="flex items-start">
-                  <span className="mr-3 text-2xl">🌱</span>
+                  <span
+                    aria-hidden="true"
+                    className="mr-3 mt-2 h-2 w-2 shrink-0 rounded-full bg-gray-400 dark:bg-gray-500"
+                  />
                   <div>
                     <strong className="text-gray-900 dark:text-white">
                       {t("values.continuousLearning.title")}
@@ -135,7 +138,10 @@ export default async function AboutPage({ params }: AboutPageProps) {
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-3 text-2xl">🔍</span>
+                  <span
+                    aria-hidden="true"
+                    className="mr-3 mt-2 h-2 w-2 shrink-0 rounded-full bg-gray-400 dark:bg-gray-500"
+                  />
                   <div>
                     <strong className="text-gray-900 dark:text-white">
                       {t("values.curiosity.title")}
@@ -144,7 +150,10 @@ export default async function AboutPage({ params }: AboutPageProps) {
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-3 text-2xl">📈</span>
+                  <span
+                    aria-hidden="true"
+                    className="mr-3 mt-2 h-2 w-2 shrink-0 rounded-full bg-gray-400 dark:bg-gray-500"
+                  />
                   <div>
                     <strong className="text-gray-900 dark:text-white">
                       {t("values.progress.title")}
@@ -153,7 +162,10 @@ export default async function AboutPage({ params }: AboutPageProps) {
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-3 text-2xl">🤝</span>
+                  <span
+                    aria-hidden="true"
+                    className="mr-3 mt-2 h-2 w-2 shrink-0 rounded-full bg-gray-400 dark:bg-gray-500"
+                  />
                   <div>
                     <strong className="text-gray-900 dark:text-white">
                       {t("values.trust.title")}
@@ -162,7 +174,10 @@ export default async function AboutPage({ params }: AboutPageProps) {
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-3 text-2xl">⚖️</span>
+                  <span
+                    aria-hidden="true"
+                    className="mr-3 mt-2 h-2 w-2 shrink-0 rounded-full bg-gray-400 dark:bg-gray-500"
+                  />
                   <div>
                     <strong className="text-gray-900 dark:text-white">
                       {t("values.balance.title")}
