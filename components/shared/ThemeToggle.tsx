@@ -1,9 +1,7 @@
 "use client";
 
-import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
-import { useState } from "react";
-import { useHydrated } from "@/lib/hooks/useHydrated";
+import { useEffect, useState } from "react";
 
 type Theme = "light" | "dark" | "system";
 
@@ -15,17 +13,17 @@ const themes: { value: Theme; label: string }[] = [
 
 export function ThemeToggle() {
   const { theme, setTheme, resolvedTheme } = useTheme();
-  const tCommon = useTranslations("common");
-  const mounted = useHydrated();
+  const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   if (!mounted) {
     return (
       <div className="relative flex items-center h-9">
-        <button
-          className="icon-button h-9 w-9 rounded-lg flex items-center justify-center"
-          aria-label={tCommon("toggleTheme")}
-        >
+        <button className="h-9 w-9 rounded-lg transition-colors flex items-center justify-center">
           <div className="w-5 h-5" />
         </button>
       </div>
@@ -95,9 +93,14 @@ export function ThemeToggle() {
     <div className="relative flex items-center h-9">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="icon-button h-9 w-9 rounded-lg flex items-center justify-center"
-        aria-label={tCommon("toggleTheme")}
-        aria-expanded={isOpen}
+        className="h-9 w-9 rounded-lg transition-colors flex items-center justify-center"
+        style={{ color: 'var(--nav-text)' }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.backgroundColor = 'var(--button-hover-bg)';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.backgroundColor = 'transparent';
+        }}
       >
         {currentIcon}
       </button>
@@ -109,19 +112,32 @@ export function ThemeToggle() {
             className="absolute right-0 top-full mt-1 w-36 border rounded-lg shadow-lg z-50 overflow-hidden"
             style={{ backgroundColor: 'var(--dropdown-bg)', borderColor: 'var(--border-color)' }}
           >
-            {themes.map((option) => (
+            {themes.map((t) => (
               <button
-                key={option.value}
+                key={t.value}
                 onClick={() => {
-                  setTheme(option.value);
+                  setTheme(t.value);
                   setIsOpen(false);
                 }}
-                className="dropdown-item w-full flex items-center gap-2 px-3 py-2 text-sm"
-                aria-pressed={theme === option.value}
+                className="w-full flex items-center gap-2 px-3 py-2 text-sm transition-colors"
+                style={{
+                  backgroundColor: theme === t.value ? 'var(--dropdown-selected-bg)' : 'transparent',
+                  color: theme === t.value ? 'var(--dropdown-selected-text)' : 'var(--dropdown-text)',
+                }}
+                onMouseEnter={(e) => {
+                  if (theme !== t.value) {
+                    e.currentTarget.style.backgroundColor = 'var(--dropdown-hover-bg)';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (theme !== t.value) {
+                    e.currentTarget.style.backgroundColor = 'transparent';
+                  }
+                }}
               >
-                {getIcon(option.value)}
-                {option.label}
-                {theme === option.value && (
+                {getIcon(t.value)}
+                {t.label}
+                {theme === t.value && (
                   <svg className="w-4 h-4 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>

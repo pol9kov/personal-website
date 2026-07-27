@@ -2,7 +2,7 @@
   "navigation": {
     "home": "Home",
     "about": "About Me",
-    "imperiaOs": "Imperia OS",
+    "aiIntegration": "AI Integration",
     "caseStudies": "Case Studies",
     "resume": "Resume",
     "siteName": "Egor Polyakov"
@@ -35,143 +35,79 @@
   },
   "about": {
     "title": "About Me",
-    "subtitle": "Solution Architect. Humans give meaning, AI gives form.",
+    "subtitle": "Backend engineer with 10+ years of experience and a strong mathematical background. Building systems that handle complexity while remaining understandable.",
     "whoIAm": {
       "title": "Who I Am",
-      "p1": "Math-focused education in St. Petersburg (LNMO), then a path through EAV systems, cloud-native Go microservices, and blockchain infrastructure.",
-      "p2": "Now building Imperia OS — a platform where AI is part of the architecture, not bolted on."
+      "p1": "Graduated from LNMO in St. Petersburg, explored over a dozen programming languages, and placed in ICYS and Baltic Science and Engineering Competition.",
+      "p2": "Over the years, progressed from dynamic EAV systems to cloud-native Go microservices and AI integrations."
     },
     "approach": {
-      "title": "How I Think",
-      "p1": "I check whether the problem is stated correctly before optimizing the solution.",
-      "p2": "I catch when a concept drifts mid-reasoning — when a generic label hides that nothing concrete was built, or when an abstraction solves a problem that doesn't exist."
+      "title": "My Approach",
+      "p1": "While others optimize for technical elegance, I optimize for business profit.",
+      "p2": "Preferring practical architectures that work today and remain flexible tomorrow."
     },
     "currentFocus": {
       "title": "Current Focus",
-      "p1": "Imperia OS. Business requirements come first, then tests, then code — all three are automatically indexed and embedded. The dev-agent works through the same flow: understand the problem, research root cause, plan, implement, verify, commit."
+      "p1": "Interested in systems that need to be both robust and adaptable: microservices, dynamic data schemas, developer-friendly APIs, and AI layers on top of existing products."
+    },
+    "values": {
+      "title": "Values",
+      "continuousLearning": {
+        "title": "Continuous Learning",
+        "text": "Every project provides new thinking tools."
+      },
+      "curiosity": {
+        "title": "Curiosity",
+        "text": "Seeking root causes, not just treating symptoms."
+      },
+      "progress": {
+        "title": "Progress Over Perfection",
+        "text": "Sustainable steps beat quick fixes."
+      },
+      "trust": {
+        "title": "Trust",
+        "text": "Honest communication and reliability."
+      }
     }
   },
   "resume": {
     "title": "Resume",
-    "subtitle": "AI Platform Engineer · Buenos Aires",
-    "updated": "Updated: July 2026",
-    "print": "Print / PDF",
-    "contactsTitle": "Contacts",
-    "summaryTitle": "Summary",
-    "summary": "Building an AI assistant to do everything its user wants — and the platform that goal requires. The same infrastructure builds the platform and delivers it to its users.",
-    "experienceTitle": "Experience",
-    "experience": [
-      {
-        "role": "Imperia OS",
-        "org": "Independent",
-        "period": "2025 – present",
-        "paragraphs": [
-          "The platform is written from inside itself. Agents propose a change, author it, verify it, and land it behind a gate; deployment walks dev, standby, and production with no hand on it. Most of the code is written by the system now. What stays with me is direction, and the gate.",
-          "Two kinds of memory back the development, and both reach the agent the same two ways: pulled into its prompt automatically by embedding match, or fetched on demand through MCP tools.",
-          "The first is a knowledge graph that follows the development flow: business use cases come first; tests are written from them; code implements them; and all three are automatically indexed into the graph and embedded.",
-          "The second is a thought system: a hierarchy that composes itself, where every new thought is summarized into the layer above, recursively. The same module runs the business agents.",
-          "Another way of working with memory: state. A stateful agent is a state machine — the algorithm controls the flow, and each step is atomic: an LLM call or a deterministic operation. The algorithm doesn't hallucinate. Stateless agents are the rest: one call, no machine.",
-          "People and agents are members of the same rooms. Membership is privacy and addressing at once — another agent, another contact, a private side channel between two of them is one more room, not one more concept.",
-          "One agent stands between that mesh and the person. Everything the others say passes through it, and only what changes what the person would do reaches them.",
-          "A promise is an object, not a sentence. When a turn commits to something and nothing durable backs it, the debt is written down and the agent is woken on it later. Going silent on a promise is a state the system can see.",
-          "Agents are one of three abstractions the system reduces to. Blocks are the second — everything addressable shares one shape and one embedding. Protocols are the third — everything that crosses a boundary. Payment included."
-        ]
-      },
-      {
-        "role": "Full-Stack Engineer",
-        "org": "Independent",
-        "period": "2022 – 2025",
-        "paragraphs": [
-          "A cross-platform mobile platform on Flutter and AWS. Clean Architecture from the first commit, cloud infrastructure as code in AWS CDK.",
-          "Dart and Flutter on the frontend — feature-based modules, event-driven reactive layout, Riverpod for state. AWS Lambda in Go on the backend — DynamoDB with composite keys, S3 for media, Amplify and Cognito for auth."
-        ]
-      },
-      {
-        "role": "Blockchain Developer",
-        "org": "IBM",
-        "period": "2020 – 2022",
-        "paragraphs": [
-          "Built a full testing environment and CI/CD pipeline for Hyperledger Fabric — feature delivery speed doubled. Refactored the project structure, cutting the codebase by 30%. Led the CouchDB→LevelDB migration that improved data-operation performance by 40%. Delivered a cross-channel encryption solution with zero defects, despite the absence of formal requirements."
-        ]
-      },
-      {
-        "role": "Blockchain Developer",
-        "org": "Insolar",
-        "period": "2019 – 2020",
-        "paragraphs": [
-          "Designed the data architecture for a blockchain-based wallet, initiating the process and guiding a newly onboarded system architect through the key design decisions."
-        ]
-      },
-      {
-        "role": "Blockchain Developer",
-        "org": "Sber",
-        "period": "2018 – 2019",
-        "paragraphs": [
-          "A custom CRUD-style abstraction layer over Hyperledger Fabric, self-initiated and built after hours. New-feature implementation dropped from around eight hours to fifteen minutes, simplifying composite-key data operations."
-        ]
-      }
-    ],
-    "educationTitle": "Education",
-    "education": [
-      {
-        "degree": "Mathematics and Mechanics",
-        "org": "St. Petersburg State University, Mat-Mekh",
-        "period": "2012 – 2017",
-        "text": "Arrived from LNMO, the Saint Petersburg laboratory for continuous mathematical education. Olympiad medals along the way — mathematics at ICYS and the City Olympiad, computer science at the Baltic Scientific and Engineering Competition. Worked through university in parallel — Java, Android, Delphi, and embedded C++ for spectrograph instrumentation at a materials research institute."
-      }
-    ],
-    "languagesTitle": "Languages",
-    "languages": [
-      "Russian — native",
-      "English — Advanced",
-      "Spanish — Beginner"
-    ],
-    "stackTitle": "Stack",
-    "stack": [
-      "TypeScript",
-      "Go",
-      "Dart / Flutter",
-      "Java",
-      "Python",
-      "Next.js / React",
-      "Node.js",
-      "Clean Architecture",
-      "MCP",
-      "PostgreSQL",
-      "MongoDB",
-      "Kuzu",
-      "DynamoDB",
-      "AWS (CDK, Lambda, Cognito, S3)",
-      "Docker",
-      "Linux",
-      "systemd",
-      "Infrastructure as Code",
-      "Hyperledger Fabric"
-    ]
+    "subtitle": "Download my professional resume in PDF format",
+    "download": "Download Resume (PDF)"
   },
-  "imperiaOs": {
-    "title": "Imperia OS",
-    "subtitle": "AI-first development platform.",
-    "tryDemo": "Visit Platform",
+  "aiIntegration": {
+    "title": "We automate your business processes with AI in 24-72 hours",
+    "subtitle": "Custom solution for your specific task.",
+    "tryDemo": "Visit Site",
     "problem": {
-      "title": "The Problem",
-      "text": "Most AI integrations give a model a prompt and hope for the best. No workflow discipline, no audit trail, no way to know why the agent did what it did."
+      "title": "Problem",
+      "text": "Generic platforms don't fit specific processes. Consulting writes from scratch for months. There's a gap between them."
     },
     "solution": {
-      "title": "The Approach",
-      "text": "The algorithm controls the flow, not the LLM. Agents follow deterministic phases with exit criteria. Each phase restricts which tools are available. Every step is recorded — confidence, observations, gaps. The algorithm doesn't hallucinate — only the bounded steps inside it can."
+      "title": "Solution",
+      "text": "I write code precisely for your process, but use ready-made AI components (models, vector databases, agents). That's why it's fast - pilot in 24-72 hours, not months."
     },
+    "tasksTitle": "What tasks we solve",
+    "tasks": [
+      "Auto-responses in support based on your knowledge base",
+      "Assistant for managers: client history, documents, next action",
+      "Incoming request processing and routing",
+      "Data extraction from documents"
+    ],
     "howWeWork": {
-      "title": "How It Works"
+      "title": "How we work",
+      "note": "Where models are hosted - cloud or your servers - you decide."
     },
     "steps": [
-      "Business requirements defined first — the spec tree is runtime configuration",
-      "Tests written from requirements — verify before implementation",
-      "Dev-agent follows six phases: understand → research → plan → implement → verify → commit",
-      "All three layers indexed and embedded — the agent sees what exists before writing anything new"
+      "You describe the process (or talk to nAnI - AI that gathers requirements)",
+      "I write automation for your task in 24-72 hours",
+      "You test the pilot, I refine it to production in 2 weeks"
     ],
-    "caseStudyTeaser": "Imperia OS is also written up as a case study — architecture, decisions and what they cost.",
-    "caseStudyLink": "Read the case study"
+    "whyNotConsulting": {
+      "title": "Why faster than consulting",
+      "problem": "Consulting writes everything from scratch: business logic, AI layer, and integrations. Months of work.",
+      "solution": "I use ready-made AI components (OpenAI, Neo4j, vector search), but write business logic specifically for your process. Faster + precisely for your task."
+    }
   },
   "caseStudies": {
     "title": "Case Studies",
@@ -185,29 +121,26 @@
     "viewSource": "View Source Code",
     "architectureDiagrams": "Architecture Diagrams",
     "items": {
-      "imperia-os": {
-        "title": "Imperia OS — AI-First Development Platform",
-        "description": "Full-stack AI platform with state-machine runtime, three knowledge graphs, and self-building agent system.",
-        "problem": "AI assistants are stateless — no persistent memory, no business context, no ability to act on real systems. Building a real assistant requires a platform: runtime, knowledge base, agent system, and infrastructure.",
-        "solution": "Built Imperia OS from scratch: state-machine runtime where LLMs are atomic steps, three knowledge graphs (business model, tests, code), MCP tool system for typed database access, and hot-standby infrastructure with automatic failover.",
+      "ai-infrastructure": {
+        "title": "AI Integration into CRM for Support Automation",
+        "description": "Connecting LLM to company CRM for automatic responses based on internal knowledge base.",
+        "problem": "Support team spent significant time processing repetitive requests. Operators manually searched for information in the knowledge base, increasing response time.",
+        "solution": "Integrated AI layer with CRM: the system analyzes incoming messages, finds relevant materials, and generates responses based on corporate knowledge base. Non-standard requests are automatically handed off to an operator.",
         "technicalDetails": [
-          "State-machine runtime for deterministic LLM orchestration",
-          "Three knowledge graphs in Kuzu: business domain, tests, code structure",
-          "MCP tool system — PostgreSQL, Kuzu, MongoDB via typed interfaces",
-          "Thought engine — persistent memory with wikilinks and embeddings",
-          "Hot standby with 15s health checks and automatic failover",
-          "Monorepo: Next.js + TypeScript + pnpm workspaces"
+          "Integration via REST API",
+          "RAG layer for relevant data retrieval",
+          "AI processing in Next.js API layer"
         ],
         "results": [
-          "Running in production since 2025",
-          "9 services across prod/standby/dev environments",
-          "Zero-downtime deployment with automated pipeline",
-          "Development flow: business scenarios → tests → agents generate code"
+          "Response time reduced from minutes to seconds",
+          "Operator workload decreased by more than 40%",
+          "Response quality comparable to experienced employee",
+          "System operates 24/7"
         ],
         "lessonsLearned": [
-          "LLMs become reliable when each call is a bounded step in a state machine",
-          "Three separate knowledge graphs beat one merged graph — different query patterns need different schemas",
-          "Building the platform with itself is the strongest validation"
+          "AI effectively handles typical requests",
+          "Fallback to human is mandatory for edge cases",
+          "Knowledge base quality directly affects accuracy"
         ]
       },
       "mobile-platform": {
