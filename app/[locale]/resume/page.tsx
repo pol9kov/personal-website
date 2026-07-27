@@ -51,7 +51,7 @@ export default async function ResumePage({ params }: ResumePageProps) {
           <a
             href={pdf}
             download={pdfName}
-            className="inline-flex items-center rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:scale-105 hover:shadow-xl"
+            className="inline-flex items-center rounded-lg bg-blue-600 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:bg-blue-700 hover:shadow-xl"
           >
             <svg
               className="mr-3 h-6 w-6"

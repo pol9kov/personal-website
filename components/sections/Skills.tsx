@@ -85,7 +85,7 @@ export function Skills({ className }: SkillsProps) {
                         </span>
                         <div className="h-2 w-full rounded-full bg-gray-200 dark:bg-gray-700">
                           <div
-                            className="h-full rounded-full bg-gradient-to-r from-blue-600 to-purple-600 transition-all"
+                            className="h-full rounded-full bg-blue-600 dark:bg-blue-500 transition-all"
                             style={{ width: `${(skill.proficiency / 5) * 100}%` }}
                           />
                         </div>
