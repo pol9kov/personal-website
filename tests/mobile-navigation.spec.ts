@@ -8,7 +8,7 @@ test.describe("Mobile Navigation", () => {
     await page.waitForLoadState("networkidle");
 
     const hamburgerButton = page.locator('button[aria-label="Toggle menu"]');
-    const desktopNav = page.locator("nav.hidden.md\\:flex");
+    const desktopNav = page.locator("header nav");
 
     // Hamburger should be visible on mobile
     await expect(hamburgerButton).toBeVisible();
@@ -81,7 +81,7 @@ test.describe("Mobile Navigation", () => {
     await page.waitForLoadState("networkidle");
 
     const hamburgerButton = page.locator('button[aria-label="Toggle menu"]');
-    const desktopNav = page.locator("nav.hidden.md\\:flex");
+    const desktopNav = page.locator("header nav");
 
     // Desktop navigation should be visible
     await expect(desktopNav).toBeVisible();

@@ -65,7 +65,7 @@ export function Header() {
         {/* Right: Nav + Language + Theme */}
         <div className="flex items-center gap-2 md:gap-3 shrink-0">
           {/* Desktop navigation */}
-          <nav className="hidden md:flex items-center gap-4">
+          <nav className="hidden sm:flex items-center gap-4">
             {navItems.map((item) => (
               <Link
                 key={item.href}
@@ -102,7 +102,7 @@ export function Header() {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
             aria-expanded={isMenuOpen}
-            className="md:hidden p-2 rounded-lg transition-colors"
+            className="sm:hidden p-2 rounded-lg transition-colors"
             style={{ color: 'var(--nav-text)' }}
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = 'var(--button-hover-bg)';
@@ -127,7 +127,7 @@ export function Header() {
       {/* Mobile menu */}
       {isMenuOpen && (
         <div
-          className="md:hidden border-b px-4 py-3"
+          className="sm:hidden border-b px-4 py-3"
           style={{ backgroundColor: 'var(--background)', borderColor: 'var(--border-color)' }}
         >
           <nav className="flex flex-col gap-3">
