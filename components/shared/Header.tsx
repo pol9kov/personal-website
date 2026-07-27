@@ -57,22 +57,28 @@ export function Header() {
             href="/"
             className="hover:opacity-80 transition-opacity flex items-center gap-2 shrink-0"
           >
-            <span className="text-lg font-semibold hidden sm:block">{t("siteName")}</span>
-            <span className="text-base font-semibold sm:hidden">EP</span>
+            <span className="text-lg font-semibold max-sm:hidden">{t("siteName")}</span>
+            <span className="text-base font-semibold hidden max-sm:block">EP</span>
           </Link>
         </div>
 
+        {/* Видимость шапки устроена FAIL-OPEN. Раньше меню было спрятано по
+            умолчанию (`hidden`) и показывалось только media-запросом — то есть
+            если-запрос по любой причине не применился, человек оставался вообще
+            без ссылок, и именно так это и выглядело у владельца сайта. Теперь
+            наоборот: по умолчанию видно всё, media-запрос только СВОРАЧИВАЕТ на
+            узком экране. Худший исход поменялся с «ничего нет» на «тесновато». */}
         {/* Right: Nav + Language + Theme */}
         <div className="flex items-center gap-2 md:gap-3 shrink-0">
           {/* Desktop navigation */}
-          <nav className="hidden sm:flex items-center gap-4">
+          <nav className="flex max-sm:hidden items-center gap-4">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 className="text-sm font-medium transition-colors"
                 style={{
-                  color: pathname === item.href ? 'var(--nav-active-text)' : 'var(--nav-text)',
+                  color: pathname === item.href ? 'var(--nav-active-text, currentColor)' : 'var(--nav-text, currentColor)',
                 }}
                 onMouseEnter={(e) => {
                   if (pathname !== item.href) {
@@ -81,7 +87,7 @@ export function Header() {
                 }}
                 onMouseLeave={(e) => {
                   if (pathname !== item.href) {
-                    e.currentTarget.style.color = 'var(--nav-text)';
+                    e.currentTarget.style.color = 'var(--nav-text, currentColor)';
                   }
                 }}
               >
@@ -102,8 +108,8 @@ export function Header() {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
             aria-expanded={isMenuOpen}
-            className="sm:hidden p-2 rounded-lg transition-colors"
-            style={{ color: 'var(--nav-text)' }}
+            className="hidden max-sm:block p-2 rounded-lg transition-colors"
+            style={{ color: 'var(--nav-text, currentColor)' }}
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = 'var(--button-hover-bg)';
             }}
@@ -127,7 +133,7 @@ export function Header() {
       {/* Mobile menu */}
       {isMenuOpen && (
         <div
-          className="sm:hidden border-b px-4 py-3"
+          className="hidden max-sm:block border-b px-4 py-3"
           style={{ backgroundColor: 'var(--background)', borderColor: 'var(--border-color)' }}
         >
           <nav className="flex flex-col gap-3">
@@ -138,7 +144,7 @@ export function Header() {
                 onClick={() => setIsMenuOpen(false)}
                 className="text-base font-medium transition-colors"
                 style={{
-                  color: pathname === item.href ? 'var(--nav-active-text)' : 'var(--nav-text)',
+                  color: pathname === item.href ? 'var(--nav-active-text, currentColor)' : 'var(--nav-text, currentColor)',
                 }}
                 onMouseEnter={(e) => {
                   if (pathname !== item.href) {
@@ -147,7 +153,7 @@ export function Header() {
                 }}
                 onMouseLeave={(e) => {
                   if (pathname !== item.href) {
-                    e.currentTarget.style.color = 'var(--nav-text)';
+                    e.currentTarget.style.color = 'var(--nav-text, currentColor)';
                   }
                 }}
               >
