@@ -2,7 +2,7 @@
   "navigation": {
     "home": "Home",
     "about": "About Me",
-    "aiIntegration": "AI Integration",
+    "imperiaOs": "Imperia OS",
     "caseStudies": "Case Studies",
     "resume": "Resume",
     "siteName": "Egor Polyakov"
@@ -107,39 +107,30 @@
     "subtitle": "Download my professional resume in PDF format",
     "download": "Download Resume (PDF)"
   },
-  "aiIntegration": {
-    "title": "We automate your business processes with AI in 24-72 hours",
-    "subtitle": "Custom solution for your specific task.",
-    "tryDemo": "Visit Site",
+  "imperiaOs": {
+    "title": "Imperia OS",
+    "subtitle": "AI-first development platform.",
+    "tryDemo": "Visit Platform",
     "problem": {
-      "title": "Problem",
-      "text": "Generic platforms don't fit specific processes. Consulting writes from scratch for months. There's a gap between them."
+      "title": "The Problem",
+      "text": "Most AI integrations give a model a prompt and hope for the best. No workflow discipline, no audit trail, no way to know why the agent did what it did."
     },
     "solution": {
-      "title": "Solution",
-      "text": "I write code precisely for your process, but use ready-made AI components (models, vector databases, agents). That's why it's fast - pilot in 24-72 hours, not months."
+      "title": "The Approach",
+      "text": "The algorithm controls the flow, not the LLM. Agents follow deterministic phases with exit criteria. Each phase restricts which tools are available. Every step is recorded — confidence, observations, gaps. The algorithm doesn't hallucinate — only the bounded steps inside it can."
     },
-    "tasksTitle": "What tasks we solve",
-    "tasks": [
-      "Auto-responses in support based on your knowledge base",
-      "Assistant for managers: client history, documents, next action",
-      "Incoming request processing and routing",
-      "Data extraction from documents"
-    ],
     "howWeWork": {
-      "title": "How we work",
-      "note": "Where models are hosted - cloud or your servers - you decide."
+      "title": "How It Works",
+      "note": ""
     },
     "steps": [
-      "You describe the process (or talk to nAnI - AI that gathers requirements)",
-      "I write automation for your task in 24-72 hours",
-      "You test the pilot, I refine it to production in 2 weeks"
+      "Business requirements defined first — the spec tree is runtime configuration",
+      "Tests written from requirements — verify before implementation",
+      "Dev-agent follows six phases: understand → research → plan → implement → verify → commit",
+      "All three layers indexed and embedded — the agent sees what exists before writing anything new"
     ],
-    "whyNotConsulting": {
-      "title": "Why faster than consulting",
-      "problem": "Consulting writes everything from scratch: business logic, AI layer, and integrations. Months of work.",
-      "solution": "I use ready-made AI components (OpenAI, Neo4j, vector search), but write business logic specifically for your process. Faster + precisely for your task."
-    }
+    "caseStudyTeaser": "Architecture details — phase-gating, thought chains, database ownership — in the case study.",
+    "caseStudyLink": "Read Case Study"
   },
   "caseStudies": {
     "title": "Case Studies",
@@ -153,26 +144,28 @@
     "viewSource": "View Source Code",
     "architectureDiagrams": "Architecture Diagrams",
     "items": {
-      "ai-infrastructure": {
-        "title": "AI Integration into CRM for Support Automation",
-        "description": "Connecting LLM to company CRM for automatic responses based on internal knowledge base.",
-        "problem": "Support team spent significant time processing repetitive requests. Operators manually searched for information in the knowledge base, increasing response time.",
-        "solution": "Integrated AI layer with CRM: the system analyzes incoming messages, finds relevant materials, and generates responses based on corporate knowledge base. Non-standard requests are automatically handed off to an operator.",
+      "imperia-os": {
+        "title": "Imperia OS — AI-First Development Platform",
+        "description": "Platform where autonomous agents follow deterministic phase workflows to develop software.",
+        "problem": "Giving an LLM full control doesn't scale. It decides what to do, which tools to call, when to stop. No discipline, no traceability, no way to prevent the agent from editing code before it understands the problem.",
+        "solution": "The algorithm controls the flow. Dev-agent follows six phases: understand → research → plan → implement → verify → commit. Each phase has exit criteria. Each phase gates which tools the agent can access — READ phase is read-only, WRITE phase allows editing, TESTS phase allows test execution.",
         "technicalDetails": [
-          "Integration via REST API",
-          "RAG layer for relevant data retrieval",
-          "AI processing in Next.js API layer"
+          "Case/Process routing — each Process checks a predicate, executes in order, no LLM decides the next step",
+          "Phase-gated MCP tools — READ phase: read-only; WRITE phase: edit; TESTS: test commands; COMMIT: git",
+          "Thought chain per session — confidence, observations, gaps, suggestions at every step",
+          "Code graph in Kuzu — files, functions, classes, imports from Rust parser",
+          "Agent memory in Kuzu — sessions, thoughts, message deduplication by embedding",
+          "User blocks in MongoDB — notes, files, thoughts with vector embeddings for semantic search"
         ],
         "results": [
-          "Response time reduced from minutes to seconds",
-          "Operator workload decreased by more than 40%",
-          "Response quality comparable to experienced employee",
-          "System operates 24/7"
+          "Dev-agent develops the platform using the platform itself — same tools, same workflow",
+          "Agents must reproduce the bug and cite file:line before implementing any fix",
+          "Every agent decision is traceable — thoughts record what was observed, what was missing, and why the agent chose its approach"
         ],
         "lessonsLearned": [
-          "AI effectively handles typical requests",
-          "Fallback to human is mandatory for edge cases",
-          "Knowledge base quality directly affects accuracy"
+          "LLMs become reliable when an algorithm controls the flow — the algorithm doesn't hallucinate",
+          "Separate databases beat one merged store — code structure, agent memory, and user data need different schemas and query patterns",
+          "Phase-gating tool access prevents agents from editing code before they understand the problem"
         ]
       },
       "mobile-platform": {

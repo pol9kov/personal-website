@@ -2,7 +2,7 @@
   "navigation": {
     "home": "Inicio",
     "about": "Sobre Mi",
-    "aiIntegration": "Integracion IA",
+    "imperiaOs": "Imperia OS",
     "caseStudies": "Casos de Estudio",
     "resume": "Curriculum",
     "siteName": "Egor Polyakov"
@@ -107,39 +107,30 @@
     "subtitle": "Descarga mi curriculum profesional en formato PDF",
     "download": "Descargar Curriculum (PDF)"
   },
-  "aiIntegration": {
-    "title": "Automatizamos tus procesos de negocio con IA en 24-72 horas",
-    "subtitle": "Solucion personalizada para tu tarea especifica.",
-    "tryDemo": "Visitar Sitio",
+  "imperiaOs": {
+    "title": "Imperia OS",
+    "subtitle": "Plataforma de desarrollo AI-first.",
+    "tryDemo": "Visitar Plataforma",
     "problem": {
-      "title": "Problema",
-      "text": "Las plataformas genericas no se ajustan a procesos especificos. La consultoria escribe desde cero durante meses. Hay una brecha entre ellos."
+      "title": "El Problema",
+      "text": "La mayoría de las integraciones de IA le dan al modelo un prompt y esperan lo mejor. Sin disciplina de workflow, sin trazabilidad, sin forma de saber por qué el agente hizo lo que hizo."
     },
     "solution": {
-      "title": "Solucion",
-      "text": "Escribo codigo precisamente para tu proceso, pero uso componentes de IA listos (modelos, bases de datos vectoriales, agentes). Por eso es rapido - piloto en 24-72 horas, no meses."
+      "title": "El Enfoque",
+      "text": "El algoritmo controla el flujo, no el LLM. Los agentes siguen fases determinísticas con criterios de salida. Cada fase restringe qué herramientas están disponibles. Cada paso se registra — confianza, observaciones, brechas. El algoritmo no alucina — solo los pasos acotados dentro de él pueden."
     },
-    "tasksTitle": "Que tareas resolvemos",
-    "tasks": [
-      "Respuestas automaticas en soporte basadas en tu base de conocimientos",
-      "Asistente para gerentes: historial de cliente, documentos, siguiente accion",
-      "Procesamiento y enrutamiento de solicitudes entrantes",
-      "Extraccion de datos de documentos"
-    ],
     "howWeWork": {
-      "title": "Como trabajamos",
-      "note": "Donde se alojan los modelos - nube o tus servidores - tu decides."
+      "title": "Cómo Funciona",
+      "note": ""
     },
     "steps": [
-      "Describes el proceso (o hablas con nAnI - IA que recopila requisitos)",
-      "Escribo la automatizacion para tu tarea en 24-72 horas",
-      "Pruebas el piloto, lo refino a produccion en 2 semanas"
+      "Primero los requisitos de negocio — el spec tree es configuración de runtime",
+      "Tests escritos desde requisitos — verificación antes de implementación",
+      "El dev-agent sigue seis fases: understand → research → plan → implement → verify → commit",
+      "Las tres capas se indexan y embeben — el agente ve qué existe antes de escribir algo nuevo"
     ],
-    "whyNotConsulting": {
-      "title": "Por que mas rapido que consultoria",
-      "problem": "La consultoria escribe todo desde cero: logica de negocio, capa de IA e integraciones. Meses de trabajo.",
-      "solution": "Uso componentes de IA listos (OpenAI, Neo4j, busqueda vectorial), pero escribo la logica de negocio especificamente para tu proceso. Mas rapido + precisamente para tu tarea."
-    }
+    "caseStudyTeaser": "Detalles de arquitectura — acceso por fase, cadenas de pensamiento, propiedad de bases de datos — en el caso de estudio.",
+    "caseStudyLink": "Leer Caso de Estudio"
   },
   "caseStudies": {
     "title": "Casos de Estudio",
@@ -153,70 +144,72 @@
     "viewSource": "Ver Codigo Fuente",
     "architectureDiagrams": "Diagramas de Arquitectura",
     "items": {
-      "ai-infrastructure": {
-        "title": "Integracion de IA en CRM para Automatizacion de Soporte",
-        "description": "Conexion de LLM a CRM de empresa para respuestas automaticas basadas en base de conocimientos interna.",
-        "problem": "El equipo de soporte pasaba tiempo significativo procesando solicitudes repetitivas. Los operadores buscaban informacion manualmente en la base de conocimientos, aumentando el tiempo de respuesta.",
-        "solution": "Integre capa de IA con CRM: el sistema analiza mensajes entrantes, encuentra materiales relevantes y genera respuestas basadas en la base de conocimientos corporativa. Las solicitudes no estandar se entregan automaticamente a un operador.",
+      "imperia-os": {
+        "title": "Imperia OS — Plataforma de Desarrollo AI-First",
+        "description": "Plataforma donde agentes autónomos siguen workflows de fases determinísticos para desarrollar software.",
+        "problem": "Dar a un LLM control total no escala. El modelo decide qué hacer, qué herramientas llamar, cuándo parar. Sin disciplina, sin trazabilidad, sin forma de prevenir que el agente edite código antes de entender el problema.",
+        "solution": "El algoritmo controla el flujo. El dev-agent sigue seis fases: understand → research → plan → implement → verify → commit. Cada fase tiene criterios de salida. Cada fase limita qué herramientas puede usar el agente — en fase READ solo lectura, en WRITE edición, en TESTS ejecución de tests.",
         "technicalDetails": [
-          "Integracion via REST API",
-          "Capa RAG para recuperacion de datos relevantes",
-          "Procesamiento de IA en capa API de Next.js"
+          "Routing Case/Process — cada Process verifica un predicado, se ejecuta en orden, el LLM no decide el siguiente paso",
+          "MCP por fase — READ: solo lectura; WRITE: edición; TESTS: comandos de test; COMMIT: git",
+          "Cadena de pensamiento por sesión — confianza, observaciones, brechas, sugerencias en cada paso",
+          "Code graph en Kuzu — archivos, funciones, clases, importaciones desde parser Rust",
+          "Memoria de agentes en Kuzu — sesiones, pensamientos, deduplicación de mensajes por embedding",
+          "Bloques de usuario en MongoDB — notas, archivos, pensamientos con embeddings vectoriales para búsqueda semántica"
         ],
         "results": [
-          "Tiempo de respuesta reducido de minutos a segundos",
-          "Carga de operadores disminuida en mas del 40%",
-          "Calidad de respuesta comparable a empleado experimentado",
-          "Sistema opera 24/7"
+          "El dev-agent desarrolla la plataforma usando la plataforma misma — mismas herramientas, mismo workflow",
+          "El agente debe reproducir el bug y citar file:line antes de implementar cualquier fix",
+          "Cada decisión del agente es trazable — los pensamientos registran qué se observó, qué faltaba y por qué el agente eligió su enfoque"
         ],
         "lessonsLearned": [
-          "IA maneja efectivamente solicitudes tipicas",
-          "Fallback a humano es obligatorio para casos limite",
-          "Calidad de base de conocimientos afecta directamente la precision"
+          "Los LLMs se vuelven confiables cuando un algoritmo controla el flujo — el algoritmo no alucina",
+          "Bases separadas superan una unificada — estructura de código, memoria de agentes y datos de usuario necesitan esquemas y patrones de consulta diferentes",
+          "Limitar herramientas por fase previene que los agentes editen código antes de entender el problema"
         ]
       },
       "mobile-platform": {
-        "title": "Plataforma Movil Multiplataforma",
-        "description": "Plataforma movil escalable en Flutter y AWS con arquitectura limpia e infraestructura automatizada.",
-        "problem": "Se necesitaba una base para un producto multiplataforma con backend confiable y despliegue automatizado. Los enfoques tipicos llevaban a arquitectura fragmentada.",
-        "solution": "Implemente Clean Architecture con estructura basada en Features en Flutter. Backend - serverless en AWS (Lambda en Golang). Infraestructura definida en CDK y se despliega automaticamente.",
+        "title": "Plataforma Móvil Multiplataforma",
+        "description": "Plataforma móvil escalable en Flutter y AWS con arquitectura limpia e infraestructura automatizada.",
+        "problem": "Se necesitaba una base para un producto multiplataforma con backend confiable y despliegue automatizado. Los enfoques típicos llevaban a arquitectura fragmentada.",
+        "solution": "Implementé Clean Architecture con estructura basada en Features en Flutter. Backend serverless en AWS (Lambda en Golang). Infraestructura definida en CDK y se despliega automáticamente.",
         "technicalDetails": [
           "Clean Architecture + estructura basada en Features",
           "Backend serverless en AWS (Lambda, DynamoDB, Cognito)",
-          "Infraestructura como Codigo (AWS CDK)"
+          "Infraestructura como Código (AWS CDK)"
         ],
         "results": [
-          "Base arquitectonica e infraestructural implementada",
+          "Base arquitectónica e infraestructural implementada",
           "Despliegue completamente automatizado",
           "Estructura modular simplifica desarrollo futuro",
-          "Backend en estado listo para produccion"
+          "Backend en estado listo para producción"
         ],
         "lessonsLearned": [
           "Clean Architecture vale la pena en proyectos grandes",
-          "Infraestructura como Codigo es critica para reproducibilidad",
+          "Infraestructura como Código es crítica para reproducibilidad",
           "Serverless reduce sobrecarga operacional"
         ]
       },
       "website-builder": {
-        "title": "Plataforma de Constructor de Sitios Web Dinamicos",
-        "description": "Sistema de constructor de sitios web flexible con esquema de datos dinamico y soporte multi-tenancy.",
-        "problem": "Se necesitaba un constructor donde usuarios puedan crear tipos de entidades y campos arbitrarios sin migraciones de BD. Ademas aislamiento de datos entre clientes.",
-        "solution": "Implemente patron EAV (Entity-Attribute-Value) con multi-tenancy a nivel de base de datos. Los usuarios crean sus entidades y campos a traves de la interfaz, los datos se almacenan en estructura universal y extensible.",
+        "title": "Plataforma de Constructor de Sitios Web Dinámicos",
+        "description": "Sistema flexible de constructor de sitios web con esquema de datos dinámico y soporte multi-tenancy.",
+        "problem": "Se necesitaba un constructor donde los usuarios puedan crear tipos de entidad y campos arbitrarios sin migraciones de BD. Más aislamiento de datos entre clientes.",
+        "solution": "Implementé patrón EAV (Entity-Attribute-Value) con multi-tenancy a nivel de base de datos. Los usuarios crean sus entidades y campos a través de la interfaz, los datos se almacenan en una estructura universal y extensible.",
         "technicalDetails": [
-          "Patron EAV para esquema dinamico sin migraciones",
+          "Patrón EAV para esquema dinámico sin migraciones",
           "Multi-tenancy con bases de datos aisladas por cliente",
           "Almacenamiento type-safe de diferentes tipos de datos"
         ],
         "results": [
-          "Usuarios crean entidades sin intervencion de desarrollador",
+          "Los usuarios crean entidades sin intervención de desarrollador",
           "Aislamiento completo de datos entre clientes",
           "Cero tiempo de inactividad para cambios de esquema",
-          "Sistema se adapta a diferentes dominios de negocio"
+          "El sistema se adapta a diferentes dominios de negocio"
         ],
         "lessonsLearned": [
-          "EAV proporciona maxima flexibilidad pero requiere optimizacion de consultas",
-          "Multi-tenancy a nivel BD es el aislamiento mas confiable",
-          "Almacenamiento type-safe previene corrupcion de datos"
+          "EAV funciona bien para datos verdaderamente dinámicos",
+          "Multi-tenancy requiere decisiones de aislamiento tempranas",
+          "La flexibilidad del esquema tiene un costo de complejidad de consulta"
         ]
       }
     }

@@ -14,6 +14,14 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Playwright artefacts. They are gitignored, but they still exist ON DISK
+    // and eslint lints the disk — so the pre-commit hook poisoned itself: its
+    // own `npm test` step writes playwright-report/, and the NEXT commit's lint
+    // step then drowned in generated HTML/JS nobody wrote. Measured 2026-07-27
+    // on one unchanged tree: 1 warning before a test run, 140 errors and 2720
+    // warnings after it.
+    "playwright-report/**",
+    "test-results/**",
   ]),
 ]);
 
