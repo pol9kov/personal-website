@@ -13,10 +13,13 @@ import * as path from "path";
 // линия шла мимо столбцов. Копия удалена; расхождение теперь невозможно.
 import { skills } from "../lib/constants/skills";
 import type { Skill } from "../lib/types";
+import {
+  SKILL_ROW_HEIGHT as ROW_HEIGHT,
+  SKILL_ROW_GAP as ROW_GAP,
+  skillChartHeight,
+} from "../lib/constants/skill-chart";
 
 // Layout constants (must match Skills.tsx)
-const ROW_HEIGHT = 40;
-const ROW_GAP = 16;
 
 // Hard-coded colors - matching name gradient (cyan to blue)
 const COLOR_START = "rgb(6, 182, 212)"; // cyan-500
@@ -30,10 +33,7 @@ function generateIntegralSVG(categorySkills: Skill[]): string {
     (a, b) => b.proficiency - a.proficiency
   );
   const seed = sortedSkills.reduce((acc, s) => acc + s.name.charCodeAt(0), 0);
-  const totalHeight =
-    sortedSkills.length * ROW_HEIGHT +
-    (sortedSkills.length - 1) * ROW_GAP +
-    ROW_HEIGHT; // Extra padding at bottom (full row height)
+  const totalHeight = skillChartHeight(sortedSkills.length);
 
   // Points at the right edge of each progress bar
   const basePoints = sortedSkills.map((skill, i) => {

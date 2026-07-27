@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { skills } from "@/lib/constants/skills";
+import { SKILL_ROW_HEIGHT, SKILL_ROW_GAP } from "@/lib/constants/skill-chart";
 import { Skill } from "@/lib/types";
 import { cn } from "@/lib/utils/cn";
 import { SkillIntegralChart } from "@/components/ui";
@@ -14,7 +15,6 @@ export interface SkillsProps {
 }
 
 // Layout constant for skill rows
-const ROW_HEIGHT = 40; // Height of each skill row (name + bar)
 
 /**
  * Skills section - technical skills display
@@ -77,9 +77,9 @@ export function Skills({ className }: SkillsProps) {
                   <SkillIntegralChart category={category as Skill["category"]} />
 
                   {/* Skill bars */}
-                  <div className="relative z-10 flex flex-col gap-4">
+                  <div className="relative z-10 flex flex-col" style={{ gap: SKILL_ROW_GAP }}>
                     {sortedSkills.map((skill) => (
-                      <div key={skill.name} className="flex flex-col justify-end" style={{ height: ROW_HEIGHT }}>
+                      <div key={skill.name} className="flex flex-col justify-end" style={{ height: SKILL_ROW_HEIGHT }}>
                         <span className="font-medium text-gray-700 dark:text-gray-300 mb-1">
                           {skill.name}
                         </span>
