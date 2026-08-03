@@ -16,9 +16,15 @@ export default async function ResumePage({ params }: ResumePageProps) {
   setRequestLocale(locale);
   const t = await getTranslations("resume");
 
-  const pdf = locale === "ru" ? "/resume-ru.pdf" : "/resume-en.pdf";
-  const pdfName =
-    locale === "ru" ? "Yegor_Polyakov_Resume_RU.pdf" : "Yegor_Polyakov_Resume.pdf";
+  // Each locale gets the resume Egor wrote in that language. A locale with no resume of
+  // its own falls back to English — the one language every reader of this site shares.
+  const RESUME_EN = { pdf: "/resume-en.pdf", name: "Yegor_Polyakov_Resume.pdf" };
+  const RESUME_BY_LOCALE: Record<string, { pdf: string; name: string }> = {
+    en: RESUME_EN,
+    ru: { pdf: "/resume-ru.pdf", name: "Yegor_Polyakov_Resume_RU.pdf" },
+    es: { pdf: "/resume-es.pdf", name: "Yegor_Polyakov_Resume_ES.pdf" },
+  };
+  const { pdf, name: pdfName } = RESUME_BY_LOCALE[locale] ?? RESUME_EN;
 
   return (
     <main className="flex min-h-screen items-start sm:items-center justify-center bg-gradient-to-b from-white to-gray-50 py-12 sm:py-20 dark:from-gray-900 dark:to-gray-950">
