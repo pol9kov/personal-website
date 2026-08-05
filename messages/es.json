@@ -1,10 +1,10 @@
 {
   "navigation": {
     "home": "Inicio",
-    "about": "Sobre Mi",
+    "about": "Sobre Mí",
     "imperiaOs": "Imperia OS",
     "caseStudies": "Casos de Estudio",
-    "resume": "Curriculum",
+    "resume": "Currículum",
     "siteName": "Egor Polyakov"
   },
   "hero": {
@@ -15,8 +15,8 @@
     "contactMe": "Contactar"
   },
   "skills": {
-    "title": "Habilidades y Tecnologias",
-    "subtitle": "Tecnologias y herramientas con las que trabajo",
+    "title": "Habilidades y Tecnologías",
+    "subtitle": "Tecnologías y herramientas con las que trabajo",
     "categories": {
       "languages": "Lenguajes Principales",
       "frameworks": "Arquitectura y Plataformas",
@@ -31,26 +31,26 @@
   },
   "common": {
     "toggleTheme": "Cambiar tema",
-    "toggleMenu": "Cambiar menu"
+    "toggleMenu": "Cambiar menú"
   },
   "about": {
-    "title": "Sobre Mi",
-    "subtitle": "Mi camino, mi filosofia y lo que me impulsa",
+    "title": "Sobre Mí",
+    "subtitle": "Mi camino, mi filosofía y lo que me impulsa",
     "whoIAm": {
-      "title": "Quien Soy",
+      "title": "Quién Soy",
       "p1": "Construyo Imperia OS — un asistente de IA que haga todo lo que su usuario quiera, y la plataforma que ese objetivo exige. La misma infraestructura construye la plataforma y la entrega a sus usuarios. Detrás de eso: más de una década de sistemas backend que debían ser a la vez robustos y capaces de cambiar — cuatro años de blockchain en Sber, Insolar e IBM, y luego tres años construyendo un producto multiplataforma de punta a punta, Flutter en el frontend y Go serverless sobre AWS detrás.",
       "p2": "No interpreto papeles ni me escondo detrás de la jerga. Lo que más me importa en un sistema de agentes es poder decir por qué hizo lo que hizo — por eso construyo el flujo con pasos que se pueden nombrar, no con la improvisación del modelo. Mi fuerza está en",
-      "p2Emphasis": "la transparencia y la capacidad de encarar verdades dificiles",
-      "p2End": ", tanto en el codigo como en la colaboracion.",
-      "quote": "La mente aporta claridad. El corazon aporta profundidad. La presencia es mi don."
+      "p2Emphasis": "la transparencia y la capacidad de encarar verdades difíciles",
+      "p2End": ", tanto en el código como en la colaboración.",
+      "quote": "La mente aporta claridad. El corazón aporta profundidad. La presencia es mi don."
     },
     "journey": {
       "title": "El Camino",
-      "p1": "Me gradue en LNMO (Laboratorio de Educacion Matematica Continua) en San Petersburgo, donde explore mas de una docena de lenguajes de programacion, desde Pascal hasta OCaml, C, Haskell e incluso Brainfuck. Desde mis anos escolares participe en investigacion cientifica y presente trabajos en conferencias academicas. Obtuve el 3er lugar en Matematicas en ICYS-2012 en los Paises Bajos, el 1er lugar en el concurso estatal de San Petersburgo y el 3er lugar en el Baltic Science and Engineering Competition. En 2015-2016 forme parte del jurado juvenil del concurso baltico. Durante ese tiempo trabaje en algoritmos de descomposicion de informacion, redes neuronales y analisis de datos.",
+      "p1": "Me gradué en LNMO (Laboratorio de Educación Matemática Continua) en San Petersburgo, donde exploré más de una docena de lenguajes de programación, desde Pascal hasta OCaml, C, Haskell e incluso Brainfuck. Desde mis años escolares participé en investigación científica y presenté trabajos en conferencias académicas. Obtuve el 3er lugar en Matemáticas en ICYS-2012 en los Países Bajos, el 1er lugar en el concurso estatal de San Petersburgo y el 3er lugar en el Baltic Science and Engineering Competition. En 2015-2016 formé parte del jurado juvenil del concurso báltico. Durante ese tiempo trabajé en algoritmos de descomposición de información, redes neuronales y análisis de datos.",
       "p2": "Mi camino en el desarrollo se ha formado a partir de un principio:",
-      "p2Emphasis": "la vida es un flujo continuo de experiencia que te hace mas fuerte y mas sabio",
-      "p2End": ". Cada proyecto es una oportunidad de aprender, no solo sobre tecnologia, sino sobre como los sistemas sirven a las personas.",
-      "p3": "Antes abordaba los problemas desde la cabeza, persiguiendo el control y las soluciones perfectas. Con el tiempo aprendi que la verdadera ingenieria ocurre cuando permaneces presente con el problema, escuchas en profundidad y actuas desde la comprension y no desde la evitacion. Las mejores arquitecturas surgen cuando respetas tanto las restricciones tecnicas como las necesidades humanas.",
+      "p2Emphasis": "la vida es un flujo continuo de experiencia que te hace más fuerte y más sabio",
+      "p2End": ". Cada proyecto es una oportunidad de aprender, no solo sobre tecnología, sino sobre cómo los sistemas sirven a las personas.",
+      "p3": "Antes abordaba los problemas desde la cabeza, persiguiendo el control y las soluciones perfectas. Con el tiempo aprendí que la verdadera ingeniería ocurre cuando permaneces presente con el problema, escuchas en profundidad y actúas desde la comprensión y no desde la evitación. Las mejores arquitecturas surgen cuando respetas tanto las restricciones técnicas como las necesidades humanas.",
       "p4": "Desde construir sistemas EAV dinámicos hace una década hasta Hyperledger Fabric en Sber e IBM, Go serverless sobre AWS y la plataforma de agentes que construyo hoy, he aprendido que las soluciones sostenibles nacen de la disciplina, la paciencia y la disposición a permanecer con la complejidad hasta que emerge la claridad."
     },
     "approach": {
@@ -64,9 +64,9 @@
       "p3Start": "Valoro",
       "p3Bold": "la reutilización antes que la reinvención",
       "p3End": ". Un grafo de conocimiento sigue el flujo del desarrollo — primero los casos de uso de negocio, de ellos salen las pruebas, el código los implementa, y los tres se indexan y se incrustan solos —, así que lo que ya existe se ve antes de escribir algo nuevo, y la Clean Architecture deja cada módulo portátil a cualquier parte. No es una formalidad: es cuidado hacia quienes mantendrán el sistema después, incluido tú mismo dentro de seis meses, cuando ya hayas olvidado por qué tomaste esa decisión.",
-      "p4Start": "Y lo mas importante: aporto",
+      "p4Start": "Y lo más importante: aporto",
       "p4Bold": "presencia",
-      "p4End": " a mi trabajo. No solo atencion tecnica, sino implicacion genuina con el problema que tengo delante. La gran ingenieria ocurre cuando dejas de evitar la complejidad y empiezas a escuchar lo que el sistema te esta diciendo."
+      "p4End": " a mi trabajo. No solo atención técnica, sino implicación genuina con el problema que tengo delante. La gran ingeniería ocurre cuando dejas de evitar la complejidad y empiezas a escuchar lo que el sistema te está diciendo."
     },
     "currentFocus": {
       "title": "Enfoque Actual",
@@ -74,38 +74,38 @@
       "p2": "Debajo, todo el sistema se reduce a tres abstracciones. Los agentes son una. Los bloques son la segunda — todo lo direccionable comparte una forma y un embedding. Los protocolos, la tercera — todo lo que cruza un límite, los pagos incluidos: el acceso de pago es un decorador sobre el protocolo, y la misma ranura acepta firma, auditoría o registro en blockchain."
     },
     "beyondCode": {
-      "title": "Mas Alla del Codigo",
-      "p1": "Fuera de la programacion me interesan las practicas de atencion plena, el entrenamiento fisico y la filosofia de la mejora continua. Creo que mantener el equilibrio entre concentracion y descanso, entre intensidad y ligereza, me hace mejor ingeniero.",
-      "p2": "Estos intereses no estan separados de mi trabajo; moldean como abordo los problemas. La atencion, la paciencia y la presencia son tan importantes al depurar un sistema complejo como en cualquier otra practica."
+      "title": "Más Allá del Código",
+      "p1": "Fuera de la programación me interesan las prácticas de atención plena, el entrenamiento físico y la filosofía de la mejora continua. Creo que mantener el equilibrio entre concentración y descanso, entre intensidad y ligereza, me hace mejor ingeniero.",
+      "p2": "Estos intereses no están separados de mi trabajo; moldean cómo abordo los problemas. La atención, la paciencia y la presencia son tan importantes al depurar un sistema complejo como en cualquier otra práctica."
     },
     "values": {
       "title": "Valores Fundamentales",
       "continuousLearning": {
         "title": "Aprendizaje continuo:",
-        "text": "Cada experiencia es una oportunidad de crecer. Trato cada proyecto como una ocasion para aprender algo nuevo sobre los sistemas, las personas o sobre mi mismo."
+        "text": "Cada experiencia es una oportunidad de crecer. Trato cada proyecto como una ocasión para aprender algo nuevo sobre los sistemas, las personas o sobre mí mismo."
       },
       "curiosity": {
         "title": "Curiosidad:",
-        "text": "Preguntar \"por que\" y \"como\" lleva a mejores soluciones. Profundizo en los problemas para entender las causas raiz, no solo los sintomas."
+        "text": "Preguntar \"por qué\" y \"cómo\" lleva a mejores soluciones. Profundizo en los problemas para entender las causas raíz, no solo los síntomas."
       },
       "progress": {
-        "title": "Progreso antes que perfeccion:",
+        "title": "Progreso antes que perfección:",
         "text": "Paso a paso, sin prisa. El progreso sostenible siempre gana a los atajos vistosos."
       },
       "trust": {
         "title": "Confianza y cuidado:",
-        "text": "Construir confianza mediante la fiabilidad, la comunicacion clara y el cuidado genuino por las personas con las que trabajo y por los sistemas que mantenemos juntos."
+        "text": "Construir confianza mediante la fiabilidad, la comunicación clara y el cuidado genuino por las personas con las que trabajo y por los sistemas que mantenemos juntos."
       },
       "balance": {
         "title": "Equilibrio:",
-        "text": "La excelencia tecnica importa, pero el pragmatismo tambien. La innovacion es importante, pero la estabilidad tambien. Encontrar la armonia entre necesidades que compiten es donde ocurre la verdadera ingenieria."
+        "text": "La excelencia técnica importa, pero el pragmatismo también. La innovación es importante, pero la estabilidad también. Encontrar la armonía entre necesidades que compiten es donde ocurre la verdadera ingeniería."
       }
     }
   },
   "resume": {
-    "title": "Curriculum",
-    "subtitle": "Descarga mi curriculum profesional en formato PDF",
-    "download": "Descargar Curriculum (PDF)"
+    "title": "Currículum",
+    "subtitle": "Descarga mi currículum profesional en formato PDF",
+    "download": "Descargar Currículum (PDF)"
   },
   "imperiaOs": {
     "title": "Imperia OS",
@@ -134,14 +134,14 @@
   },
   "caseStudies": {
     "title": "Casos de Estudio",
-    "subtitle": "Inmersiones profundas en soluciones tecnicas y decisiones arquitectonicas",
+    "subtitle": "Inmersiones profundas en soluciones técnicas y decisiones arquitectónicas",
     "problem": "Problema",
-    "solution": "Solucion",
-    "technicalDetails": "Detalles Tecnicos",
+    "solution": "Solución",
+    "technicalDetails": "Detalles Técnicos",
     "results": "Resultados",
     "lessonsLearned": "Lecciones Aprendidas",
     "backToList": "Volver a Casos de Estudio",
-    "viewSource": "Ver Codigo Fuente",
+    "viewSource": "Ver Código Fuente",
     "architectureDiagrams": "Diagramas de Arquitectura",
     "items": {
       "imperia-os": {
