@@ -20,8 +20,8 @@ export async function generateMetadata({
   const name = isRu ? "Егор Поляков" : "Egor Polyakov";
   const title = isRu ? "Backend & AI инженер" : "Backend & AI Engineer";
   const description = isRu
-    ? "Интеграция ИИ в реальные продукты"
-    : "AI Integration for Real Products";
+    ? "Агентные платформы и LLM-инфраструктура: потоком управляет алгоритм, а не LLM"
+    : "Agent platforms and LLM infrastructure: the algorithm controls the flow, not the LLM";
 
   return {
     title,
@@ -39,7 +39,7 @@ export async function generateMetadata({
           url: "https://egor-polyakov.vercel.app/api/og",
           width: 1200,
           height: 630,
-          alt: "Egor Polyakov - AI Integration for Real Products",
+          alt: "Egor Polyakov - Agent Platforms and LLM Infrastructure",
         },
       ],
     },

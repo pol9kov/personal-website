@@ -6,7 +6,7 @@ import { Link } from "@/i18n/navigation";
 export const metadata: Metadata = {
   title: "Imperia OS | Egor Polyakov",
   description:
-    "AI-first development platform. The algorithm controls the flow, not the LLM.",
+    "An AI assistant and the platform that goal requires. The algorithm controls the flow, not the LLM.",
 };
 
 interface ImperiaOSPageProps {

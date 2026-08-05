@@ -64,7 +64,7 @@ export async function GET() {
               letterSpacing: "-0.02em",
             }}
           >
-            AI Integration for Real Products
+            The algorithm controls the flow, not the LLM
           </h1>
 
           {/* Subtitle */}
@@ -79,7 +79,7 @@ export async function GET() {
               whiteSpace: "nowrap",
             }}
           >
-            We connect AI to your CRM, chatbots and internal tools. Results in days, not months.
+            Agent platforms: a state-machine runtime, memory, protocols.
           </p>
 
           {/* Bottom tags */}
@@ -94,7 +94,7 @@ export async function GET() {
               textTransform: "uppercase",
             }}
           >
-            Backend · Architecture · AI Integration
+            AI Agents · LLM Platform · Backend
           </p>
         </div>
 

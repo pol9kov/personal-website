@@ -38,8 +38,8 @@
     "subtitle": "Mi camino, mi filosofia y lo que me impulsa",
     "whoIAm": {
       "title": "Quien Soy",
-      "p1": "Soy ingeniero backend con mas de una decada de experiencia construyendo sistemas que deben ser a la vez robustos y adaptables. Lo que me define no es solo la habilidad tecnica, sino un compromiso profundo con la honestidad, la presencia y el cuidado en todo lo que construyo.",
-      "p2": "No interpreto papeles ni me escondo detras de la jerga. Me mantengo fiel a mi mismo y traigo presencia plena a mi trabajo, ya sea disenando la arquitectura de un sistema, revisando codigo o acompanando a un companero de equipo. Mi fuerza esta en",
+      "p1": "Construyo Imperia OS — un asistente de IA que haga todo lo que su usuario quiera, y la plataforma que ese objetivo exige. La misma infraestructura construye la plataforma y la entrega a sus usuarios. Detrás de eso: más de una década de sistemas backend que debían ser a la vez robustos y capaces de cambiar — cuatro años de blockchain en Sber, Insolar e IBM, y luego tres años construyendo un producto multiplataforma de punta a punta, Flutter en el frontend y Go serverless sobre AWS detrás.",
+      "p2": "No interpreto papeles ni me escondo detrás de la jerga. Lo que más me importa en un sistema de agentes es poder decir por qué hizo lo que hizo — por eso construyo el flujo con pasos que se pueden nombrar, no con la improvisación del modelo. Mi fuerza está en",
       "p2Emphasis": "la transparencia y la capacidad de encarar verdades dificiles",
       "p2End": ", tanto en el codigo como en la colaboracion.",
       "quote": "La mente aporta claridad. El corazon aporta profundidad. La presencia es mi don."
@@ -51,27 +51,27 @@
       "p2Emphasis": "la vida es un flujo continuo de experiencia que te hace mas fuerte y mas sabio",
       "p2End": ". Cada proyecto es una oportunidad de aprender, no solo sobre tecnologia, sino sobre como los sistemas sirven a las personas.",
       "p3": "Antes abordaba los problemas desde la cabeza, persiguiendo el control y las soluciones perfectas. Con el tiempo aprendi que la verdadera ingenieria ocurre cuando permaneces presente con el problema, escuchas en profundidad y actuas desde la comprension y no desde la evitacion. Las mejores arquitecturas surgen cuando respetas tanto las restricciones tecnicas como las necesidades humanas.",
-      "p4": "Desde construir sistemas EAV dinamicos hace una decada hasta disenar microservicios cloud-native en Go hoy, he aprendido que las soluciones sostenibles nacen de la disciplina, la paciencia y la disposicion a permanecer con la complejidad hasta que emerge la claridad."
+      "p4": "Desde construir sistemas EAV dinámicos hace una década hasta Hyperledger Fabric en Sber e IBM, Go serverless sobre AWS y la plataforma de agentes que construyo hoy, he aprendido que las soluciones sostenibles nacen de la disciplina, la paciencia y la disposición a permanecer con la complejidad hasta que emerge la claridad."
     },
     "approach": {
       "title": "Mi Enfoque",
       "p1Start": "Construyo sistemas",
       "p1Bold": "paso a paso, sin prisa",
-      "p1End": ". No hay atajos hacia la calidad. Cada accion, ya sea escribir codigo, disenar arquitectura o revisar pull requests, es una expresion de cuidado por el oficio y por las personas que dependen de lo que construimos.",
+      "p1End": ". No hay atajos hacia la calidad. Con los agentes eso vale más que con cualquier otra cosa que haya construido: aquí un agente con estado es una máquina de estados — el algoritmo controla el flujo y cada paso es atómico, una llamada al LLM o una operación determinista. El algoritmo no alucina; solo pueden hacerlo los pasos acotados dentro de él. Los agentes sin estado son el resto: una llamada, sin máquina.",
       "p2Start": "Mi enfoque se apoya en",
       "p2Bold": "la responsabilidad antes que el control",
-      "p2End": ". El control es una ilusion; no puedes predecir cada caso limite ni evitar cada error. Pero si puedes asumir plena responsabilidad por tus decisiones, por la calidad de tu codigo y por la confianza que construyes con tu equipo. Esta mentalidad me ha guiado en migraciones complejas, redisenos de sistemas y momentos en los que la claridad solo llego despues de quedarme con el problema mas tiempo del comodo.",
+      "p2End": ". El control es una ilusión; no puedes predecir cada caso límite ni evitar cada error. Pero sí puedes asumir plena responsabilidad por tus decisiones, por la calidad de tu código y por la confianza que construyes con tu equipo — y puedes dejar un sistema que registra lo que hizo, para que el siguiente no tenga que creerte de palabra.",
       "p3Start": "Valoro",
-      "p3Bold": "las soluciones practicas",
-      "p3End": " que funcionan hoy y siguen siendo adaptables manana. La arquitectura limpia, el codigo bien probado y la documentacion honesta no son formalidades; son actos de cuidado hacia quienes mantendran el sistema despues, incluido tu mismo dentro de seis meses, cuando ya hayas olvidado por que tomaste esa decision.",
+      "p3Bold": "la reutilización antes que la reinvención",
+      "p3End": ". Un grafo de conocimiento sigue el flujo del desarrollo — primero los casos de uso de negocio, de ellos salen las pruebas, el código los implementa, y los tres se indexan y se incrustan solos —, así que lo que ya existe se ve antes de escribir algo nuevo, y la Clean Architecture deja cada módulo portátil a cualquier parte. No es una formalidad: es cuidado hacia quienes mantendrán el sistema después, incluido tú mismo dentro de seis meses, cuando ya hayas olvidado por qué tomaste esa decisión.",
       "p4Start": "Y lo mas importante: aporto",
       "p4Bold": "presencia",
       "p4End": " a mi trabajo. No solo atencion tecnica, sino implicacion genuina con el problema que tengo delante. La gran ingenieria ocurre cuando dejas de evitar la complejidad y empiezas a escuchar lo que el sistema te esta diciendo."
     },
     "currentFocus": {
       "title": "Enfoque Actual",
-      "p1": "Ahora mismo estoy profundizando mi experiencia en Go, explorando la interseccion entre los sistemas backend y la infraestructura de IA, y construyendo herramientas que conectan tecnologias potentes con necesidades humanas practicas.",
-      "p2": "Me interesan especialmente los sistemas que deben ser a la vez robustos y adaptables: arquitecturas de microservicios capaces de evolucionar, bases de datos que manejan esquemas dinamicos y APIs que los desarrolladores realmente disfrutan usar."
+      "p1": "Toda mi atención está en Imperia OS. Dos memorias sostienen el desarrollo y ambas llegan al agente igual: entran en su prompt por coincidencia de embeddings, o se piden a demanda con herramientas MCP. La primera es el grafo de conocimiento sobre casos de uso, pruebas y código. La segunda es un sistema de pensamientos: una jerarquía que se compone sola, donde cada pensamiento nuevo se resume en la capa de arriba, recursivamente. El mismo módulo mueve los agentes de negocio.",
+      "p2": "Debajo, todo el sistema se reduce a tres abstracciones. Los agentes son una. Los bloques son la segunda — todo lo direccionable comparte una forma y un embedding. Los protocolos, la tercera — todo lo que cruza un límite, los pagos incluidos: el acceso de pago es un decorador sobre el protocolo, y la misma ranura acepta firma, auditoría o registro en blockchain."
     },
     "beyondCode": {
       "title": "Mas Alla del Codigo",
@@ -109,27 +109,27 @@
   },
   "imperiaOs": {
     "title": "Imperia OS",
-    "subtitle": "Plataforma de desarrollo AI-first.",
+    "subtitle": "Un asistente de IA que haga todo lo que su usuario quiera — y la plataforma que ese objetivo exige.",
     "tryDemo": "Visitar Plataforma",
     "problem": {
       "title": "El Problema",
-      "text": "La mayoría de las integraciones de IA le dan al modelo un prompt y esperan lo mejor. Sin disciplina de workflow, sin trazabilidad, sin forma de saber por qué el agente hizo lo que hizo."
+      "text": "La mayoría de las integraciones de IA le dan al modelo un prompt y esperan lo mejor. Sin disciplina de flujo, sin memoria que sobreviva a la llamada, sin trazabilidad — no hay forma de saber por qué el agente hizo lo que hizo."
     },
     "solution": {
       "title": "El Enfoque",
-      "text": "El algoritmo controla el flujo, no el LLM. Los agentes siguen fases determinísticas con criterios de salida. Cada fase restringe qué herramientas están disponibles. Cada paso se registra — confianza, observaciones, brechas. El algoritmo no alucina — solo los pasos acotados dentro de él pueden."
+      "text": "El algoritmo controla el flujo, no el LLM. Un agente con estado es una máquina de estados: cada paso es atómico — una llamada al LLM o una operación determinista —, así que el algoritmo no alucina; solo pueden hacerlo los pasos acotados dentro de él. Los agentes sin estado son el resto: una llamada, sin máquina. Cada paso se registra — qué se observó, qué faltaba, por qué así."
     },
     "howWeWork": {
       "title": "Cómo Funciona",
       "note": ""
     },
     "steps": [
-      "Primero los requisitos de negocio — el spec tree es configuración de runtime",
-      "Tests escritos desde requisitos — verificación antes de implementación",
-      "El dev-agent sigue seis fases: understand → research → plan → implement → verify → commit",
-      "Las tres capas se indexan y embeben — el agente ve qué existe antes de escribir algo nuevo"
+      "Primero los casos de uso de negocio — el spec tree es configuración de runtime",
+      "Las pruebas se escriben desde los casos de uso — verificación antes de implementación",
+      "El código los implementa, y las tres capas se indexan en el grafo de conocimiento y se incrustan solas",
+      "La memoria llega al agente de dos formas — entra en su prompt por coincidencia de embeddings, o se pide a demanda con herramientas MCP"
     ],
-    "caseStudyTeaser": "Detalles de arquitectura — acceso por fase, cadenas de pensamiento, propiedad de bases de datos — en el caso de estudio.",
+    "caseStudyTeaser": "Detalles de arquitectura — la máquina de estados, el grafo de conocimiento, la capa de protocolos — en el caso de estudio.",
     "caseStudyLink": "Leer Caso de Estudio"
   },
   "caseStudies": {
@@ -145,27 +145,27 @@
     "architectureDiagrams": "Diagramas de Arquitectura",
     "items": {
       "imperia-os": {
-        "title": "Imperia OS — Plataforma de Desarrollo AI-First",
-        "description": "Plataforma donde agentes autónomos siguen workflows de fases determinísticos para desarrollar software.",
-        "problem": "Dar a un LLM control total no escala. El modelo decide qué hacer, qué herramientas llamar, cuándo parar. Sin disciplina, sin trazabilidad, sin forma de prevenir que el agente edite código antes de entender el problema.",
-        "solution": "El algoritmo controla el flujo. El dev-agent sigue seis fases: understand → research → plan → implement → verify → commit. Cada fase tiene criterios de salida. Cada fase limita qué herramientas puede usar el agente — en fase READ solo lectura, en WRITE edición, en TESTS ejecución de tests.",
+        "title": "Imperia OS — Un asistente de IA y la plataforma que exige",
+        "description": "Plataforma de agentes con un runtime de máquina de estados, un grafo de conocimiento sobre el flujo del desarrollo y dos memorias que llegan al agente por MCP.",
+        "problem": "Dar a un LLM control total no escala. El modelo decide qué hacer, qué herramientas llamar, cuándo parar — y no retiene nada entre llamadas. Sin memoria, sin contexto de negocio, sin trazabilidad, sin forma de prevenir que el agente edite código antes de entender el problema.",
+        "solution": "El algoritmo controla el flujo. Un agente con estado es una máquina de estados: cada paso es atómico — una llamada al LLM o una operación determinista. La memoria llega al agente de dos formas: entra en su prompt por coincidencia de embeddings, o se pide a demanda con herramientas MCP. Todo lo que hace el sistema se reduce a tres abstracciones — agentes, bloques y protocolos.",
         "technicalDetails": [
-          "Routing Case/Process — cada Process verifica un predicado, se ejecuta en orden, el LLM no decide el siguiente paso",
-          "MCP por fase — READ: solo lectura; WRITE: edición; TESTS: comandos de test; COMMIT: git",
-          "Cadena de pensamiento por sesión — confianza, observaciones, brechas, sugerencias en cada paso",
-          "Code graph en Kuzu — archivos, funciones, clases, importaciones desde parser Rust",
-          "Memoria de agentes en Kuzu — sesiones, pensamientos, deduplicación de mensajes por embedding",
-          "Bloques de usuario en MongoDB — notas, archivos, pensamientos con embeddings vectoriales para búsqueda semántica"
+          "Runtime de máquina de estados — el algoritmo ordena los pasos; una llamada al LLM es un paso acotado entre otros deterministas",
+          "Grafo de conocimiento sobre el flujo del desarrollo — casos de uso de negocio, las pruebas escritas desde ellos y el código que los implementa, todo indexado e incrustado",
+          "Sistema de pensamientos — una jerarquía que se compone sola, donde cada pensamiento nuevo se resume en la capa de arriba; el mismo módulo mueve los agentes de negocio",
+          "Herramientas MCP — acceso tipado y a demanda a la misma memoria que el prompt recibe solo",
+          "Tres abstracciones — agentes; bloques, donde todo lo direccionable comparte una forma y un embedding; protocolos, para todo lo que cruza un límite",
+          "El acceso de pago como decorador sobre el protocolo — la misma ranura acepta firma, auditoría o registro en blockchain"
         ],
         "results": [
-          "El dev-agent desarrolla la plataforma usando la plataforma misma — mismas herramientas, mismo workflow",
-          "El agente debe reproducir el bug y citar file:line antes de implementar cualquier fix",
-          "Cada decisión del agente es trazable — los pensamientos registran qué se observó, qué faltaba y por qué el agente eligió su enfoque"
+          "La misma infraestructura construye la plataforma y la entrega a sus usuarios",
+          "La reutilización es la norma — el mapa de conocimiento muestra lo que ya existe antes de escribir algo nuevo, y la Clean Architecture deja cada módulo portátil",
+          "Cada decisión del agente es trazable — el registro guarda qué se observó, qué faltaba y por qué el agente eligió su enfoque"
         ],
         "lessonsLearned": [
-          "Los LLMs se vuelven confiables cuando un algoritmo controla el flujo — el algoritmo no alucina",
-          "Bases separadas superan una unificada — estructura de código, memoria de agentes y datos de usuario necesitan esquemas y patrones de consulta diferentes",
-          "Limitar herramientas por fase previene que los agentes editen código antes de entender el problema"
+          "Los LLMs se vuelven confiables cuando un algoritmo controla el flujo — el algoritmo no alucina, solo pueden hacerlo los pasos acotados dentro de él",
+          "Almacenes separados superan a uno unificado — estructura de código, memoria de agentes y datos de usuario necesitan esquemas y patrones de consulta diferentes",
+          "El pago va en un decorador sobre el protocolo, no dentro del agente — la misma ranura acepta después firma, auditoría o registro en blockchain"
         ]
       },
       "mobile-platform": {
@@ -174,8 +174,8 @@
         "problem": "Se necesitaba una base para un producto multiplataforma con backend confiable y despliegue automatizado. Los enfoques típicos llevaban a arquitectura fragmentada.",
         "solution": "Implementé Clean Architecture con estructura basada en Features en Flutter. Backend serverless en AWS (Lambda en Golang). Infraestructura definida en CDK y se despliega automáticamente.",
         "technicalDetails": [
-          "Clean Architecture + estructura basada en Features",
-          "Backend serverless en AWS (Lambda, DynamoDB, Cognito)",
+          "Clean Architecture + módulos por funcionalidad, maquetación reactiva por eventos, Riverpod para el estado",
+          "Backend serverless en AWS — Lambda en Go, DynamoDB con claves compuestas, S3 para medios, Amplify y Cognito para auth",
           "Infraestructura como Código (AWS CDK)"
         ],
         "results": [

@@ -38,8 +38,8 @@
     "subtitle": "My journey, philosophy, and what drives me",
     "whoIAm": {
       "title": "Who I Am",
-      "p1": "I'm a backend engineer with over a decade of experience building systems that need to be both robust and adaptable. What defines me is not just technical skill, but a deep commitment to honesty, presence, and care in everything I build.",
-      "p2": "I don't play roles or hide behind jargon. I stay true to myself and bring full presence to my work, whether that's architecting a system, reviewing code, or mentoring a teammate. My strength lies in",
+      "p1": "I build Imperia OS — an AI assistant to do everything its user wants, and the platform that goal requires. The same infrastructure builds the platform and delivers it to its users. Behind that: over a decade of backend systems that had to be both reliable and open to change — four years of blockchain engineering at Sber, Insolar and IBM, then three years building a cross-platform product end to end, Flutter on the front and serverless Go on AWS behind it.",
+      "p2": "I don't play roles and I don't hide behind jargon. What matters most to me in an agent system is being able to say why it did what it did — so I build the flow out of steps that can be named, not out of a model's improvisation. My strength lies in",
       "p2Emphasis": "transparency and the ability to face hard truths",
       "p2End": ", both in code and in collaboration.",
       "quote": "Mind brings clarity. Heart brings depth. Presence is my gift."
@@ -51,27 +51,27 @@
       "p2Emphasis": "life is a continuous stream of experience that makes you stronger and wiser",
       "p2End": ". Each project is an opportunity to learn, not just about technology, but about how systems serve people.",
       "p3": "I used to approach problems from my head, chasing control and perfect solutions. Over time, I learned that true engineering happens when you stay present with the problem, listen deeply, and act from understanding rather than avoidance. The best architectures emerge when you respect both technical constraints and human needs.",
-      "p4": "From building dynamic EAV systems a decade ago to designing cloud-native Go microservices today, I've learned that sustainable solutions come from discipline, patience, and a willingness to stay with complexity until clarity emerges."
+      "p4": "From dynamic EAV systems a decade ago to Hyperledger Fabric at Sber and IBM, to serverless Go on AWS, to the agent platform I build today, I've learned that sustainable solutions come from discipline, patience, and a willingness to stay with complexity until clarity emerges."
     },
     "approach": {
       "title": "My Approach",
       "p1Start": "I build systems",
       "p1Bold": "step by step, without rushing",
-      "p1End": ". There are no shortcuts to quality. Every action, whether writing code, designing architecture, or reviewing pull requests, is an expression of care for the craft and for the people who depend on what we build.",
+      "p1End": ". There are no shortcuts to quality. That holds for agents more than for anything else I've built: a stateful agent here is a state machine — the algorithm controls the flow, and each step is atomic, one LLM call or one deterministic operation. The algorithm doesn't hallucinate; only the bounded steps inside it can. Stateless agents are the rest: one call, no machine.",
       "p2Start": "My approach is grounded in",
       "p2Bold": "responsibility over control",
-      "p2End": ". Control is an illusion; you can't predict every edge case or prevent every bug. But you can take full ownership of your decisions, your code quality, and the trust you build with your team. This mindset has guided me through complex migrations, system redesigns, and moments where clarity only came after sitting with the problem longer than was comfortable.",
+      "p2End": ". Control is an illusion; you can't predict every edge case or prevent every bug. But you can take full ownership of your decisions, your code quality, and the trust you build with your team — and you can leave behind a system that records what it did, so the next person doesn't have to take your word for it.",
       "p3Start": "I value",
-      "p3Bold": "practical solutions",
-      "p3End": " that work today while remaining adaptable for tomorrow. Clean architecture, well-tested code, and honest documentation aren't formalities; they are acts of care for future maintainers, including yourself six months from now when you've forgotten why you made that choice.",
+      "p3Bold": "re-use over reinvention",
+      "p3End": ". A knowledge graph follows the development flow — business use cases first, tests written from them, code implementing them, all three indexed and embedded automatically — so whatever already exists is visible before anything new gets written, and Clean Architecture keeps every module portable enough to use anywhere. That isn't a formality; it is care for future maintainers, including yourself six months from now when you've forgotten why you made that choice.",
       "p4Start": "Most importantly, I bring",
       "p4Bold": "presence",
       "p4End": " to my work. Not just technical attention, but genuine engagement with the problem at hand. Great engineering happens when you stop avoiding complexity and start listening to what the system is telling you."
     },
     "currentFocus": {
       "title": "Current Focus",
-      "p1": "Right now, I'm deepening my expertise in Go, exploring the intersection of backend systems and AI infrastructure, and building tools that bridge powerful technologies with practical human needs.",
-      "p2": "I'm particularly interested in systems that need to be both robust and adaptable: microservices architectures that can evolve, databases that can handle dynamic schemas, and APIs that developers actually enjoy using."
+      "p1": "Imperia OS is where my attention goes. Two kinds of memory back the development, and both reach the agent the same two ways: pulled into its prompt automatically by embedding match, or fetched on demand through MCP tools. The first is the knowledge graph over use cases, tests and code. The second is a thought system — a hierarchy that composes itself, where every new thought is summarized into the layer above, recursively. The same module runs the business agents.",
+      "p2": "Underneath, the system reduces to three abstractions. Agents are one. Blocks are the second — everything addressable shares one shape and one embedding. Protocols are the third — everything that crosses a boundary, payment included: paid access is a decorator over the protocol, and the same slot accepts signing, audit, or a blockchain commitment."
     },
     "beyondCode": {
       "title": "Beyond Code",
@@ -109,27 +109,27 @@
   },
   "imperiaOs": {
     "title": "Imperia OS",
-    "subtitle": "AI-first development platform.",
+    "subtitle": "An AI assistant to do everything its user wants — and the platform that goal requires.",
     "tryDemo": "Visit Platform",
     "problem": {
       "title": "The Problem",
-      "text": "Most AI integrations give a model a prompt and hope for the best. No workflow discipline, no audit trail, no way to know why the agent did what it did."
+      "text": "Most AI integrations give a model a prompt and hope for the best. No workflow discipline, no memory that survives the call, no audit trail — no way to know why the agent did what it did."
     },
     "solution": {
       "title": "The Approach",
-      "text": "The algorithm controls the flow, not the LLM. Agents follow deterministic phases with exit criteria. Each phase restricts which tools are available. Every step is recorded — confidence, observations, gaps. The algorithm doesn't hallucinate — only the bounded steps inside it can."
+      "text": "The algorithm controls the flow, not the LLM. A stateful agent is a state machine: each step is atomic — one LLM call or one deterministic operation — so the algorithm doesn't hallucinate; only the bounded steps inside it can. Stateless agents are the rest: one call, no machine. Every step is recorded — what was observed, what was missing, why this way."
     },
     "howWeWork": {
       "title": "How It Works",
       "note": ""
     },
     "steps": [
-      "Business requirements defined first — the spec tree is runtime configuration",
-      "Tests written from requirements — verify before implementation",
-      "Dev-agent follows six phases: understand → research → plan → implement → verify → commit",
-      "All three layers indexed and embedded — the agent sees what exists before writing anything new"
+      "Business use cases come first — the spec tree is runtime configuration",
+      "Tests are written from the use cases — verify before implementation",
+      "Code implements them, and all three layers are indexed into the knowledge graph and embedded automatically",
+      "Memory reaches the agent two ways — pulled into its prompt by embedding match, or fetched on demand through MCP tools"
     ],
-    "caseStudyTeaser": "Architecture details — phase-gating, thought chains, database ownership — in the case study.",
+    "caseStudyTeaser": "Architecture details — the state machine, the knowledge graph, the protocol layer — in the case study.",
     "caseStudyLink": "Read Case Study"
   },
   "caseStudies": {
@@ -145,27 +145,27 @@
     "architectureDiagrams": "Architecture Diagrams",
     "items": {
       "imperia-os": {
-        "title": "Imperia OS — AI-First Development Platform",
-        "description": "Platform where autonomous agents follow deterministic phase workflows to develop software.",
-        "problem": "Giving an LLM full control doesn't scale. It decides what to do, which tools to call, when to stop. No discipline, no traceability, no way to prevent the agent from editing code before it understands the problem.",
-        "solution": "The algorithm controls the flow. Dev-agent follows six phases: understand → research → plan → implement → verify → commit. Each phase has exit criteria. Each phase gates which tools the agent can access — READ phase is read-only, WRITE phase allows editing, TESTS phase allows test execution.",
+        "title": "Imperia OS — An AI Assistant and the Platform It Requires",
+        "description": "Agent platform with a state-machine runtime, a knowledge graph over the development flow, and two kinds of memory reaching the agent through MCP.",
+        "problem": "Giving an LLM full control doesn't scale. It decides what to do, which tools to call, when to stop — and it keeps nothing between calls. No memory, no business context, no traceability, no way to prevent the agent from editing code before it understands the problem.",
+        "solution": "The algorithm controls the flow. A stateful agent is a state machine: each step is atomic — one LLM call or one deterministic operation. Memory reaches the agent two ways: pulled into its prompt automatically by embedding match, or fetched on demand through MCP tools. Everything the system does reduces to three abstractions — agents, blocks and protocols.",
         "technicalDetails": [
-          "Case/Process routing — each Process checks a predicate, executes in order, no LLM decides the next step",
-          "Phase-gated MCP tools — READ phase: read-only; WRITE phase: edit; TESTS: test commands; COMMIT: git",
-          "Thought chain per session — confidence, observations, gaps, suggestions at every step",
-          "Code graph in Kuzu — files, functions, classes, imports from Rust parser",
-          "Agent memory in Kuzu — sessions, thoughts, message deduplication by embedding",
-          "User blocks in MongoDB — notes, files, thoughts with vector embeddings for semantic search"
+          "State-machine runtime — the algorithm sequences the steps; an LLM call is one bounded step among deterministic ones",
+          "Knowledge graph over the development flow — business use cases, the tests written from them, and the code implementing them, all indexed and embedded",
+          "Thought system — a self-composing hierarchy where every new thought is summarized into the layer above; the same module runs the business agents",
+          "MCP tools — typed, on-demand access to the same memory the prompt receives automatically",
+          "Three abstractions — agents; blocks, where everything addressable shares one shape and one embedding; protocols, for everything that crosses a boundary",
+          "Paid access as a decorator over the protocol — the same slot accepts signing, audit, or a blockchain commitment"
         ],
         "results": [
-          "Dev-agent develops the platform using the platform itself — same tools, same workflow",
-          "Agents must reproduce the bug and cite file:line before implementing any fix",
-          "Every agent decision is traceable — thoughts record what was observed, what was missing, and why the agent chose its approach"
+          "The same infrastructure builds the platform and delivers it to its users",
+          "Re-use is the default — the knowledge map shows what already exists before anything new is written, and Clean Architecture keeps every module portable",
+          "Every agent decision is traceable — the record holds what was observed, what was missing, and why the agent chose its approach"
         ],
         "lessonsLearned": [
-          "LLMs become reliable when an algorithm controls the flow — the algorithm doesn't hallucinate",
-          "Separate databases beat one merged store — code structure, agent memory, and user data need different schemas and query patterns",
-          "Phase-gating tool access prevents agents from editing code before they understand the problem"
+          "LLMs become reliable when an algorithm controls the flow — the algorithm doesn't hallucinate, only the bounded steps inside it can",
+          "Separate stores beat one merged store — code structure, agent memory and user data need different schemas and query patterns",
+          "Payment belongs in a decorator over the protocol, not inside the agent — the same slot then takes signing, audit or a blockchain commitment"
         ]
       },
       "mobile-platform": {
@@ -174,8 +174,8 @@
         "problem": "Needed a foundation for a cross-platform product with reliable backend and automated deployment. Typical approaches led to fragmented architecture.",
         "solution": "Implemented Clean Architecture with Feature-based structure in Flutter. Backend - serverless on AWS (Lambda in Golang). Infrastructure defined in CDK and deploys automatically.",
         "technicalDetails": [
-          "Clean Architecture + Feature-based structure",
-          "Serverless backend on AWS (Lambda, DynamoDB, Cognito)",
+          "Clean Architecture + feature-based modules, event-driven reactive layout, Riverpod for state",
+          "Serverless backend on AWS — Lambda in Go, DynamoDB with composite keys, S3 for media, Amplify and Cognito for auth",
           "Infrastructure as Code (AWS CDK)"
         ],
         "results": [

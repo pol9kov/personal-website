@@ -5,7 +5,7 @@ import { getTranslations } from "next-intl/server";
 export const metadata: Metadata = {
   title: "About | Egor Polyakov",
   description:
-    "Backend engineer with 10+ years of experience. Building systems that handle complexity while remaining understandable.",
+    "Building Imperia OS — an AI assistant and the agent platform that goal requires. Over a decade of backend systems that stay understandable under complexity.",
 };
 
 interface AboutPageProps {
