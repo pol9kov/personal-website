@@ -26,9 +26,9 @@ export const skills: Skill[] = [
   { name: "DynamoDB", category: "databases", proficiency: 4 },
   { name: "PostgreSQL", category: "databases", proficiency: 3 },
   { name: "Kuzu graph", category: "databases", proficiency: 3 },
+  { name: "Vector search", category: "databases", proficiency: 3 },
   { name: "Redis", category: "databases", proficiency: 3 },
   { name: "S3", category: "databases", proficiency: 4 },
-  { name: "Vector search", category: "databases", proficiency: 3 },
 
   // DevOps & Cloud
   { name: "AWS", category: "devops", proficiency: 4 },
