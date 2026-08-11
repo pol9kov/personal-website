@@ -37,7 +37,7 @@
     "subtitle": "My journey, philosophy, and what drives me",
     "whoIAm": {
       "title": "Who I Am",
-      "p1": "I work inside the platform I am writing, every day. I started writing it in mid-2025 because I wanted three things for myself: a psychologist, someone to keep my daily life in order, and a partner for the startup I was building at the time. All three need the same thing — to remember me: I understand why well and remember how badly, so I build systems that remember for me. That is Imperia OS — an AI assistant to do everything its user wants, and the platform that goal requires; its agents write the code, while I hold the requirements and the spec map. Behind that: over a decade of backend systems that had to be both reliable and open to change — four years of blockchain engineering at Sber, Insolar and IBM, then three years building a cross-platform product end to end, Flutter on the front and serverless Go on AWS behind it.",
+      "p1": "In mid-2025 I found myself missing a few things: a psychologist, order in my daily life, and a partner for the startup I was building at the time. I understand why well and remember how badly — I needed a system that would remember for me. That's how Imperia OS was born — I now live and work inside it every day.",
       "p2": "I don't play roles and I don't hide behind jargon. What matters most to me in an agent system is being able to say why it did what it did — so I build the flow out of steps that can be named, not out of a model's improvisation. My strength lies in",
       "p2Emphasis": "transparency and the ability to face hard truths",
       "p2End": ", both in code and in collaboration.",
