@@ -17,7 +17,6 @@ export const skills: Skill[] = [
   { name: "Node.js", category: "frameworks", proficiency: 4 },
   { name: "MCP", category: "frameworks", proficiency: 4 },
   { name: "Clean Architecture", category: "frameworks", proficiency: 4 },
-  { name: "Infrastructure as Code", category: "frameworks", proficiency: 4 },
   { name: "Hyperledger Fabric", category: "frameworks", proficiency: 4 },
   { name: "Flutter", category: "frameworks", proficiency: 4 },
   { name: "React/Next.js", category: "frameworks", proficiency: 3 },
@@ -38,5 +37,5 @@ export const skills: Skill[] = [
   { name: "Git", category: "devops", proficiency: 2 },
   { name: "systemd", category: "devops", proficiency: 3 },
   { name: "Playwright", category: "devops", proficiency: 3 },
-  { name: "Vercel", category: "devops", proficiency: 3 },
+  { name: "Vercel", category: "devops", proficiency: 2 },
 ];
