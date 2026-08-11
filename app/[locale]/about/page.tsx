@@ -41,6 +41,7 @@ export default async function AboutPage({ params }: AboutPageProps) {
               <div className="space-y-4 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                 <p>{t("whoIAm.p1")}</p>
                 <p>{t("whoIAm.p2")}</p>
+                <p>{t("whoIAm.p3")}</p>
               </div>
             </section>
 
