@@ -18,11 +18,11 @@ export default async function AboutPage({ params }: AboutPageProps) {
   const t = await getTranslations("about");
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-white to-gray-50 py-20 dark:from-gray-900 dark:to-gray-950">
+    <main className="flex min-h-[calc(100vh-4rem)] items-center bg-gradient-to-b from-white to-gray-50 py-20 dark:from-gray-900 dark:to-gray-950">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-4xl">
           {/* Header */}
-          <div className="mb-16 text-center">
+          <div className="mb-12 text-center">
             <h1 className="mb-4 text-5xl font-bold leading-snug text-gray-900 dark:text-white">
               {t("title")}
             </h1>
