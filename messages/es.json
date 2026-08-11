@@ -34,69 +34,10 @@
   },
   "about": {
     "title": "Sobre Mí",
-    "subtitle": "Mi camino, mi filosofía y lo que me impulsa",
     "whoIAm": {
-      "title": "Quién Soy",
       "p1": "Soy empático: ávido de sentido y malo reteniendo lo concreto y seco — necesito un sistema que recuerde por mí. A mediados de 2025 se sumó la necesidad de un psicólogo, alguien que ordenara mi día a día y un compañero para la startup que construía entonces. Así nació Imperia OS — ahora vivo y trabajo dentro de ella cada día.",
       "p2": "Soy ansioso: el caos me incomoda — necesito sostener el sentido y la comprensión de lo que ocurre. Por eso la plataforma está hecha para que se le vea por dentro: cada acción deja huella, los errores gritan enseguida en vez de esconderse, y cada cosa tiene su lugar.",
       "p3": "Lo que más valoro en la vida es la confianza. A los agentes se les puede controlar y limitar — yo prefiero guiar y enseñar: cada corrección mía se convierte en una regla, y el sistema aprende a encontrar sus propios defectos."
-    },
-    "journey": {
-      "title": "El Camino",
-      "p1": "Me gradué en LNMO (Laboratorio de Educación Matemática Continua) en San Petersburgo, donde exploré más de una docena de lenguajes de programación, desde Pascal hasta OCaml, C, Haskell e incluso Brainfuck. Desde mis años escolares participé en investigación científica y presenté trabajos en conferencias académicas. Obtuve el 3er lugar en Matemáticas en ICYS-2012 en los Países Bajos, el 1er lugar en el concurso estatal de San Petersburgo y el 3er lugar en el Baltic Science and Engineering Competition. En 2015-2016 formé parte del jurado juvenil del concurso báltico. Durante ese tiempo trabajé en algoritmos de descomposición de información, redes neuronales y análisis de datos.",
-      "p2": "Mi camino en el desarrollo se ha formado a partir de un principio:",
-      "p2Emphasis": "la vida es un flujo continuo de experiencia que te hace más fuerte y más sabio",
-      "p2End": ". Cada proyecto es una oportunidad de aprender, no solo sobre tecnología, sino sobre cómo los sistemas sirven a las personas.",
-      "p3": "Antes abordaba los problemas desde la cabeza, persiguiendo el control y las soluciones perfectas. Con el tiempo aprendí que la verdadera ingeniería ocurre cuando permaneces presente con el problema, escuchas en profundidad y actúas desde la comprensión y no desde la evitación. Las mejores arquitecturas surgen cuando respetas tanto las restricciones técnicas como las necesidades humanas.",
-      "p4": "Desde construir sistemas EAV dinámicos hace una década hasta Hyperledger Fabric en Sber e IBM, Go serverless sobre AWS y la plataforma de agentes que construyo hoy, he aprendido que las soluciones sostenibles nacen de la disciplina, la paciencia y la disposición a permanecer con la complejidad hasta que emerge la claridad."
-    },
-    "approach": {
-      "title": "Mi Enfoque",
-      "p1Start": "Construyo sistemas",
-      "p1Bold": "paso a paso, sin prisa",
-      "p1End": ". No hay atajos hacia la calidad. Con los agentes eso vale más que con cualquier otra cosa que haya construido: aquí un agente con estado es una máquina de estados — el algoritmo controla el flujo y cada paso es atómico, una llamada al LLM o una operación determinista. El algoritmo no alucina; solo pueden hacerlo los pasos acotados dentro de él. Los agentes sin estado son el resto: una llamada, sin máquina.",
-      "p2Start": "Mi enfoque se apoya en",
-      "p2Bold": "la responsabilidad antes que el control",
-      "p2End": ". El control es una ilusión; no puedes predecir cada caso límite ni evitar cada error. Pero sí puedes asumir plena responsabilidad por tus decisiones, por la calidad de tu código y por la confianza que construyes con tu equipo — y puedes dejar un sistema que registra lo que hizo, para que el siguiente no tenga que creerte de palabra.",
-      "p3Start": "Valoro",
-      "p3Bold": "la reutilización antes que la reinvención",
-      "p3End": ". Un grafo de conocimiento sigue el flujo del desarrollo — primero los casos de uso de negocio, de ellos salen las pruebas, el código los implementa, y los tres se indexan y se incrustan solos —, así que lo que ya existe se ve antes de escribir algo nuevo, y la Clean Architecture deja cada módulo portátil a cualquier parte. No es una formalidad: es cuidado hacia quienes mantendrán el sistema después, incluido tú mismo dentro de seis meses, cuando ya hayas olvidado por qué tomaste esa decisión.",
-      "p4Start": "Y lo más importante: aporto",
-      "p4Bold": "presencia",
-      "p4End": " a mi trabajo. No solo atención técnica, sino implicación genuina con el problema que tengo delante. La gran ingeniería ocurre cuando dejas de evitar la complejidad y empiezas a escuchar lo que el sistema te está diciendo."
-    },
-    "currentFocus": {
-      "title": "Enfoque Actual",
-      "p1": "Toda mi atención está en Imperia OS. Dos memorias sostienen el desarrollo y ambas llegan al agente igual: entran en su prompt por coincidencia de embeddings, o se piden a demanda con herramientas MCP. La primera es el grafo de conocimiento sobre casos de uso, pruebas y código. La segunda es un sistema de pensamientos: una jerarquía que se compone sola, donde cada pensamiento nuevo se resume en la capa de arriba, recursivamente. El mismo módulo mueve los agentes de negocio.",
-      "p2": "Debajo, todo el sistema se reduce a tres abstracciones. Los agentes son una. Los bloques son la segunda — todo lo direccionable comparte una forma y un embedding. Los protocolos, la tercera — todo lo que cruza un límite, los pagos incluidos: el acceso de pago es un decorador sobre el protocolo, y la misma ranura acepta firma, auditoría o registro en blockchain."
-    },
-    "beyondCode": {
-      "title": "Más Allá del Código",
-      "p1": "Fuera de la programación me interesan las prácticas de atención plena, el entrenamiento físico y la filosofía de la mejora continua. Creo que mantener el equilibrio entre concentración y descanso, entre intensidad y ligereza, me hace mejor ingeniero.",
-      "p2": "Estos intereses no están separados de mi trabajo; moldean cómo abordo los problemas. La atención, la paciencia y la presencia son tan importantes al depurar un sistema complejo como en cualquier otra práctica."
-    },
-    "values": {
-      "title": "Valores Fundamentales",
-      "continuousLearning": {
-        "title": "Aprendizaje continuo:",
-        "text": "Cada experiencia es una oportunidad de crecer. Trato cada proyecto como una ocasión para aprender algo nuevo sobre los sistemas, las personas o sobre mí mismo."
-      },
-      "curiosity": {
-        "title": "Curiosidad:",
-        "text": "Preguntar \"por qué\" y \"cómo\" lleva a mejores soluciones. Profundizo en los problemas para entender las causas raíz, no solo los síntomas."
-      },
-      "progress": {
-        "title": "Progreso antes que perfección:",
-        "text": "Paso a paso, sin prisa. El progreso sostenible siempre gana a los atajos vistosos."
-      },
-      "trust": {
-        "title": "Confianza y cuidado:",
-        "text": "Construir confianza mediante la fiabilidad, la comunicación clara y el cuidado genuino por las personas con las que trabajo y por los sistemas que mantenemos juntos."
-      },
-      "balance": {
-        "title": "Equilibrio:",
-        "text": "La excelencia técnica importa, pero el pragmatismo también. La innovación es importante, pero la estabilidad también. Encontrar la armonía entre necesidades que compiten es donde ocurre la verdadera ingeniería."
-      }
     }
   },
   "resume": {
