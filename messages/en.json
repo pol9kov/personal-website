@@ -51,19 +51,20 @@
     "tryDemo": "Step inside — it’s running",
     "tryDemoCaption": "Write to the agent, and your own turn becomes the example on the page — every step of it, traced.",
     "dream": {
-      "lead": "Imperia OS is an app about life — all of it. It remembers everything and it is there for everything. The architecture is big because life is."
+      "lead": "Imperia OS is an app about life — all of it. It remembers everything and it is there for everything.",
+      "nail": "The architecture is big because life is."
     },
     "proof": {
-      "title": "The Proof",
-      "text": "Imperia OS was built by one person — not as a feat of endurance, but as the platform's own work. Agents take tasks from the queue, write code, review each other and ship to production hands-free; a change that answers to no requirement cannot land. The platform builds itself — and that is the strongest proof of its thesis: one person with this instrument does what used to take a team."
+      "title": "The platform builds itself",
+      "text": "Imperia OS was built by one person — not as a feat of endurance, but as the platform's own work. Agents take tasks from the queue, write code, review each other and ship to production hands-free; a change that answers to no requirement cannot land. One person with this instrument does what used to take a team."
     },
     "inside": {
-      "title": "Inside",
-      "text": "Every action leaves a trail: any agent's turn is laid out step by step — what it saw, what was missing, why it chose this way. A failure doesn't hide, it names itself — and only what it touched replays."
+      "title": "Every action leaves a trail",
+      "text": "Any agent's turn is laid out step by step — what it saw, what was missing, why it chose this way. A failure doesn't hide, it names itself — and only what it touched replays."
     },
     "next": {
-      "title": "What's Next",
-      "text": "Next comes exchange. In your own storage you mark what you want to share — your assistant carries it to your people, and their assistants bring you their best: ideas, places, finds. A feed whose algorithm works for you, because it is yours. Under the hood, the same protocol: identity, rights, trail — and payment, when a shelf becomes a storefront."
+      "title": "Next comes exchange",
+      "text": "In your own storage you mark what you want to share — your assistant carries it to your people, and their assistants bring you their best: ideas, places, finds. A feed whose algorithm works for you, because it is yours. Under the hood, the same protocol: identity, rights, trail — and payment, when a shelf becomes a storefront."
     }
   },
   "caseStudies": {
