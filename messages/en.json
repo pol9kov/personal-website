@@ -47,29 +47,23 @@
   },
   "imperiaOs": {
     "title": "Imperia OS",
-    "subtitle": "An AI assistant to do everything its user wants — and the platform that goal requires.",
+    "subtitle": "I'm building an assistant that will do everything its user wants — and the platform that goal requires.",
     "tryDemo": "Step inside — it’s running",
-    "problem": {
-      "title": "The Problem",
-      "text": "Most AI integrations give a model a prompt and hope for the best. No workflow discipline, no memory that survives the call, no audit trail — no way to know why the agent did what it did."
-    },
-    "solution": {
-      "title": "The Approach",
-      "text": "The algorithm controls the flow, not the LLM. A stateful agent is a state machine: each step is atomic — one LLM call or one deterministic operation — so the algorithm doesn't hallucinate; only the bounded steps inside it can. Stateless agents are the rest: one call, no machine. Every step is recorded — what was observed, what was missing, why this way."
-    },
-    "howWeWork": {
-      "title": "How It Works",
-      "note": ""
-    },
-    "steps": [
-      "Business use cases come first — the spec tree is runtime configuration",
-      "Tests are written from the use cases — verify before implementation",
-      "Code implements them, and all three layers are indexed into the knowledge graph and embedded automatically",
-      "Memory reaches the agent two ways — pulled into its prompt by embedding match, or fetched on demand through MCP tools"
-    ],
     "tryDemoCaption": "Write to the agent, and your own turn becomes the example on the page — every step of it, traced.",
     "dream": {
       "lead": "Imperia OS is an app about life — all of it. It remembers everything and it is there for everything. The architecture is big because life is."
+    },
+    "proof": {
+      "title": "The Proof",
+      "text": "Imperia OS was built by one person — not as a feat of endurance, but as the platform's own work. Agents take tasks from the queue, write code, review each other and ship to production hands-free; a change that answers to no requirement cannot land. The platform builds itself — and that is the strongest proof of its thesis: one person with this instrument does what used to take a team."
+    },
+    "inside": {
+      "title": "Inside",
+      "text": "Every action leaves a trail: any agent's turn is laid out step by step — what it saw, what was missing, why it chose this way. A failure doesn't hide, it names itself — and only what it touched replays."
+    },
+    "next": {
+      "title": "What's Next",
+      "text": "Next comes exchange. In your own storage you mark what you want to share — your assistant carries it to your people, and their assistants bring you their best: ideas, places, finds. A feed whose algorithm works for you, because it is yours. Under the hood, the same protocol: identity, rights, trail — and payment, when a shelf becomes a storefront."
     }
   },
   "caseStudies": {

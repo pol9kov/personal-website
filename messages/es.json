@@ -47,29 +47,23 @@
   },
   "imperiaOs": {
     "title": "Imperia OS",
-    "subtitle": "Un asistente de IA que haga todo lo que su usuario quiera — y la plataforma que ese objetivo exige.",
+    "subtitle": "Construyo un asistente que hará todo lo que su usuario quiera — y la plataforma que esa meta exige.",
     "tryDemo": "Entra — está en marcha",
-    "problem": {
-      "title": "El Problema",
-      "text": "La mayoría de las integraciones de IA le dan al modelo un prompt y esperan lo mejor. Sin disciplina de flujo, sin memoria que sobreviva a la llamada, sin trazabilidad — no hay forma de saber por qué el agente hizo lo que hizo."
-    },
-    "solution": {
-      "title": "El Enfoque",
-      "text": "El algoritmo controla el flujo, no el LLM. Un agente con estado es una máquina de estados: cada paso es atómico — una llamada al LLM o una operación determinista —, así que el algoritmo no alucina; solo pueden hacerlo los pasos acotados dentro de él. Los agentes sin estado son el resto: una llamada, sin máquina. Cada paso se registra — qué se observó, qué faltaba, por qué así."
-    },
-    "howWeWork": {
-      "title": "Cómo Funciona",
-      "note": ""
-    },
-    "steps": [
-      "Primero los casos de uso de negocio — el spec tree es configuración de runtime",
-      "Las pruebas se escriben desde los casos de uso — verificación antes de implementación",
-      "El código los implementa, y las tres capas se indexan en el grafo de conocimiento y se incrustan solas",
-      "La memoria llega al agente de dos formas — entra en su prompt por coincidencia de embeddings, o se pide a demanda con herramientas MCP"
-    ],
     "tryDemoCaption": "Escríbele al agente, y tu propio turno se vuelve el ejemplo de la página — cada paso, trazado.",
     "dream": {
       "lead": "Imperia OS es una app sobre la vida — toda. Recuerda todo y está para todo. La arquitectura es grande porque la vida lo es."
+    },
+    "proof": {
+      "title": "La prueba",
+      "text": "Imperia OS fue construida por una persona — no como hazaña de resistencia, sino como trabajo de la propia plataforma. Los agentes toman tareas de la cola, escriben código, se revisan entre sí y publican a producción sin manos; un cambio que no responde a ningún requisito no puede aterrizar. La plataforma se construye a sí misma — y esa es la prueba más fuerte de su tesis: una persona con este instrumento hace lo que antes exigía un equipo."
+    },
+    "inside": {
+      "title": "Por dentro",
+      "text": "Cada acción deja rastro: cualquier turno de un agente está desglosado paso a paso — qué vio, qué faltó, por qué eligió así. Un fallo no se esconde: se nombra a sí mismo — y sólo se repite lo que tocó."
+    },
+    "next": {
+      "title": "Lo que sigue",
+      "text": "Luego viene el intercambio. En tu propio almacén marcas lo que quieres compartir — tu asistente lo lleva a tu gente, y sus asistentes te traen lo mejor de ellos: ideas, lugares, hallazgos. Un feed cuyo algoritmo trabaja para ti, porque es tuyo. Bajo el capó, el mismo protocolo: identidad, derechos, rastro — y pago, cuando un estante se vuelve vitrina."
     }
   },
   "caseStudies": {

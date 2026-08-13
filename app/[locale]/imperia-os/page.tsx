@@ -17,8 +17,6 @@ export default async function ImperiaOSPage({ params }: ImperiaOSPageProps) {
   setRequestLocale(locale);
   const t = await getTranslations("imperiaOs");
 
-  const steps = t.raw("steps") as string[];
-
   return (
     <main className="min-h-screen bg-gradient-to-b from-white to-gray-50 pt-24 pb-20 sm:py-20 dark:from-gray-900 dark:to-gray-950">
       <div className="container mx-auto px-4">
@@ -55,41 +53,34 @@ export default async function ImperiaOSPage({ params }: ImperiaOSPageProps) {
               </p>
             </section>
 
-            {/* Problem */}
+            {/* Доказательство: платформа строит себя сама — компания одного человека */}
             <section>
               <h2 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
-                {t("problem.title")}
+                {t("proof.title")}
               </h2>
               <p className="text-lg text-gray-700 dark:text-gray-300">
-                {t("problem.text")}
+                {t("proof.text")}
               </p>
             </section>
 
-            {/* Architecture */}
+            {/* Внутри: след каждого действия — без техники */}
             <section>
               <h2 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
-                {t("solution.title")}
+                {t("inside.title")}
               </h2>
               <p className="text-lg text-gray-700 dark:text-gray-300">
-                {t("solution.text")}
+                {t("inside.text")}
               </p>
             </section>
 
-            {/* Development Flow */}
+            {/* Дальше: обмен полками между ассистентами — этаж 3, «кто дошёл, тот дошёл» */}
             <section>
               <h2 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
-                {t("howWeWork.title")}
+                {t("next.title")}
               </h2>
-              <ol className="space-y-4">
-                {steps.map((step, index) => (
-                  <li key={index} className="flex items-start text-lg text-gray-700 dark:text-gray-300">
-                    <span className="mr-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-600 text-sm font-bold text-white">
-                      {index + 1}
-                    </span>
-                    {step}
-                  </li>
-                ))}
-              </ol>
+              <p className="text-lg text-gray-700 dark:text-gray-300">
+                {t("next.text")}
+              </p>
             </section>
 
           </div>
