@@ -48,8 +48,7 @@
   "imperiaOs": {
     "title": "Imperia OS",
     "subtitle": "Construyo un asistente que hará todo lo que su usuario quiera — y la plataforma que esa meta exige.",
-    "tryDemo": "Entra — está en marcha",
-    "tryDemoCaption": "Escríbele al agente, y tu propio turno se vuelve el ejemplo de la página — cada paso, trazado.",
+    "tryDemoCaption": "Escríbele al agente — y tu propio turno se vuelve el ejemplo de la página, cada paso trazado. Haz clic — entra.",
     "dream": {
       "lead": "Imperia OS es una app sobre la vida — toda. Recuerda todo y está para todo.",
       "nail": "La arquitectura es grande porque la vida lo es."

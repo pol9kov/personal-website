@@ -36,19 +36,17 @@ export default async function ImperiaOSPage({ params }: ImperiaOSPageProps) {
             {t("subtitle")}
           </p>
 
-          {/* ОДНА дверь в платформу — живой юзкейз: гость пишет агенту и видит
-              свой ход примером на той же странице. Ссылка текстом, как
-              «Проекты» на главной, — не таблетка. */}
+          {/* ОДНА дверь — живой виджет самой платформы в герое: не обещание
+              «она работает», а её дышащие цифры (его крой 2026-08-13: ссылка
+              стала лишней — её работу делает виджет). Клик по виджету — внутрь. */}
           <div className="mt-8">
-            <a
-              href="https://imperiaos.com/spec/message"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-lg font-medium text-blue-600 transition-colors hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
-            >
-              {t("tryDemo")} →
-            </a>
-            <p className="mt-2 max-w-md text-sm text-gray-500 dark:text-gray-400">
+            <iframe
+              src="https://imperiaos.com/widget/executor"
+              title="Imperia OS — live"
+              loading="lazy"
+              className="h-52 w-full rounded-xl border border-gray-200 dark:border-gray-800"
+            />
+            <p className="mt-2 max-w-xl text-sm text-gray-500 dark:text-gray-400">
               {t("tryDemoCaption")}
             </p>
           </div>
@@ -68,17 +66,6 @@ export default async function ImperiaOSPage({ params }: ImperiaOSPageProps) {
                 <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                   {t(`${k}.text`)}
                 </p>
-                {/* Живое доказательство: пульс НАСТОЯЩЕЙ платформы — виджет
-                    самой Imperia OS (только числа, контент не выезжает по
-                    построению). Клик по виджету — та же дверь внутрь. */}
-                {k === "proof" && (
-                  <iframe
-                    src="https://imperiaos.com/widget/executor"
-                    title="Imperia OS — live pulse"
-                    loading="lazy"
-                    className="mt-6 h-52 w-full rounded-xl border border-gray-200 dark:border-gray-800"
-                  />
-                )}
               </section>
             ))}
           </div>
