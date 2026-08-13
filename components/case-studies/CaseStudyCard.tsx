@@ -63,7 +63,7 @@ export function CaseStudyCard({ study }: CaseStudyCardProps) {
         {study.tags.map((tag) => (
           <span
             key={tag}
-            className="rounded-full bg-blue-100 px-3 py-1 text-sm text-blue-800 dark:bg-blue-900/30 dark:text-blue-300"
+            className="rounded border border-gray-200 px-2.5 py-0.5 text-xs text-gray-500 dark:border-gray-700 dark:text-gray-400"
           >
             {tag}
           </span>

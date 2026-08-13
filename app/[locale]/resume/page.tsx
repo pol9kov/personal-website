@@ -11,6 +11,12 @@ interface ResumePageProps {
   params: Promise<{ locale: string }>;
 }
 
+/**
+ * Язык сайта («смысл впереди формы»): градиентный заголовок-гвоздь, ссылка
+ * текстом со стрелкой, влево, воздух. Иконка-кружок и синяя кнопка с тенью
+ * были шаблонным лендинг-элементом — сняты 2026-08-13 вместе с той же
+ * таблеткой на странице Imperia OS.
+ */
 export default async function ResumePage({ params }: ResumePageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
@@ -27,53 +33,24 @@ export default async function ResumePage({ params }: ResumePageProps) {
   const { pdf, name: pdfName } = RESUME_BY_LOCALE[locale] ?? RESUME_EN;
 
   return (
-    <main className="flex min-h-screen items-start sm:items-center justify-center bg-gradient-to-b from-white to-gray-50 py-12 sm:py-20 dark:from-gray-900 dark:to-gray-950">
+    <main className="flex min-h-screen items-start sm:items-center bg-gradient-to-b from-white to-gray-50 py-12 sm:py-20 dark:from-gray-900 dark:to-gray-950">
       <div className="container mx-auto px-4">
-        <div className="mx-auto max-w-2xl text-center">
-          <div className="mb-8">
-            <div className="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900/30">
-              <svg
-                className="h-12 w-12 text-blue-600 dark:text-blue-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                />
-              </svg>
-            </div>
-            <h1 className="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
-              {t("title")}
-            </h1>
-            <p className="text-lg text-gray-600 dark:text-gray-300">
-              {t("subtitle")}
-            </p>
-          </div>
-
-          <a
-            href={pdf}
-            download={pdfName}
-            className="inline-flex items-center rounded-lg bg-blue-600 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:bg-blue-700 hover:shadow-xl"
-          >
-            <svg
-              className="mr-3 h-6 w-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+        <div className="mx-auto max-w-2xl">
+          <h1 className="inline text-4xl font-bold leading-snug sm:text-5xl name-gradient">
+            {t("title")}
+          </h1>
+          <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
+            {t("subtitle")}
+          </p>
+          <div className="mt-8">
+            <a
+              href={pdf}
+              download={pdfName}
+              className="text-lg font-medium text-blue-600 transition-colors hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-              />
-            </svg>
-            {t("download")}
-          </a>
+              {t("download")} →
+            </a>
+          </div>
         </div>
       </div>
     </main>
