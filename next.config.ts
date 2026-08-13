@@ -6,16 +6,6 @@ const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 const nextConfig: NextConfig = {
   async redirects() {
     return [
-      // MAINTENANCE (Egor, 2026-08-10): the copy is mid-rewrite and must not be
-      // read by hiring managers in its half-state. Everything redirects to the
-      // stub EXCEPT paths carrying a file extension — resume PDFs are already
-      // linked from live applications and must keep serving. Remove this block
-      // to bring the site back.
-      {
-        source: "/((?!maintenance|_next|.*\\..*).*)",
-        destination: "/maintenance",
-        permanent: false,
-      },
       // Short links with UTM tracking
       {
         source: "/go/telegram",
