@@ -77,12 +77,18 @@ export default async function LocaleLayout({
   return (
     <div
       lang={locale}
-      className="antialiased"
+      className="antialiased flex min-h-screen flex-col"
     >
+      {/* Липкий футер: колонка в высоту экрана, main (flex-1) занимает
+          остаток — футер виден без скролла на короткой странице и уезжает
+          вниз на длинной. min-h-screen на САМИХ страницах толкал футер за
+          экран везде (его специмен 2026-08-13). */}
       <NextIntlClientProvider messages={messages}>
         <Providers>
           <Header />
-          {children}
+          <div className="flex flex-1 flex-col [&>main]:flex-1">
+            {children}
+          </div>
           <Footer />
         </Providers>
       </NextIntlClientProvider>
