@@ -36,7 +36,7 @@ export default async function ResumePage({ params }: ResumePageProps) {
     <main className="flex min-h-screen items-start sm:items-center bg-gradient-to-b from-white to-gray-50 py-12 sm:py-20 dark:from-gray-900 dark:to-gray-950">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-2xl">
-          <h1 className="inline text-4xl font-bold leading-snug sm:text-5xl name-gradient">
+          <h1 className="inline text-4xl font-bold leading-snug text-gray-900 sm:text-5xl dark:text-white">
             {t("title")}
           </h1>
           <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">

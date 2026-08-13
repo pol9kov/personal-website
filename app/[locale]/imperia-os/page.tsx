@@ -29,7 +29,7 @@ export default async function ImperiaOSPage({ params }: ImperiaOSPageProps) {
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-2xl">
           {/* Герой */}
-          <h1 className="text-4xl font-bold leading-snug sm:text-5xl md:text-6xl name-gradient inline">
+          <h1 className="inline text-4xl font-bold leading-snug text-gray-900 sm:text-5xl md:text-6xl dark:text-white">
             {t("title")}
           </h1>
           <p className="mt-4 text-xl text-gray-600 dark:text-gray-300 sm:text-2xl">
@@ -54,7 +54,7 @@ export default async function ImperiaOSPage({ params }: ImperiaOSPageProps) {
           {/* Мечта — крупная строфа, гвоздь градиентом */}
           <p className="mt-24 text-2xl font-medium leading-relaxed text-gray-900 dark:text-white sm:text-3xl">
             {t("dream.lead")}{" "}
-            <span className="name-gradient font-bold">{t("dream.nail")}</span>
+            <span className="font-bold">{t("dream.nail")}</span>
           </p>
 
           <div className="mt-20 space-y-16">
