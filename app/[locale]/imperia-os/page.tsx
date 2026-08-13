@@ -68,6 +68,17 @@ export default async function ImperiaOSPage({ params }: ImperiaOSPageProps) {
                 <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                   {t(`${k}.text`)}
                 </p>
+                {/* Живое доказательство: пульс НАСТОЯЩЕЙ платформы — виджет
+                    самой Imperia OS (только числа, контент не выезжает по
+                    построению). Клик по виджету — та же дверь внутрь. */}
+                {k === "proof" && (
+                  <iframe
+                    src="https://imperiaos.com/widget/executor"
+                    title="Imperia OS — live pulse"
+                    loading="lazy"
+                    className="mt-6 h-52 w-full rounded-xl border border-gray-200 dark:border-gray-800"
+                  />
+                )}
               </section>
             ))}
           </div>
