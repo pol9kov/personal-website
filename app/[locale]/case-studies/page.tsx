@@ -15,7 +15,7 @@ export default async function CaseStudiesPage({
   const t = await getTranslations("caseStudies");
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-white to-gray-50 pt-28 pb-24 dark:from-gray-900 dark:to-gray-950">
+    <main className="bg-gradient-to-b from-white to-gray-50 pt-28 pb-24 dark:from-gray-900 dark:to-gray-950">
       <div className="container mx-auto px-4">
         <div className="mx-auto mb-12 max-w-2xl">
           <h1 className="inline text-4xl font-bold leading-snug text-gray-900 sm:text-5xl dark:text-white">

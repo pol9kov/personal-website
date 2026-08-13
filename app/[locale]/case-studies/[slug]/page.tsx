@@ -42,7 +42,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
   const lessonsLearned = t.raw(`items.${slug}.lessonsLearned`) as string[];
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-950">
+    <main className="bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-950">
       <div className="container mx-auto px-4 py-20">
         <Link
           href="/case-studies"
