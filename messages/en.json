@@ -26,7 +26,8 @@
   },
   "footer": {
     "contact": "Contacts",
-    "email": "Email"
+    "email": "Email",
+    "copied": "copied ✓"
   },
   "common": {
     "toggleTheme": "Toggle theme",

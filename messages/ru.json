@@ -26,7 +26,8 @@
   },
   "footer": {
     "contact": "Контакты",
-    "email": "Email"
+    "email": "Email",
+    "copied": "скопировано ✓"
   },
   "common": {
     "toggleTheme": "Сменить тему",

@@ -13,7 +13,7 @@ export interface FooterProps {
 
 const EMAIL = "egor.pol9kov@gmail.com";
 
-function EmailCopy({ label }: { label: string }) {
+function EmailCopy({ label, copiedLabel }: { label: string; copiedLabel: string }) {
   const [copied, setCopied] = useState(false);
   const copy = () => {
     navigator.clipboard
@@ -45,7 +45,7 @@ function EmailCopy({ label }: { label: string }) {
           "opacity-0 transition-opacity group-hover:opacity-100",
         )}
       >
-        {copied ? "скопировано ✓" : EMAIL}
+        {copied ? copiedLabel : EMAIL}
       </span>
     </span>
   );
@@ -102,7 +102,7 @@ export function Footer({ className }: FooterProps) {
                 уводил в системную почту (маковский Mail), которой владелец
                 сайта и его гости не пользуются (Егор, 2026-08-13). Тултип
                 показывает сам адрес; после клика — «скопировано». */}
-            <EmailCopy label={t("email")} />
+            <EmailCopy label={t("email")} copiedLabel={t("copied")} />
           </div>
         </div>
       </div>
