@@ -46,9 +46,16 @@ export default async function ImperiaOSPage({ params }: ImperiaOSPageProps) {
               loading="lazy"
               className="h-52 w-full rounded-xl border border-gray-200 dark:border-gray-800"
             />
-            <p className="mt-2 max-w-xl text-sm text-gray-500 dark:text-gray-400">
-              {t("tryDemoCaption")}
-            </p>
+            {/* Действие — ссылкой в языке сайта, не серой подписью-описанием
+                (его нож 2026-08-13: «подпись идёт будто к виджету»). */}
+            <a
+              href="https://imperiaos.com/spec/message"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-block text-base font-medium text-blue-600 transition-colors hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+            >
+              {t("tryDemoCaption")} →
+            </a>
           </div>
 
           {/* Мечта — крупная строфа, гвоздь градиентом */}
