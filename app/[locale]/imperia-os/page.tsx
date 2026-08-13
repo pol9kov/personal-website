@@ -36,9 +36,11 @@ export default async function ImperiaOSPage({ params }: ImperiaOSPageProps) {
             {t("subtitle")}
           </p>
 
-          {/* ОДНА дверь — живой виджет самой платформы в герое: не обещание
-              «она работает», а её дышащие цифры (его крой 2026-08-13: ссылка
-              стала лишней — её работу делает виджет). Клик по виджету — внутрь. */}
+          {/* Живой виджет платформы в герое — её дышащие цифры, без подписей:
+              разделы исполнителя свёрнуты и раскрываются внутри (его крой
+              2026-08-13). Ссылка на след хода живёт у своего утверждения —
+              в секции «У каждого действия есть след», интерфейс там сам
+              объясняет, что делать. */}
           <div className="mt-8">
             <iframe
               src="https://imperiaos.com/widget/executor"
@@ -46,16 +48,6 @@ export default async function ImperiaOSPage({ params }: ImperiaOSPageProps) {
               loading="lazy"
               className="h-52 w-full rounded-xl border border-gray-200 dark:border-gray-800"
             />
-            {/* Действие — ссылкой в языке сайта, не серой подписью-описанием
-                (его нож 2026-08-13: «подпись идёт будто к виджету»). */}
-            <a
-              href="https://imperiaos.com/spec/message"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-3 inline-block text-base font-medium text-blue-600 transition-colors hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
-            >
-              {t("tryDemoCaption")} →
-            </a>
           </div>
 
           {/* Мечта — крупная строфа, гвоздь градиентом */}
@@ -67,9 +59,25 @@ export default async function ImperiaOSPage({ params }: ImperiaOSPageProps) {
           <div className="mt-20 space-y-16">
             {sections.map((k) => (
               <section key={k}>
-                <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
-                  {t(`${k}.title`)}
-                </h2>
+                {/* «У каждого действия есть след» — само утверждение и есть
+                    дверь к живому следу (его крой 2026-08-13: просто ссылка,
+                    без приглашений — интерфейс там объясняет себя сам). */}
+                {k === "inside" ? (
+                  <h2 className="mb-4 text-2xl font-bold">
+                    <a
+                      href="https://imperiaos.com/domains#content=spec%3Amessage"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-900 transition-colors hover:text-blue-600 dark:text-white dark:hover:text-blue-400"
+                    >
+                      {t(`${k}.title`)} →
+                    </a>
+                  </h2>
+                ) : (
+                  <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
+                    {t(`${k}.title`)}
+                  </h2>
+                )}
                 <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                   {t(`${k}.text`)}
                 </p>
