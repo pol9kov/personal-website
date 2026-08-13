@@ -67,8 +67,6 @@
       "Code implements them, and all three layers are indexed into the knowledge graph and embedded automatically",
       "Memory reaches the agent two ways — pulled into its prompt by embedding match, or fetched on demand through MCP tools"
     ],
-    "caseStudyTeaser": "Architecture details — the state machine, the knowledge graph, the protocol layer — in the case study.",
-    "caseStudyLink": "Read Case Study",
     "tryDemoCaption": "Write to the agent, and your own turn becomes the example on the page — every step of it, traced.",
     "dream": {
       "lead": "Imperia OS is an app about life — all of it. It remembers everything and it is there for everything. The architecture is big because life is."
@@ -86,30 +84,6 @@
     "viewSource": "View Source Code",
     "architectureDiagrams": "Architecture Diagrams",
     "items": {
-      "imperia-os": {
-        "title": "Imperia OS — An AI Assistant and the Platform It Requires",
-        "description": "Agent platform with a state-machine runtime, a knowledge graph over the development flow, and two kinds of memory reaching the agent through MCP.",
-        "problem": "Giving an LLM full control doesn't scale. It decides what to do, which tools to call, when to stop — and it keeps nothing between calls. No memory, no business context, no traceability, no way to prevent the agent from editing code before it understands the problem.",
-        "solution": "The algorithm controls the flow. A stateful agent is a state machine: each step is atomic — one LLM call or one deterministic operation. Memory reaches the agent two ways: pulled into its prompt automatically by embedding match, or fetched on demand through MCP tools. Everything the system does reduces to three abstractions — agents, blocks and protocols.",
-        "technicalDetails": [
-          "State-machine runtime — the algorithm sequences the steps; an LLM call is one bounded step among deterministic ones",
-          "Knowledge graph over the development flow — business use cases, the tests written from them, and the code implementing them, all indexed and embedded",
-          "Thought system — a self-composing hierarchy where every new thought is summarized into the layer above; the same module runs the business agents",
-          "MCP tools — typed, on-demand access to the same memory the prompt receives automatically",
-          "Three abstractions — agents; blocks, where everything addressable shares one shape and one embedding; protocols, for everything that crosses a boundary",
-          "Paid access as a decorator over the protocol — the same slot accepts signing, audit, or a blockchain commitment"
-        ],
-        "results": [
-          "The same infrastructure builds the platform and delivers it to its users",
-          "Re-use is the default — the knowledge map shows what already exists before anything new is written, and Clean Architecture keeps every module portable",
-          "Every agent decision is traceable — the record holds what was observed, what was missing, and why the agent chose its approach"
-        ],
-        "lessonsLearned": [
-          "LLMs become reliable when an algorithm controls the flow — the algorithm doesn't hallucinate, only the bounded steps inside it can",
-          "Separate stores beat one merged store — code structure, agent memory and user data need different schemas and query patterns",
-          "Payment belongs in a decorator over the protocol, not inside the agent — the same slot then takes signing, audit or a blockchain commitment"
-        ]
-      },
       "mobile-platform": {
         "title": "Cross-Platform Mobile Platform",
         "description": "Scalable mobile platform on Flutter and AWS with clean architecture and automated infrastructure.",

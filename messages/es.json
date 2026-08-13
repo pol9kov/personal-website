@@ -67,8 +67,6 @@
       "El código los implementa, y las tres capas se indexan en el grafo de conocimiento y se incrustan solas",
       "La memoria llega al agente de dos formas — entra en su prompt por coincidencia de embeddings, o se pide a demanda con herramientas MCP"
     ],
-    "caseStudyTeaser": "Detalles de arquitectura — la máquina de estados, el grafo de conocimiento, la capa de protocolos — en el caso de estudio.",
-    "caseStudyLink": "Leer Caso de Estudio",
     "tryDemoCaption": "Escríbele al agente, y tu propio turno se vuelve el ejemplo de la página — cada paso, trazado.",
     "dream": {
       "lead": "Imperia OS es una app sobre la vida — toda. Recuerda todo y está para todo. La arquitectura es grande porque la vida lo es."
@@ -86,30 +84,6 @@
     "viewSource": "Ver Código Fuente",
     "architectureDiagrams": "Diagramas de Arquitectura",
     "items": {
-      "imperia-os": {
-        "title": "Imperia OS — Un asistente de IA y la plataforma que exige",
-        "description": "Plataforma de agentes con un runtime de máquina de estados, un grafo de conocimiento sobre el flujo del desarrollo y dos memorias que llegan al agente por MCP.",
-        "problem": "Dar a un LLM control total no escala. El modelo decide qué hacer, qué herramientas llamar, cuándo parar — y no retiene nada entre llamadas. Sin memoria, sin contexto de negocio, sin trazabilidad, sin forma de prevenir que el agente edite código antes de entender el problema.",
-        "solution": "El algoritmo controla el flujo. Un agente con estado es una máquina de estados: cada paso es atómico — una llamada al LLM o una operación determinista. La memoria llega al agente de dos formas: entra en su prompt por coincidencia de embeddings, o se pide a demanda con herramientas MCP. Todo lo que hace el sistema se reduce a tres abstracciones — agentes, bloques y protocolos.",
-        "technicalDetails": [
-          "Runtime de máquina de estados — el algoritmo ordena los pasos; una llamada al LLM es un paso acotado entre otros deterministas",
-          "Grafo de conocimiento sobre el flujo del desarrollo — casos de uso de negocio, las pruebas escritas desde ellos y el código que los implementa, todo indexado e incrustado",
-          "Sistema de pensamientos — una jerarquía que se compone sola, donde cada pensamiento nuevo se resume en la capa de arriba; el mismo módulo mueve los agentes de negocio",
-          "Herramientas MCP — acceso tipado y a demanda a la misma memoria que el prompt recibe solo",
-          "Tres abstracciones — agentes; bloques, donde todo lo direccionable comparte una forma y un embedding; protocolos, para todo lo que cruza un límite",
-          "El acceso de pago como decorador sobre el protocolo — la misma ranura acepta firma, auditoría o registro en blockchain"
-        ],
-        "results": [
-          "La misma infraestructura construye la plataforma y la entrega a sus usuarios",
-          "La reutilización es la norma — el mapa de conocimiento muestra lo que ya existe antes de escribir algo nuevo, y la Clean Architecture deja cada módulo portátil",
-          "Cada decisión del agente es trazable — el registro guarda qué se observó, qué faltaba y por qué el agente eligió su enfoque"
-        ],
-        "lessonsLearned": [
-          "Los LLMs se vuelven confiables cuando un algoritmo controla el flujo — el algoritmo no alucina, solo pueden hacerlo los pasos acotados dentro de él",
-          "Almacenes separados superan a uno unificado — estructura de código, memoria de agentes y datos de usuario necesitan esquemas y patrones de consulta diferentes",
-          "El pago va en un decorador sobre el protocolo, no dentro del agente — la misma ranura acepta después firma, auditoría o registro en blockchain"
-        ]
-      },
       "mobile-platform": {
         "title": "Plataforma Móvil Multiplataforma",
         "description": "Plataforma móvil escalable en Flutter y AWS con arquitectura limpia e infraestructura automatizada.",

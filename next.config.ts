@@ -6,6 +6,18 @@ const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 const nextConfig: NextConfig = {
   async redirects() {
     return [
+      // Imperia OS — не кейс, а живое дело со своей страницей (Егор, 2026-08-13);
+      // старый адрес разборного экрана ведёт на неё.
+      {
+        source: "/:locale(en|ru|es)/case-studies/imperia-os",
+        destination: "/:locale/imperia-os",
+        permanent: false,
+      },
+      {
+        source: "/case-studies/imperia-os",
+        destination: "/imperia-os",
+        permanent: false,
+      },
       // Short links with UTM tracking
       {
         source: "/go/telegram",
