@@ -26,7 +26,7 @@ export default async function CaseStudiesPage({
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-2">
           {caseStudies.map((study) => (
             <CaseStudyCard key={study.id} study={study} />
           ))}
