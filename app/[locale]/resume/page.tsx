@@ -33,7 +33,7 @@ export default async function ResumePage({ params }: ResumePageProps) {
   const { pdf, name: pdfName } = RESUME_BY_LOCALE[locale] ?? RESUME_EN;
 
   return (
-    <main className="flex min-h-screen items-start sm:items-center bg-gradient-to-b from-white to-gray-50 py-12 sm:py-20 dark:from-gray-900 dark:to-gray-950">
+    <main className="min-h-screen bg-gradient-to-b from-white to-gray-50 pt-28 pb-24 dark:from-gray-900 dark:to-gray-950">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-2xl">
           <h1 className="inline text-4xl font-bold leading-snug text-gray-900 sm:text-5xl dark:text-white">
