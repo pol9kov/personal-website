@@ -6,7 +6,7 @@ import { Link } from "@/i18n/navigation";
 export const metadata: Metadata = {
   title: "Imperia OS | Egor Polyakov",
   description:
-    "AI-first development platform. The algorithm controls the flow, not the LLM.",
+    "An AI assistant and the platform that goal requires. The algorithm controls the flow, not the LLM.",
 };
 
 interface ImperiaOSPageProps {
@@ -32,17 +32,30 @@ export default async function ImperiaOSPage({ params }: ImperiaOSPageProps) {
             <p className="text-xl text-gray-600 dark:text-gray-300">
               {t("subtitle")}
             </p>
+            {/* ОДНА дверь в платформу с этой страницы — живой юзкейз-пример:
+                гость открывает спеку Message, пишет агенту и видит свой ход
+                примером на той же странице. Остальное здесь — словами. */}
             <a
-              href="https://imperiaos.com/"
+              href="https://imperiaos.com/spec/message"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-6 inline-block rounded-lg bg-blue-600 px-6 py-3 text-lg font-medium text-white transition-colors hover:bg-blue-700"
             >
               {t("tryDemo")}
             </a>
+            <p className="mx-auto mt-4 max-w-xl text-sm text-gray-500 dark:text-gray-400">
+              {t("tryDemoCaption")}
+            </p>
           </div>
 
           <div className="space-y-16">
+            {/* Dream — открытие: триптих Егора «обо всём / для всего», гвоздь про архитектуру */}
+            <section className="text-center">
+              <p className="text-2xl font-medium leading-relaxed text-gray-900 dark:text-white">
+                {t("dream.lead")}
+              </p>
+            </section>
+
             {/* Problem */}
             <section>
               <h2 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white">

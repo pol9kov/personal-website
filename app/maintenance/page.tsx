@@ -11,12 +11,9 @@ export const metadata = {
 
 export default function MaintenancePage() {
   return (
-    <>
-      <style>{`html, body { margin: 0; height: 100%; overflow: hidden; background: #141414; }`}</style>
     <main
       style={{
-        position: "fixed",
-        inset: 0,
+        minHeight: "100vh",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -51,6 +48,5 @@ export default function MaintenancePage() {
         </p>
       </div>
     </main>
-    </>
   );
 }

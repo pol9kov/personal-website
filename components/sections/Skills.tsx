@@ -56,9 +56,6 @@ export function Skills({ className }: SkillsProps) {
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white">
             {t("title")}
           </h2>
-          <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
-            {t("subtitle")}
-          </p>
         </div>
 
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
