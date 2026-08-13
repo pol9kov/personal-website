@@ -48,7 +48,7 @@
   "imperiaOs": {
     "title": "Imperia OS",
     "subtitle": "Un asistente de IA que haga todo lo que su usuario quiera — y la plataforma que ese objetivo exige.",
-    "tryDemo": "Visitar Plataforma",
+    "tryDemo": "Entra — está en marcha",
     "problem": {
       "title": "El Problema",
       "text": "La mayoría de las integraciones de IA le dan al modelo un prompt y esperan lo mejor. Sin disciplina de flujo, sin memoria que sobreviva a la llamada, sin trazabilidad — no hay forma de saber por qué el agente hizo lo que hizo."
@@ -68,7 +68,11 @@
       "La memoria llega al agente de dos formas — entra en su prompt por coincidencia de embeddings, o se pide a demanda con herramientas MCP"
     ],
     "caseStudyTeaser": "Detalles de arquitectura — la máquina de estados, el grafo de conocimiento, la capa de protocolos — en el caso de estudio.",
-    "caseStudyLink": "Leer Caso de Estudio"
+    "caseStudyLink": "Leer Caso de Estudio",
+    "tryDemoCaption": "Escríbele al agente, y tu propio turno se vuelve el ejemplo de la página — cada paso, trazado.",
+    "dream": {
+      "lead": "Imperia OS es una app sobre la vida — toda. Recuerda todo y está para todo. La arquitectura es grande porque la vida lo es."
+    }
   },
   "caseStudies": {
     "title": "Casos de Estudio",

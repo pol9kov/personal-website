@@ -48,7 +48,7 @@
   "imperiaOs": {
     "title": "Imperia OS",
     "subtitle": "An AI assistant to do everything its user wants — and the platform that goal requires.",
-    "tryDemo": "Visit Platform",
+    "tryDemo": "Step inside — it’s running",
     "problem": {
       "title": "The Problem",
       "text": "Most AI integrations give a model a prompt and hope for the best. No workflow discipline, no memory that survives the call, no audit trail — no way to know why the agent did what it did."
@@ -68,7 +68,11 @@
       "Memory reaches the agent two ways — pulled into its prompt by embedding match, or fetched on demand through MCP tools"
     ],
     "caseStudyTeaser": "Architecture details — the state machine, the knowledge graph, the protocol layer — in the case study.",
-    "caseStudyLink": "Read Case Study"
+    "caseStudyLink": "Read Case Study",
+    "tryDemoCaption": "Write to the agent, and your own turn becomes the example on the page — every step of it, traced.",
+    "dream": {
+      "lead": "Imperia OS is an app about life — all of it. It remembers everything and it is there for everything. The architecture is big because life is."
+    }
   },
   "caseStudies": {
     "title": "Case Studies",
