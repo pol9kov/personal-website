@@ -42,7 +42,7 @@
   },
   "resume": {
     "title": "Resume",
-    "subtitle": "Download my professional resume in PDF format",
+    "subtitle": "The current version — the same one I send to companies.",
     "download": "Download Resume (PDF)"
   },
   "imperiaOs": {
@@ -69,7 +69,7 @@
   },
   "caseStudies": {
     "title": "Case Studies",
-    "subtitle": "Deep dives into technical solutions and architectural decisions",
+    "subtitle": "Finished work — what was built and how it came out.",
     "problem": "Problem",
     "solution": "Solution",
     "technicalDetails": "Technical Details",

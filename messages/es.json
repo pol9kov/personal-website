@@ -42,7 +42,7 @@
   },
   "resume": {
     "title": "Currículum",
-    "subtitle": "Descarga mi currículum profesional en formato PDF",
+    "subtitle": "La versión vigente — la misma que envío a las empresas.",
     "download": "Descargar Currículum (PDF)"
   },
   "imperiaOs": {
@@ -69,7 +69,7 @@
   },
   "caseStudies": {
     "title": "Casos de Estudio",
-    "subtitle": "Inmersiones profundas en soluciones técnicas y decisiones arquitectónicas",
+    "subtitle": "Trabajos terminados — qué se construyó y cómo salió.",
     "problem": "Problema",
     "solution": "Solución",
     "technicalDetails": "Detalles Técnicos",

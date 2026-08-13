@@ -22,8 +22,8 @@ export default async function AboutPage({ params }: AboutPageProps) {
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-4xl">
           {/* Header */}
-          <div className="mb-12 text-center">
-            <h1 className="mb-4 text-5xl font-bold leading-snug text-gray-900 dark:text-white">
+          <div className="mb-12">
+            <h1 className="mb-4 inline text-4xl font-bold leading-snug sm:text-5xl name-gradient">
               {t("title")}
             </h1>
           </div>
