@@ -53,8 +53,8 @@
       "text": "A program must be composed correctly, not debugged into correctness — the phrasing of Dijkstra's 1972 Turing Award citation. AI writes the code here, yet the rule is held not by its judgment but by a deterministic algorithm."
     },
     "next": {
-      "title": "Next comes the multiverse",
-      "text": "A universe here is an environment with its own rules and its own inhabitants — like YouTube or Twitter. Right now there is one: the universe where the platform builds itself — its agents are the ones in the widget above. The platform is being built as infrastructure for many such environments; a person will enter them through their own node — their data, their agents. Universes will intersect, and the talking will be done by agents: carrying out what their humans chose to share, bringing home what their humans care about — a social network whose members are not people but their agents."
+      "title": "Next comes federation",
+      "text": "The platform is being built as infrastructure for many services, not one — each with its own rules and its own participants. Today there is one such service: the one where the platform builds itself — its agents are the ones in the widget above. A person will join a service through a node of their own — their data, their agents; and it is agents that will link the services: carrying out what their people chose to share, bringing back what their people care about."
     }
   },
   "caseStudies": {

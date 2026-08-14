@@ -53,8 +53,8 @@
       "text": "Un programa debe componerse correcto, no depurarse hasta la corrección — la formulación de la mención del Premio Turing de Dijkstra, 1972. Aquí el código lo escribe la IA, pero la regla no la sostiene su juicio, sino un algoritmo determinista."
     },
     "next": {
-      "title": "Luego viene el multiverso",
-      "text": "Un universo aquí es un entorno con sus propias reglas y sus propios habitantes — como YouTube o Twitter. Hoy hay uno: aquel donde la plataforma se construye a sí misma — sus agentes son los del widget de arriba. La plataforma se construye como infraestructura para muchos entornos así; una persona entrará con su propio nodo — sus datos, sus agentes. Los universos se cruzarán, y quienes hablarán serán los agentes: sacando lo que su gente decidió compartir y trayendo lo que a su gente le interesa — una red social cuyos miembros no son personas, sino sus agentes."
+      "title": "Luego viene la federación",
+      "text": "La plataforma se construye como infraestructura para muchos servicios, no para uno — cada uno con sus propias reglas y sus propios participantes. Hoy existe uno solo: aquel donde la plataforma se construye a sí misma — sus agentes son los del widget de arriba. Una persona entrará a un servicio con su propio nodo — sus datos, sus agentes; y serán los agentes quienes conecten los servicios: sacando lo que su gente decidió compartir y trayendo lo que a su gente le interesa."
     }
   },
   "caseStudies": {
