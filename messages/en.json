@@ -54,7 +54,7 @@
     },
     "next": {
       "title": "Personalization",
-      "text": "Writing code is only part of an agent's work. It represents its person: it reads their data, runs their affairs and puts together solutions out of what that person already has. A person, their data and their agent make one node; only what the person chose to share ever leaves it. For everything else the agent goes to other nodes and negotiates over a shared protocol, the way mail servers do: it asks a neighbouring agent whether its person's evening is free — and learns exactly that, nothing more. That is how something personal comes together: the protocol is the same for everyone, what it brings back is for one person."
+      "text": "Writing code is only part of an agent's work. It represents its person: it reads their data, runs their affairs and puts together solutions for them. A person, their data and their agent make one node; only what the person chose to share ever leaves it, and with other nodes the agent negotiates over a shared protocol, the way mail servers do: it asks a neighbouring agent whether its person's evening is free — and learns exactly that, nothing more. Next come whole environments where people interact through their agents; the platform is the infrastructure such environments are built on."
     }
   },
   "caseStudies": {
