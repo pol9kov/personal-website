@@ -54,7 +54,7 @@
     },
     "next": {
       "title": "Next comes federation",
-      "text": "The platform is being built as infrastructure for many services, not one — each with its own rules and its own participants. Today there is one such service: the one where the platform builds itself — its agents are the ones in the widget above. A person will join a service through a node of their own — their data, their agents; and it is agents that will link the services: carrying out what their people chose to share, bringing back what their people care about."
+      "text": "The platform is being built as infrastructure for such networks — not for one. Picture it: your agent and your data stay on your machine while you connect to one of the networks; only what you chose to share ever leaves it, and the ones negotiating are the agents, over a shared protocol — like mail servers, except the correspondents are not people but their agents."
     }
   },
   "caseStudies": {

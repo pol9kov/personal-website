@@ -54,7 +54,7 @@
     },
     "next": {
       "title": "Luego viene la federación",
-      "text": "La plataforma se construye como infraestructura para muchos servicios, no para uno — cada uno con sus propias reglas y sus propios participantes. Hoy existe uno solo: aquel donde la plataforma se construye a sí misma — sus agentes son los del widget de arriba. Una persona entrará a un servicio con su propio nodo — sus datos, sus agentes; y serán los agentes quienes conecten los servicios: sacando lo que su gente decidió compartir y trayendo lo que a su gente le interesa."
+      "text": "La plataforma se construye como infraestructura para esas redes, no para una sola. Imagine: su agente y sus datos se quedan en su máquina mientras usted se conecta a una de las redes; solo sale lo que usted decidió compartir, y quienes se entienden entre sí son los agentes, por un protocolo común — como los servidores de correo, salvo que los interlocutores no son personas sino sus agentes."
     }
   },
   "caseStudies": {
