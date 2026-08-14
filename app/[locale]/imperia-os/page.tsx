@@ -42,8 +42,12 @@ export default async function ImperiaOSPage({ params }: ImperiaOSPageProps) {
               в секции «У каждого действия есть след», интерфейс там сам
               объясняет, что делать. */}
           <div className="mt-8">
+            {/* Окно в DEV: платформа строит себя на dev-исполнителе, прод
+                обслуживает пользователей и в его числах стройки нет (его
+                слово 2026-08-14: «зачем показываем прод, если там разработки
+                нет?»). Ручка отдаёт только счётчики — контент не утекает. */}
             <iframe
-              src="https://imperiaos.com/widget/executor"
+              src="https://dev.imperiaos.com/widget/executor"
               title="Imperia OS — live"
               loading="lazy"
               className="h-52 w-full rounded-xl border border-gray-200 dark:border-gray-800"
