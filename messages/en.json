@@ -53,8 +53,8 @@
       "text": "A program must be composed correctly, not debugged into correctness — the phrasing of Dijkstra's 1972 Turing Award citation. AI writes the code here, yet the rule is held not by its judgment but by a deterministic algorithm."
     },
     "next": {
-      "title": "Personalization",
-      "text": "Writing code is only part of an agent's work. It represents its person: it reads their data, runs their affairs and puts together solutions for them. A person, their data and their agent make one node; only what the person chose to share ever leaves it, and with other nodes the agent negotiates over a shared protocol, the way mail servers do: it asks a neighbouring agent whether its person's evening is free — and learns exactly that, nothing more. That is how the agent grows into an aggregator of the whole world for one person. Next come whole environments where people interact through their agents; the platform is the infrastructure such environments are built on."
+      "title": "Environments",
+      "text": "Writing code is only part of an agent's work. It runs one person's affairs, and the longer it does, the more precisely it gathers the rest of the world for them — not a common feed, but what this person needs. Yet one agent hits a limit: what matters to people happens between people. So the platform is not one application but a foundation for environments where people meet through their agents."
     }
   },
   "caseStudies": {
