@@ -53,8 +53,8 @@
       "nail": "La arquitectura es grande porque la vida lo es."
     },
     "proof": {
-      "title": "La plataforma se construye a sí misma",
-      "text": "Imperia OS fue construida por una persona — no como hazaña de resistencia, sino como trabajo de la propia plataforma. Los agentes toman tareas de la cola, escriben código, se revisan entre sí y publican a producción sin manos; un cambio que no responde a ningún requisito no puede aterrizar. Una persona con este instrumento hace lo que antes exigía un equipo."
+      "title": "El código repite la intención",
+      "text": "Aquí la especificación no es un documento junto al código — es la forma del propio código. La intención está escrita como un árbol de requisitos, y el código debe seguir su estructura: cada cambio nombra el requisito al que sirve — si no lo nombra, la puerta lo devuelve. Lo que se puede verificar se verifica en vivo: una prueba corre en cada build y retiene el despliegue hasta que pasa. La vieja regla de Dijkstra, ejecutada por una máquina: un programa debe componerse correcto, no depurarse hasta la corrección."
     },
     "inside": {
       "title": "Cada acción deja rastro",
