@@ -54,7 +54,7 @@
     },
     "next": {
       "title": "Personalización",
-      "text": "Escribir código es solo una parte del trabajo del agente. Representa a su persona: lee sus datos, lleva sus asuntos y arma soluciones para ella. Una persona, sus datos y su agente forman un nodo; de él solo sale lo que la persona decidió compartir, y con otros nodos el agente negocia por un protocolo común, como lo hacen entre sí los servidores de correo: le pregunta al agente vecino si la tarde de su persona está libre — y se entera exactamente de eso, nada más. Después vienen entornos enteros donde la gente interactúa a través de sus agentes; la plataforma es la infraestructura sobre la que se construyen esos entornos."
+      "text": "Escribir código es solo una parte del trabajo del agente. Representa a su persona: lee sus datos, lleva sus asuntos y arma soluciones para ella. Una persona, sus datos y su agente forman un nodo; de él solo sale lo que la persona decidió compartir, y con otros nodos el agente negocia por un protocolo común, como lo hacen entre sí los servidores de correo: le pregunta al agente vecino si la tarde de su persona está libre — y se entera exactamente de eso, nada más. Así el agente crece hasta ser un agregador del mundo entero para una sola persona. Después vienen entornos enteros donde la gente interactúa a través de sus agentes; la plataforma es la infraestructura sobre la que se construyen esos entornos."
     }
   },
   "caseStudies": {
