@@ -48,21 +48,18 @@
   "imperiaOs": {
     "title": "Imperia OS",
     "subtitle": "Construyo un asistente de IA que adopta la forma que su usuario necesita — y la plataforma sin la cual no se puede construir.",
-    "dream": {
-      "lead": "Dos niveles — como un compilador y los programas que se escriben sobre él: los agentes construyen la plataforma misma y trabajan sobre ella, armando con los datos de una persona sus dominios, widgets y páginas.",
-      "nail": "Por eso la meta es la transparencia: cada paso que dan queda a la vista."
-    },
     "proof": {
       "title": "El código repite la intención",
       "text": "Aquí la especificación no es un documento junto al código — es la forma del propio código. La intención está escrita como un árbol de requisitos, y el código debe seguir su estructura: cada cambio nombra el requisito al que sirve — si no lo nombra, la puerta lo devuelve. Lo que se puede verificar se verifica en vivo: antes de cada despliegue corre un escenario real contra el sistema vivo, y el rojo detiene la build. De la mención del Premio Turing de Dijkstra, 1972: un programa debe componerse correcto, no depurarse hasta la corrección. Aquí lo ejecuta una máquina."
     },
     "inside": {
       "title": "Cada acción deja rastro",
+      "levels": "Dos niveles — como un compilador y los programas que se escriben sobre él: los agentes construyen la plataforma misma y trabajan sobre ella, armando con los datos de una persona sus dominios, widgets y páginas.",
       "text": "Cualquier turno de un agente está desglosado paso a paso — qué vio, qué faltó, por qué eligió así. Un fallo no se esconde: se nombra a sí mismo — y sólo se repite lo que tocó."
     },
     "next": {
       "title": "Luego viene el intercambio",
-      "text": "En tu propio almacén marcas lo que quieres compartir — tu asistente lo lleva a tu gente, y sus asistentes te traen lo mejor de ellos: ideas, lugares, hallazgos. Un feed cuyo algoritmo trabaja para ti, porque es tuyo. Bajo el capó, el mismo protocolo: identidad, derechos, rastro — y pago, cuando un estante se vuelve vitrina."
+      "text": "En su propio almacén una persona marca lo que quiere compartir — su asistente lo lleva a los suyos, y los asistentes de ellos le traen lo mejor de lo suyo: ideas, lugares, hallazgos. Un feed cuyo algoritmo sirve a su dueño, no a una plataforma. Bajo el capó, el mismo protocolo: identidad, derechos, rastro — y pago, cuando un estante se vuelve vitrina."
     }
   },
   "caseStudies": {
