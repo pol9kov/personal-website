@@ -50,12 +50,10 @@
     "subtitle": "I'm building an AI assistant that takes the shape its user needs — and the platform it takes to build one.",
     "proof": {
       "title": "The code mirrors the intent",
-      "text": "The specification here is not a document beside the code — it is the shape of the code itself. The intent is written as a tree of requirements, and the code must follow its structure: every change names the requirement it serves — fail to name it, and the gate turns it back. Whatever can be checked is checked live: before every release a real scenario runs against the live system, and red stops the build from going further. From Dijkstra's 1972 Turing Award citation: a program must be composed correctly, not debugged into correctness. Here a machine carries it out."
+      "text": "The intent here is not a document beside the code but a tree of requirements inside it — from a business goal down to a single rule. The code points back at them: a change shows what it serves, and a requirement shows everything that carries it out. Touch a requirement that nothing checks, and the push is refused. And a check declares which parts of the code it judges: touch them and it runs against the live system before the change ships. From Dijkstra's 1972 Turing Award citation: a program must be composed correctly, not debugged into correctness. Here a machine carries it out."
     },
     "inside": {
-      "title": "Every action leaves a trail",
-      "levels": "Two levels here — like a compiler and the programs written on it: agents build the platform itself, and agents work on it, assembling a person\u2019s domains, widgets and pages out of their own data.",
-      "text": "Any agent's turn is laid out step by step — what it saw, what was missing, why it chose this way. A failure doesn't hide, it names itself — and only what it touched replays."
+      "title": "Every action leaves a trail"
     },
     "next": {
       "title": "Next comes exchange",

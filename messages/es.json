@@ -50,12 +50,10 @@
     "subtitle": "Construyo un asistente de IA que adopta la forma que su usuario necesita — y la plataforma sin la cual no se puede construir.",
     "proof": {
       "title": "El código repite la intención",
-      "text": "Aquí la especificación no es un documento junto al código — es la forma del propio código. La intención está escrita como un árbol de requisitos, y el código debe seguir su estructura: cada cambio nombra el requisito al que sirve — si no lo nombra, la puerta lo devuelve. Lo que se puede verificar se verifica en vivo: antes de cada despliegue corre un escenario real contra el sistema vivo, y el rojo detiene la build. De la mención del Premio Turing de Dijkstra, 1972: un programa debe componerse correcto, no depurarse hasta la corrección. Aquí lo ejecuta una máquina."
+      "text": "Aquí la intención no es un documento junto al código, sino un árbol de requisitos dentro de él: desde el objetivo de negocio hasta una regla concreta. El código los referencia: un cambio muestra a qué sirve, y un requisito muestra todo lo que lo ejecuta. Tocar un requisito que ninguna verificación respalda y el push queda bloqueado. Y cada verificación declara qué partes del código juzga: si las tocas, corre contra el sistema vivo antes de que el cambio salga. De la mención del Premio Turing de Dijkstra, 1972: un programa debe componerse correcto, no depurarse hasta la corrección. Aquí lo ejecuta una máquina."
     },
     "inside": {
-      "title": "Cada acción deja rastro",
-      "levels": "Dos niveles — como un compilador y los programas que se escriben sobre él: los agentes construyen la plataforma misma y trabajan sobre ella, armando con los datos de una persona sus dominios, widgets y páginas.",
-      "text": "Cualquier turno de un agente está desglosado paso a paso — qué vio, qué faltó, por qué eligió así. Un fallo no se esconde: se nombra a sí mismo — y sólo se repite lo que tocó."
+      "title": "Cada acción deja rastro"
     },
     "next": {
       "title": "Luego viene el intercambio",

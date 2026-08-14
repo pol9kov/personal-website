@@ -23,10 +23,13 @@ interface ImperiaOSPageProps {
  * размера не вводить.
  *
  * ПОРЯДОК — ЕГО СЛОВОМ: подзаголовок → живой виджет → «У каждого действия
- * есть след» вплотную к виджету (виджет и ЕСТЬ этот след, его крой f31a14a),
- * и ПОД этим заголовком то, что он ожидал там прочитать: сперва два уровня
- * работы агентов, потом сам разбор хода («почему не написать под этим?»,
- * 2026-08-14).
+ * есть след» ОДНОЙ кликабельной строкой вплотную к виджету (виджет и ЕСТЬ этот
+ * след, его крой f31a14a) → концентрат про спеку. Прозы под ссылкой нет
+ * НАМЕРЕННО: разбор хода дословно повторял /about («у каждого действия есть
+ * след, ошибки кричат сразу»), а аналогия «компилятор и программы на нём» была
+ * снята им же — «аналогия не до конца правильная… за такую хуйню человек
+ * закатит глаза» (2026-08-14, событие ce0b35fc). Один источник правды между
+ * поверхностями: след живёт в /about и в самом виджете, здесь только ссылка.
  */
 export default async function ImperiaOSPage({ params }: ImperiaOSPageProps) {
   const { locale } = await params;
@@ -50,24 +53,18 @@ export default async function ImperiaOSPage({ params }: ImperiaOSPageProps) {
             <ImperiaWidgetFrame locale={locale} />
           </div>
 
-          <div className="mt-16 space-y-16">
-            <section>
-              <h2 className="mb-4 text-2xl font-bold">
-                <a
-                  href="https://imperiaos.com/domains#content=spec%3Amessage"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-900 transition-colors hover:text-blue-600 dark:text-white dark:hover:text-blue-400"
-                >
-                  {t("inside.title")} →
-                </a>
-              </h2>
-              <div className="space-y-4 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-                <p>{t("inside.levels")}</p>
-                <p>{t("inside.text")}</p>
-              </div>
-            </section>
+          <h2 className="mt-6 text-2xl font-bold">
+            <a
+              href="https://imperiaos.com/domains#content=spec%3Amessage"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-900 transition-colors hover:text-blue-600 dark:text-white dark:hover:text-blue-400"
+            >
+              {t("inside.title")} →
+            </a>
+          </h2>
 
+          <div className="mt-16 space-y-16">
             {sections.map((k) => (
               <section key={k}>
                 <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
