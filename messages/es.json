@@ -50,10 +50,7 @@
     "subtitle": "Construyo un asistente de IA que adopta la forma que su usuario necesita — y la plataforma sin la cual no se puede construir.",
     "proof": {
       "title": "El código repite la intención",
-      "text": "Aquí la intención no es un documento junto al código, sino un árbol de requisitos dentro de él: desde el objetivo de negocio hasta una regla concreta. El código los referencia: un cambio muestra a qué sirve, y un requisito muestra todo lo que lo ejecuta. Tocar un requisito que ninguna verificación respalda y el push queda bloqueado. Y cada verificación declara qué partes del código juzga: si las tocas, corre contra el sistema vivo antes de que el cambio salga. De la mención del Premio Turing de Dijkstra, 1972: un programa debe componerse correcto, no depurarse hasta la corrección. Aquí lo ejecuta una máquina."
-    },
-    "inside": {
-      "title": "Cada acción deja rastro"
+      "text": "La intención vive como un árbol de requisitos dentro del código: un cambio que toca un requisito sin ninguna verificación detrás no pasa. De la mención del Premio Turing de Dijkstra, 1972: un programa debe componerse correcto, no depurarse hasta la corrección — aquí lo ejecuta una máquina."
     },
     "next": {
       "title": "Luego viene el intercambio",
