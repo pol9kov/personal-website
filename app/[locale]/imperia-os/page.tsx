@@ -47,7 +47,7 @@ export default async function ImperiaOSPage({ params }: ImperiaOSPageProps) {
                 слово 2026-08-14: «зачем показываем прод, если там разработки
                 нет?»). Ручка отдаёт только счётчики — контент не утекает. */}
             <iframe
-              src="https://dev.imperiaos.com/widget/executor"
+              src={`https://dev.imperiaos.com/widget/executor?lang=${locale === "ru" ? "ru" : "en"}`}
               title="Imperia OS — live"
               loading="lazy"
               className="h-52 w-full rounded-xl border border-gray-200 dark:border-gray-800"
