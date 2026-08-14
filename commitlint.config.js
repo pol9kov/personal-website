@@ -1,7 +1,31 @@
+/**
+ * СЛОВО ВЛАДЕЛЬЦА В ТЕЛЕ КОММИТА ОБЯЗАНО НЕСТИ ID СОБЫТИЯ.
+ * Разбор 2026-08-14, класс owner-bafflement: c67f4c2 заявил «пары, утверждённые
+ * Егором построчно» на строфе, сочинённой агентом, и через сутки владелец не
+ * узнал свои слова на живом сайте. Правило и его укус по истории репозитория —
+ * scripts/owner-approval-claim.mjs + scripts/owner-approval-claim.test.mjs.
+ */
+const OWNER_APPROVAL_RULE = "owner-approval-needs-event-id";
+
 /** @type {import('@commitlint/types').UserConfig} */
 module.exports = {
   extends: ["@commitlint/config-conventional"],
+  plugins: [
+    {
+      rules: {
+        // Относительный динамический import: резолвится от самого файла конфига,
+        // без require() — его запрещает eslint-правило репозитория.
+        [OWNER_APPROVAL_RULE]: async (parsed) => {
+          const mod = await import("./scripts/owner-approval-claim.mjs");
+          const verdict = mod.ownerApprovalVerdict(parsed.raw ?? "");
+          return [verdict.ok, verdict.ok ? "" : verdict.red];
+        },
+      },
+    },
+  ],
   rules: {
+    // Апрув владельца, названный прозой, обязан назвать событие с его словом
+    [OWNER_APPROVAL_RULE]: [2, "always"],
     // Type должен быть один из списка
     "type-enum": [
       2,
