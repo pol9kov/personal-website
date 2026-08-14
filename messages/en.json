@@ -47,7 +47,7 @@
   },
   "imperiaOs": {
     "title": "Imperia OS",
-    "subtitle": "I'm building an AI assistant that takes the shape its user needs — and the platform it takes to build one.",
+    "subtitle": "I'm building an AI assistant that takes the shape its user needs — and the platform it takes to build one. An operating system, because an agent needs what a program needs — memory, tools, access rights; the platform provides them to all of them at once.",
     "proof": {
       "title": "Transparent by construction",
       "text": "A program must be composed correctly, not debugged into correctness — the phrasing of Dijkstra's 1972 Turing Award citation. AI writes the code here, yet the rule is held not by its judgment but by a deterministic algorithm."
