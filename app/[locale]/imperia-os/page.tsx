@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
+import { ImperiaWidgetFrame } from "@/components/shared/ImperiaWidgetFrame";
 
 export const metadata: Metadata = {
   title: "Imperia OS | Egor Polyakov",
@@ -44,14 +45,9 @@ export default async function ImperiaOSPage({ params }: ImperiaOSPageProps) {
           <div className="mt-8">
             {/* Окно в DEV: платформа строит себя на dev-исполнителе, прод
                 обслуживает пользователей и в его числах стройки нет (его
-                слово 2026-08-14: «зачем показываем прод, если там разработки
-                нет?»). Ручка отдаёт только счётчики — контент не утекает. */}
-            <iframe
-              src={`https://dev.imperiaos.com/widget/executor?lang=${locale}`}
-              title="Imperia OS — live"
-              loading="lazy"
-              className="h-52 w-full rounded-xl border border-gray-200 dark:border-gray-800"
-            />
+                слово 2026-08-14). Рамка с автовысотой: фиксированная резала
+                раскрывающиеся разделы (его нож 2026-08-14). */}
+            <ImperiaWidgetFrame locale={locale} />
           </div>
 
           {/* Мечта — крупная строфа, гвоздь градиентом */}
