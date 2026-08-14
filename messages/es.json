@@ -50,7 +50,7 @@
     "subtitle": "Construyo un asistente de IA que adopta la forma que su usuario necesita — y la plataforma sin la cual no se puede construir.",
     "proof": {
       "title": "Transparente por construcción",
-      "text": "Un programa debe componerse correcto, no depurarse hasta la corrección — la formulación de la mención del Premio Turing de Dijkstra, 1972. Aquí lo hace cumplir una máquina."
+      "text": "Un programa debe componerse correcto, no depurarse hasta la corrección — la formulación de la mención del Premio Turing de Dijkstra, 1972. Aquí el código lo escribe la IA, pero la regla no la sostiene su juicio, sino un algoritmo determinista."
     },
     "next": {
       "title": "Luego viene el multiverso",

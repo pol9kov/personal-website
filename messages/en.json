@@ -50,7 +50,7 @@
     "subtitle": "I'm building an AI assistant that takes the shape its user needs — and the platform it takes to build one.",
     "proof": {
       "title": "Transparent by construction",
-      "text": "A program must be composed correctly, not debugged into correctness — the phrasing of Dijkstra's 1972 Turing Award citation. Here a machine enforces it."
+      "text": "A program must be composed correctly, not debugged into correctness — the phrasing of Dijkstra's 1972 Turing Award citation. AI writes the code here, yet the rule is held not by its judgment but by a deterministic algorithm."
     },
     "next": {
       "title": "Next comes the multiverse",
