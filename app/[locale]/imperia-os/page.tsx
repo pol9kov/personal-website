@@ -23,7 +23,7 @@ export default async function ImperiaOSPage({ params }: ImperiaOSPageProps) {
   setRequestLocale(locale);
   const t = await getTranslations("imperiaOs");
 
-  const sections = ["proof", "inside", "next"] as const;
+  const sections = ["proof", "next"] as const;
 
   return (
     <main className="bg-gradient-to-b from-white to-gray-50 pt-28 pb-24 dark:from-gray-900 dark:to-gray-950">
@@ -39,9 +39,7 @@ export default async function ImperiaOSPage({ params }: ImperiaOSPageProps) {
 
           {/* Живой виджет платформы в герое — её дышащие цифры, без подписей:
               разделы исполнителя свёрнуты и раскрываются внутри (его крой
-              2026-08-13). Ссылка на след хода живёт у своего утверждения —
-              в секции «У каждого действия есть след», интерфейс там сам
-              объясняет, что делать. */}
+              2026-08-13). */}
           <div className="mt-8">
             {/* Окно в DEV: платформа строит себя на dev-исполнителе, прод
                 обслуживает пользователей и в его числах стройки нет (его
@@ -49,6 +47,29 @@ export default async function ImperiaOSPage({ params }: ImperiaOSPageProps) {
                 раскрывающиеся разделы (его нож 2026-08-14). */}
             <ImperiaWidgetFrame locale={locale} />
           </div>
+
+          {/* «У каждого действия есть след» стоит ВПЛОТНУЮ к виджету (его
+              слово 2026-08-14): виджет и ЕСТЬ этот след — его цифры это
+              действия агентов за сутки, а заголовок-ссылка ведёт в живой
+              разбор хода. Прежде утверждение стояло третьим экраном ниже, и
+              окно висело без слов, которые его объясняют. Это НЕ возврат
+              серой подписи под окном (её он снял в 2c0f55f) — переехала сама
+              секция целиком, второй копии текста нигде нет. */}
+          <section className="mt-8">
+            <h2 className="mb-3 text-2xl font-bold">
+              <a
+                href="https://imperiaos.com/domains#content=spec%3Amessage"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-900 transition-colors hover:text-blue-600 dark:text-white dark:hover:text-blue-400"
+              >
+                {t("inside.title")} →
+              </a>
+            </h2>
+            <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+              {t("inside.text")}
+            </p>
+          </section>
 
           {/* Мечта — крупная строфа, гвоздь градиентом */}
           <p className="mt-24 text-2xl font-medium leading-relaxed text-gray-900 dark:text-white sm:text-3xl">
@@ -59,25 +80,9 @@ export default async function ImperiaOSPage({ params }: ImperiaOSPageProps) {
           <div className="mt-20 space-y-16">
             {sections.map((k) => (
               <section key={k}>
-                {/* «У каждого действия есть след» — само утверждение и есть
-                    дверь к живому следу (его крой 2026-08-13: просто ссылка,
-                    без приглашений — интерфейс там объясняет себя сам). */}
-                {k === "inside" ? (
-                  <h2 className="mb-4 text-2xl font-bold">
-                    <a
-                      href="https://imperiaos.com/domains#content=spec%3Amessage"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-900 transition-colors hover:text-blue-600 dark:text-white dark:hover:text-blue-400"
-                    >
-                      {t(`${k}.title`)} →
-                    </a>
-                  </h2>
-                ) : (
-                  <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
-                    {t(`${k}.title`)}
-                  </h2>
-                )}
+                <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
+                  {t(`${k}.title`)}
+                </h2>
                 <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                   {t(`${k}.text`)}
                 </p>
