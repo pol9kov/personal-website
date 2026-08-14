@@ -53,8 +53,8 @@
       "text": "Un programa debe componerse correcto, no depurarse hasta la corrección — la formulación de la mención del Premio Turing de Dijkstra, 1972. Aquí el código lo escribe la IA, pero la regla no la sostiene su juicio, sino un algoritmo determinista."
     },
     "next": {
-      "title": "Entornos",
-      "text": "Escribir código es solo una parte del trabajo del agente. Lleva los asuntos de una persona y, cuanto más los lleva, con mayor precisión reúne para ella el resto del mundo: no un feed común, sino lo que esa persona necesita. Pero un solo agente choca con un límite: lo que de verdad importa ocurre entre personas. Por eso la plataforma no es una aplicación, sino la base sobre la que se construyen entornos donde las personas se encuentran a través de sus agentes."
+      "title": "La visión",
+      "text": "Escribir código es solo una parte del trabajo del agente. La principal es la persona: el agente lee sus datos, lleva sus asuntos y arma decisiones para ella. Cuanto más los lleva, mejor elige: qué leer, con quién trabajar, qué emprender. Habrá muchos agentes, uno por persona, y donde se encuentren crecerán entornos a la escala de YouTube o Twitter — con la diferencia de que la gente entra en ellos a través de sus agentes. Imperia OS es la infraestructura sobre la que se construyen esos entornos. Es un sueño, pero su base ya funciona — está justo arriba, en esta página."
     }
   },
   "caseStudies": {
