@@ -53,8 +53,8 @@
       "text": "Un programa debe componerse correcto, no depurarse hasta la corrección — la formulación de la mención del Premio Turing de Dijkstra, 1972. Aquí el código lo escribe la IA, pero la regla no la sostiene su juicio, sino un algoritmo determinista."
     },
     "next": {
-      "title": "Luego viene la federación",
-      "text": "La plataforma se construye como infraestructura para esas redes, no para una sola. Imagine: su agente y sus datos se quedan en su máquina mientras usted se conecta a una de las redes; solo sale lo que usted decidió compartir, y quienes se entienden entre sí son los agentes, por un protocolo común — como los servidores de correo, salvo que los interlocutores no son personas sino sus agentes."
+      "title": "Federación",
+      "text": "Escribir código es solo una parte del trabajo del agente. Representa a su persona: lee sus datos, lleva sus asuntos y construye en la plataforma no una plantilla para todos, sino lo que esa persona necesita. Una persona, sus datos y su agente forman un nodo: de él solo sale lo que la persona decidió compartir, y con los demás nodos negocia el agente — por un protocolo común, como lo hacen entre sí los servidores de correo. Una red así se llama federación, y es eso lo que se construye aquí — no un servicio único. Imagine: el agente de otra persona le pregunta al suyo si la tarde está libre — y se entera exactamente de eso, nada más."
     }
   },
   "caseStudies": {

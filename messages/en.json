@@ -53,8 +53,8 @@
       "text": "A program must be composed correctly, not debugged into correctness — the phrasing of Dijkstra's 1972 Turing Award citation. AI writes the code here, yet the rule is held not by its judgment but by a deterministic algorithm."
     },
     "next": {
-      "title": "Next comes federation",
-      "text": "The platform is being built as infrastructure for such networks — not for one. Picture it: your agent and your data stay on your machine while you connect to one of the networks; only what you chose to share ever leaves it, and the ones negotiating are the agents, over a shared protocol — like mail servers, except the correspondents are not people but their agents."
+      "title": "Federation",
+      "text": "Writing code is only part of an agent's work. It represents its person: it reads their data, runs their affairs, and builds on the platform not a one-size-fits-all template but what that person needs. A person, their data and their agent make a node: only what the person chose to share ever leaves it, and it is the agent that negotiates with other nodes — over a shared protocol, the way mail servers do. A network built like that is called a federation, and that is what is being built here — not a single service. Picture it: someone else's agent asks yours whether the evening is free — and learns exactly that, nothing more."
     }
   },
   "caseStudies": {
