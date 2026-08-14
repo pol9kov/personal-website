@@ -54,7 +54,7 @@
     },
     "proof": {
       "title": "The code mirrors the intent",
-      "text": "The specification here is not a document beside the code — it is the shape of the code itself. The intent is written as a tree of requirements, and the code must follow its structure: every change names the requirement it serves — fail to name it, and the gate turns it back. Whatever can be checked is checked live: a probe runs on every build and holds the release until it passes. Dijkstra's old rule, carried out by a machine: a program must be composed correctly, not debugged into correctness."
+      "text": "The specification here is not a document beside the code — it is the shape of the code itself. The intent is written as a tree of requirements, and the code must follow its structure: every change names the requirement it serves — fail to name it, and the gate turns it back. Whatever can be checked is checked live: before every release a real scenario runs against the live system, and red stops the build from going further. From Dijkstra's 1972 Turing Award citation: a program must be composed correctly, not debugged into correctness. Here a machine carries it out."
     },
     "inside": {
       "title": "Every action leaves a trail",
