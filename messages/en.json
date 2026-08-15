@@ -54,7 +54,7 @@
     },
     "next": {
       "title": "The operating system",
-      "text": "Writing code is only part of an agent's work. The main part is the person: the agent reads their data, runs their affairs and puts together decisions for them. Where people meet each other there's an environment — and they come into it through their agents. For environments like these the platform is the operating system: an environment installs on it the way an app installs on an OS. A person will pick the one that interests them and plug in; the tedious part — finding, sifting, putting the data together — goes to the agent, and the person gets the result: picked for them and shown the way that suits them."
+      "text": "Writing code is only part of an agent's work. The main part is the person: the agent reads their data, runs their affairs and puts together decisions for them. People gather into environments — each of them through their own agent. For environments like these the platform is the operating system: an environment installs on it like an app. The agent picks both the environment and everything worth having inside it, and the person gets the result: picked for them and shown the way that suits them."
     }
   },
   "caseStudies": {
