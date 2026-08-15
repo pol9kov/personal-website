@@ -64,6 +64,7 @@ export function Footer({ className }: FooterProps) {
 
   return (
     <footer
+      id="contacts"
       className={cn(
         "border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 py-8",
         className

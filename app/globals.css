@@ -94,3 +94,12 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* Подсветка контактов после клика «Написать» в hero */
+#contacts.contacts-highlight {
+  animation: contacts-pulse 1.6s ease-out;
+}
+@keyframes contacts-pulse {
+  0% { background-color: rgb(59 130 246 / 0.15); }
+  100% { background-color: transparent; }
+}
