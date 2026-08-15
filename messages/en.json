@@ -54,7 +54,7 @@
     },
     "next": {
       "title": "The operating system",
-      "text": "Writing code is only part of an agent's work. The main part is the person: the agent reads their data, runs their affairs and puts together decisions for them. There will be many such agents, one person each, and where they meet, whole environments will grow on the scale of YouTube or Twitter — with the difference that people come into them through their agents. For environments like these the platform is the operating system: an environment installs on it the way an app installs on an OS. A person will pick the one that interests them and plug in; the tedious part — finding, sifting, putting together — goes to the agent, and the person gets the result: picked for them and shown the way that suits them. It's a dream, but the ground under it already works — it's right above on this page."
+      "text": "Writing code is only part of an agent's work. The main part is the person: the agent reads their data, runs their affairs and puts together decisions for them. Where people meet each other there's an environment — and they come into it through their agents. For environments like these the platform is the operating system: an environment installs on it the way an app installs on an OS. A person will pick the one that interests them and plug in; the tedious part — finding, sifting, putting the data together — goes to the agent, and the person gets the result: picked for them and shown the way that suits them."
     }
   },
   "caseStudies": {

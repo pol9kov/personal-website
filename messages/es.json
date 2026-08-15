@@ -54,7 +54,7 @@
     },
     "next": {
       "title": "El sistema operativo",
-      "text": "Escribir código es solo una parte del trabajo del agente. La principal es la persona: el agente lee sus datos, lleva sus asuntos y arma decisiones para ella. Habrá muchos agentes, uno por persona, y donde se encuentren crecerán entornos enteros a la escala de YouTube o Twitter — con la diferencia de que la gente entra en ellos a través de sus agentes. Para esos entornos la plataforma es el sistema operativo: un entorno se instala en ella como una aplicación en un sistema operativo. La persona elegirá el que le interese y se conectará; la parte tediosa — buscar, filtrar, reunir — queda para el agente, y la persona recibe el resultado: elegido para ella y mostrado como le resulta cómodo. Es un sueño, pero su base ya funciona — está justo arriba, en esta página."
+      "text": "Escribir código es solo una parte del trabajo del agente. La principal es la persona: el agente lee sus datos, lleva sus asuntos y arma decisiones para ella. Donde la gente se encuentra hay un entorno — y se entra en él a través del propio agente. Para esos entornos la plataforma es el sistema operativo: un entorno se instala en ella como una aplicación en un sistema operativo. La persona elegirá el que le interese y se conectará; la parte tediosa — buscar, filtrar y reunir los datos — queda para el agente, y la persona recibe el resultado: elegido para ella y mostrado como le resulta cómodo."
     }
   },
   "caseStudies": {
