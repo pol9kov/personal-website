@@ -54,7 +54,7 @@
     },
     "next": {
       "title": "The operating system",
-      "text": "Writing code is only part of an agent's work. The main part is the person: the agent reads their data, runs their affairs and puts together decisions for them. And no person is alone — environments connect them to everyone else, each with its own rules of exchange. An environment installs on Imperia OS the way an app installs on an operating system. The agent finds an environment that interests the person, picks out what matters in it and shows it the way that suits them. The person gets it ready-made. And all of it is alive: the person keeps growing, environments appear and change, and the agent keeps learning the world alongside them."
+      "text": "Writing code is only part of an agent's work. The main part is the person: the agent reads their data, runs their affairs and puts together decisions for them. And no person is alone — environments connect them to everyone else, each with its own rules of exchange. An environment installs on Imperia OS the way an app installs on an operating system. The agent finds these environments, exchanges data in them with other people and shows it the way that suits this person."
     }
   },
   "caseStudies": {
