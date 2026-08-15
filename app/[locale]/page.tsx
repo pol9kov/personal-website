@@ -1,5 +1,5 @@
 import { setRequestLocale } from "next-intl/server";
-import { Hero, Skills } from "@/components/sections";
+import { Hero } from "@/components/sections";
 
 interface HomePageProps {
   params: Promise<{ locale: string }>;
@@ -11,8 +11,9 @@ export default async function Home({ params }: HomePageProps) {
 
   return (
     <main>
+      {/* Секция навыков снята целиком (Егор 2026-08-15): сайт читает человек,
+          а не ATS — навыки несёт резюме, сайт продаёт платформу. */}
       <Hero />
-      <Skills />
     </main>
   );
 }

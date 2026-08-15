@@ -12,12 +12,6 @@ export interface Project {
   github?: string;
 }
 
-export interface Skill {
-  name: string;
-  category: "languages" | "frameworks" | "databases" | "devops" | "other";
-  proficiency: number; // 1-5
-}
-
 export interface ContactForm {
   name: string;
   email: string;
