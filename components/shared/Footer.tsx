@@ -40,7 +40,15 @@ function EmailCopy({ label, copiedLabel }: { label: string; copiedLabel: string 
       </button>
       <span
         className={cn(
-          "pointer-events-none absolute bottom-full left-1/2 mb-2 -translate-x-1/2 whitespace-nowrap rounded-md px-2.5 py-1 text-xs",
+          // ПОЧЕМУ ПРАВЫЙ КРАЙ, А НЕ ЦЕНТР. Почта — последний элемент в строке,
+          // прижатой вправо. Тултип шириной 162px, центрированный на ней
+          // (left-1/2 + -translate-x-1/2), вылезал за правый край экрана: на
+          // iPhone документ становился 434px при экране 390 и ВСЯ страница
+          // ездила вбок — Егор 2026-08-15 («вправо-влево двигаю, ходит ходуном
+          // вся страница», левая часть текста уходила за экран). Замер до
+          // правки: scrollWidth 434 при clientWidth 390, единственный виновник —
+          // этот span. Правый край держит тултип внутри контейнера всегда.
+          "pointer-events-none absolute bottom-full right-0 mb-2 whitespace-nowrap rounded-md px-2.5 py-1 text-xs",
           "bg-gray-900 text-gray-100 dark:bg-gray-100 dark:text-gray-900",
           "opacity-0 transition-opacity group-hover:opacity-100",
         )}
@@ -66,7 +74,11 @@ export function Footer({ className }: FooterProps) {
     <footer
       id="contacts"
       className={cn(
-        "border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 py-8",
+        // pb-28 на мобильном: iOS Safari держит свою нижнюю панель ПОВЕРХ
+        // страницы, и контакты, доехавшие до самого низа документа, оказывались
+        // под ней — Егор 2026-08-15 («нижняя плашка закрыта панелью», скриншот).
+        // Запас поднимает строку контактов над панелью; на десктопе он не нужен.
+        "border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 pt-8 pb-28 sm:pb-8",
         className
       )}
     >
