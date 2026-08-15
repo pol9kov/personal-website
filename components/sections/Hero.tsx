@@ -44,13 +44,21 @@ export function Hero({ className }: HeroProps) {
   return (
     <section
       className={cn(
-        "flex min-h-[calc(100vh-4rem)] items-center justify-center bg-gradient-to-b from-white to-gray-50",
+        // flex-1 вместо min-h в целый экран: жёсткая высота выталкивала футер
+        // за кадр даже на пустой главной (Егор 2026-08-15: «должно влезать»).
+        // Каркас в layout уже колонка в высоту экрана — герой занимает
+        // остаток, и футер виден без скролла.
+        "flex flex-1 items-center justify-center bg-gradient-to-b from-white to-gray-50",
         "dark:from-gray-900 dark:to-gray-950",
         className
       )}
     >
       <div className="container mx-auto px-4">
-        <div className="mx-auto max-w-2xl">
+        {/* text-center: текст был выровнен влево под фотографию-противовес
+            справа; фото уехало (2026-08-15), и левая колонка при центральной
+            кнопке дала две оси — «написать по центру, текст сбоку» (Егор).
+            Ось у страницы одна, центральная. */}
+        <div className="mx-auto max-w-2xl text-center">
           {/* Фото уехало на «О себе» (Джамиль → Егор, 2026-08-15):
               главная продаёт работу, человека представляет личная страница. */}
           <h1

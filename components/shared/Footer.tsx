@@ -83,7 +83,9 @@ export function Footer({ className }: FooterProps) {
       )}
     >
       <div className="container mx-auto px-4">
-        <div className="flex flex-col items-end gap-3">
+        {/* items-center: у страницы одна центральная ось (герой по центру
+            с 2026-08-15) — контакты, прижатые вправо, с неё выпадали. */}
+        <div className="flex flex-col items-center gap-3">
           <a
             href="https://t.me/pol9kov"
             target="_blank"

@@ -10,7 +10,7 @@ export default async function Home({ params }: HomePageProps) {
   setRequestLocale(locale);
 
   return (
-    <main>
+    <main className="flex flex-col">
       {/* Секция навыков снята целиком (Егор 2026-08-15): сайт читает человек,
           а не ATS — навыки несёт резюме, сайт продаёт платформу. */}
       <Hero />
