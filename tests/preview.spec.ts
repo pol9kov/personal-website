@@ -15,8 +15,10 @@ test.describe("Rework preview", () => {
   });
 
   test("resume PDFs keep serving", async ({ request }) => {
-    for (const lang of ["en", "ru", "es"]) {
-      const res = await request.get(`/resume-${lang}.pdf`);
+    // Имена с ведущим подчёркиванием — файл встаёт первым в загрузках
+    // (Егор, 2026-08-15). Старые пути /resume-*.pdf сняты без редиректов.
+    for (const lang of ["EN", "RU", "ES"]) {
+      const res = await request.get(`/_Yegor_Polyakov_Resume_${lang}.pdf`);
       expect(res.status()).toBe(200);
       expect(res.headers()["content-type"]).toContain("pdf");
     }
