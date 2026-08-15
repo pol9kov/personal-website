@@ -31,6 +31,7 @@ const WIDGET_CANVAS = "#201e1b";
 
 export function ImperiaWidgetFrame({ locale }: { locale: string }) {
   const [height, setHeight] = useState(208);
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
     const onMessage = (e: MessageEvent) => {
@@ -38,6 +39,7 @@ export function ImperiaWidgetFrame({ locale }: { locale: string }) {
       const d = e.data as { type?: string; height?: number };
       if (d?.type === "imperia-widget-height" && typeof d.height === "number") {
         setHeight(Math.max(120, Math.min(900, Math.ceil(d.height))));
+        setReady(true);
       }
     };
     window.addEventListener("message", onMessage);
@@ -62,7 +64,13 @@ export function ImperiaWidgetFrame({ locale }: { locale: string }) {
         title="Imperia OS — live"
         loading="lazy"
         scrolling="no"
-        style={{ height, backgroundColor: WIDGET_CANVAS }}
+        // ОКНО ПОКАЗЫВАЕМ ТОЛЬКО КОГДА ОНО ЗАГОВОРИЛО. Пока документ окна не
+        // отрисован (платформа перезапускается, сеть тормозит, страница пустая),
+        // браузер красит его площадь белым ПОВЕРХ фона элемента — Егор поймал
+        // это 2026-08-15 скриншотом с телефона: на месте виджета белый
+        // прямоугольник. Первое сообщение о высоте = документ жив; до него
+        // видна тёмная рамка того же цвета, что и полотно виджета.
+        style={{ height, backgroundColor: WIDGET_CANVAS, opacity: ready ? 1 : 0 }}
         className="block w-full border-0"
       />
     </div>
