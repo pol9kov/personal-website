@@ -2,10 +2,8 @@
 
 import { useTranslations } from "next-intl";
 import { skills } from "@/lib/constants/skills";
-import { SKILL_ROW_HEIGHT, SKILL_ROW_GAP } from "@/lib/constants/skill-chart";
 import { Skill } from "@/lib/types";
 import { cn } from "@/lib/utils/cn";
-import { SkillIntegralChart } from "@/components/ui";
 
 /**
  * Skills section props
@@ -68,30 +66,18 @@ export function Skills({ className }: SkillsProps) {
                   {categories[category as Skill["category"]]}
                 </h3>
 
-                {/* Skills list with integral overlay */}
-                <div className="relative">
-                  {/* Integral area chart overlay */}
-                  <SkillIntegralChart category={category as Skill["category"]} />
-
-                  {/* Названия навыков. Полоски убраны: уровень показывает
-                      кривая позади — её горизонтальный размах на строке навыка
-                      и есть его уровень, а полоска дублировала то же самое
-                      вторым способом. Строка сохраняет прежнюю высоту, потому
-                      что кривая опирается на её середину. */}
-                  <div className="relative z-10 flex flex-col" style={{ gap: SKILL_ROW_GAP }}>
-                    {sortedSkills.map((skill) => (
-                      <div
-                        key={skill.name}
-                        className="flex flex-col justify-center"
-                        style={{ height: SKILL_ROW_HEIGHT }}
-                      >
-                        <span className="font-medium text-gray-700 dark:text-gray-300">
-                          {skill.name}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+                {/* Графики сняты (Егор 2026-08-15: «убрать графики… это фейк») —
+                    остаются только названия: в чём есть опыт, без самооценок. */}
+                <ul className="space-y-3">
+                  {sortedSkills.map((skill) => (
+                    <li
+                      key={skill.name}
+                      className="font-medium text-gray-700 dark:text-gray-300"
+                    >
+                      {skill.name}
+                    </li>
+                  ))}
+                </ul>
               </div>
             );
           })}

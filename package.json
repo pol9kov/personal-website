@@ -3,9 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "generate:skills": "tsx scripts/generate-skill-images.ts",
-    "dev": "npm run generate:skills && next dev",
-    "build": "npm run generate:skills && next build",
+    "dev": "next dev",
+    "build": "next build",
     "start": "next start",
     "lint": "eslint",
     "lint:fix": "eslint --fix",

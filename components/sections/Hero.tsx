@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils/cn";
 
@@ -52,29 +51,8 @@ export function Hero({ className }: HeroProps) {
     >
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-2xl">
-          {/* Photo floats to the right, text wraps around it */}
-          <div
-            className="relative float-right ml-2 mb-2 sm:ml-6 sm:mb-6 h-36 w-36 sm:h-44 sm:w-44 md:h-52 md:w-52 rounded-full overflow-hidden"
-            style={{ shapeOutside: "circle(50%)" }}
-          >
-            {/* Mobile: pre-cropped zoomed version */}
-            <Image
-              src="/images/profile-mobile.jpg"
-              alt={t("name")}
-              fill
-              className="object-cover sm:hidden"
-              priority
-            />
-            {/* Desktop: full image */}
-            <Image
-              src="/images/profile.jpg"
-              alt={t("name")}
-              fill
-              className="object-cover hidden sm:block"
-              priority
-            />
-          </div>
-
+          {/* Фото уехало на «О себе» (Джамиль → Егор, 2026-08-15):
+              главная продаёт работу, человека представляет личная страница. */}
           <h1
             className="inline text-4xl font-bold leading-snug sm:text-5xl md:text-6xl name-gradient"
           >
@@ -87,9 +65,6 @@ export function Hero({ className }: HeroProps) {
           <p className="mt-5 font-mono text-xs tracking-widest text-gray-400 dark:text-gray-500 opacity-70 uppercase">
             {t("tags")}
           </p>
-
-          {/* Clear float */}
-          <div className="clear-both"></div>
 
           <div className="mt-10 flex justify-center">
             <button

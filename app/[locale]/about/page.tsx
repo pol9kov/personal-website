@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 
@@ -33,11 +34,33 @@ export default async function AboutPage({ params }: AboutPageProps) {
               this page carries only the personal story (Egor, 2026-08-11). */}
           <div className="space-y-16">
             <section>
+              {/* Фото переехало сюда с главной (Джамиль → Егор, 2026-08-15):
+                  главная продаёт работу, человека представляет эта страница. */}
+              <div
+                className="relative float-right ml-4 mb-4 sm:ml-6 sm:mb-6 h-36 w-36 sm:h-44 sm:w-44 rounded-full overflow-hidden"
+                style={{ shapeOutside: "circle(50%)" }}
+              >
+                <Image
+                  src="/images/profile-mobile.jpg"
+                  alt="Egor Polyakov"
+                  fill
+                  className="object-cover sm:hidden"
+                  priority
+                />
+                <Image
+                  src="/images/profile.jpg"
+                  alt="Egor Polyakov"
+                  fill
+                  className="object-cover hidden sm:block"
+                  priority
+                />
+              </div>
               <div className="space-y-4 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                 <p>{t("whoIAm.p1")}</p>
                 <p>{t("whoIAm.p2")}</p>
                 <p>{t("whoIAm.p3")}</p>
               </div>
+              <div className="clear-both"></div>
             </section>
 
           </div>
