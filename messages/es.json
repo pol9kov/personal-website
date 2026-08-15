@@ -53,7 +53,7 @@
     },
     "next": {
       "title": "El sistema operativo",
-      "text": "Escribir código es solo una parte del trabajo del agente. La principal es la persona: el agente lee sus datos, lleva sus asuntos y arma decisiones para ella. Y nadie está solo: los entornos la conectan con los demás, y cada uno tiene sus propias reglas de intercambio. Un entorno se instala en Imperia OS como una aplicación en un sistema operativo. El agente encuentra esos entornos, intercambia datos en ellos con otras personas y muestra lo que recibe como le resulta cómodo a esta persona."
+      "text": "Escribir código es solo una parte del trabajo del agente. La principal es la persona: el agente trabaja con sus datos, ayuda a llevar sus asuntos y reúne aquello en lo que la persona basa sus decisiones. Y nadie está solo: los entornos la conectan con los demás, y cada uno tiene sus propias reglas de intercambio. Un entorno se instala en Imperia OS como una aplicación en un sistema operativo. El agente encuentra esos entornos, intercambia datos en ellos con otras personas y muestra lo que recibe como le resulta cómodo a esta persona."
     }
   },
   "caseStudies": {
