@@ -46,7 +46,7 @@ export async function generateMetadata({
   const { locale } = await params;
 
   const isRu = locale === "ru";
-  const name = isRu ? "Егор Поляков" : "Egor Polyakov";
+  const name = isRu ? "Егор Поляков" : "Yegor Polyakov";
   // Текст карточки (og) — только из согласованных строк: заголовок — строка
   // героя, вторая — факт из резюме (Егор 2026-08-15: «карточка старенькая,
   // текст поменять, дизайн оставить»).
@@ -71,7 +71,7 @@ export async function generateMetadata({
           url: "https://egor-polyakov.vercel.app/api/og",
           width: 1200,
           height: 630,
-          alt: "Egor Polyakov — Humans give meaning. AI gives form.",
+          alt: "Yegor Polyakov — Humans give meaning. AI gives form.",
         },
       ],
     },

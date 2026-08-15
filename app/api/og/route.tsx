@@ -52,7 +52,7 @@ export async function GET() {
               letterSpacing: "-0.02em",
             }}
           >
-            Egor Polyakov
+            Yegor Polyakov
           </h1>
 
           {/* Роль — второй уровень */}
@@ -93,11 +93,11 @@ export async function GET() {
             transform: "translateY(-50%)",
             display: "flex",
             flexDirection: "column",
-            gap: "16px",
+            gap: "30px",
           }}
         >
           {[...Array(5)].map((_, row) => (
-            <div key={row} style={{ display: "flex", gap: "16px" }}>
+            <div key={row} style={{ display: "flex", gap: "30px" }}>
               {[...Array(5)].map((_, col) => {
                 // Gradient from bottom-left (light) to top-right (dark)
                 // row 4 = bottom, row 0 = top; col 0 = left, col 4 = right
@@ -112,8 +112,8 @@ export async function GET() {
                   <div
                     key={col}
                     style={{
-                      width: "8px",
-                      height: "8px",
+                      width: "18px",
+                      height: "18px",
                       borderRadius: "50%",
                       backgroundColor: `rgba(${r}, ${g}, ${b}, ${opacity})`,
                     }}

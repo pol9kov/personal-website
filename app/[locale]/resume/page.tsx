@@ -3,7 +3,7 @@ import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 
 export const metadata: Metadata = {
-  title: "Resume | Egor Polyakov",
+  title: "Resume | Yegor Polyakov",
   description: "Download my professional resume",
 };
 

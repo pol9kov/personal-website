@@ -10,7 +10,7 @@ test.describe("Rework preview", () => {
   test("root serves the home page", async ({ page }) => {
     await page.goto("/");
     await expect(
-      page.getByRole("heading", { name: "Egor Polyakov" }),
+      page.getByRole("heading", { name: "Yegor Polyakov" }),
     ).toBeVisible();
   });
 

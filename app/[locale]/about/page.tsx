@@ -4,7 +4,7 @@ import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 
 export const metadata: Metadata = {
-  title: "About | Egor Polyakov",
+  title: "About | Yegor Polyakov",
   description:
     "Building Imperia OS — an AI assistant and the agent platform that goal requires. Over a decade of backend systems that stay understandable under complexity.",
 };
@@ -42,14 +42,14 @@ export default async function AboutPage({ params }: AboutPageProps) {
               >
                 <Image
                   src="/images/profile-mobile.jpg"
-                  alt="Egor Polyakov"
+                  alt="Yegor Polyakov"
                   fill
                   className="object-cover sm:hidden"
                   priority
                 />
                 <Image
                   src="/images/profile.jpg"
-                  alt="Egor Polyakov"
+                  alt="Yegor Polyakov"
                   fill
                   className="object-cover hidden sm:block"
                   priority

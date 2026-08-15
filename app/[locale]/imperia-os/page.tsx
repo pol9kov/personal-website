@@ -4,7 +4,7 @@ import { getTranslations } from "next-intl/server";
 import { ImperiaWidgetFrame } from "@/components/shared/ImperiaWidgetFrame";
 
 export const metadata: Metadata = {
-  title: "Imperia OS | Egor Polyakov",
+  title: "Imperia OS | Yegor Polyakov",
   description:
     "An AI assistant that takes the shape its user needs — and the agent platform it takes to build one. Every action leaves a trail.",
 };
