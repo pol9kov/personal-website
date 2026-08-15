@@ -95,11 +95,12 @@ body {
   background-clip: text;
 }
 
-/* Подсветка контактов после клика «Написать» в hero */
-#contacts.contacts-highlight {
-  animation: contacts-pulse 1.6s ease-out;
+/* Подсветка контактов после клика «Написать» в hero: сам текст контактов
+   дважды пульсирует голубым (цвет кнопки «Написать») и возвращается
+   в стандартный. Класс вешается после того, как страница доехала вниз. */
+#contacts.contacts-highlight :is(a, button) {
+  animation: contacts-pulse 1.1s ease-in-out 2;
 }
 @keyframes contacts-pulse {
-  0% { background-color: rgb(59 130 246 / 0.15); }
-  100% { background-color: transparent; }
+  50% { color: rgb(59 130 246); }
 }

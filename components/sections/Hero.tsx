@@ -25,11 +25,21 @@ export function Hero({ className }: HeroProps) {
   const scrollToContacts = () => {
     const el = document.getElementById("contacts");
     if (!el) return;
-    el.scrollIntoView({ behavior: "smooth", block: "end" });
     el.classList.remove("contacts-highlight");
-    // перезапуск анимации при повторном клике
-    void el.offsetWidth;
-    el.classList.add("contacts-highlight");
+    el.scrollIntoView({ behavior: "smooth", block: "end" });
+    // Пульс — когда страница ДОЕХАЛА вниз, а не в момент клика:
+    // ждём scrollend; таймер — на случай браузера без события
+    // или когда скроллить уже нечего (scrollend тогда не приходит).
+    let fired = false;
+    const pulse = () => {
+      if (fired) return;
+      fired = true;
+      window.removeEventListener("scrollend", pulse);
+      void el.offsetWidth; // перезапуск анимации при повторном клике
+      el.classList.add("contacts-highlight");
+    };
+    window.addEventListener("scrollend", pulse, { once: true });
+    window.setTimeout(pulse, 1200);
   };
 
   return (
