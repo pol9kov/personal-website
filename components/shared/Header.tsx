@@ -46,9 +46,17 @@ export function Header() {
 
 
   return (
-    <>
+    // ПОЧЕМУ ОБЁРТКА, А НЕ sticky НА САМОЙ ШАПКЕ. Раскрытое мобильное меню —
+    // СЕСТРА шапки, а не её потомок. Пока `sticky` висел на <header>, липла
+    // одна шапка, а панель со ссылками оставалась обычным блоком в потоке
+    // документа, то есть у САМОГО ВЕРХА страницы: внизу длинной страницы
+    // нажатие на бургер открывало её за экраном — кнопка «не работает».
+    // Поймал Джамиль 2026-08-15 («посмотри на мобилке, когда скролл внизу
+    // страницы, нажми на меню»). Липнет общий контейнер — панель едет вместе
+    // с шапкой на любом скролле.
+    <div className="sticky top-0 z-50">
       <header
-        className="sticky top-0 z-50 h-12 border-b flex items-center px-3 md:px-4 justify-between"
+        className="h-12 border-b flex items-center px-3 md:px-4 justify-between"
         style={{ backgroundColor: 'var(--background)', borderColor: 'var(--border-color)' }}
       >
         {/* Left: Logo */}
@@ -163,6 +171,6 @@ export function Header() {
           </nav>
         </div>
       )}
-    </>
+    </div>
   );
 }
