@@ -47,10 +47,13 @@ export async function generateMetadata({
 
   const isRu = locale === "ru";
   const name = isRu ? "Егор Поляков" : "Egor Polyakov";
-  const title = isRu ? "Backend & AI инженер" : "Backend & AI Engineer";
+  // Текст карточки (og) — только из согласованных строк: заголовок — строка
+  // героя, вторая — факт из резюме (Егор 2026-08-15: «карточка старенькая,
+  // текст поменять, дизайн оставить»).
+  const title = "AI Agent Platform Engineer";
   const description = isRu
-    ? "Агентные платформы и LLM-инфраструктура: потоком управляет алгоритм, а не LLM"
-    : "Agent platforms and LLM infrastructure: the algorithm controls the flow, not the LLM";
+    ? "Человек задаёт смысл. AI придаёт форму. Imperia OS — ИИ-платформа, в которой код пишут агенты."
+    : "Humans give meaning. AI gives form. Imperia OS — an AI platform whose agents write the code.";
 
   return {
     title,
@@ -68,7 +71,7 @@ export async function generateMetadata({
           url: "https://egor-polyakov.vercel.app/api/og",
           width: 1200,
           height: 630,
-          alt: "Egor Polyakov - Agent Platforms and LLM Infrastructure",
+          alt: "Egor Polyakov — Humans give meaning. AI gives form.",
         },
       ],
     },

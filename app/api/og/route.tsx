@@ -50,7 +50,7 @@ export async function GET() {
               letterSpacing: "0.02em",
             }}
           >
-            Egor Polyakov · Backend & AI Engineer
+            Egor Polyakov · AI Agent Platform Engineer
           </p>
 
           {/* Headline */}
@@ -64,7 +64,7 @@ export async function GET() {
               letterSpacing: "-0.02em",
             }}
           >
-            The algorithm controls the flow, not the LLM
+            Humans give meaning. AI gives form.
           </h1>
 
           {/* Subtitle */}
@@ -79,7 +79,7 @@ export async function GET() {
               whiteSpace: "nowrap",
             }}
           >
-            Agent platforms: a state-machine runtime, memory, protocols.
+            Imperia OS — an AI platform whose agents write the code.
           </p>
 
           {/* Bottom tags */}
@@ -94,7 +94,7 @@ export async function GET() {
               textTransform: "uppercase",
             }}
           >
-            AI Agents · LLM Platform · Backend
+            AI Agents · Backend / Full-Stack
           </p>
         </div>
 
