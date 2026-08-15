@@ -27,6 +27,7 @@
 import { useEffect, useState } from "react";
 
 const WIDGET_ORIGIN = "https://dev.imperiaos.com";
+const WIDGET_CANVAS = "#201e1b";
 
 export function ImperiaWidgetFrame({ locale }: { locale: string }) {
   const [height, setHeight] = useState(208);
@@ -44,13 +45,24 @@ export function ImperiaWidgetFrame({ locale }: { locale: string }) {
   }, []);
 
   return (
-    <div className="w-full overflow-hidden rounded-xl border border-gray-200 dark:border-gray-800">
+    // ЦВЕТ ПОЛОТНА ВИДЖЕТА — НА САМОЙ РАМКЕ, А НЕ ТОЛЬКО ВНУТРИ ОКНА. Пока
+    // документ окна не загружен, браузер красит площадь iframe СВОИМ дефолтным
+    // холстом — белым; на телефоне это видно как светлая вспышка на полсекунды
+    // перед тем, как виджет станет тёмным (Егор 2026-08-15). Фон на элементе
+    // iframe и на обёртке занимает тот же прямоугольник ДО загрузки, а после
+    // загрузки его перекрывает собственный фон документа — вспышке взяться
+    // неоткуда. Значение — ровно полотно embed-страницы платформы
+    // (packages/app/app/widget/executor/page.tsx, background: '#201e1b').
+    <div
+      className="w-full overflow-hidden rounded-xl border border-gray-200 dark:border-gray-800"
+      style={{ backgroundColor: WIDGET_CANVAS }}
+    >
       <iframe
         src={`${WIDGET_ORIGIN}/widget/executor?lang=${locale}`}
         title="Imperia OS — live"
         loading="lazy"
         scrolling="no"
-        style={{ height }}
+        style={{ height, backgroundColor: WIDGET_CANVAS }}
         className="block w-full border-0"
       />
     </div>
