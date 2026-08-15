@@ -121,18 +121,3 @@ body {
   background-clip: text;
 }
 
-/* Подсветка контактов после клика «Написать» в hero: текст контактов один раз
-   плавно загорается голубым свечением (цвет кнопки «Написать») и гаснет.
-   Класс вешается после того, как страница доехала вниз. */
-#contacts.contacts-highlight :is(a, button) {
-  animation: contacts-pulse 2.2s ease-in-out 1;
-}
-@keyframes contacts-pulse {
-  50% {
-    color: rgb(37 99 235);
-    text-shadow:
-      0 0 1px rgb(59 130 246),
-      0 0 6px rgb(59 130 246 / 0.95),
-      0 0 14px rgb(59 130 246 / 0.55);
-  }
-}

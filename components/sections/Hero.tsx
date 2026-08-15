@@ -21,26 +21,6 @@ export interface HeroProps {
 export function Hero({ className }: HeroProps) {
   const t = useTranslations("hero");
 
-  const scrollToContacts = () => {
-    const el = document.getElementById("contacts");
-    if (!el) return;
-    el.classList.remove("contacts-highlight");
-    el.scrollIntoView({ behavior: "smooth", block: "end" });
-    // Пульс — когда страница ДОЕХАЛА вниз, а не в момент клика:
-    // ждём scrollend; таймер — на случай браузера без события
-    // или когда скроллить уже нечего (scrollend тогда не приходит).
-    let fired = false;
-    const pulse = () => {
-      if (fired) return;
-      fired = true;
-      window.removeEventListener("scrollend", pulse);
-      void el.offsetWidth; // перезапуск анимации при повторном клике
-      el.classList.add("contacts-highlight");
-    };
-    window.addEventListener("scrollend", pulse, { once: true });
-    window.setTimeout(pulse, 1200);
-  };
-
   return (
     <section
       className={cn(
@@ -54,11 +34,11 @@ export function Hero({ className }: HeroProps) {
       )}
     >
       <div className="container mx-auto px-4">
-        {/* text-center: текст был выровнен влево под фотографию-противовес
-            справа; фото уехало (2026-08-15), и левая колонка при центральной
-            кнопке дала две оси — «написать по центру, текст сбоку» (Егор).
-            Ось у страницы одна, центральная. */}
-        <div className="mx-auto max-w-2xl text-center">
+        {/* Левая ось, как на резюме и «Обо мне» — одна система на весь сайт
+            (Егор 2026-08-15: «на всех страницах не центрировано»). Две оси
+            давала центральная кнопка «Написать» — она убрана: CTA теперь
+            цветная «Написать» в футере, общем для всех страниц. */}
+        <div className="mx-auto max-w-2xl">
           {/* Фото уехало на «О себе» (Джамиль → Егор, 2026-08-15):
               главная продаёт работу, человека представляет личная страница. */}
           <h1
@@ -73,15 +53,6 @@ export function Hero({ className }: HeroProps) {
           <p className="mt-5 font-mono text-xs tracking-widest text-gray-400 dark:text-gray-500 opacity-70 uppercase">
             {t("tags")}
           </p>
-
-          <div className="mt-10 flex justify-center">
-            <button
-              onClick={scrollToContacts}
-              className="text-lg font-medium text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 transition-colors cursor-pointer"
-            >
-              {t("contactMe")}
-            </button>
-          </div>
         </div>
       </div>
     </section>

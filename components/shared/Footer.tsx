@@ -74,23 +74,25 @@ export function Footer({ className }: FooterProps) {
     <footer
       id="contacts"
       className={cn(
-        // pb-28 на мобильном: iOS Safari держит свою нижнюю панель ПОВЕРХ
-        // страницы, и контакты, доехавшие до самого низа документа, оказывались
-        // под ней — Егор 2026-08-15 («нижняя плашка закрыта панелью», скриншот).
-        // Запас поднимает строку контактов над панелью; на десктопе он не нужен.
-        "border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 pt-8 pb-28 sm:pb-8",
+        // Нижний отступ на мобильном — обычные 2rem плюс РОВНО высота нижней
+        // панели iOS Safari через env(safe-area-inset-bottom): жёсткий pb-28
+        // раздувал футер на четверть экрана (Егор 2026-08-15), а прятал
+        // контакты под панелью именно её системный размер — его env() и даёт.
+        "border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 pt-8 pb-[calc(2rem+env(safe-area-inset-bottom))] sm:pb-8",
         className
       )}
     >
       <div className="container mx-auto px-4">
-        {/* items-center: у страницы одна центральная ось (герой по центру
-            с 2026-08-15) — контакты, прижатые вправо, с неё выпадали. */}
-        <div className="flex flex-col items-center gap-3">
+        {/* Правый край, как было до центрирования: ось сайта левая (герой
+            снова слева словом Егора 2026-08-15), контакты — правый противовес. */}
+        <div className="flex flex-col items-end gap-3">
+          {/* Цветная «Написать» на каждой странице (Егор 2026-08-15): кнопка
+              уехала из героя сюда — футер общий, CTA один и всегда в кадре. */}
           <a
             href="https://t.me/pol9kov"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+            className="text-base font-medium text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 transition-colors"
           >
             {t("contact")}
           </a>
