@@ -53,8 +53,8 @@
       "text": "A program must be composed correctly, not debugged into correctness — the phrasing of Dijkstra's 1972 Turing Award citation. AI writes the code here, yet the rule is held not by its judgment but by a deterministic algorithm."
     },
     "next": {
-      "title": "The vision",
-      "text": "Writing code is only part of an agent's work. The main part is the person: the agent reads their data, runs their affairs and puts together decisions for them. The longer it runs them, the sharper its picks: what to read, whom to work with, what to take on. There will be many such agents, one person each, and where they meet, environments will grow on the scale of YouTube or Twitter — with the difference that people come into them through their agents. Imperia OS is the infrastructure such environments are built on. It's a dream, but the ground under it already works — it's right above on this page."
+      "title": "The operating system",
+      "text": "Writing code is only part of an agent's work. The main part is the person: the agent reads their data, runs their affairs and puts together decisions for them. There will be many such agents, one person each, and where they meet, whole environments will grow on the scale of YouTube or Twitter — with the difference that people come into them through their agents. For environments like these the platform is the operating system: an environment installs on it the way an app installs on an OS. A person will pick the one that interests them and plug in; the tedious part — finding, sifting, putting together — goes to the agent, and the person gets the result: picked for them and shown the way that suits them. It's a dream, but the ground under it already works — it's right above on this page."
     }
   },
   "caseStudies": {
