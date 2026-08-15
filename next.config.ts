@@ -6,6 +6,12 @@ const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 const nextConfig: NextConfig = {
   async redirects() {
     return [
+      // Файлы резюме переименованы под опознаваемое имя (см. комментарий в
+      // app/[locale]/resume/page.tsx). Старые адреса уже разосланы людям —
+      // они обязаны продолжать работать.
+      { source: "/resume-en.pdf", destination: "/_Yegor_Polyakov_Resume_EN.pdf", permanent: false },
+      { source: "/resume-ru.pdf", destination: "/_Yegor_Polyakov_Resume_RU.pdf", permanent: false },
+      { source: "/resume-es.pdf", destination: "/_Yegor_Polyakov_Resume_ES.pdf", permanent: false },
       // Imperia OS — не кейс, а живое дело со своей страницей (Егор, 2026-08-13);
       // старый адрес разборного экрана ведёт на неё.
       {

@@ -31,15 +31,15 @@ export default function MaintenancePage() {
         </p>
         <p style={{ fontSize: 17, lineHeight: 1.6 }}>
           Resume:{" "}
-          <a href="/resume-en.pdf" style={{ color: "#7aa2f7" }}>
+          <a href="/_Yegor_Polyakov_Resume_EN.pdf" style={{ color: "#7aa2f7" }}>
             English
           </a>{" "}
           ·{" "}
-          <a href="/resume-ru.pdf" style={{ color: "#7aa2f7" }}>
+          <a href="/_Yegor_Polyakov_Resume_RU.pdf" style={{ color: "#7aa2f7" }}>
             Russian
           </a>{" "}
           ·{" "}
-          <a href="/resume-es.pdf" style={{ color: "#7aa2f7" }}>
+          <a href="/_Yegor_Polyakov_Resume_ES.pdf" style={{ color: "#7aa2f7" }}>
             Spanish
           </a>
         </p>
