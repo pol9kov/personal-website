@@ -39,24 +39,12 @@ export async function GET() {
             maxWidth: "850px",
           }}
         >
-          {/* Top line - name and role */}
-          <p
-            style={{
-              fontSize: "18px",
-              fontWeight: 400,
-              color: "#FFFFFF",
-              margin: 0,
-              opacity: 0.7,
-              letterSpacing: "0.02em",
-            }}
-          >
-            Egor Polyakov · AI Agent Platform Engineer
-          </p>
-
-          {/* Headline */}
+          {/* Имя — самое крупное на карточке: ссылка приходит от человека,
+              и карточка должна первым делом назвать человека, а не слоган
+              (Егор 2026-08-15: «большими буквами моё имя, фамилия»). */}
           <h1
             style={{
-              fontSize: "64px",
+              fontSize: "72px",
               fontWeight: 700,
               color: "#FFFFFF",
               margin: 0,
@@ -64,37 +52,35 @@ export async function GET() {
               letterSpacing: "-0.02em",
             }}
           >
-            Humans give meaning. AI gives form.
+            Egor Polyakov
           </h1>
 
-          {/* Subtitle */}
+          {/* Роль — второй уровень */}
           <p
             style={{
-              fontSize: "26px",
+              fontSize: "30px",
+              fontWeight: 400,
+              color: "#FFFFFF",
+              opacity: 0.85,
+              margin: 0,
+              lineHeight: 1.3,
+            }}
+          >
+            AI Agent Platform Engineer
+          </p>
+
+          {/* Одна строка-крючок — строка героя сайта */}
+          <p
+            style={{
+              fontSize: "24px",
               fontWeight: 400,
               color: "#BBBBBB",
               margin: 0,
               lineHeight: 1.5,
-              marginTop: "8px",
-              whiteSpace: "nowrap",
+              marginTop: "16px",
             }}
           >
-            Imperia OS — an AI platform whose agents write the code.
-          </p>
-
-          {/* Bottom tags */}
-          <p
-            style={{
-              fontSize: "14px",
-              fontWeight: 400,
-              color: "#666666",
-              margin: 0,
-              marginTop: "32px",
-              letterSpacing: "0.15em",
-              textTransform: "uppercase",
-            }}
-          >
-            AI Agents · Backend / Full-Stack
+            Humans give meaning. AI gives form.
           </p>
         </div>
 
