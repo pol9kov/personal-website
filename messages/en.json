@@ -24,9 +24,9 @@
   "about": {
     "title": "About Me",
     "whoIAm": {
-      "p1": "I'm an empath: greedy for meaning and bad at holding on to dry specifics. I need someone to remember for me, to listen to me, to run my daily life, and to build alongside me. In mid-2025 I set out to make that someone — that's how Imperia OS was born, and now it's beside me every day.",
-      "p2": "I'm a worrier: chaos makes me uncomfortable — I need to see what is happening and understand what it means. Imperia OS lets me do that: every action leaves a trail, errors cry out at once instead of hiding, and everything has its place.",
-      "p3": "What I value most in life is trust. I could control and constrain agents — instead, I guide and teach them, and the system itself learns to catch its defects — and, even more importantly, to prevent them from appearing in the future. A defect that never happens is money the company never loses. I always measure my work by how much it earns or saves the company."
+      "p1": "I'm an empath, greedy for meaning and bad at holding on to dry specifics. I need someone to remember for me, to listen to me, to run my daily life, and to build alongside me. In mid-2025 I set out to make that someone. That is how Imperia OS was born, and now it's beside me every day.",
+      "p2": "I'm a worrier. Chaos makes me uncomfortable, and I need to see what is happening and understand what it means. Imperia OS lets me do that. Every action leaves a trail, errors cry out at once instead of hiding, and everything has its place.",
+      "p3": "What I value most in life is trust. I could control and constrain agents. Instead I guide and teach them, and the system itself learns to catch its defects and, even more importantly, to prevent them from appearing in the future. A defect that never happens is money the company never loses. I always measure my work by how much it earns or saves the company."
     }
   },
   "resume": {
@@ -35,19 +35,19 @@
   },
   "imperiaOs": {
     "title": "Imperia OS",
-    "subtitle": "I'm building an AI assistant that takes the shape its user needs — and the platform it takes to build one. An operating system, because an agent needs what a program needs — memory, tools, access rights; the platform provides them to all of them at once.",
+    "subtitle": "I'm building an AI assistant that takes the shape its user needs, and the platform it takes to build one. An operating system, because an agent needs what a program needs. It needs memory, tools and access rights, and the platform provides them to all of them at once.",
     "proof": {
       "title": "Transparent by construction",
-      "text": "A program must be composed correctly, not debugged into correctness — the phrasing of Dijkstra's 1972 Turing Award citation. AI writes the code here, yet the rule is held not by its judgment but by a deterministic algorithm."
+      "text": "A program must be composed correctly, not debugged into correctness. That is the phrasing of Dijkstra's 1972 Turing Award citation. AI writes the code here, yet the rule is held not by its judgment but by a deterministic algorithm."
     },
     "next": {
       "title": "The operating system",
-      "text": "Writing code is only part of an agent's work. The main part is the person: the agent works with their data, helps run their affairs and puts together what they base their decisions on. And no person is alone — environments connect them to everyone else, each with its own rules of exchange. An environment installs on Imperia OS the way an app installs on an operating system. The agent finds these environments, exchanges data in them with other people and shows what it receives the way that suits this person."
+      "text": "Writing code is only part of an agent's work. The main part is the person. The agent works with their data, helps run their affairs and puts together what they base their decisions on. And no person is alone, because environments connect them to everyone else, each with its own rules of exchange. An environment installs on Imperia OS the way an app installs on an operating system. The agent finds these environments, exchanges data in them with other people and shows what it receives the way that suits this person."
     }
   },
   "caseStudies": {
     "title": "Case Studies",
-    "subtitle": "Finished work — what was built and how it came out.",
+    "subtitle": "Finished work. What was built and how it came out.",
     "problem": "Problem",
     "solution": "Solution",
     "technicalDetails": "Technical Details",
@@ -64,7 +64,7 @@
         "solution": "Implemented Clean Architecture with Feature-based structure in Flutter. Backend - serverless on AWS (Lambda in Golang). Infrastructure defined in CDK and deploys automatically.",
         "technicalDetails": [
           "Clean Architecture + feature-based modules, event-driven reactive layout, Riverpod for state",
-          "Serverless backend on AWS — Lambda in Go, DynamoDB with composite keys, S3 for media, Amplify and Cognito for auth",
+          "Serverless backend on AWS, with Lambda in Go, DynamoDB composite keys, S3 for media, Amplify and Cognito for auth",
           "Infrastructure as Code (AWS CDK)"
         ],
         "results": [

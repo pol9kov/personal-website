@@ -24,9 +24,9 @@
   "about": {
     "title": "Sobre Mí",
     "whoIAm": {
-      "p1": "Soy empático: ávido de sentido y malo reteniendo lo concreto y seco. Necesito a alguien que recuerde por mí, que me escuche, que lleve mi día a día y que construya conmigo. A mediados de 2025 me puse a crearlo yo mismo — así nació Imperia OS, y ahora está a mi lado cada día.",
-      "p2": "Soy ansioso: el caos me incomoda — necesito ver lo que ocurre y entender qué significa. Imperia OS me lo da: cada acción deja huella, los errores gritan enseguida en vez de esconderse, y cada cosa tiene su lugar.",
-      "p3": "Lo que más valoro en la vida es la confianza. Podría controlar y restringir a los agentes — en cambio, los guío y les enseño, y el propio sistema aprende a detectar sus defectos y, aún más importante, a evitar que aparezcan en el futuro. Un defecto que nunca ocurre es dinero que la empresa nunca pierde. Siempre mido mi trabajo por cuánto dinero genera o le ahorra a la empresa."
+      "p1": "Soy empático, ávido de sentido y malo reteniendo lo concreto y seco. Necesito a alguien que recuerde por mí, que me escuche, que lleve mi día a día y que construya conmigo. A mediados de 2025 me puse a crearlo yo mismo. Así nació Imperia OS, y ahora está a mi lado cada día.",
+      "p2": "Soy ansioso. El caos me incomoda y necesito ver lo que ocurre y entender qué significa. Imperia OS me lo da. Cada acción deja huella, los errores gritan enseguida en vez de esconderse, y cada cosa tiene su lugar.",
+      "p3": "Lo que más valoro en la vida es la confianza. Podría controlar y restringir a los agentes. En cambio los guío y les enseño, y el propio sistema aprende a detectar sus defectos y, aún más importante, a evitar que aparezcan en el futuro. Un defecto que nunca ocurre es dinero que la empresa nunca pierde. Siempre mido mi trabajo por cuánto dinero genera o le ahorra a la empresa."
     }
   },
   "resume": {
@@ -35,10 +35,10 @@
   },
   "imperiaOs": {
     "title": "Imperia OS",
-    "subtitle": "Construyo un asistente de IA que adopta la forma que su usuario necesita — y la plataforma sin la cual no se puede construir. Un sistema operativo, porque un agente necesita lo mismo que un programa: memoria, herramientas, permisos de acceso; la plataforma se los da a todos a la vez.",
+    "subtitle": "Construyo un asistente de IA que adopta la forma que su usuario necesita, y la plataforma sin la cual no se puede construir. Un sistema operativo, porque un agente necesita lo mismo que un programa. Necesita memoria, herramientas y permisos de acceso, y la plataforma se los da a todos a la vez.",
     "proof": {
       "title": "Transparente por construcción",
-      "text": "Un programa debe componerse correcto, no depurarse hasta la corrección — la formulación de la mención del Premio Turing de Dijkstra, 1972. Aquí el código lo escribe la IA, pero la regla no la sostiene su juicio, sino un algoritmo determinista."
+      "text": "Un programa debe componerse correcto, no depurarse hasta la corrección. Así lo formula la mención del Premio Turing de Dijkstra, 1972. Aquí el código lo escribe la IA, pero la regla no la sostiene su juicio, sino un algoritmo determinista."
     },
     "next": {
       "title": "El sistema operativo",
@@ -47,7 +47,7 @@
   },
   "caseStudies": {
     "title": "Casos de Estudio",
-    "subtitle": "Trabajos terminados — qué se construyó y cómo salió.",
+    "subtitle": "Trabajos terminados. Qué se construyó y cómo salió.",
     "problem": "Problema",
     "solution": "Solución",
     "technicalDetails": "Detalles Técnicos",
@@ -64,7 +64,7 @@
         "solution": "Implementé Clean Architecture con estructura basada en Features en Flutter. Backend serverless en AWS (Lambda en Golang). Infraestructura definida en CDK y se despliega automáticamente.",
         "technicalDetails": [
           "Clean Architecture + módulos por funcionalidad, maquetación reactiva por eventos, Riverpod para el estado",
-          "Backend serverless en AWS — Lambda en Go, DynamoDB con claves compuestas, S3 para medios, Amplify y Cognito para auth",
+          "Backend serverless en AWS, con Lambda en Go, DynamoDB con claves compuestas, S3 para medios, Amplify y Cognito para auth",
           "Infraestructura como Código (AWS CDK)"
         ],
         "results": [
