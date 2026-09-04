@@ -35,10 +35,10 @@
   },
   "imperiaOs": {
     "title": "Imperia OS",
-    "subtitle": "Construyo un asistente de IA que adopta la forma que su usuario necesita, y la plataforma sin la cual no se puede construir. Un sistema operativo, porque un agente necesita lo mismo que un programa. Necesita memoria, herramientas y permisos de acceso, y la plataforma se los da a todos a la vez.",
+    "subtitle": "Construyo un asistente de IA que adopta la forma que su usuario necesita, y la plataforma sin la cual no se puede construir. Un sistema operativo, porque un agente necesita lo mismo que un programa — memoria, herramientas, permisos de acceso. La plataforma se los da a todos a la vez.",
     "proof": {
       "title": "Transparente por construcción",
-      "text": "Un programa debe componerse correcto, no depurarse hasta la corrección. Así lo formula la mención del Premio Turing de Dijkstra, 1972. Aquí el código lo escribe la IA, pero la regla no la sostiene su juicio, sino un algoritmo determinista."
+      "text": "Un programa debe componerse correcto, no depurarse hasta la corrección — así lo formula la mención del Premio Turing de Dijkstra, 1972. Aquí el código lo escribe la IA, pero la regla no la sostiene su juicio, sino un algoritmo determinista."
     },
     "next": {
       "title": "El sistema operativo",
