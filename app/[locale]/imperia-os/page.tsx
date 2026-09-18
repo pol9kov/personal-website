@@ -6,7 +6,7 @@ import { ImperiaWidgetFrame } from "@/components/shared/ImperiaWidgetFrame";
 export const metadata: Metadata = {
   title: "Imperia OS | Yegor Polyakov",
   description:
-    "An AI assistant that takes the shape its user needs — and the agent platform it takes to build one. Every action leaves a trail.",
+    "An assistant that takes the shape its user needs, and a platform that gives it memory, tools, and access rights.",
 };
 
 interface ImperiaOSPageProps {
